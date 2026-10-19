@@ -12,3 +12,6 @@ lots of towers
 you can lose if you upgrade enemy stream too fast
 
 Horizontal map, guns on left side, enemies walk in from right toward guns. can destroy guns. eventually mass amount of enemies with horde mechanics and feel
+
+==
+unrelated idea - plant clicker. start with chloroplasts in algae, then multicelular, to plants, propogation reduces total production for a time but then it eventually outpaces what was before. then multiple plants and managing garden

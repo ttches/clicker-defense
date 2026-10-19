@@ -1,0 +1,26 @@
+# Leaf Blower Revolution Android 2.29.6 (vCode 2029006); game.droid sha256 99b95417…; accessed 2026-10-18
+key,index,from,to,cost,reward,cost_amount,reward_amount,static_resources,time_resistant,source
+convert_gold,1,leaves,gold,leaves=100,gold=1,100,1,false,false,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_converters.gml:9
+convert_platinum,2,gold,platinum,gold=100,platinum=1,100,1,false,false,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_converters.gml:24
+convert_bismuth,3,platinum,bismuth,platinum=100,bismuth=1,100,1,false,false,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_converters.gml:39
+convert_cosmic,4,bismuth,cosmic,bismuth=100,cosmic=1,100,1,false,false,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_converters.gml:54
+convert_void,5,cosmic,void,cosmic=100,void=1,100,1,false,false,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_converters.gml:69
+exotic_celestial,10,exotic,celestial,exotic=10000000000000,celestial=1,10000000000000,1,false,false,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_converters.gml:84
+convert_flask_red,106,void,flask_red,void=100,flask_red=1,100,1,false,false,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_converters.gml:99
+convert_flask_green,107,flask_red,flask_green,flask_red=100,flask_green=1,100,1,false,false,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_converters.gml:114
+convert_flask_blue,108,flask_green,flask_blue,flask_green=100,flask_blue=1,100,1,false,false,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_converters.gml:129
+convert_flask_magenta,109,flask_blue,flask_magenta,flask_blue=100,flask_magenta=1,100,1,false,false,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_converters.gml:144
+convert_flask_orange,110,flask_magenta,flask_orange,flask_magenta=100,flask_orange=1,100,1,false,false,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_converters.gml:159
+convert_flask_black,111,flask_orange,flask_black,flask_orange=100,flask_black=1,100,1,false,false,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_converters.gml:174
+convert_flask_strange,112,flask_black,flask_strange,flask_black=10000,flask_strange=1,10000,1,false,false,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_converters.gml:189
+convert_flask_strange_silver_token,2010,flask_strange,silver_token,flask_strange=500000,silver_token=1,500000,1,false,false,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_converters.gml:204
+convert_silver_token_gold_token,2020,silver_token,gold_token,silver_token=1000,gold_token=1,1000,1,false,false,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_converters.gml:218
+convert_borb_cheese,5000,borbs,cheese,borbs=5000,cheese=1,5000,1,true,false,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_converters.gml:232
+convert_borb_borb_juice,5010,borbs,borb_juice,borbs=100000000,borb_juice=1,100000000,1,true,true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_converters.gml:248
+convert_borb_juice_borb_token,5020,borb_juice,borb_token,borb_juice=500,borb_token=1,500,1,true,true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_converters.gml:270
+convert_cheese_beer,5200,cheese,beer,cheese=500,beer=1,500,1,true,false,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_converters.gml:292
+convert_plasma_electric,10000,plasma,energy_electrical,plasma=100,energy_electrical=20,100,20,true,false,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_converters.gml:308
+convert_azurite_dice,20000,azurite,dice,azurite=10000,dice=5,10000,5,true,false,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_converters.gml:329
+convert_azurite_power_dice,20001,azurite,power_dice,azurite=500000,power_dice=5,500000,5,true,false,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_converters.gml:350
+convert_niobium_dice,20010,niobium,dice,niobium=10000,dice=10,10000,10,true,false,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_converters.gml:371
+convert_niobium_power_dice,20011,niobium,power_dice,niobium=500000,power_dice=10,500000,10,true,false,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_converters.gml:392

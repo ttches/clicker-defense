@@ -1,0 +1,21 @@
+# variable_upgrades.csv — Exponential Idle Android 1.4.46 (vCode 313);decompiled sha256:9bbce1c0;accessed 2026-10-18; source reference/exponential-idle/ei-decompiled/
+target_letter,base_cost,b_initial_level,a_progress,effect,source
+y,3.0816,0.699266982,2,factor of y: 1 + level*Power (starts Power=1),ExponentialIdle/Upgrades.cs:100
+z,3.1664,0.73365241,2.2,factor of z: 1 + level*Power (starts Power=1),ExponentialIdle/Upgrades.cs:100
+s,102,2.738211258,2.42,factor of s: 1 + level*Power (starts Power=1),ExponentialIdle/Upgrades.cs:100
+u,ee4.58812,16.973438352,2.662,factor of u: 1 + level*Power (starts Power=1),ExponentialIdle/Upgrades.cs:100
+v,ee10.34614,36.101149208,2.9282,factor of v: 1 + level*Power (starts Power=1),ExponentialIdle/Upgrades.cs:100
+w,ee18.6802,63.786314254,3.22102,factor of w: 1 + level*Power (starts Power=1),ExponentialIdle/Upgrades.cs:100
+alpha,ee29.6665,100.282012541,3.543122,factor of alpha: 1 + level*Power (starts Power=1),ExponentialIdle/Upgrades.cs:100
+beta,ee43.36535,145.788605834,3.897434,factor of beta: 1 + level*Power (starts Power=1),ExponentialIdle/Upgrades.cs:100
+gamma,ee59.82692,200.472741091,4.287178,factor of gamma: 1 + level*Power (starts Power=1),ExponentialIdle/Upgrades.cs:100
+delta,ee79.09427,264.477506641,4.715895,factor of delta: 1 + level*Power (starts Power=1),ExponentialIdle/Upgrades.cs:100
+epsilon,ee101.20524,337.928538011,5.187485,factor of epsilon: 1 + level*Power (starts Power=1),ExponentialIdle/Upgrades.cs:100
+zeta,ee154.08981,513.60727466,5.706233,factor of zeta: 1 + level*Power (starts Power=1),ExponentialIdle/Upgrades.cs:100
+eta,ee218.71532,728.288571548,6.276857,factor of eta: 1 + level*Power (starts Power=1),ExponentialIdle/Upgrades.cs:100
+theta,ee255.4941,850.465046531,6.904542,factor of theta: 1 + level*Power (starts Power=1),ExponentialIdle/Upgrades.cs:100
+iota,ee338.09506,1124.859483303,7.594997,factor of iota: 1 + level*Power (starts Power=1),ExponentialIdle/Upgrades.cs:100
+kappa,ee432.88683,1439.750948175,8.354496,factor of kappa: 1 + level*Power (starts Power=1),ExponentialIdle/Upgrades.cs:100
+lambda,ee540.01417,1795.6202607,9.189946,factor of lambda: 1 + level*Power (starts Power=1),ExponentialIdle/Upgrades.cs:100
+nu,ee659.60794,2192.902179662,10.108941,factor of nu: 1 + level*Power (starts Power=1),ExponentialIdle/Upgrades.cs:100
+xi,ee791.7877,2631.993842401,11.119835,factor of xi: 1 + level*Power (starts Power=1),ExponentialIdle/Upgrades.cs:100

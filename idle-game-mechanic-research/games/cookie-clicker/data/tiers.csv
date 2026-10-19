@@ -1,0 +1,20 @@
+# tiers.csv — Game.Tiers price multipliers; Cookie Clicker web 2.058;sha256:d530a13b; accessed 2026-10-18; main.js:10110-10129
+tier,name,price_multiplier,unlock,achiev_unlock,special,req,color,source
+1,Plain,10,1,1,,,#ccb3ac,main.js:10111
+2,Berrylium,50,5,50,,,#ff89e7,main.js:10112
+3,Blueberrylium,500,25,100,,,#00deff,main.js:10113
+4,Chalcedhoney,50000,50,150,,,#ffcc2f,main.js:10114
+5,Buttergold,5000000,100,200,,,#e9d673,main.js:10115
+6,Sugarmuck,500000000,150,250,,,#a8bf91,main.js:10116
+7,Jetmint,500000000000,200,300,,,#60ff50,main.js:10117
+8,Cherrysilver,500000000000000,250,350,,,#f01700,main.js:10118
+9,Hazelrald,500000000000000000,300,400,,,#9ab834,main.js:10119
+10,Mooncandy,500000000000000000000,350,450,,,#7e7ab9,main.js:10120
+11,Astrofudge,5000000000000000000000000,400,500,,,#9a3316,main.js:10121
+12,Alabascream,50000000000000000000000000000,450,550,,,#c1a88c,main.js:10122
+13,Iridyum,500000000000000000000000000000000,500,600,,,#adb1b3,main.js:10123
+14,Glucosmium,5000000000000000000000000000000000000,550,650,,,#ff89e7,main.js:10124
+15,Glimmeringue,50000000000000000000000000000000000000000,600,700,,,#fffaa8,main.js:10125
+synergy1,Synergy I,200000,15,,1,Synergies Vol. I,#008595,main.js:10126
+synergy2,Synergy II,200000000000,75,,1,Synergies Vol. II,#008595,main.js:10127
+fortune,Fortune,77777777777777777777777777777,-1,,1,,#9ab834,main.js:10128

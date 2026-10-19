@@ -1,0 +1,38 @@
+# Leaf Blower Revolution Android 2.29.6 (vCode 2029006); game.droid sha256 99b95417…; accessed 2026-10-18
+key,index,name,type,blow_power,range_stat,blow_range_base,cost,can_blow,source
+hands,-100,Your Hands,blowers,1,1,16,leaves=0,true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_weapons.gml:9
+leaf_rake,-50,Small Leaf Rake,blowers,2,2,24,leaves=50,true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_weapons.gml:24
+leaf_rake_advanced,-30,Large Leaf Rake,blowers,4,4,40,leaves=500,true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_weapons.gml:38
+leaf_blower,30,Leaf Blower,blowers,6,6,56,leaves=5000,true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_weapons.gml:52
+leaf_blower_advanced,40,Advanced Leaf Blower,blowers,8,8,72,gold=500,true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_weapons.gml:66
+nuclear_leaf_blower,50,Nuclear Leaf Blower,blowers,10,10,88,gold=5000,true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_weapons.gml:80
+airplane_turbine,60,Airplane Turbine,blowers,12,12,104,platinum=500,true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_weapons.gml:94
+leaf_powered_leaf_blower,70,Leaf Powered Leaf Blower,blowers,14,14,120,platinum=5000,true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_weapons.gml:108
+paint_roller,80,Large Paint Roller,blowers,15,15,128,bismuth=500,true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_weapons.gml:122
+rocket_engine,90,Rocket Engine,blowers,16,16,136,cosmic=500,true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_weapons.gml:136
+lazer,100,Lazer,blowers,18,18,152,void=500,true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_weapons.gml:150
+alien_turbine,110,Alien Turbine,blowers,20,22,184,flask_red=500,true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_weapons.gml:164
+ace_of_spades,120,Ace of Spades,blowers,24,24,200,flask_green=500,true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_weapons.gml:178
+blowfish,130,Blowfish,blowers,26,26,216,flask_blue=500,true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_weapons.gml:192
+gfx_card,140,Graphics Card,blowers,28,28,232,flask_magenta=500,true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_weapons.gml:206
+drill,150,Drill,blowers,30,30,248,flask_orange=500,true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_weapons.gml:220
+fan,160,Fan,blowers,32,32,264,flask_black=500,true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_weapons.gml:234
+compressor,170,Compressor,blowers,34,34,280,flask_strange=500,true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_weapons.gml:248
+bellows,180,Bellows,blowers,36,36,296,exotic=50000000000,true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_weapons.gml:262
+celestial_blower,190,The Celestial Blower,blowers,18,12,104,celestial=50,true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_weapons.gml:276
+drill_ht,200,THE HIGHTECH DRILL,blowers,512,8,72,mythical=5000000000000,true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_weapons.gml:297
+sword,210,Leaf Sword,swords,0,4,40,lava=5000000000000000,false,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_weapons.gml:311
+borb_sword,211,"sprintf(%s %s, Borb, __(Sword))",swords,0,4,40,borbs=100000,false,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_weapons.gml:339
+carpenters_cup,220,Carpenter's Cup,blowers,1,1,16,silver_token=1000;gold_token=42,true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_weapons.gml:356
+holy_grail,221,The Holy Grail,blowers,1024,8,72,silver_token=50000;gold_token=15000,true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_weapons.gml:371
+bellows_ht,320,THE HIGHTECH BELLOWS,blowers,768,16,136,sand=5000000000000000,true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_weapons.gml:407
+ace_of_spades_ht,330,THE HIGHTECH ACE OF SPADES,blowers,1024,24,200,ancient=500000000,true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_weapons.gml:421
+strange_blower,340,Strange Blower,blowers,1024,30,248,water_crystal=50,true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_weapons.gml:435
+shovel,10000,Shovel,shovels,0,3,32,gold=50000,false,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_weapons.gml:450
+shovel_ht,10100,THE HIGHTECH SHOVEL,shovels,0,3,32,mythical=5000000000000000000000000000000,false,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_weapons.gml:470
+shovel_nuclear,10200,Nuclear Shovel,shovels,0,3,32,moonstone=1000000000000000000000000000000,false,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_weapons.gml:489
+shovel_soul,10300,Soul Shovel,shovels,0,3,32,soul_particles=500,false,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_weapons.gml:508
+trout,20000,Large Trout,trouts,5,2,24,gold=2500000,true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_weapons.gml:528
+trout_ht,20100,THE HIGHTECH TROUT,trouts,10,2,24,mythical=5000000000000000000000000000000,true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_weapons.gml:548
+trout_nuclear,20200,Nuclear Trout,trouts,50,2,24,moonstone=1000000000000000000000000000000,true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_weapons.gml:567
+trout_soul,20300,Soul Trout,trouts,60,2,24,soul_particles=2000,true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_weapons.gml:586

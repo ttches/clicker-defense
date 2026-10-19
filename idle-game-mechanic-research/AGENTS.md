@@ -1,0 +1,109 @@
+# idle-game-mechanic-research — working notes for agents
+
+**Mission:** produce *sourced, numeric* guides to the mechanics and math pacing
+of four incremental games — **Cookie Clicker**, **Leaf Blower Revolution**,
+**Exponential Idle**, **Revolution Idle** — plus a design-theory track, all
+feeding a final synthesis for our own **clicker tower-defence** game in
+`../readme.md`.
+
+The durable plan lives in [`PLAN.md`](PLAN.md); current state in
+[`PROGRESS.md`](PROGRESS.md). Read both before doing anything. This file is the
+conventions + commands brief.
+
+## Golden rules (do not break these)
+
+1. **Every number has a source.** No orphan numbers. Each number/row cites a URL
+   (or artifact `file:line`), an access date, and enough of a quote/anchor to
+   re-find it. Sources live in [`SOURCES.md`](SOURCES.md).
+2. **Scripts and measurement own extraction; agents never invent numbers.** If a
+   value can be measured or extracted, it must be — not read off a screenshot or
+   guessed. Prose may summarize; it may not fabricate.
+3. **Raw artifacts are gitignored; derived docs are committed.** APKs, game
+   installs, decompiled trees are references only. Never commit binaries or
+   copied assets.
+4. **Record contradictions, don't smooth them.** If source A and source B
+   disagree, write both (with citations) in the doc's *Disputes* section and
+   flag it. A negative result ("no usable wiki", "tool X fails") is a result.
+5. **Version-pin everything.** Every game has a version/build + date recorded in
+   [`SOURCES.md`](SOURCES.md); numbers are meaningless without it.
+6. **Trust the files, not the conversation.** A fresh session must resume from
+   `PLAN.md → PROGRESS.md` with no prior context.
+
+## Source triage (per game, step T0)
+
+Estimate each game's community-source quality *before* researching, and record a
+verdict + evidence in `SOURCES.md`:
+
+- **rich** — extensive, maintained, formulaic, matches artifacts → rely on it as
+  primary; extraction only spot-checks.
+- **workable** — usable but with gaps/stale parts → wiki as scaffold; extract to
+  fill and confirm.
+- **thin / avoid** — small, low-traffic, unmaintained, few formulas → **ignore
+  it**; focus on the game (extract + measure) and cite only incidentally.
+
+Checklist: coverage, maintenance (last activity), traffic, rigor (formulas vs
+hand-waving), agreement (matches artifacts/other sources).
+
+## Layout
+
+```
+PLAN.md        durable plan + decisions log + deferred register + phase status
+AGENTS.md      this file
+PROGRESS.md    session handoff / next actions
+SOURCES.md     global source registry (game, source, URL, date, hash, quality)
+ACCESS.md      per-game acquisition + extraction playbook
+theory/        incremental-game design theory + the Guildenstern guide series
+games/<game>/  MECHANICS.md, MATH.md, ANALYSIS.md, SOURCES.md, data/*.csv
+synthesis/     cross-game comparison + design lessons for our game
+tools/<game>/  deterministic extractors / live-object dumpers / measurement
+reference/     gitignored raw artifacts (APKs, installs, decompiled trees)
+```
+
+## Conventions
+
+- Markdown for prose; **CSV is the artifact, Markdown tables are generated** from
+  it (see `tools/`). The CSV wins on conflict — regenerate, don't hand-edit the
+  rendered table.
+- Cite inline as `[sources.md#cc-wiki-buildings]` or a short `(source: URL)`.
+  Prefer stable anchors over raw long URLs in prose.
+- File names: `kebab-case.md`; data files `snake_case.csv` with a header row.
+- No comments in scripts that restate the code; comment the *why*.
+- Keep `PLAN.md` §Decisions and [`PROGRESS.md`](PROGRESS.md) current as work
+  lands. Record every deferral in the deferred register.
+
+## Commands
+
+```
+# (intended; add as tools land under tools/)
+node tools/<game>/<extractor>.mjs      # deterministic extract/measure -> data/*.csv
+# Markdown tables are generated from CSV; do not hand-edit generated tables.
+```
+
+Toolchain for artifact work is installed on demand (no root) — see
+[`ACCESS.md`](ACCESS.md) and the clickpoc precedent at
+`../../clickpoc/research/android/install-tools.sh`.
+
+## Agent roster (dispatched by the orchestrator via the `task` tool)
+
+| agent               | purpose                                                     | writes                        |
+| ------------------- | ----------------------------------------------------------- | ----------------------------- |
+| `game-source-recon` | find/classify canonical sources; triage quality              | `SOURCES.md`, `games/*/SOURCES.md` |
+| `mechanics-decoder` | decode systems → mechanics map                               | `games/<game>/MECHANICS.md`   |
+| `number-harvester`  | extract/measure hard numbers; write extractors               | `games/<game>/data/*.csv`, `MATH.md`, `tools/<game>/` |
+| `source-verifier`   | adversarial re-derivation + citation audit (read-only)       | `games/<game>/VERIFY.md`      |
+| `design-analyst`    | pacing analysis + cross-game lessons                         | `games/<game>/ANALYSIS.md`, `synthesis/` |
+
+The **orchestrator skill** and these agents live at the **repo root**
+(`/workspace/clicker-defence/.opencode/`) — opencode only discovers `.opencode/`
+at the project root, not nested here. The skill governs how sessions run: keep
+your context small, delegate volume, independently verify.
+
+## Where the truth lives
+
+| need                                   | read                                                        |
+| -------------------------------------- | ----------------------------------------------------------- |
+| the plan / phase status / decisions    | `PLAN.md`                                                    |
+| where a fact came from                 | `SOURCES.md`, `games/<game>/SOURCES.md`                      |
+| how to obtain a game / decompile it    | `ACCESS.md`                                                  |
+| clickpoc's proven access+unpack recipe | `../../clickpoc/research/android/{ACCESS,UNPACKING,ENVIRONMENT}.md` |
+| the orchestrator playbook              | `../../clickpoc-web-port/.opencode/skills/orchestrator/SKILL.md` |

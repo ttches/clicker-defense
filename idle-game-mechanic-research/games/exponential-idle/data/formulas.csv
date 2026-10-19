@@ -1,0 +1,9 @@
+# formulas.csv — Exponential Idle Android 1.4.46 (vCode 313);decompiled sha256:9bbce1c0;accessed 2026-10-18; source reference/exponential-idle/ei-decompiled/
+name,formula,meaning,source
+main_equation,f(t+dt) = f(t) * exp( b * X * phi * Ptau * Ctau * ExtraMultiplier * dt ),"per tick; X = composed variables (or last layer), phi = product of research phi_i, tau = product of theory tau",ExponentialIdle.Controller/FunctionIntegrator.cs:61
+time_dampen,"f -> (f+1)^power - 1; power = m + (1-m)*2*(1/(1+e^(-e/50)) - 0.5), m=0.5",e = elapsed time since last prestige in seconds,ExponentialIdle.Controller/FunctionIntegrator.cs:75
+layer_integrator,L_k(t) = integral over layers; dt^j / j! series,each supremacy 'Add f(t) layer' raises the effective order of f,ExponentialIdle.Controller/FunctionIntegrator.cs:51
+variable_compose,X = Factor * next^Exponent + level * 2^c(level),nested composition; c(level) from GetConstantFactorExponent,ExponentialIdle/Variable.cs:95
+constant_factor_c,stages: 0(L<10);1(10-24);1+L/25(<1500);31+L/50(<6000);91+L/100(<10000);141+L/200(<24000);201+L/400,integer stepwise exponent added as 2^c,ExponentialIdle/Variable.cs:222
+double_exponential_cost,cost(L) = 2^(2^(a*L + b)),a = stored Progress; b = log2(log2(initialCost)); variables & variable-factor & dt upgrades,ExponentialIdle/DoubleExponentialCostModel.cs:42
+exponential_cost,cost(L) = b * 2^(a*L),"b = initialCost, a = Progress; μ/ψ upgrades, prestige-layer costs",ExponentialIdle/ExponentialCostModel.cs:47

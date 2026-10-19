@@ -1,0 +1,16 @@
+# stars.csv — Exponential Idle Android 1.4.46 (vCode 313);decompiled sha256:9bbce1c0;accessed 2026-10-18; source reference/exponential-idle/ei-decompiled/
+key,cost_or_value,name,effect,source
+base_probability,0.0004,chance factor per tick,0.0004 = 0.04%,ExponentialIdle/Stars.cs:7
+effective_probability,rate * sqrt(dt) * 0.0004,stars per tick,rate = ticks elapsed; dt = EffectiveDelta,ExponentialIdle/Stars.cs:29
+VariableBonus,15*(1+level^2),Variables,unlocks next variable,ExponentialIdle/StarBonuses.cs:75
+BuyAllButtonBonus,15,Buy All button,unlocks Buy All,ExponentialIdle/StarBonuses.cs:119
+VariableAutoBuyerBonus,200,Variable autobuyer,auto-buy variables,ExponentialIdle/StarBonuses.cs:141
+UpgradeAutoBuyerBonus,200,Upgrade autobuyer,auto-buy upgrades,ExponentialIdle/StarBonuses.cs:163
+AutoPrestigeBonus,500,Auto prestige,auto-prestige expression,ExponentialIdle/StarBonuses.cs:185
+AutoSupremacyBonus,100000,Auto supremacy,auto-supremacy expression,ExponentialIdle/StarBonuses.cs:221
+AutomationRateBonus,500 + 750*level,Automation speed,halves automation interval,ExponentialIdle/StarBonuses.cs:250
+AccelerationBonus,50,Acceleration button,unlocks accel multiplier,ExponentialIdle/StarBonuses.cs:290
+permanent_variable_levels,"floor(a*level*exp(min(100, a*level/200)) + 1)",Variable level,free level of a variable; a per-variable table,ExponentialIdle/StarBonuses.cs:322
+minigame_fifteen,10,Minigame,unlock 15-puzzle,exponential-idle.fandom.com/wiki/Instructions
+minigame_torus,75,Minigame,unlock Torus puzzle,exponential-idle.fandom.com/wiki/Instructions
+minigame_arrow,150,Minigame,unlock Arrow puzzle,exponential-idle.fandom.com/wiki/Instructions

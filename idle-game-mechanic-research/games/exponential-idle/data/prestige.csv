@@ -1,0 +1,11 @@
+# prestige.csv — Exponential Idle Android 1.4.46 (vCode 313);decompiled sha256:9bbce1c0;accessed 2026-10-18; source reference/exponential-idle/ei-decompiled/
+key,formula,value,meaning,source
+d_mu,"max(log10(f(t)), 0)",0,Prestige currency μ gained (multiplicative via dividing f(t) by cost),ExponentialIdle/Prestige.cs:201
+d_psi,2^(log10(log10(f(t)))/25 - 1) - 0.5; 0 if f<=10,,Supremacy currency ψ gained from cumulative f(t),ExponentialIdle/Prestige.cs:226
+d_b,log10(f(t))^0.8 / (40*num),40*num = 4e6 when b>=1e5,"Boost to b gained per prestige (d b/b is the prestige progress signal). While b<1e5, num=10^(3+((log10 b+3)/8)*2); if SupremacyCount==0 the result is capped at (10*10^((log10 b+3)/9))*b",ExponentialIdle/Prestige.cs:288
+FirstInfinity,ee200,BigNumber.From(200).Exp10().Exp10(),f(t) threshold that counts as 'infinity' (enables prestige/reset),ExponentialIdle/Prestige.cs:46
+SecondInfinity,ee2000,BigNumber.From(2000).Exp10().Exp10(),f(t) threshold that counts as 'infinity' (enables prestige/reset),ExponentialIdle/Prestige.cs:48
+ThirdInfinity,ee50000,BigNumber.From(50000).Exp10().Exp10(),f(t) threshold that counts as 'infinity' (enables prestige/reset),ExponentialIdle/Prestige.cs:50
+FourthInfinity,ee2000000,BigNumber.From(2000000).Exp10().Exp10(),f(t) threshold that counts as 'infinity' (enables prestige/reset),ExponentialIdle/Prestige.cs:52
+d_students,floor((log10(log10(f(t))) - 1000)/200) - students; 0 if f < ee2000,,Graduation grants students σ (graduation layer),ExponentialIdle/Prestige.cs:259
+student_checkpoint,10^(10^((σ+1)*200+1000)),,f(t) needed for the next student,ExponentialIdle/Prestige.cs:264

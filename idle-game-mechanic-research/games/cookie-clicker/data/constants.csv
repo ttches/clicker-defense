@@ -1,0 +1,12 @@
+# constants.csv — Cookie Clicker web 2.058;sha256:d530a13b; accessed 2026-10-18
+name,value,formula,notes,source
+price_increase,1.15,Game.priceIncrease,per owned building,main.js:7972
+price_formula,base_cost*1.15^(M-F),getPrice/getSumPrice,ceil'd; F = free buildings,main.js:8090-8105
+sell_refund_frac,0.25,giveBack=0.25,of current buy price,main.js:8117-8122
+sell_refund_actual,0.2875,0.25*1.15,wiki: 28.75% of cost; 57.5% with Earth Shatterer,cc-wiki#building-prices
+buy10_multiplier,20.303718238052724,sum_{i=0..9} 1.15^i,wiki: 20.303718238,derived;cc-wiki#building-prices
+buy100_multiplier,7828749.6713352,sum_{i=0..99} 1.15^i,wiki: 7828749.671335256,derived;cc-wiki#building-prices
+doubling_cadence,4.959484454640391,log(2)/log(1.15),~every 5 buildings (5 -> x2.011),derived;cc-wiki#building-prices
+thousand_cadence,49.425152238081125,log(1000)/log(1.15),~every 50 buildings (50 -> x1083.7),derived;cc-wiki#building-prices
+free_buildings,15,Starter kit 10 + Starter kitchen 5,F term in price formula,cc-wiki#building-prices
+hc_factor,3,Game.HCfactor,same as prestige.csv,main.js:4185

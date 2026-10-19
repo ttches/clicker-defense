@@ -1,0 +1,9 @@
+# upgrades.csv — Exponential Idle Android 1.4.46 (vCode 313);decompiled sha256:9bbce1c0;accessed 2026-10-18; source reference/exponential-idle/ei-decompiled/
+category,name,base_cost,a_progress,a_numeric,b_initial_level,effect,max_level,currency,source
+regular,Free dt (id 0),0,,,,FreeDelta += 0.01*amount*Power per level,∞,f(t),ExponentialIdle/Upgrades.cs:46
+regular,dt increase (id 1),1000000000000,2,2,5.316983346,Delta = 1 + 0.1*level*Power,∞,f(t),ExponentialIdle/Upgrades.cs:68
+supremacy,"x exponent +0.2 (ψ, id 4000)","1.5 / 2000 / 3.0000e+15 (piecewise L<4, L<15, else)",2 / 3 / 5,,,variables[0].Exponent += 0.2*amount,40,ψ,ExponentialIdle/Upgrades.cs:165-167
+supremacy,"Add f(t) layer (ψ, id 4001)","1000 / 1000 (L<4, else)",6 / 9,,,ActiveLayerCount += amount,8,ψ,ExponentialIdle/Upgrades.cs:190-191
+supremacy,"Higher-variable exponent (ψ, id 4002)","10^[110,130,…,570] (24 tiers)",,,,variables[k-1].Exponent += 0.04 per tier,24,ψ,ExponentialIdle/Upgrades.cs:211
+prestige,"dt Power (μ, id 3000)",15,15,15,,dtUpgrade.Power += amount*Power (Power starts 1),∞,μ,ExponentialIdle/Upgrades.cs:141
+prestige,"y-factor Power (μ, id 3001)",20,20,20,,variableUpgrades[y].Power += amount*Power,∞,μ,ExponentialIdle/Upgrades.cs:153

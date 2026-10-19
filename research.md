@@ -59,5 +59,3 @@ This can be a long term epic that we chip away with, whatever strategy you think
 We'll want to record our progress and choices along the way as this will span many sessions perhaps
 
 The plan can include future spikes
-
--- do the preliminary cursary research to turn this research doc into more of a real plan. It doesn't have to be extremely detailed, the agent in charge of each major step can do more research beforehand

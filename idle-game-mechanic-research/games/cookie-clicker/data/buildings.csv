@@ -1,0 +1,22 @@
+# buildings.csv — Cookie Clicker web 2.058;sha256:d530a13b; accessed 2026-10-18; source: reference/cookie-clicker/main.js
+name,base_cost,base_cps,cost_multiplier,unlock,notes,source
+Cursor,15,0.1,1.15,cookiesEarned>=base_cost (or already owned),Autoclicks once every 10 seconds.,main.js:8979;price-arg;ComputeCps@9001
+Grandma,100,1,1.15,cookiesEarned>=base_cost (or already owned),A nice grandma to bake more cookies.,main.js:9023;basePrice@8024;baseCps@8018
+Farm,1100,8,1.15,cookiesEarned>=base_cost (or already owned),Grows cookie plants from cookie seeds.,main.js:9104;basePrice@8024;baseCps@8018
+Mine,12000,47,1.15,cookiesEarned>=base_cost (or already owned),Mines out cookie dough and chocolate chips.,main.js:9116;basePrice@8024;baseCps@8018
+Factory,130000,260,1.15,cookiesEarned>=base_cost (or already owned),Produces large quantities of cookies.,main.js:9126;basePrice@8024;baseCps@8018
+Bank,1400000,1400,1.15,cookiesEarned>=base_cost (or already owned),Generates cookies from interest.,main.js:9138;basePrice@8024;baseCps@8018
+Temple,20000000,7800,1.15,cookiesEarned>=base_cost (or already owned),"Full of precious, ancient chocolate.",main.js:9150;basePrice@8024;baseCps@8018
+Wizard tower,330000000,44000,1.15,cookiesEarned>=base_cost (or already owned),Summons cookies with magic spells.,main.js:9162;basePrice@8024;baseCps@8018
+Shipment,5100000000,260000,1.15,cookiesEarned>=base_cost (or already owned),Brings in fresh cookies from the cookie planet.,main.js:9175;basePrice@8024;baseCps@8018
+Alchemy lab,75000000000,1600000,1.15,cookiesEarned>=base_cost (or already owned),Turns gold into cookies!,main.js:9185;basePrice@8024;baseCps@8018
+Portal,1000000000000,10000000,1.15,cookiesEarned>=base_cost (or already owned),Opens a door to the Cookieverse.,main.js:9196;basePrice@8024;baseCps@8018
+Time machine,14000000000000,65000000,1.15,cookiesEarned>=base_cost (or already owned),"Brings cookies from the past, before they were even eaten.",main.js:9206;basePrice@8024;baseCps@8018
+Antimatter condenser,170000000000000,430000000,1.15,cookiesEarned>=base_cost (or already owned),Condenses the antimatter in the universe into cookies.,main.js:9217;basePrice@8024;baseCps@8018
+Prism,2100000000000000,2900000000,1.15,cookiesEarned>=base_cost (or already owned),Converts light itself into cookies.,main.js:9228;basePrice@8024;baseCps@8018
+Chancemaker,26000000000000000,21000000000,1.15,cookiesEarned>=base_cost (or already owned),Generates cookies out of thin air through sheer luck.,main.js:9238;basePrice@8024;baseCps@8018
+Fractal engine,310000000000000000,150000000000,1.15,cookiesEarned>=base_cost (or already owned),Turns cookies into even more cookies.,main.js:9249;basePrice@8024;baseCps@8018
+Javascript console,71000000000000000000,1100000000000,1.15,cookiesEarned>=base_cost (or already owned),Creates cookies from the very code this game was written in.,main.js:9260;basePrice@8024;baseCps@8018
+Idleverse,12000000000000000000000,8300000000000,1.15,cookiesEarned>=base_cost (or already owned),There's been countless other idle universes running alongside our own. You've finally found a way to hijack their production and convert whatever they've been making into cookies!,main.js:9271;basePrice@8024;baseCps@8018
+Cortex baker,1900000000000000000000000,64000000000000,1.15,cookiesEarned>=base_cost (or already owned),These artificial brains the size of planets are capable of simply dreaming up cookies into existence. Time and space are inconsequential. Reality is arbitrary.,main.js:9281;basePrice@8024;baseCps@8018
+You,540000000000000000000000000,510000000000000,1.15,cookiesEarned>=base_cost (or already owned),"You, alone, are the reason behind all these cookies. You figure if there were more of you... maybe you could make even more.",main.js:9291;basePrice@8024;baseCps@8018

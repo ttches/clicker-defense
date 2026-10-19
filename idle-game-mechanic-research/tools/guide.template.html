@@ -1,0 +1,614 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How Idle Games Work — a study of four incrementals</title>
+<style>
+  :root{
+    --bg:#fbfaf7; --fg:#23262b; --muted:#6b7280; --rule:#e7e2d8; --link:#2f6f4f;
+    --quote-bg:#f4f1ea; --panel:#ffffff; --panel-brd:#e7e2d8; --code:#f0ede6;
+    --mark:#eaf3ec; --mark-brd:#cfe4d4;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#14161a; --fg:#e6e8ea; --muted:#9aa4b0; --rule:#2a2f36; --link:#84c9a2;
+      --quote-bg:#1b1f24; --panel:#1a1e23; --panel-brd:#2a2f36; --code:#23282f;
+      --mark:#16241b; --mark-brd:#2c4a36; }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--bg); color:var(--fg);
+    font:19px/1.78 "Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:46rem;margin:0 auto;padding:0 24px 100px}
+  .kicker{font:600 .72rem/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--link);margin:56px 0 14px}
+  h1{font-size:2.6rem;line-height:1.12;letter-spacing:-.015em;margin:0 0 18px;font-weight:700}
+  .standfirst{font-size:1.2rem;line-height:1.6;color:var(--muted);margin:0 0 22px}
+  h2{font-size:1.7rem;line-height:1.2;margin:64px 0 6px;letter-spacing:-.01em;padding-top:14px;border-top:2px solid var(--fg)}
+  h2 .partno{font:700 .72rem/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--link);display:block;margin-bottom:10px}
+  h3{font-size:1.32rem;line-height:1.3;margin:44px 0 6px;letter-spacing:-.005em}
+  h4{font:600 .82rem/1.4 ui-sans-serif,system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--muted);margin:32px 0 6px}
+  p{margin:0 0 1.15em}
+  .lede{font-size:1.08rem;color:var(--muted)}
+  a{color:var(--link);text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--link) 40%,transparent)}
+  a:hover{border-bottom-color:var(--link)}
+  code,kbd{font:0.82em/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:var(--code);
+    padding:.12em .42em;border-radius:4px}
+  pre{background:var(--code);border:1px solid var(--panel-brd);border-radius:8px;padding:14px 16px;overflow:auto;
+    font:0.82rem/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+  pre code{background:none;padding:0}
+  blockquote{margin:1.3em 0;padding:.2em 0 .2em 1.1em;border-left:3px solid var(--rule);
+    color:var(--muted);font-style:italic}
+  blockquote blockquote{margin:.8em 0}
+  ul,ol{margin:0 0 1.15em;padding-left:1.3em}
+  li{margin:.3em 0}
+  hr{border:none;border-top:1px solid var(--rule);margin:2.4em 0}
+  .toc{background:var(--panel);border:1px solid var(--panel-brd);border-radius:10px;padding:18px 22px;margin:30px 0 10px;
+    font-family:ui-sans-serif,system-ui,sans-serif;font-size:.92rem}
+  .toc h4{margin:0 0 8px}
+  .toc ol{margin:0;padding-left:1.2em}
+  .toc ol ol{margin:.2em 0 .5em}
+  .toc a{border:none}
+  .callout{background:var(--mark);border:1px solid var(--mark-brd);border-radius:10px;padding:14px 18px;margin:1.6em 0}
+  .callout p:last-child{margin-bottom:0}
+  .note{font-size:.9rem;color:var(--muted);font-family:ui-sans-serif,system-ui,sans-serif}
+  table{width:100%;border-collapse:collapse;margin:1.5em 0;font:0.86rem/1.5 ui-sans-serif,system-ui,sans-serif}
+  th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--rule);vertical-align:top}
+  th{font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:600;
+    border-bottom:1.5px solid var(--fg)}
+  td.n,th.n{font-variant-numeric:tabular-nums;white-space:nowrap}
+  .shape{font-style:italic;font-size:1.05rem;color:var(--muted);border-left:3px solid var(--link);padding:2px 0 2px 14px;margin:0 0 1.4em}
+
+  /* Reddit chapters */
+  .post{margin:40px 0 8px;padding-top:8px}
+  .post-num{font:700 .72rem/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--link);margin:0 0 6px}
+  .post h3{margin-top:2px;font-size:1.45rem}
+  .post-meta{font:0.8rem/1.5 ui-sans-serif,system-ui,sans-serif;color:var(--muted);margin:0 0 16px}
+  .post-body{background:var(--panel);border:1px solid var(--panel-brd);border-radius:10px;padding:6px 22px 2px}
+  .post-body p{margin:1em 0}
+  .discussion{margin:14px 0 0;font-family:ui-sans-serif,system-ui,sans-serif}
+  .discussion summary{cursor:pointer;font-size:.9rem;font-weight:600;color:var(--muted);padding:10px 2px;list-style:none}
+  .discussion summary::-webkit-details-marker{display:none}
+  .discussion summary::before{content:"▸ ";color:var(--link)}
+  .discussion[open] summary::before{content:"▾ "}
+  .comments{border-left:2px solid var(--rule);padding-left:18px}
+  .comment{margin:0 0 20px;font-size:.98rem}
+  .comment .comment-head{font-size:.8rem;color:var(--muted);margin-bottom:2px}
+  .comment .chead-author{font-weight:600;color:var(--fg);margin-right:8px}
+  .comment.op .chead-author{color:var(--link)}
+  .comment p{margin:.4em 0}
+  .comment blockquote{font-size:.95rem;margin:.6em 0}
+
+  .warn{background:#fdf3e7;border:1px solid #f0d9b8;border-radius:8px;padding:12px 16px;color:#7a5a20;font-size:.9rem}
+  @media (prefers-color-scheme: dark){ .warn{background:#2a2416;border-color:#4a3d22;color:#e0c896} }
+
+  footer{margin-top:80px;padding-top:24px;border-top:1px solid var(--rule);color:var(--muted);
+    font:0.85rem/1.7 ui-sans-serif,system-ui,sans-serif}
+  .top{position:fixed;right:20px;bottom:20px;background:var(--panel);border:1px solid var(--panel-brd);
+    border-radius:999px;padding:8px 14px;font:0.8rem/1 ui-sans-serif,system-ui,sans-serif;
+    text-decoration:none;color:var(--muted);border-bottom:1px solid var(--panel-brd)}
+  @media (max-width:640px){ h1{font-size:2rem} .wrap{padding:0 18px 80px} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <p class="kicker">A study of four incremental games</p>
+  <h1>How idle games work</h1>
+  <p class="standfirst">Four games, taken apart. The machinery they share, the maths behind their
+  pacing, and the design vocabulary that ties it together — followed by the original six-part
+  essay series that named half of these ideas.</p>
+  <p class="note">Sources: Cookie Clicker 2.058, Exponential Idle 1.4.46, Revolution Idle 1.078,
+  Leaf Blower Revolution 2.29.6. Numbers were read from each game's own code or decompiled binary
+  where possible, and cross-checked against community wikis; see the research folder for the
+  full sourced breakdown.</p>
+</header>
+
+<nav class="toc">
+  <h4>Contents</h4>
+  <ol>
+    <li><a href="#machinery">The machinery of an idle game</a>
+      <ol style="font-weight:400">
+        <li><a href="#loop">The loop</a></li>
+        <li><a href="#efficiency">Purchase efficiency</a></li>
+        <li><a href="#scaling">Scaling: three families</a></li>
+        <li><a href="#curves">Cost curves and cadence</a></li>
+        <li><a href="#discounts">Discounts</a></li>
+        <li><a href="#idle">Idle time and offline</a></li>
+        <li><a href="#prestige">Prestige and reset layers</a></li>
+        <li><a href="#active">Active play: clicks, streaks, events</a></li>
+        <li><a href="#walls">Caps, walls, and failure</a></li>
+        <li><a href="#bignum">Big numbers</a></li>
+        <li><a href="#vocab">A shared vocabulary</a></li>
+      </ol>
+    </li>
+    <li><a href="#series">The original series: “Mechanics of Incremental Games”</a></li>
+    <li><a href="#games">Four games, four philosophies</a>
+      <ol style="font-weight:400">
+        <li><a href="#cc">Cookie Clicker</a></li>
+        <li><a href="#ei">Exponential Idle</a></li>
+        <li><a href="#ri">Revolution Idle</a></li>
+        <li><a href="#lbr">Leaf Blower Revolution</a></li>
+      </ol>
+    </li>
+    <li><a href="#sidebyside">Side by side</a></li>
+    <li><a href="#ours">Into our own game</a></li>
+  </ol>
+</nav>
+
+<p>An idle game — also called an incremental or clicker game — looks trivial. A number goes up.
+You spend part of it to make the number go up faster. And yet a handful of these games have held
+millions of players for hundreds of hours, and their design rests on a small, surprisingly rich
+mathematical core. This guide pulls apart that core using four of the genre's most instructive
+titles, and then steps back to ask what all of it means for a game of our own.</p>
+
+<p>We chose deliberately different games. Cookie Clicker is the clean baseline — almost pure
+exponential growth, one prestige layer, no way to lose. Exponential Idle pushes the maths to its
+absurd extreme, with numbers so large they need a custom type and four nested resets. Revolution
+Idle inverts the usual model: its income is a product raised to a power, so breadth matters more
+than depth. Leaf Blower Revolution is the busy, sprawling one, with a dozen currencies, hundreds
+of capped upgrades, and five resets stacked on top of each other. Together they cover most of the
+design space.</p>
+
+<!-- ===================== PART I ===================== -->
+<h2 id="machinery"><span class="partno">Part One</span>The machinery of an idle game</h2>
+
+<p class="lede">Before the games, the concepts. These build on each other, so they are worth
+reading in order — the early ones are short and the later ones take more room.</p>
+
+<h3 id="loop">The loop</h3>
+<p>Every game here runs on the same heartbeat. You have at least one <strong>currency</strong> —
+cookies, leaves, score — which arrives either by your own clicking or, more importantly, on its
+own. You spend that currency on <strong>assets</strong>: buildings, circles, tools, towers. Assets
+produce more currency, currency buys more assets, and the rate of production climbs. That is the
+entire genre. The craft is in the dials.</p>
+<p>The first dial is the split between the two ways currency arrives. Active play — clicking the
+big cookie — is fast but bounded by your attention and your fingers. Passive play — the buildings
+that tick away in the background — is slow but free. A good idle game makes both matter: clicking
+gives an early edge and occasional bursts, but the buildings are what actually carry you forward.
+Cookie Clicker is almost too honest about this. Its Cursor building literally autoclicks once every
+ten seconds, so even a "clicking" asset is really just a slow generator.</p>
+<p>The second dial is what a purchase gives you. Almost always it is a bit more production, and the
+interesting question — the one that occupies the rest of this chapter — is how much more, and how
+that amount changes as you buy more.</p>
+
+<h3 id="efficiency">Purchase efficiency</h3>
+<p>When you can buy several things, which do you buy? The intuitive answer is to divide the cost by
+the gain and pick the smallest number: if a watering can costs 3 for +3 water and a pump costs 15
+for +15, they are equally "efficient" and the choice is a wash. This is what one of the original
+essays called <em>purchase efficiency</em>, and it is the right first approximation.</p>
+<p>It has a subtle flaw, though, and a commenter on that essay spotted it: a raw ratio ignores
+<em>when</em> the gain arrives. A +1 per second now is worth more than a +150 per second you can
+only afford an hour from now, because the early one compounds. The fix is to compare
+<strong>payback time</strong> — the cost divided by the rate of gain — and to remember that any
+buy made earlier also earns for the whole time you would have spent saving for the bigger one. In
+practice, good players of these games end up buying a small number of each thing and constantly
+re-scanning for the cheapest next gain. In Cookie Clicker, the sweet spot through most of the game
+is only about two to eight of each building before the next rung up becomes the better use of a
+cookie.</p>
+<p>The design lesson is simple to state and easy to forget: if the game can rank purchases for the
+player — highlight the cheapest cost per unit of gain — it removes a layer of tedious arithmetic
+and lets the player focus on the interesting choice, which is usually <em>what kind</em> of gain to
+chase rather than <em>which specific</em> item.</p>
+
+<h3 id="scaling">Scaling: three families</h3>
+<p>Here is the actual equation under the whole genre, stated in Cookie Clicker's own terms:</p>
+<pre><code>price = base cost × 1.15 ^ (number already owned)</code></pre>
+<p>Each purchase makes the next one 15% dearer, and the production it adds is a flat step. The
+consequence is that the cost of the next purchase grows geometrically while the gain stays linear,
+so the time to afford the next one creeps upward — slowly at first, then relentlessly. That 15% is
+the single most-copied number in the genre, and it is worth knowing what it does: a multiplier of
+1.15 doubles the price every <strong>4.96</strong> purchases and multiplies it by a thousand every
+<strong>49.4</strong>. Those two numbers — five and fifty — are the whole rhythm of a
+Cookie-Clicker-style game. Roughly every five buys you feel the cost double; roughly every fifty,
+you feel it leap a thousandfold.</p>
+<p>That is <strong>exponential scaling</strong>, the default "number go up" curve. The original
+essay series identified two others worth naming. The first is <strong>interdependent</strong>
+scaling, in which spending on one asset is what unlocks the next currency or tier entirely. The
+classic example is <em>A Dark Room</em>: you build houses before workers arrive, workers before
+you can gather enough to find a mine, and the mine opens an entirely new resource. Nothing
+"scales" smoothly here; the game advances through gates. The second family is
+<strong>derivative</strong> scaling, where you buy something that produces producers — colleges
+that produce mathematicians per second, while the mathematicians produce proofs. Production then
+compounds on top of itself, which the series called "exponentially exponential."</p>
+<p>Derivative scaling is the most dangerous of the three, and the reason is instructive. If
+production grows without limit and nothing consumes it, the numbers race toward the point where
+the arithmetic itself breaks. The series' author put it bluntly: keep making rewards arrive faster
+and "your game is going to explode exponentially," until you hit the number cap and get
+<code>NaN</code> or <code>Infinity</code>. The antidote, he suggested, is a sink — a mechanism that
+eats the producers, so the growth is held in tension with decay.</p>
+
+<h3 id="curves">Cost curves and cadence</h3>
+<p>The 1.15 curve is smooth to the point of being invisible. A commenter on the scaling essay made
+a lovely observation: you do not have to be smooth at all. You could approximate the same effect
+with <em>plateaus and cliffs</em> — five purchases that all cost 100, then five that cost 200, and
+so on, doubling every five. The average cost growth is similar, but the feel is completely
+different, and the commenter gave two reasons it might be better.</p>
+<p>First, round numbers are easier to read. If prices are 100, 200, 500, 1000, the player sees at a
+glance how far away the next one is; if they are 132, 152, 174, 201, the precision is noise.
+Second — and this is the design insight — plateaus give a <em>sense of getting ahead</em>. While
+several purchases cost the same, buying one makes the next feel more affordable; then the cliff
+arrives and marks a new obstacle to overcome. The flat stretch is relief, the cliff is drama. A
+smooth curve gives you neither.</p>
+<p>So the cost curve is not just a difficulty setting; it is a pacing instrument. Exponential,
+stepped, or some hybrid — each produces a different emotional rhythm, and the choice is as much
+about feel as about balance.</p>
+
+<h3 id="discounts">Discounts</h3>
+<p>Sooner or later a game offers to make things cheaper, and here there is a trap. Discounts stack
+<em>multiplicatively</em>, which means equal headline steps are not equal. The gap between a 1%
+discount and a 2% discount is nothing; the gap between 98% and 99% is enormous, because that last
+percent halves every remaining cost. A designer who scales discounts linearly will find that the
+late-game discounts are wildly more powerful than the early ones, distorting the whole economy.</p>
+<p>The rule that follows is easy to remember and important: give discounts a larger headline effect
+at low levels and a smaller one at high levels, and never let the total reach 100%. Cookie Clicker
+follows this to the letter — its many discounts are multiplicative and none of them reach zero, and
+the maximum achievable is about a 35% reduction. The one legitimate use of a 100% discount is as a
+deliberate phase-change: not a stat you accumulate, but an event that says "for the next while,
+buying is free," which is a very different thing.</p>
+
+<h3 id="idle">Idle time and offline</h3>
+<p>Idling is the genre's defining feature, and it comes with a strict rule from the original series:
+idle intervals should be consistent or grow, never shrink. If the game demands your attention more
+and more often, it has stopped being something you can leave running while you work, which was the
+entire point. The author suggested thinking in terms of a play-to-idle ratio — one minute of play
+for fifteen of idle, say — and warned that idling must not become a "fancy timer with no real
+purpose," meaning it has to actually matter to progress.</p>
+<p>What happens while the game is closed is a separate design decision, and the four games solve it
+four different ways. Cookie Clicker uses a <strong>capped floor</strong>: offline you earn 5% of
+your normal rate for the first hour, dropping to 0.5% after, and it is switched off by default until
+you buy the relevant upgrade. Exponential Idle instead <strong>replays</strong> the simulation while
+you were away, stepping the same tick function many times to catch up, with no hard day limit.
+Revolution Idle treats offline time as a literal <strong>resource</strong>: time away accumulates a
+currency that buys simulation speed, so being away does not accrue value so much as accelerate it
+later. Leaf Blower Revolution takes a <strong>quarter of your best-ever rate</strong> and replays
+every subsystem, capped at a day (extendable to a week).</p>
+<p>There is no single correct answer, but the shared shape is: choose an offline model, cap it, and
+make the return feel like a reward — usually with a summary of what you gathered.</p>
+
+<h3 id="prestige">Prestige and reset layers</h3>
+<p>The original series never covered prestige — the voluntary reset that trades your progress for a
+permanent multiplier — which is a striking omission, because it is arguably the defining structure
+of the modern genre. Our research extended the vocabulary to fill that gap, because prestige is
+where the long game lives.</p>
+<p>The basic idea: at some point it becomes faster to throw everything away and start again with a
+permanent bonus than to grind onward. Cookie Clicker does this once: when you ascend, you trade
+your cookies for <em>heavenly chips</em>, where the number of chips is the cube root of your
+lifetime cookies divided by a trillion, and each chip gives a flat +1% to production forever. That
+cube root matters. It means a million-fold increase in cookies only gives a hundred-fold increase
+in chips, so a reset is generous but sharply diminishing — the game is telling you, gently, when it
+is time to stop and restart.</p>
+<p>The other three games turn this single reset into a stack. Exponential Idle has four nested
+layers, where resetting the top one wipes the ones below but grants a bigger, slower reward.
+Revolution Idle has five. Leaf Blower Revolution has four, and here is the cleanest idea in the
+whole genre: each layer rewards a <em>different</em> metric. One asks how much you collected, one
+asks how big your multipliers got, one asks how far up a tower you climbed, one asks how many
+mechanics you engaged with. No single action covers them all, so no single strategy dominates.</p>
+<p>If you are designing a game, the question is not "should there be prestige" but "what should
+each reset ask of the player, and what does it give back?" A reset that asks the same question
+twice is just a longer grind; a reset that asks a new question is a new game.</p>
+
+<h3 id="active">Active play: clicks, streaks, events</h3>
+<p>Clicks need a job. If clicking is unbounded, a script does it better than a human and the
+interface becomes a formality. If clicking does nothing, the game is a screensaver. The essays and
+the games offer a spread of solutions.</p>
+<p>Cookie Clicker's answer is the <strong>variable-ratio reward</strong>: golden cookies appear at
+random, on a schedule that runs from five to fifteen minutes, and give big temporary buffs. This is
+the same psychology as a slot machine, and the author of the reward-frequency essay said so
+explicitly — the game taps a reward pattern the player cannot fully predict, which is exactly what
+keeps them glancing at the screen. Exponential Idle uses a <strong>bounded burst</strong>: a button
+that accelerates time, but caps itself at about three times normal speed, so it is a boost rather
+than a shortcut. Leaf Blower Revolution uses a <strong>decaying streak</strong>: a combo multiplier
+that climbs as you keep collecting leaves and decays within seconds if you stop, rewarding
+sustained attention. And Revolution Idle, tellingly, has <strong>no click lane at all</strong> —
+its "active" layer is the scripting system you use to automate the game.</p>
+<p>The through-line: active play should pay better <em>right now</em> than idling, without ever
+making idle progress pointless. That balance — a reward for showing up that does not punish you for
+leaving — is the whole trick.</p>
+
+<h3 id="walls">Caps, walls, and failure</h3>
+<p>Nothing grows forever, and how a game handles its limits says a lot about it. There are two kinds
+of wall. A <strong>soft wall</strong> just gets more expensive: Cookie Clicker's 1.15 ladder is one
+long soft wall, with occasional hard steps where a new building costs ten times the last. A
+<strong>hard wall</strong> is a ceiling — a building that can only go to level 30, a shop item you
+can buy three of, an "Infinity" beyond which production simply stops. Leaf Blower Revolution is the
+hard-wall game: 898 of its 1022 shop upgrades have a maximum count, so plateaus are the norm and
+only a few uncapped value multipliers keep climbing.</p>
+<p>The most interesting mechanic in this whole area is a hard wall that <em>moves</em>, but only
+when you reset. Exponential Idle caps production at a point called Infinity; no amount of normal
+play gets past it. Only a higher-tier prestige raises the cap, from one ceiling to the next,
+through a fixed ladder of ever-larger exponents. This is brilliant because it converts the vaguest
+of goals — "go faster" — into a concrete, deliberate decision: the only way through is to stop and
+bank a reset. Revolution Idle does something similar with magnitude thresholds that double as both
+resets and walls.</p>
+<p>And then there is the thing all four games lack: a way to lose. None of them can be failed. This
+is the genre's biggest unexamined assumption, and it is the exact assumption our own game —
+a tower defence where upgrading the enemy stream too fast can kill you — was built to break. When
+there is no losing, walls can only ever be delays. When there is losing, a wall becomes a genuine
+dilemma, and we will come back to that in the last part.</p>
+
+<h3 id="bignum">Big numbers</h3>
+<p>Idle games get to numbers that ordinary arithmetic cannot hold. A 64-bit floating-point number,
+the normal kind, tops out around 1.8 × 10<sup>308</sup>; past that it becomes <code>Infinity</code>
+and the game breaks. Most web incrementals solve this with a library called break_infinity.js, which
+extends the range to roughly <code>ee16</code> — a one followed by 10<sup>16</sup> zeros. That is
+plenty for most games.</p>
+<p>Exponential Idle needed more, so it rolls its own type: every number is stored as a triple of
+<em>sign</em>, <em>exponent</em>, and <em>depth</em>, where depth is how many layers of "e" you are
+stacked under. This is what lets the game casually print numbers with thousands of e's. The lesson
+for a designer is unglamorous but unavoidable: decide how large your numbers can get, and how you
+will represent them, before you design an endgame that depends on them.</p>
+
+<h3 id="vocab">A shared vocabulary</h3>
+<p>A few terms are worth fixing before we go further, because they recur constantly. A
+<strong>resource</strong> is anything you can spend; an <strong>asset</strong> is anything that
+produces. A resource can be an asset — cookies earn cookies — but most assets are not directly
+spent. An <strong>upgrade</strong> is anything that changes the rules: a multiplier, a new unlock,
+an automation, a discount. The original series listed a dozen distinct <em>classes</em> of upgrade
+(auto-acquisition rate, harvest interval, decay rate, global speed, and so on), which is useful
+mostly as a checklist: if you can classify every upgrade in your game against that list, you are
+far less likely to accidentally build the same one three times.</p>
+<p>Holding all of this together is one idea the series never named but every game obeys: the
+<strong>shape</strong> of a game — the order in which its systems unlock, and how long each phase
+lasts. Cookie Clicker's shape, for instance, is "dozens of hours per run, with the endgame cliffs
+taking multiple days each." The shape is the game's promise about how much time it is asking for,
+and it is decided mostly by the numbers on this part's pages.</p>
+
+<!-- ===================== PART II ===================== -->
+<h2 id="series"><span class="partno">Part Two</span>The original series: “Mechanics of Incremental Games”</h2>
+
+<p>In February 2014, a user called <strong>u/Guildenstern_artist</strong> posted a six-part essay
+series to r/incremental_games under the title <em>Mechanics of Incremental Games</em>. It is an
+amateur work — the comments are full of friendly arguments about whether it was too pretentious,
+and the author cheerfully agrees with some of them — but it named a surprising number of the ideas
+the genre still runs on: purchase efficiency, the reward-frequency clock, the three scaling
+families, the discount hazard. We read all six posts and their discussion threads in full, and they
+are reproduced below exactly as written, so you can read them rather than a summary of them. The
+comment threads are included because the best corrections to the original essays are in them.</p>
+
+<p class="note">Note on numbering: the series has no post explicitly numbered "1". The first,
+unnumbered essay on purchase efficiency is effectively chapter one; the numbered posts run from two
+to six. There is no seventh.</p>
+
+{{PART_II_REDDIT}}
+
+<!-- ===================== PART III ===================== -->
+<h2 id="games"><span class="partno">Part Three</span>Four games, four philosophies</h2>
+
+<p class="lede">With the vocabulary in hand, here is how each game actually spends it. The four
+were chosen to disagree with each other as much as possible.</p>
+
+<h3 id="cc">Cookie Clicker — the clean baseline</h3>
+<p class="shape">An endless sum-of-generators on one 1.15 ladder, punctuated by ten-fold buildings,
+tier doublings and golden-cookie bursts — safe by construction, with no way to lose.</p>
+<p>Cookie Clicker is the genre's Rosetta stone. Its economy is a single ladder: twenty buildings,
+each costing 1.15 times the previous unit of its kind, each producing a flat amount. The buildings
+themselves are laid out along a steep staircase — a Farm costs about eleven times a Grandma, a
+Mine about eleven times a Farm, and the endgame buildings leap by factors of a hundred and sixty or
+more — so the game is really a sequence of soft walls, each followed by a fresh, powerful generator.
+It is the multiplicative version of the plateau-and-cliff idea from the scaling essay, except the
+plateaus are within a building and the cliffs are between them.</p>
+<p>Its upgrade system layers on top of that baseline. Each building has fifteen tiered upgrades
+that double its production, plus "kitten" upgrades driven by milk (which comes from achievements,
+tying your collection to your economy), plus synergies in which one building boosts another, plus a
+research tree, plus a heavenly tree that unlocks only after your first reset. The design is
+generous to the point of excess, and it works because the base ladder is so legible that players
+can absorb all the extras without losing the thread.</p>
+<p>Prestige happens once. You spend your cookies on heavenly chips, the cube root of your lifetime
+total, each worth a flat +1% forever. The active layer is golden cookies — random, buff-granting,
+on a five-to-fifteen-minute schedule. Offline income is a small, capped fraction of your normal
+rate. And there is no lose condition at all; the only stakes are time.</p>
+<table>
+  <tr><th>At a glance</th><th class="n">&nbsp;</th></tr>
+  <tr><td>Cost curve</td><td class="n">fixed 1.15 ladder</td></tr>
+  <tr><td>Doubles every</td><td class="n">~4.96 purchases</td></tr>
+  <tr><td>Reaches 1000× every</td><td class="n">~49.4 purchases</td></tr>
+  <tr><td>Prestige layers</td><td class="n">1 (Ascension)</td></tr>
+  <tr><td>First reset at</td><td class="n">10<sup>12</sup> cookies</td></tr>
+  <tr><td>Active reward</td><td class="n">golden cookies (300–900 s)</td></tr>
+  <tr><td>Offline</td><td class="n">5% → 0.5%, capped</td></tr>
+  <tr><td>Discount ceiling</td><td class="n">~35% off</td></tr>
+</table>
+
+<h3 id="ei">Exponential Idle — the math temple</h3>
+<p class="shape">A double-exponential temple you periodically collapse: four nested resets, each
+reward read off a cumulative product, with a hard wall that only a higher layer can move.</p>
+<p>Exponential Idle is what happens when a mathematician designs a clicker. Its central object is
+not a list of buildings but an equation: a value <em>f(t)</em> that grows by a factor of
+e<sup>(b · x · φ · τ · dt)</sup> every tick, where the letters are multipliers you earn from
+different systems. You do not buy generators in the ordinary sense; you buy variables in a
+change-of-variables tower, each one fed by the last.</p>
+<p>Its costs are the most aggressive in the genre. A regular generator's price follows what we can
+only call a double exponential — the multiplier on each purchase grows with the price itself, so a
+buy might cost six times the last early on and three hundred times the last once the numbers are
+large. This is derivative scaling taken to its logical end, and it is why the game needs its custom
+big-number type.</p>
+<p>Prestige is not one reset but four, nested. Reset the bottom layer and you keep the one above;
+reset a higher layer and it wipes everything below, granting a much larger, much slower reward.
+Each layer's payout is read from a <em>cumulative product</em> — a running total that includes every
+reset you have ever done — so even though the rewards look flat or diminishing in the moment, they
+compound across the whole history of the game. And the whole thing is capped by <em>Infinity</em>,
+a hard wall that no ordinary play can pass; only a higher-tier reset raises it, one ceiling at a
+time, through exponents that grow from a hundred to a million. It is the most elegant "no free
+progress" rule we found.</p>
+<table>
+  <tr><th>At a glance</th><th class="n">&nbsp;</th></tr>
+  <tr><td>In-run curve</td><td class="n">double-exponential</td></tr>
+  <tr><td>Meta upgrades</td><td class="n">×32,768 / level</td></tr>
+  <tr><td>Prestige layers</td><td class="n">4 (Prestige → Supremacy → Graduation → Theories)</td></tr>
+  <tr><td>First reset</td><td class="n">~15 minutes</td></tr>
+  <tr><td>Hard wall ladder</td><td class="n">10<sup>200</sup> → 10<sup>2×10<sup>6</sup></sup></td></tr>
+  <tr><td>Active reward</td><td class="n">accelerator, capped ~×3.17</td></tr>
+  <tr><td>Offline</td><td class="n">clamped replay</td></tr>
+</table>
+
+<h3 id="ri">Revolution Idle — breadth through exponents</h3>
+<p class="shape">Breadth is mandatory: income is a product raised to a power, so walls are level
+caps and magnitude thresholds, and the active layer is automation scripting.</p>
+<p>Revolution Idle starts with ten circles, each a colour, each producing score as it completes laps.
+You upgrade a circle's level to make it faster, and you ascend it — resetting it to level five —
+once it hits a cap. That is the early game, and it is almost gentle: the cost multiplier on each
+circle is a modest 1.20 to 1.56, far flatter than Cookie Clicker's ladder.</p>
+<p>The gentleness is a trap, because the <em>shape</em> of the economy is different. Your income is
+not the sum of the circles; it is the <em>product</em> of all their multipliers, raised to a common
+exponent. That single change rewrites the strategy. In a product economy, breadth is mandatory: ten
+circles at multiplier <em>m</em> are worth <em>m</em> to the tenth power, so neglecting any one of
+them is catastrophic. And because the whole product is then raised to an exponent, every upgrade
+lands as a cliff rather than a slope. Walls, accordingly, are not prices but <em>counts</em>: a hard
+level cap of one hundred plus ten per ascension.</p>
+<p>Prestige is a stack of five, each gated by a magnitude threshold — ten billion score for the
+first, then thresholds that climb into the numbers with hundreds of digits. Promotion then layers
+four boosts on top, each with its own experience curve, which the community has mapped to the exact
+formula. And the game has no clicking at all: its "active" layer is a macro system in which you
+script the game's own automation, with the wonderful wrinkle that automation <em>degrades</em> at
+very high speed, so raw speed is a risk you have to manage rather than a pure win.</p>
+<table>
+  <tr><th>At a glance</th><th class="n">&nbsp;</th></tr>
+  <tr><td>Income</td><td class="n">(∏ multipliers · P.Mult)^exponent</td></tr>
+  <tr><td>Cost multiplier</td><td class="n">×1.20 … ×1.56 per circle</td></tr>
+  <tr><td>Wall</td><td class="n">hard level cap 100 + 10·asc</td></tr>
+  <tr><td>Prestige layers</td><td class="n">5+ (… Infinity → Eternity → Unity)</td></tr>
+  <tr><td>First reset</td><td class="n">10<sup>10</sup> score</td></tr>
+  <tr><td>Active reward</td><td class="n">none — automation macros</td></tr>
+  <tr><td>Offline</td><td class="n">speed currency (2×–60×)</td></tr>
+</table>
+
+<h3 id="lbr">Leaf Blower Revolution — many currencies, capped cliffs</h3>
+<p class="shape">A dozen parallel leaf currencies and capped cliffs (898 of 1022 upgrades are
+finite); four resets that each ask a different question.</p>
+<p>Leaf Blower Revolution is the maximalist of the four, and the most instructive about what
+happens when a game keeps bolting systems onto a simple start. You begin by blowing leaves off a
+screen. Basic leaves buy better tools; better leaves unlock new areas; each area has its own shop,
+its own leaf type, and its own chain of upgrades. Before long you are juggling dozens of
+currencies, and the game's complexity is its actual content.</p>
+<p>Its cost curves are geometric but, crucially, <em>capped</em>. Each upgrade follows
+<code>cost = base × cost_exp^level</code>, where the growth factor ranges from about 1.5 (doubling
+every 1.7 levels) up to 4 (doubling every half-level) — far steeper per purchase than Cookie
+Clicker. But most of these upgrades have a maximum count, so they plateau and stay plateaued. Only
+a handful of uncapped value multipliers keep climbing. The result is a game of buying out finite
+utilities and then rotating to the next system — the plateau is the default state, and progress
+comes in bursts when a new lane opens.</p>
+<p>Its four resets are the clever part. Each one rewards a different metric: how much you collected,
+how big your multipliers grew, how high you climbed a tower, how many mechanics you engaged with.
+Because they ask different questions, they cannot be satisfied by the same action, and the game
+never reduces to one optimal loop. The active layer is a decaying combo multiplier that climbs as
+you keep collecting and collapses within seconds if you stop — the cleanest active-play reward of
+the four. Offline income is a quarter of your best-ever rate, capped at a day.</p>
+<table>
+  <tr><th>At a glance</th><th class="n">&nbsp;</th></tr>
+  <tr><td>Shop curve</td><td class="n">base × cost_exp^level</td></tr>
+  <tr><td>cost_exp range</td><td class="n">1.5 … 4</td></tr>
+  <tr><td>Wall</td><td class="n">finite max_count (898 / 1022)</td></tr>
+  <tr><td>Prestige layers</td><td class="n">4 (Leaf Crunch → BLC → MLC → ULC)</td></tr>
+  <tr><td>First reset</td><td class="n">~29 prestige coins</td></tr>
+  <tr><td>Active reward</td><td class="n">combo kill-streak (×2 base, up to ×36)</td></tr>
+  <tr><td>Offline</td><td class="n">best-ever ÷ 4, capped 1→7 days</td></tr>
+</table>
+
+<!-- ===================== PART IV ===================== -->
+<h2 id="sidebyside"><span class="partno">Part Four</span>Side by side</h2>
+
+<p>Absolute numbers are not comparable across the four — each uses its own currency, and a cookie
+is not a leaf. What <em>is</em> comparable is the shape of the maths: the multiplier, the cadence,
+the number of resets, and the rule for moving a wall.</p>
+
+<h4>Cost curves and walls</h4>
+<table>
+  <thead><tr><th>Game</th><th>Curve family</th><th class="n">Multiplier</th><th class="n">Cadence</th><th>Wall</th></tr></thead>
+  <tbody>
+    <tr><td>Cookie Clicker</td><td>fixed geometric</td><td class="n">×1.15</td><td class="n">double ~4.96; ×1000 ~49.4</td><td>soft, plus ten-fold jumps</td></tr>
+    <tr><td>Exponential Idle</td><td>double-exponential</td><td class="n">grows with price</td><td class="n">no fixed cadence</td><td>hard, moved by a reset</td></tr>
+    <tr><td>Revolution Idle</td><td>fixed geometric</td><td class="n">×1.20–1.56</td><td class="n">fixed</td><td>hard level cap</td></tr>
+    <tr><td>Leaf Blower</td><td>geometric, capped</td><td class="n">cost_exp 1.5–4</td><td class="n">double 1.71 → 0.50</td><td>finite count</td></tr>
+  </tbody>
+</table>
+
+<h4>Resets, offline, and active play</h4>
+<table>
+  <thead><tr><th>Game</th><th class="n">Resets</th><th>Offline model</th><th>Active reward</th></tr></thead>
+  <tbody>
+    <tr><td>Cookie Clicker</td><td class="n">1</td><td>capped floor (5% → 0.5%)</td><td>golden cookies (random)</td></tr>
+    <tr><td>Exponential Idle</td><td class="n">4</td><td>clamped replay</td><td>accelerator (×3.17 cap)</td></tr>
+    <tr><td>Revolution Idle</td><td class="n">5+</td><td>speed currency (2×–60×)</td><td>automation macros</td></tr>
+    <tr><td>Leaf Blower</td><td class="n">4</td><td>best-ever ÷ 4, capped</td><td>combo kill-streak</td></tr>
+  </tbody>
+</table>
+
+<p>One pattern jumps out from the table. The four games arrange themselves along a single axis of
+<em>where the difficulty lives</em>. Cookie Clicker puts it in the price and leaves you safe.
+Exponential Idle puts it in a wall you can only move by resetting. Revolution Idle puts it in a
+breadth requirement — neglect one circle and the product collapses. Leaf Blower puts it in finite
+counts, forcing you to keep finding new lanes. And none of them puts it in <em>failure</em>, which
+is the axis we intend to push on.</p>
+
+<!-- ===================== PART V ===================== -->
+<h2 id="ours"><span class="partno">Part Five</span>Into our own game</h2>
+
+<p>Our game inverts the genre's central assurance. It is a clicker tower defence: an enemy stream
+walks in from the right toward guns on the left; dead enemies become currency; that currency buys
+towers and — critically — <em>stronger enemies</em>. Upgrading the stream raises your income and the
+threat at the same time, and if you push the latter too far, you lose. Everything above was read
+with that inversion in mind, and it points at five things worth building deliberately.</p>
+
+<p><strong>One ladder, two sides.</strong> Use a single shared cost curve for both towers and the
+enemy stream — a 1.15-style ladder is the obvious starting point, because it is the one pattern
+every player already understands. When the "next unit costs a bit more" rhythm applies to the thing
+trying to kill you and the thing defending you, the trade-off becomes instantly legible.</p>
+
+<p><strong>Make the stream the tempting buy.</strong> From Cookie Clicker we learned that players
+follow purchase efficiency almost reflexively — they will buy whatever gives the most gain per unit
+spent. If upgrading the stream is the efficient buy (which it should be, since it is the risk), the
+player will naturally reach for it. But pair that temptation with a <em>preview</em>: show the
+projected enemy health and arrival rate next to the current tower damage, so that "I can afford to
+push this" and "I will survive if I do" are two separate, visible facts. The goal is that losing
+feels like a decision, never a trap.</p>
+
+<p><strong>Let the wall move only when you bank a reset.</strong> Exponential Idle's moving
+Infinity wall is the best idea we found for a risk game. Make the cap on total threat something that
+advances only when the player completes a reset, never for free during a run. That single rule turns
+the dangerous "accelerate the stream" action into a deliberate, between-run decision, and makes each
+reset a genuine pivot rather than a chore.</p>
+
+<p><strong>Bark the threat super-linearly.</strong> For the risk to be real, enemy pressure has to
+rise faster than your income can. If income scales roughly linearly with stream upgrades while
+enemy health and speed scale super-linearly — the way Revolution Idle's product-then-exponent
+economy makes every upgrade a cliff — then the stream lever stays attractive right up to the point
+where it becomes fatal. That is exactly the tension we want, and it is a property of the curve
+shapes, not of any single number.</p>
+
+<p><strong>Build the horde as a rhythm, and reward showing up.</strong> Structure the waves as
+ten-fold health walls followed by farms, one boss per era, so the difficulty reads as movement
+rather than a monotone ramp. On top of it, put a fast-decaying kill-streak multiplier — Leaf Blower
+Revolution's combo, which we judged the cleanest active reward of the four — and schedule
+elite or treasure enemies on a five-to-fifteen-minute escalating clock, borrowing the golden
+cookie's variable-ratio pull. Active play should pay better now, without making idling pointless.
+Offline should be a capped quarter-rate with a welcome-back summary, so leaving is rewarded but
+never trivialises the risk.</p>
+
+<p>None of the four games can be lost. That is the space we are stepping into, and the research
+suggests the way to do it well is not to add a fail state on top of a safe incremental — it is to
+make the act of growing <em>be</em> the danger. The stream is the economy; the economy is the
+threat; the player holds both levers at once.</p>
+
+<footer>
+  <p><strong>How this was made.</strong> A long research folder sits behind this guide. For each
+  game we decoded the mechanics, extracted the hard numbers into machine-readable tables, had a
+  separate agent verify them against the original code or binary, and only then wrote the analysis.
+  The full sourced breakdown — every number with its provenance — lives in
+  <code>idle-game-mechanic-research/</code>: see <code>theory/mechanics-taxonomy.md</code>,
+  <code>theory/incremental-games-guides.md</code>, <code>synthesis/cross-game-comparison.md</code>,
+  <code>synthesis/design-lessons.md</code>, and each <code>games/&lt;game&gt;/</code> folder. The
+  original Reddit series is reproduced from captures described in <code>ACCESS.md</code>.</p>
+  <p>Field guide · built {{GENERATED}} · regenerate with <code>node tools/build-guide.mjs</code>.</p>
+</footer>
+
+</div>
+<a href="#machinery" class="top">↑ top</a>
+</body>
+</html>

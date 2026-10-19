@@ -1,0 +1,13 @@
+# constants.csv — Exponential Idle Android 1.4.46 (vCode 313);decompiled sha256:9bbce1c0;accessed 2026-10-18; source reference/exponential-idle/ei-decompiled/
+name,value,formula,meaning,source
+default_b,0.001,BigNumber.From(0.001),initial b at FullReset/Supremacy,ExponentialIdle/Function.cs:9
+ticks_per_second,10,TicksPerSecond = 10,automatic tick every 0.1 s (t += dt/10),ExponentialIdle.Controller/TimeUpdater.cs:16
+default_automation_rate_ms,5000,DefaultRate = 5000,autobuyer interval (ms) before speed upgrades,ExponentialIdle/Automation.cs:27
+reward_bonus,1.5,Bonus = 1.5,reward/ad multiplier applied to theories (stacking x1.5),ExponentialIdle/Rewards.cs:16
+accel_gain,0.1 / m^8,0.1 / AccelerationMultiplier^8,accel multiplier gained per tick while held,ExponentialIdle.Controller/TimeUpdater.cs:472
+accel_decel,0.02 / 0.03 / 0.04 per s,(m > 3 ? 0.04 : m > 2 ? 0.03 : 0.02) per second,decay rate when accel released,ExponentialIdle.Controller/TimeUpdater.cs:476
+accel_cap,3.17083,reset when AccelerationMultiplier > 3.17083,max accel multiplier (≈x3.17 cap),ExponentialIdle.Controller/TimeUpdater.cs:464
+accel_grace_max,2.0-3.0 s,2.0 - Random().NextDouble(),grace before decay begins,ExponentialIdle.Controller/TimeUpdater.cs:449
+time_dampen,0.5,power = (1-0.5)*2*(1/(1+e^(-e/50)) - 0.5)+0.5,dampens equation gain early in a prestige,ExponentialIdle.Controller/FunctionIntegrator.cs:73
+supremacy_extra_multiplier,1,ExtraMultiplier = BigNumber.One,global equation multiplier (event rewards),ExponentialIdle.Controller/FunctionIntegrator.cs:22
+offline_star_rate,see formula,"max(100, 1.25*(0.137134*z^2 - 5.4661*z + 386.216)), z=log10(log10(lifetime f(t)))",stars credited for offline time on load,ExponentialIdle/App.cs:539

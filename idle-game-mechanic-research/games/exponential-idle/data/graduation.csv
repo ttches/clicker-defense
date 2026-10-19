@@ -1,0 +1,11 @@
+# graduation.csv — Exponential Idle Android 1.4.46 (vCode 313);decompiled sha256:9bbce1c0;accessed 2026-10-18; source reference/exponential-idle/ei-decompiled/
+key,formula,cost,currency,max_level,source
+phi1,dt^level,"LinearCostModel(1, 0.5) -> floor(1 + 0.5*level)",student,∞,ExponentialIdle/Researches.cs:38
+phi2,(1+t)^(0.7*level),"LinearCostModel(1, 0.5)",student,∞,ExponentialIdle/Researches.cs:38
+phi3,(1+stars)^level,"LinearCostModel(1, 0.5)",student,∞,ExponentialIdle/Researches.cs:38
+phi4,(1+db)^(level / sqrt(100*log10(10+db))),"LinearCostModel(1, 0.5)",student,8,ExponentialIdle/Researches.cs:38
+phi5,(1+dmu)^(level/1300),"LinearCostModel(1, 0.5)",student,8,ExponentialIdle/Researches.cs:38
+phi6,(1+dpsi)^((level/225)*sqrt(log10(10+dpsi))),"LinearCostModel(1, 0.5)",student,8,ExponentialIdle/Researches.cs:38
+exponent_research,phi = (prod_i phi_i)^(1 + level/10),ConstantCostModel(2),student,6,ExponentialIdle/Researches.cs:93
+theories_research,unlocks theory N (level 1..9),"[20,5,5,5,5,5,5,5,40]",student,9,ExponentialIdle/Researches.cs:107
+theory_multiplier,theory bonus multiplier (sigma/20)^level,"[10,10,10]",student,3,ExponentialIdle/Researches.cs:157

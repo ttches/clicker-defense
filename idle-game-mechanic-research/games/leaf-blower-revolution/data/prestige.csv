@@ -1,0 +1,8 @@
+# Leaf Blower Revolution Android 2.29.6 (vCode 2029006); game.droid sha256 99b95417…; accessed 2026-10-18
+key,index,level,name,name_short,base_points,multiplier_add_value,source
+none,-1,0,,,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_prestige_levels.gml:7
+prestige,0,1,Leaf Crunch,LC,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_prestige_levels.gml:14
+blc,1,2,Big Leaf Crunch,BLC,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_prestige_levels.gml:21
+mlc,2,3,Mega Leaf Crunch,MLC,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_prestige_levels.gml:28
+ulc,3,4,Ultra Leaf Crunch,ULC,10,0.05,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_prestige_levels.gml:35
+inf,999999,999999,,,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_prestige_levels.gml:45

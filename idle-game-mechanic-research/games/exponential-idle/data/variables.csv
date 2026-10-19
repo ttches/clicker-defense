@@ -1,0 +1,22 @@
+# variables.csv — Exponential Idle Android 1.4.46 (vCode 313);decompiled sha256:9bbce1c0;accessed 2026-10-18; source reference/exponential-idle/ei-decompiled/
+id,letter,initial_price_expr,base_cost,b_initial_level,a_progress,cost_formula,source
+0,x,0 (free),0,,0,cost(L)=2^(2^(a*(L)+b)); f(t) divided by cost,ExponentialIdle/Variables.cs:29
+1,y,1.04,1.04,-4.143474048,0.5,cost(L)=2^(2^(a*(L)+b)); f(t) divided by cost,ExponentialIdle/Variables.cs:36
+2,z,1.08,1.08,-3.170961501,0.625,cost(L)=2^(2^(a*(L)+b)); f(t) divided by cost,ExponentialIdle/Variables.cs:43
+3,s,10,10,1.732020846,0.78125,cost(L)=2^(2^(a*(L)+b)); f(t) divided by cost,ExponentialIdle/Variables.cs:50
+4,u,ee4.28709,ee4.28709,15.973438352,0.89317393,cost(L)=2^(2^(a*(L)+b)); f(t) divided by cost,ExponentialIdle/Variables.cs:57
+5,v,ee10.04511,ee10.04511,35.101149208,1.021132376,cost(L)=2^(2^(a*(L)+b)); f(t) divided by cost,ExponentialIdle/Variables.cs:64
+6,w,ee18.37917,ee18.37917,62.786314254,1.167422485,cost(L)=2^(2^(a*(L)+b)); f(t) divided by cost,ExponentialIdle/Variables.cs:71
+7,\\alpha,ee29.36547,ee29.36547,99.282012541,1.3346705,cost(L)=2^(2^(a*(L)+b)); f(t) divided by cost,ExponentialIdle/Variables.cs:78
+8,\\beta,ee43.06432,ee43.06432,144.788605834,1.459278106,cost(L)=2^(2^(a*(L)+b)); f(t) divided by cost,ExponentialIdle/Variables.cs:85
+9,\\gamma,ee59.52589,ee59.52589,199.472741091,1.631522522,cost(L)=2^(2^(a*(L)+b)); f(t) divided by cost,ExponentialIdle/Variables.cs:92
+10,\\delta,ee78.79324,ee78.79324,263.477506641,1.865258729,cost(L)=2^(2^(a*(L)+b)); f(t) divided by cost,ExponentialIdle/Variables.cs:99
+11,\\epsilon,ee100.90421,ee100.90421,336.928538011,2.085422657,cost(L)=2^(2^(a*(L)+b)); f(t) divided by cost,ExponentialIdle/Variables.cs:106
+12,\\zeta,ee153.78878,ee153.78878,512.60727466,2.384185791,cost(L)=2^(2^(a*(L)+b)); f(t) divided by cost,ExponentialIdle/Variables.cs:113
+13,\\eta,ee218.41429,ee218.41429,727.288571548,2.725750517,cost(L)=2^(2^(a*(L)+b)); f(t) divided by cost,ExponentialIdle/Variables.cs:120
+14,\\theta,ee255.19307,ee255.19307,849.465046531,3.116248705,cost(L)=2^(2^(a*(L)+b)); f(t) divided by cost,ExponentialIdle/Variables.cs:127
+15,\\iota,ee337.79403,ee337.79403,1123.859483303,3.407188147,cost(L)=2^(2^(a*(L)+b)); f(t) divided by cost,ExponentialIdle/Variables.cs:134
+16,\\kappa,ee432.5858,ee432.5858,1438.750948175,3.983209282,cost(L)=2^(2^(a*(L)+b)); f(t) divided by cost,ExponentialIdle/Variables.cs:141
+17,\\lambda,ee539.71314,ee539.71314,1794.6202607,4.453363362,cost(L)=2^(2^(a*(L)+b)); f(t) divided by cost,ExponentialIdle/Variables.cs:148
+18,\\nu,ee659.30691,ee659.30691,2191.902179662,5.206251465,cost(L)=2^(2^(a*(L)+b)); f(t) divided by cost,ExponentialIdle/Variables.cs:155
+19,\\xi,ee791.48667,ee791.48667,2630.993842401,5.820766091,cost(L)=2^(2^(a*(L)+b)); f(t) divided by cost,ExponentialIdle/Variables.cs:162

@@ -1,0 +1,39 @@
+# Leaf Blower Revolution Android 2.29.6 (vCode 2029006); game.droid sha256 99b95417…; accessed 2026-10-18
+key,index,name,prestige_value,spawn_chance,armor,is_gem_leaf,seed_unlocked,offline_reward,source
+leaves,0,Leaf,1,100,,false,true,true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_resources.gml:7
+gold,10,Gold Leaf,2,1,2,false,true,true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_resources.gml:42
+platinum,20,Platinum Leaf,3,0.1,4,false,true,true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_resources.gml:73
+bismuth,30,Bismuth Leaf,4,0.1,8,false,true,true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_resources.gml:104
+cosmic,40,Cosmic Leaf,5,0.1,12,false,true,true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_resources.gml:135
+void,50,Void Leaf,6,0.1,16,false,true,true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_resources.gml:166
+exotic,60,Exotic Leaf,12,0.1,128,false,true,true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_resources.gml:197
+celestial,70,Celestial Leaf,13,0,192,false,true,function,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_resources.gml:230
+mythical,80,Mythical Leaf,14,0.1,256,false,true,true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_resources.gml:273
+lava,90,Lava Leaf,15,0.1,300,false,true,true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_resources.gml:308
+ice,100,Ice Leaf,16,0.1,500,false,true,true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_resources.gml:342
+obsidian,110,Obsidian Leaf,17,0,800,false,true,true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_resources.gml:376
+silicon,120,Silicon Leaf,18,0.1,1000,false,true,true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_resources.gml:410
+benitoite,130,Benitoite Leaf,19,0,1200,false,true,true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_resources.gml:443
+water,131,Water Leaf,19,0.2,1200,false,false,false,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_resources.gml:480
+moonstone,140,Moonstone Leaf,20.5,0.1,3000,false,true,true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_resources.gml:523
+sand,150,Sand Leaf,21,0.1,6000,false,true,true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_resources.gml:557
+azurite,151,Azurite Leaf,21.1,0.1,1000000,false,false,true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_resources.gml:592
+niobium,152,Niobium Leaf,21.2,0.1,1000000,false,false,true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_resources.gml:631
+ancient,160,Ancient Leaf,22,0,32000,false,false,function,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_resources.gml:670
+sacred,170,Sacred Leaf,23,0.1,10000000,false,false,true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_resources.gml:717
+biotite,180,Biotite Leaf,24,0.1,100000000,false,false,true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_resources.gml:755
+malachite,190,Malachite Leaf,25,0.1,1000000000,false,false,true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_resources.gml:793
+hematite,200,Hematite Leaf,26,0.1,10000000000,false,false,true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_resources.gml:831
+plasma,210,Plasma Leaf,32,0.1,100000000000,false,false,true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_resources.gml:869
+coal,220,Coal Leaf,33,0.1,1000000000000,false,false,true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_resources.gml:910
+amber,500,Amber Leaf,20.01,0,2000,true,false,false,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_resources.gml:950
+amethyst,510,Amethyst Leaf,20.02,0,2000,true,false,false,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_resources.gml:984
+emerald,520,Emerald Leaf,20.03,0,2000,true,false,false,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_resources.gml:1018
+kyanite,530,Kyanite Leaf,20.04,0,2000,true,false,false,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_resources.gml:1052
+rhodonite,540,Rhodonite Leaf,20.05,0,2000,true,false,false,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_resources.gml:1086
+ruby,550,Ruby Leaf,20.06,0,2000,true,false,false,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_resources.gml:1120
+tektite,560,Tektite Leaf,20.07,0,2000,true,false,false,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_resources.gml:1154
+soul_empty,11050,Empty Soul Leaf,35,0,1000000000000000,false,false,true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_resources.gml:2081
+soul,11060,Soul Leaf,36,0,1000000000000000,false,false,true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_resources.gml:2119
+quark,11100,Quark Leaf,37,0.1,100000000000000000000,false,false,true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_resources.gml:2157
+dusk,12000,Dusk Leaf,38,0.1,100000000000000000000,false,false,true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_resources.gml:2197

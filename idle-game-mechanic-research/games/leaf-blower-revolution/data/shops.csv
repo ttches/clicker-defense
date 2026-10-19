@@ -1,0 +1,1024 @@
+# Leaf Blower Revolution Android 2.29.6 (vCode 2029006); game.droid sha256 99b95417…; accessed 2026-10-18
+shop,item,index,name,cost_resource,base_cost,cost_exp,max_count,value,effect,source
+ancient,autobrew,0,Advanced Cauldron,ancient,250000,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ancient.gml:9
+ancient,unlock_shards,10,Unlock %s,ancient,5000000,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ancient.gml:21
+ancient,shards_reduce_selection_cost,11,Sharp Shards,ancient,10000000,20,3,1,shards_reduce_selection_cost=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ancient.gml:36
+ancient,more_pyramid_floors,100,More Pyramid Floors,ancient,200000,2.5,0,10,pyramid_floors=10,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ancient.gml:42
+ancient,area_enemies_decrease,110,Less Pyramid Enemies,ancient,1000000,8192,5,1,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ancient.gml:47
+ancient,crafting_backpack_size,500,Bigger Crafting Backpack,ancient,10000,3,5,1,craft_backpack_size=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ancient.gml:55
+ancient,item_drop_count,1000,Item Drop Count,ancient,750000,8,5,1,item_drop_count=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ancient.gml:61
+ancient,material_finder,2000,Material Finder,ancient,5000,4,10,0.05,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ancient.gml:68
+ancient,material_spawn_count,2100,Material Duplicator,ancient,1000000,8,5,1,material_spawn_count=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ancient.gml:75
+ancient,claw_materials_multiplier,2110,Material Pub,ancient,15000,3,5,,claw_materials_multiplier=0.25,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ancient.gml:82
+ancient,witch_cursed_count,3000,Witch Curses,ancient,11111,2,666,11,witch_cursed_count=11,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ancient.gml:94
+ancient,witch_essence_count,3100,Witch Essences,ancient,300000,3,10,1,witch_essence_count=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ancient.gml:100
+ancient,witch_spawn_delay,3200,Witch Reviver,ancient,50000,2,20,0.01,area_boss_spawn_delay_decrease_area.kokkaupunki_cursed=0.01,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ancient.gml:106
+ancient,auto_restart_pyramid,4000,Borb Pyramid Taxi,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ancient.gml:114
+ancient,artifact_autouse_timer_delay_reduction_multiplier,4500,Faster Autofacts,ancient,500000,64,5,0.05,artifact_autouse_timer_delay_reduction_multiplier=0.05,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ancient.gml:122
+ancient,trade_gems_max_value,5000,Gems Business,ancient,2000000,2,1,1,"trade_gems_max_value=get_default_struct_value(arg3, value, 1)",reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ancient.gml:129
+benitoite,unlock_resource,-20,Unlock %s,benitoite,750000000,2,1,global.resources.moonstone,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_benitoite.gml:7
+benitoite,unlock_borbs,-10,Unlock %s,benitoite,1,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_benitoite.gml:20
+benitoite,leaf_marketing,1,%s Marketing,benitoite,5000,3.5,5,,resources_leaf_add.benitoite=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_benitoite.gml:37
+benitoite,nuclear_fuel,3,Nuclear Fuel,benitoite,1000,1.5,50,,nuclear_fuel=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_benitoite.gml:57
+benitoite,blower_hit_damage,15,Leaf Damage,benitoite,75,5,0,50,blower_enemy_damage=50,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_benitoite.gml:76
+benitoite,blc_value_adder_real,100,Moar BLC,benitoite,500000,2.5,50,4000,blc_value_adder=4000,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_benitoite.gml:80
+benitoite,critical_converters_crit_chance,200,Critical Converters,benitoite,1000000,4,50,0.005,converter_crit_chance=0.005,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_benitoite.gml:84
+benitoite,critical_converters_crit_value,201,Critical Output,benitoite,1000000,6,50,0.01,converter_crit_value=0.01,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_benitoite.gml:88
+benitoite,printer_printer,300,Printer Printer,benitoite,200000000,8,300,6,printer_printer=6,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_benitoite.gml:92
+benitoite,leaf_merge_range_inc,350,Leaf Merginator,benitoite,500000000,6,10,2,leaf_merge_range=2,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_benitoite.gml:96
+benitoite,autobuy_accelerator,400,Autobuy Accelerator,benitoite,100000000,8,20,0.01,autobuy_accelerator=0.01,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_benitoite.gml:100
+benitoite,trade_refresh_decrease_timer,500,Customer Acquisition,benitoite,3000000,125,10,0.01,trade_refresh_decrease_timer=0.01,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_benitoite.gml:101
+biotite,unlock_resource,0,Unlock %s,biotite,10000000000,2,1,global.resources.malachite,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_biotite.gml:7
+biotite,fertilizer,10,%s Fertilizer,biotite,10,1.5,50,1,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_biotite.gml:12
+biotite,leaf_marketing,20,%s Marketing,biotite,500,1.25,0,1,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_biotite.gml:13
+biotite,material_storage_inc,30,Material Storage,biotite,500,1.5,50,50,material_max_count=50,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_biotite.gml:18
+biotite,more_tower_floors,40,More Tower Floors,biotite,500,1.5,0,50,tower_floor=50,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_biotite.gml:26
+biotite,more_tower_floors_pct,41,More Tower Floors%,biotite,2500,2,50,0.01,tower_floor_pct=0.01,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_biotite.gml:33
+biotite,weapon_max_upgrade_level,100,Max Tool Level,biotite,10000,1.5,50,1,weapon_max_upgrade_level=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_biotite.gml:40
+biotite,equipment_max_upgrade_level,200,Max Equipment Level,biotite,10000,1.5,50,1,equipment_max_upgrade_level=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_biotite.gml:46
+biotite,pet_max_upgrade_level,300,Max Pet Level,biotite,10000,1.5,50,1,pet_max_upgrade_level=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_biotite.gml:52
+biotite,unique_max_upgrade_level,400,Max Unique Level,biotite,10000,1.5,50,1,unique_max_upgrade_level=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_biotite.gml:58
+biotite,craft_min_chance,450,Craft Hammer,biotite,10000000000,3.5,2,1,craft_min_chance=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_biotite.gml:64
+biotite,cards_enemy_drop_chance,500,Cards Detector,biotite,1000000,12,5,0.001,cards_enemy_drop_chance=0.001,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_biotite.gml:69
+biotite,cards_boss_drop_chance,510,Boss Cards Detector,biotite,1000000,24,5,0.002,cards_boss_drop_chance=0.002,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_biotite.gml:76
+biotite,trade_gems_max_value,600,Gems Business,biotite,10000000,2,1,1,"trade_gems_max_value=get_default_struct_value(arg3, value, 1)",reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_biotite.gml:83
+bismuth,cosmic_leaves,-10,Cosmic Leaves,bismuth,10000,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_bismuth.gml:10
+bismuth,tree,-1,Tree,bismuth,10,1.5,30,,trees=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_bismuth.gml:27
+bismuth,fertilizer,0,%s Fertilizer,bismuth,10,1.5,50,1,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_bismuth.gml:49
+bismuth,leaf_marketing,1,Bismuth Marketing,bismuth,500,3.5,5,,resources_leaf_add.bismuth=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_bismuth.gml:56
+bismuth,nuclear_fuel,3,Nuclear Fuel,bismuth,100,1.5,30,,nuclear_fuel=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_bismuth.gml:76
+bismuth,auto_leaf_blower,20,Auto Leaf Blower,bismuth,200,6,3,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_bismuth.gml:92
+bismuth,auto_leaf_blower_can_hit_enemy,21,ALB Enemy Bumper,bismuth,500,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_bismuth.gml:110
+bismuth,auto_leaf_blower_hit_damage,22,ALB Hit Damage,bismuth,75,5,80,,alb_enemy_damage=4,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_bismuth.gml:122
+bismuth,auto_leaf_blower_damage,23,ALB Blowing Power,bismuth,100,1.5,20,,alb_blowing_power=2,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_bismuth.gml:139
+bismuth,bismuth_apples,50,Unlock Bismuth Apples,bismuth,50,1.5,1,,fruit_unlocked.bismuth=true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_bismuth.gml:164
+blc,prestige_value_multiplier,0,Prestige+++++,blc,1,2,0,,prestige_value_multiplier=2,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:9
+blc,blc_value_adder,10,BLC++,blc,2,2,0,,blc_value_adder=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:26
+blc,converter_speed,50,More Converter Transistors,blc,1,3,3,,converter_speed=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:43
+blc,converter_increase_output_count,60,Increase Converter Output,blc,2,2.5,0,,converter_output_multiplier_global=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:60
+blc,printers_upgrade,80,Better Printer Ink,blc,1,1.5,0,,printer_multiplier=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:77
+blc,printers_persist,90,Unlimited Printer Ink,blc,25000000,1.5,1,,prestige_persist_shops.printers=global.prestige_levels.blc.level - 1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:99
+blc,printers_room,100,Bigger Printer Room,blc,50000000,3,10,,max_printer_storage=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:119
+blc,leaf_multiplier_all,150,Master of Leaves,blc,1,2,0,,leaf_multiplier=4,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:143
+blc,fruit_value,200,Super Fruits,blc,1,2,0,,fruit_value=5,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:165
+blc,fruit_leaves_upgrade,210,Fruit Leaves,blc,5000000,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:183
+blc,fruit_magnet,220,Fruit Magnet,blc,1,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:195
+blc,combo_multiplier,400,What The Combo,blc,2,2,0,,combo_multiplier=2,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:208
+blc,nuclear_fuel,500,Nuclear Apocaleaves,blc,1,2,5,,nuclear_fuel_multiplier=0.4,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:231
+blc,daily_reward_gems,600,Moar Gems,blc,1,1.5,1,,daily_reward_gems=2,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:253
+blc,albs_tools,610,ALB Tools,blc,3,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:274
+blc,albs_pathing,611,ALB Pathing,blc,25000,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:295
+blc,albs_pathing_timer_start,612,ALB Pathing Timer,blc,500000000,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:374
+blc,auto_teleport_best_area,650,Area Teleport Bot,blc,2,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:387
+blc,autocrunch_bot,660,Auto Crunch Bot,blc,100000,4,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:400
+blc,autocrunch_setting,661,Auto Crunch Settings,blc,5000000,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:418
+blc,autocrunch_timer_reduction,662,Auto Crunch Timer,blc,10000,1.75,30,,autocrunch_timer_reduced=10,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:440
+blc,autobuy_shop,680,%s Upgrade Bot,blc,5,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:785
+blc,autobuy_shop,700,%s Upgrade Bot,blc,50,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:791
+blc,autobuy_shop,710,%s Upgrade Bot,blc,250000,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:800
+blc,autobuy_shop,720,%s Upgrade Bot,blc,500000,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:807
+blc,autobuy_shop,730,%s Upgrade Bot,blc,1000000,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:813
+blc,autobuy_shop,740,%s Upgrade Bot,blc,2000000,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:819
+blc,autobuy_shop,750,%s Upgrade Bot,blc,4000000,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:825
+blc,autobuy_shop,760,%s Upgrade Bot,blc,8000000,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:831
+blc,autobuy_shop,770,%s Upgrade Bot,blc,16000000,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:837
+blc,autobuy_shop,780,%s Upgrade Bot,blc,32000000,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:843
+blc,autobuy_shop,790,%s Upgrade Bot,blc,64000000,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:849
+blc,autobuy_shop,800,%s Upgrade Bot,blc,128000000,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:855
+blc,autobuy_shop,810,%s Upgrade Bot,blc,256000000,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:861
+blc,autobuy_shop,820,%s Upgrade Bot,blc,512000000,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:867
+blc,autobuy_shop,825,%s Upgrade Bot,blc,1024000000,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:873
+blc,autobuy_shop,830,%s Upgrade Bot,blc,2048000000,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:879
+blc,autobuy_shop,831,%s Upgrade Bot,blc,4096000000,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:885
+blc,autobuy_shop,832,%s Upgrade Bot,blc,8192000000,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:891
+blc,autobuy_shop,833,%s Upgrade Bot,blc,32768000000,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:897
+blc,autobuy_shop,834,%s Upgrade Bot,blc,65536000000,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:903
+blc,autobuy_shop,835,%s Upgrade Bot,blc,131072000000,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:909
+blc,autobuy_shop,836,%s Upgrade Bot,blc,262144000000,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:915
+blc,autobuy_shop,837,%s Upgrade Bot,blc,524288000000,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:921
+blc,autobuy_shop,838,%s Upgrade Bot,blc,1048576000000,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:927
+blc,autobuy_shop,839,%s Upgrade Bot,blc,2097152000000,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:933
+blc,autobuy_shop,840,%s Upgrade Bot,blc,4194304000000,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:939
+blc,autobuy_shop,841,%s Upgrade Bot,blc,8388608000000,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:945
+blc,autobuy_priority,900,Autobuy Priority Device,blc,250000,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:462
+blc,auto_start_converters,910,Converter Start Bot,blc,750000,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:475
+blc,coins_persist_blc,990,Crunchy Coins,blc,400000,2,10,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:488
+blc,increase_max_leaves,1000,Bigger Bag,blc,10,1.5,270,,max_leaf_storage=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:501
+blc,unlock_unique_leaves,2000,Unlock Unique Leaves,blc,20000000,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:524
+blc,unique_leaves_concurrent,2010,Greedy Uniques,blc,3000000,1.5,11,,max_unique_leaves=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:537
+blc,unlock_pets,3000,Unlock Pets,blc,1000000,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:564
+blc,unlock_trading,3500,Buy Trading Certificate,blc,100000,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:576
+blc,max_trades,3510,Leaf Trader,blc,2000000,6,3,1,trade_max_count=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:586
+blc,trade_education,3520,Trading Education,blc,20000000,24,50,,trade_base_level=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:587
+blc,unlock_crafting,3700,Buy Crafting Certificate,blc,500000,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:590
+blc,craft_level,3701,Craft Forge,blc,250000,12,3,1,craft_level=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:600
+blc,craft_min_chance,3702,Craft Hammer,blc,10000,3.5,25,1,craft_min_chance=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:601
+blc,unlock_artifacts,4000,Unlock Artifacts,blc,50000000,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:604
+blc,alb_can_collect_artifacts,4010,ALB <3 Artifacts,blc,10000000,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:616
+blc,offline_artifacts,4020,Offline Artifacts,blc,5000000,15,2,1,artifact_collect_offline=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:632
+blc,offline_crunches,4030,Offline Crunches,blc,1500000,96,5,1,offline_crunches=1;offline_crunches_blc_pct=value2,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:638
+blc,offline_crunches_blc_pct,4031,Offline BLC,blc,100000,48,50,0.01,offline_crunches_blc_pct=0.01,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:646
+blc,unlock_scrolls,5000,Unlock Scrolls,blc,5000000,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:655
+blc,unlock_mulch,6000,Unlock Mulch,blc,25000000,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:667
+blc,unlock_materials,7000,Unlock Materials,blc,250000,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:684
+blc,material_inspector,7010,Material Inspector,blc,500000,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:696
+blc,unlock_alchemy,8000,Unlock Alchemy,blc,15000000,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:713
+blc,dig_item_chance_reduction,8500,Dig Knowledge,blc,500000,2,10,0.005,dig_item_chance_reduction=0.005,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:729
+blc,dig_count_multiplier,8501,Dig Muscles,blc,7500000,8,3,1,dig_count_multiplier=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:735
+blc,dig_reduce_timeout,8502,Dig Technique,blc,5000000,8,10,0.01,dig_reduce_timeout=0.01,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:741
+blc,player_hp_reg_perma,10000,Perma HP Regeneration,blc,75000000,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:749
+blc,blow_power_controller,20010,Blow Power Controller,blc,25000000000,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_blc.gml:761
+borbs,leaf_marketing,1,Borb borb,borbs,10,3.5,100,,borb_spawn_chance=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_borbs.gml:8
+borbventure,max_borbventures,0,More %s,,,4,3,,borbventure_max_borbventures=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_borbventure.gml:9
+borbventure,max_borbventure_borbs,100,More %s,,,3.5,5,,borbventure_max_borbs=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_borbventure.gml:23
+borbventure,max_borbventure_items,200,Item Shelf,borb_juice,3000,1.15,30,1,borbventure_inventory_size=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_borbventure.gml:35
+borbventure,borbventure_craft_cost_multiplier,300,Hagglin' %s,borb_juice,5000,4,5,-0.05,borbventure_craft_cost_multiplier=-0.05,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_borbventure.gml:42
+borbventure,borbventure_increase_xp,400,Efficiency Tutorial,borb_juice,750,1.25,20,0.01,borbventure_increase_xp=0.01,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_borbventure.gml:49
+borbventure,borbventure_items_ascend_count,450,Upgrade Tutorial,borb_juice,50000,2.5,5,-1,borbventure_items_ascend_count=-1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_borbventure.gml:56
+borbventure,borbventure_refresh_timer_multiplier,500,Refresh Tutorial,borb_juice,3000,1.75,10,-0.02,borbventure_refresh_timer_multiplier=-0.02,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_borbventure.gml:63
+borbventure,borbventure_special_recruit_chance,600,Special Type Tutorial,borb_juice,10000,1.5,10,0.01,borbventure_special_recruit_chance=0.01,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_borbventure.gml:70
+borbventure,borbventure_craft_from_codex,700,Codex Crafter,borb_ascension_rune,50,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_borbventure.gml:77
+cards_transcension,cards_max_count,0,Max Cards,,,1.5,0,,cards_max_count=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_cards_transcension.gml:9
+cards_transcension,cards_enemy_drop_chance,10,Cards Detector,transcension_card_parts,6,1.85,0,0.02,cards_enemy_drop_chance=0.02,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_cards_transcension.gml:21
+cards_transcension,cards_boss_drop_chance,20,Boss Cards Detector,transcension_card_parts,6,1.85,0,0.05,cards_boss_drop_chance=0.05,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_cards_transcension.gml:28
+cards_transcension,card_parts_drop_chance,30,Card Parts Detector,transcension_card_parts,6,1.85,0,0.01,card_parts_drop_chance=0.01,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_cards_transcension.gml:35
+cards_transcension,cards_transcension_card_parts_count,100,TCP++,,,2.25,0,,cards_transcension_card_parts_count=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_cards_transcension.gml:44
+celestial,unlock_mythical_leaves,-20,Unlock %s,celestial,1000000,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_celestial.gml:8
+celestial,alb_pickup_seeds,0,ALBs Love Seeds,celestial,5,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_celestial.gml:25
+celestial,leaf_marketing,1,%s Marketing,celestial,200,3.5,50,,resources_leaf_add.celestial=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_celestial.gml:38
+celestial,seed_marketing,2,%s Marketing,celestial,5000000000,3.5,50,,seed_spawn_chance_leaf.celestial=0.01,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_celestial.gml:58
+celestial,enemy_drop_multiplier,3,Worthy Enemies,celestial,200,3,0,0.25,enemy_drop_multiplier=0.25,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_celestial.gml:83
+celestial,auto_leaf_blower_hit_damage,20,ALB Hit Damage,celestial,500,4.5,20,,alb_enemy_damage=20,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_celestial.gml:107
+celestial,enemy_spawn_chance,30,"More Enemies, Please",celestial,5,3,95,,enemy_spawn_chance=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_celestial.gml:129
+celestial,blc_value_adder_real,101,Moar BLC,celestial,100000,2,50,,blc_value_adder=200,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_celestial.gml:151
+celestial,combo_affects_celestial,300,Celestial Combo,celestial,20000,1.5,1,,resources_leaf_special_upgrades.celestial=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_celestial.gml:173
+celestial,combo_max,301,Max Combo,celestial,500,3,100,,combo_max=5,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_celestial.gml:193
+celestial,combo_rewards,302,Combo Multiplier,celestial,3000,3,0,,combo_rewards=0.5,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_celestial.gml:216
+celestial,celestial_apples,400,Unlock %s,celestial,100,1.5,1,,fruit_unlocked.celestial=true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_celestial.gml:239
+celestial,celestial_offline,500,Offline Celestials,celestial,50000,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_celestial.gml:259
+coins,unlock_areas,-500,Unlock Areas,coins,20,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_coins.gml:10
+coins,unlock_printers,-499,Unlock Printers,coins,200,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_coins.gml:23
+coins,unlock_converters,-498,Unlock Converters,coins,200,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_coins.gml:36
+coins,auto_upgrade_leaf_trees,-400,Auto Upgrade Trees,coins,100,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_coins.gml:49
+coins,auto_upgrade_leaf_fertilizer,-399,Auto Upgrade Leaf Fertilizer,coins,100,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_coins.gml:64
+coins,auto_upgrade_leaf_marketing,-398,Auto Upgrade Leaf Marketing,coins,100,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_coins.gml:79
+coins,auto_upgrade_nuclear_fuel,-397,Auto Upgrade Nuclear Fuel,coins,100,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_coins.gml:94
+coins,auto_buy_leaf_blower,-396,Auto Buy ALBs,coins,100,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_coins.gml:109
+coins,auto_unlock_leaves,-395,Auto Unlock Leaves,coins,500,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_coins.gml:124
+coins,auto_unlock_flasks,-394,Auto Unlock Flasks,coins,5000,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_coins.gml:139
+coins,printer_adder,-300,Printer Adder,coins,10,1.5,0,,printer_adder=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_coins.gml:154
+coins,printer_multiplier,-299,Printer Multiplier,coins,40,2,0,,printer_multiplier=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_coins.gml:176
+coins,converter_increase_batch_count,-99,Increase Converter Count,coins,10,2,0,,converter_batch_count=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_coins.gml:198
+coins,converter_increase_output_count,-98,Increase Converter Output,coins,20,2.5,0,,converter_output_add_global=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_coins.gml:215
+coins,prestige_value_multiplier,-5,Prestige++,coins,5,2.5,0,,prestige_value_multiplier=0.25,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_coins.gml:232
+coins,reduce_upgrade_prices,-1,Upgrade Discount,coins,5,2.5,50,,reduce_upgrade_prices=0.01,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_coins.gml:254
+coins,double_leaves,0,More Leaves,coins,2,4,0,,resources_multiplier.leaves=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_coins.gml:281
+coins,double_gold,1,More Gold Leaves,coins,2,4,0,,resources_multiplier.gold=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_coins.gml:306
+coins,double_platinum,2,More Platinum Leaves,coins,2,4,0,,resources_multiplier.platinum=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_coins.gml:336
+coins,double_bismuth,3,More Bismuth Leaves,coins,2,4,0,,resources_multiplier.bismuth=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_coins.gml:366
+coins,double_cosmic,4,More Cosmic Leaves,coins,2,4,0,,resources_multiplier.cosmic=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_coins.gml:396
+coins,double_void,5,More Void Leaves,coins,2,4,0,,resources_multiplier.void=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_coins.gml:426
+coins,double_exotic,6,More Exotic Leaves,coins,100,4,0,,resources_multiplier.exotic=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_coins.gml:456
+coins,double_celestials,7,More Celestial Leaves,coins,200,4,0,,resources_multiplier.celestial=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_coins.gml:486
+coins,fruit_spawn_chance,10,Fruit Fertilizer,coins,1,1.5,50,,fruit_spawn_chance=0.5,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_coins.gml:516
+coins,fruit_value,11,Fruity Fruits,coins,1,1.5,50,,fruit_value=0.5,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_coins.gml:538
+coins,fruit_spawn_chance_multi,12,Fruit Trees,coins,5,1.4,0,,fruit_spawn_chance_multi=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_coins.gml:555
+coins,alb_can_collect_fruits,300,ALB <3 Fruits,coins,30,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_coins.gml:573
+coins,offline_prestige,4000,Offline Prestige,coins,1500000,96,5,1,offline_prestige=1;offline_prestige_pct=value2,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_coins.gml:583
+coins,offline_prestige_pct,4001,Offline Prestige,coins,100000,48,50,0.01,offline_prestige_pct=0.01,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_coins.gml:592
+cosmic,void_leaves,-10,Void Leaves,cosmic,10000,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_cosmic.gml:10
+cosmic,tree,-1,Tree,cosmic,10,1.5,30,,trees=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_cosmic.gml:27
+cosmic,fertilizer,0,%s Fertilizer,cosmic,10,1.5,50,1,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_cosmic.gml:49
+cosmic,leaf_marketing,1,Cosmic Marketing,cosmic,500,3.5,5,,resources_leaf_add.cosmic=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_cosmic.gml:56
+cosmic,nuclear_fuel,3,Nuclear Fuel,cosmic,100,1.5,30,,nuclear_fuel=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_cosmic.gml:76
+cosmic,blower_hit_damage,15,Leaf Damage,cosmic,75,5,0,3,blower_enemy_damage=3,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_cosmic.gml:90
+cosmic,auto_leaf_blower,20,Auto Leaf Blower,cosmic,200,6,3,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_cosmic.gml:96
+cosmic,auto_leaf_blower_speed,21,ALB Speed,cosmic,100,1.5,5,,alb_speed=0.5,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_cosmic.gml:114
+cosmic,auto_leaf_blower_hit_damage,22,ALB Hit Damage,cosmic,75,5,80,,alb_enemy_damage=4,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_cosmic.gml:140
+cosmic,auto_leaf_blower_damage,23,ALB Blowing Power,cosmic,100,1.5,20,,alb_blowing_power=2,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_cosmic.gml:157
+cosmic,auto_leaf_blower_battery_capacity,24,ALB Battery Capacity,cosmic,100,1.5,10,,alb_battery_capacity=0.5,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_cosmic.gml:182
+cosmic,auto_leaf_blower_battery_charge_rate,25,ALB Battery Charge Rate,cosmic,100,1.5,10,,alb_battery_charge_rate=0.5,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_cosmic.gml:208
+cosmic,cosmic_apples,30,Unlock Cosmic Apples,cosmic,50,1.5,1,,fruit_unlocked.cosmic=true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_cosmic.gml:234
+dice,unlock_azurite_leaves,0,Unlock %s,dice,1000,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_dice.gml:9
+dice,unlock_niobium_leaves,1,Unlock %s,dice,25000,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_dice.gml:26
+dice,dice_count,5,Dice Count,dice,75,4,10,1,"dice_dice=get_default_struct_value(arg3, value, 1)",reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_dice.gml:41
+dice,dice_sides,6,Sides Count,dice,25,3,10,1,"dice_sides=get_default_struct_value(arg3, value, 1)",reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_dice.gml:48
+dice,dice_inventory_size,10,Bigger Dice Bag,dice,150,4,5,1,"dice_inventory_size=get_default_struct_value(arg3, value, 1)",reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_dice.gml:55
+dice,dice_backpack_size,11,Bigger Dice Backpack,dice,75,2,5,1,"dice_backpack_size=get_default_struct_value(arg3, value, 1)",reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_dice.gml:62
+dice,dice_timeout_reduction,13,Faster Dice,dice,50,3,10,0.5,"dice_timeout_reduction=get_default_struct_value(arg3, value, 0.5)",reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_dice.gml:69
+dice,dice_battlefield_roll_timeout_reduction,14,Faster Battle Dice,dice,50,3,10,0.5,"dice_battlefield_roll_timeout_reduction=get_default_struct_value(arg3, value, 1)",reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_dice.gml:76
+dice,unlock_converter,98,function,azurite,25000,2,1,global.converters.convert_azurite_dice.key,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_dice.gml:83
+dice,unlock_converter,99,function,azurite,1000000,2,1,global.converters.convert_azurite_power_dice.key,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_dice.gml:88
+dice,dice_count,100,Dice Count,azurite,5000,4,5,1,"dice_dice=get_default_struct_value(arg3, value, 1)",reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_dice.gml:93
+dice,dice_sides,101,Sides Count,azurite,2500,3,5,1,"dice_sides=get_default_struct_value(arg3, value, 1)",reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_dice.gml:100
+dice,dice_inventory_size,102,Bigger Dice Bag,azurite,5000,4,5,1,"dice_inventory_size=get_default_struct_value(arg3, value, 1)",reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_dice.gml:107
+dice,dice_timeout_reduction,103,Faster Dice,azurite,500,3,10,0.5,"dice_timeout_reduction=get_default_struct_value(arg3, value, 0.5)",reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_dice.gml:114
+dice,dice_battlefield_roll_timeout_reduction,104,Faster Battle Dice,azurite,500,3,10,0.5,"dice_battlefield_roll_timeout_reduction=get_default_struct_value(arg3, value, 1)",reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_dice.gml:121
+dice,mirror_efficiency,110,Mirror Gloss,azurite,50000,2,1,0.1,"mirror_efficiency=get_default_struct_value(arg3, value, 0.01)",reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_dice.gml:128
+dice,unlock_converter,198,function,niobium,25000,2,1,global.converters.convert_niobium_dice.key,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_dice.gml:134
+dice,unlock_converter,199,function,niobium,1000000,2,1,global.converters.convert_niobium_power_dice.key,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_dice.gml:139
+dice,dice_count,200,Dice Count,niobium,5000,4,5,1,"dice_dice=get_default_struct_value(arg3, value, 1)",reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_dice.gml:144
+dice,dice_sides,201,Sides Count,niobium,2500,3,5,1,"dice_sides=get_default_struct_value(arg3, value, 1)",reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_dice.gml:151
+dice,dice_inventory_size,202,Bigger Dice Bag,niobium,5000,4,5,1,"dice_inventory_size=get_default_struct_value(arg3, value, 1)",reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_dice.gml:158
+dice,dice_timeout_reduction,203,Faster Dice,niobium,500,3,10,0.5,"dice_timeout_reduction=get_default_struct_value(arg3, value, 0.5)",reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_dice.gml:165
+dice,dice_battlefield_roll_timeout_reduction,204,Faster Battle Dice,niobium,500,3,10,0.5,"dice_battlefield_roll_timeout_reduction=get_default_struct_value(arg3, value, 1)",reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_dice.gml:172
+dice,mirror_efficiency,210,Mirror Gloss,niobium,50000,2,1,0.1,"mirror_efficiency=get_default_struct_value(arg3, value, 0.01)",reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_dice.gml:179
+dice,trade_gems_max_value,4000,Gems Business,dice,50000,2,1,1,"trade_gems_max_value=get_default_struct_value(arg3, value, 1)",reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_dice.gml:185
+dlc,supporter_pack,0,Supporter Pack,usd,5.99,1.5,1,,daily_reward_gems=20,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_dlc.gml:8
+dlc,premium_pack,100,Premium Pack,usd,24.99,1.5,1,,daily_reward_gems=100,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_dlc.gml:41
+dlc,fishing_pack,130,Fishing Pack,usd,13.99,1.5,1,,daily_reward_result.materials.tide_crystal=100;daily_reward_result.resources.fish_credits=2000;daily_reward_result.resources.gems=40;fishing_catch_credits_multiplier_dlc=3;fishing_catch_tide_crystal_chance=0.05;fishing_min_fish_length_multiplier_dlc=0.5;fishing_max_fish_length_multiplier_dlc=0.5;fishing_rods_max_count=1;fishing_wait_duration_reduction_multiplier=0.15;fishing_xp_multiplier=0.25,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_dlc.gml:76
+dlc,mines_pack,140,Mines Pack,usd,13.99,1.5,1,,daily_reward_result.mine_item_rarity.epic=5;daily_reward_result.mine_item_rarity.mythical=3;daily_reward_result.mine_item_rarity.legendary=2;daily_reward_result.resources.coal_time_sphere=10;daily_reward_result.resources.diamond_coal=500;daily_reward_result.resources.diamond_shiny=5;daily_reward_result.resources.fuel=25000;daily_reward_result.resources.gems=40;mines_drill_depth_progress_multiplier_dlc=0.5;mines_max_active_caves=4;mines_inventory_size=8;mines_mine_power_multiplier_dlc=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_dlc.gml:138
+dlc,nature_pack,150,Nature Pack,usd,19.99,1.5,1,,daily_reward_result.resources.gems=50;daily_reward_result.resources.nature_gems=150;daily_reward_result.resources.nature_time_sphere=10;daily_reward_result.resources.magic_mulch=200;nature_xp_multiplier=0.5,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_dlc.gml:203
+dlc,dice_pack,160,Dice Pack,usd,13.99,1.5,1,,daily_reward_result.dice_rarity.rare=1;daily_reward_result.dice_rarity.epic=1;daily_reward_result.resources.dice=1000;daily_reward_result.resources.gems=40;dice_backpack_size=10;dice_inventory_size=10;dice_battlefield_die_drop_chance=0.01,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_dlc.gml:251
+dlc,material_pack,200,Material Pack,usd,8.99,1.5,1,,daily_reward_gems=50;daily_reward_materials=1000;daily_reward_materials_essences=50;material_max_count=10000;kokka_more_quests=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_dlc.gml:308
+dlc,cards_pack,250,Cards Pack,usd,13.99,1.5,1,,daily_reward_gems=75;daily_reward_cards_packs.common=3;daily_reward_cards_packs.rare=2;daily_reward_cards_packs.legendary=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_dlc.gml:361
+dlc,borbventure_pack,260,Borbventure Pack,usd,13.99,1.5,1,,daily_reward_gems=75;daily_reward_borbventure_packs.common=3;daily_reward_borbventure_packs.rare=2;daily_reward_borbventure_packs.legendary=1;borbventure_max_borbs=1;borbventure_increase_time=-0.05,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_dlc.gml:401
+dlc,skins_pack,300,Skins Pack,usd,3.99,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_dlc.gml:461
+dlc,gems_pack_legendary,5000,%s %s Pack,usd,9.99,1.5,1,,daily_reward_result.resources.gems=50,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_dlc.gml:484
+dlc,gems_pack_epic,5001,%s %s Pack,usd,6.99,1.5,1,,daily_reward_result.resources.gems=30,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_dlc.gml:525
+dlc,gems_pack_uncommon,5002,%s %s Pack,usd,2.99,1.5,1,,daily_reward_result.resources.gems=10,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_dlc.gml:565
+dlc,fan_pack,10000,Fan Gift,usd,0,1.5,1,,daily_reward_gems=5,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_dlc.gml:605
+environment,gold_leaves,-1,Gold Leaves,leaves,10000,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_leaves.gml:9
+environment,tree,0,Tree,leaves,10,1.5,30,,trees=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_leaves.gml:26
+environment,fertilizer,1,Fertilizer,leaves,10,1.5,50,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_leaves.gml:50
+environment,leaf_marketing,2,Leaf Marketing,leaves,500,5,0,,resources_leaf_add.leaves=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_leaves.gml:62
+environment,auto_leaf_blower,3,Auto Leaf Blower,leaves,200,8,3,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_leaves.gml:82
+environment,nuclear_fuel,4,Nuclear Fuel,leaves,100,1.5,30,,nuclear_fuel=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_leaves.gml:100
+event,borb_o_lantern_drop_count,100,Borb O'Count,borb_o_lantern,10,1.75,20,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_event.gml:13
+event,borb_o_lantern_drop_chance,101,Borb O'Chance,borb_o_lantern,3,2,20,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_event.gml:26
+event,borb_o_digs,102,Borb O'Digs,borb_o_lantern,75,2.5,10,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_event.gml:39
+event,increase_cursed_cheese_damage,110,Cursed Weakness,borb_o_lantern,8,1.3,0,,enemy_add_damage_multiplier.boss_cursed_cheese=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_event.gml:52
+event,cursed_cheese_curses_multiplier,111,Cursed Cheese Curses,borb_o_lantern,8,1.75,20,,cursed_cheese_curses_multiplier=0.1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_event.gml:72
+event,cursed_cheese_leafscended_leaves_drop_chance,120,Cursed Leafscension Luck,borb_o_lantern,10,1.75,10,,cursed_cheese_leafscended_leaves_drop_chance=0.05,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_event.gml:89
+event,cursed_cheese_leafscended_leaves_max_level,121,Cursed Leafscension Level,borb_o_lantern,25,8,2,,cursed_cheese_leafscended_leaves_max_level=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_event.gml:106
+event_anniversary,candle_attack_damage,100,Harder Blow,party_tokens,50,1.8,0,1,candle_attack_damage=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_event.gml:124
+event_anniversary,candle_attack_damage_manual,101,Mighty Blow,party_tokens,50,1.7,10,2,candle_attack_damage_manual=2,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_event.gml:137
+event_anniversary,candle_attack_timer_reduction_multiplier,102,Faster Blow,party_tokens,75,1.9,5,0.1,candle_attack_timer_reduction_multiplier=0.1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_event.gml:150
+event_anniversary,candle_manual_blow_timer_reduction_multiplier,103,Quicker Manual Blow,party_tokens,75,1.4,5,0.1,candle_manual_blow_timer_reduction_multiplier=0.1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_event.gml:163
+event_anniversary,candle_reward_multiplier,104,Generous Blow,party_tokens,50,1.8,10,0.5,candle_reward_multiplier=0.5,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_event.gml:176
+event_anniversary,candle_critical_chance,105,Lucky Blow,party_tokens,75,1.6,10,0.05,candle_critical_chance=0.05,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_event.gml:189
+event_anniversary,candle_reduce_reward_multiplier,106,Forgiving Blow,party_tokens,50,1.5,9,,candle_reduce_reward_multiplier=0.1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_event.gml:202
+event_anniversary,candle_auto_attack,107,Auto Blow,party_tokens,1500,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_event.gml:214
+event_anniversary,candle_auto_advance,108,Auto Advance/Restart,party_tokens,1000,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_event.gml:222
+event_anniversary,curse_machine_slower_aim_multiplier,150,Steady Hands,party_tokens,200,1.3,5,,curse_machine_slower_aim_multiplier=0.1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_event.gml:231
+event_anniversary,curse_machine_slower_charge_speed_multiplier,151,Slow Charge,party_tokens,200,1.3,5,,curse_machine_slower_charge_speed_multiplier=0.1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_event.gml:243
+event_anniversary,anniversary_auto_collect,199,Auto Collector,party_tokens,150,1.6,10,,resources_auto_collect.party_tokens=0.01,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_event.gml:255
+event_anniversary,leaf_multiplier_all,200,All Leaves+,party_tokens,80,1.4,10,0.5,leaf_multiplier_event=0.5,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_event.gml:270
+event_anniversary,blower_hit_damage_multiplier,201,Leaf Damage Multiplier,party_tokens,90,1.4,10,5,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_event.gml:281
+event_anniversary,enemy_drop_multiplier,204,Worthy Enemies,party_tokens,60,1.4,10,0.5,enemy_drop_multiplier=0.5,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_event.gml:289
+event_anniversary,dig_count,205,Dig Force,party_tokens,800,2,3,1,dig_count=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_event.gml:296
+event_anniversary,blc_science,209,BLC Science,party_tokens,100,1.3,10,0.5,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_event.gml:303
+event_anniversary,master_of_mlc,210,Master of MLC,party_tokens,250,1.3,10,0.3,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_event.gml:311
+event_anniversary,master_of_ulc,211,Master of ULC,party_tokens,1000,1.4,10,0.1,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_event.gml:319
+event_nature,max_fields,1,Lease Field,,,2,4,,nature_max_fields=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_event.gml:332
+event_nature,plant_hugger,10,Plant Hugger,nature_gems,50,1.5,10,0.05,nature_plant_xp_multiplier_global=0.05,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_event.gml:349
+event_nature,nature_plant_xp_multiplier_global_mm,10.1,Plant Hugger,,,1.2,0,,nature_plant_xp_multiplier_global=0.02,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_event.gml:358
+event_nature,nature_plant_grow_duration,11,Plant Stroker,,,1.6,10,,nature_plant_grow_duration=0.05,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_event.gml:377
+event_nature,nature_plant_harvest_seed_chance,12,Plant Cuddler,,,1.8,5,,nature_plant_harvest_seed_chance=0.1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_event.gml:396
+event_nature,nature_plant_synergy,13,Plant Synergy,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_event.gml:415
+event_nature,nature_water_increase_value,100,Water Quality,,,1.25,5,,nature_water_increase_value=0.05,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_event.gml:429
+event_nature,nature_water_decrease_drain_value_multiplier,105,Anti-Drain,,,1.15,5,,nature_water_decrease_drain_value_multiplier=0.1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_event.gml:448
+event_nature,nature_water_all_fields_effectivity,120,Splash Damage,,,1.35,5,,nature_water_all_fields_effectivity=0.2,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_event.gml:467
+event_nature,nature_water_auto,130,Water Bot,,,1.2,10,,nature_water_auto=0.05,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_event.gml:486
+event_nature,nature_enhance_timeout_multiplier,200,Faster Enhancing,,,1.35,5,,nature_enhance_timeout_multiplier=0.1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_event.gml:505
+event_nature,nature_enhance_cost_reduction,201,Cheaper Enhancing,,,1.25,10,,nature_enhance_cost_reduction=0.05,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_event.gml:524
+event_nature,nature_enhance_bonus_multiplier,202,Synergy Enhancing,,,1.2,5,,nature_enhance_bonus_multiplier=0.05,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_event.gml:543
+event_nature,increase_damage_doomed_tree,250,Weakness Finder,,,1.3,0,,enemy_add_damage_multiplier.boss_doomed_tree=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_event.gml:568
+event_nature,nature_vial_max_charges,300,Bigger Vial,,,1.3,5,,nature_vial_max_charges=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_event.gml:590
+event_nature,nature_vial_progress_multiplier,301,Faster Vial,,,1.2,10,,nature_vial_progress_multiplier=0.2,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_event.gml:609
+event_nature,nature_vial_seed_spawn_count,302,Quality Vial,,,1.3,3,,nature_vial_seed_spawn_count=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_event.gml:628
+event_nature,nature_vial_rarity_seed_spawn_chance,303,Better Vial,,,1.1,20,,nature_vial_rarity_seed_spawn_chance=0.025,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_event.gml:647
+event_nature,nature_vial_seed_spawn_crit_chance,304,Critical Vial,,,1.4,5,,nature_vial_seed_spawn_crit_chance=0.05,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_event.gml:666
+event_nature,nature_vial_clover3_spawn_chance,305,Lucky Vial %s,,,1.3,5,,nature_vial_clover3_spawn_chance=0.02,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_event.gml:686
+event_nature,nature_vial_clover4_spawn_chance,306,Lucky Vial %s,,,1.4,5,,nature_vial_clover4_spawn_chance=0.01,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_event.gml:710
+event_nature,unlock_butterflies,400,Unlock %s,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_event.gml:734
+event_nature,nature_butterfly_xp_multiplier_global,401,Butterfly Hugger,,,1.5,10,,nature_butterfly_xp_multiplier_global=0.02,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_event.gml:743
+event_nature,nature_butterfly_affects_butterfly_xp,402,Self-esteem,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_event.gml:767
+event_nature,nature_plant_harvest_bfly_chance,403,Butterfly Cuddler,,,1.75,10,,nature_plant_harvest_bfly_chance=0.02,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_event.gml:781
+event_nature,nature_bfly_synergy,410,Butterfly Synergy,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_event.gml:805
+exotic,unlock_celestial_leaves,-20,Unlock Celestial Leaves,exotic,100000000000,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_exotic.gml:10
+exotic,unlock_farming,-10,Buy Farming Certificate,exotic,10000,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_exotic.gml:27
+exotic,fertilizer,0,%s Fertilizer,exotic,10,1.5,50,1,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_exotic.gml:38
+exotic,leaf_marketing,1,Exotic Marketing,exotic,500,3.5,5,,resources_leaf_add.exotic=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_exotic.gml:45
+exotic,nuclear_fuel,3,Nuclear Fuel,exotic,100,1.5,30,,nuclear_fuel=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_exotic.gml:65
+exotic,blc_value_adder,100,BLC++,exotic,10000,3,10,,blc_value_multiplier=2,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_exotic.gml:81
+exotic,blc_value_adder_real,101,Moar BLC,exotic,100000,2,50,,blc_value_adder=100,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_exotic.gml:98
+exotic,exotic_apples,200,Unlock Exotic Apples,exotic,50,1.5,1,,fruit_unlocked.exotic=true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_exotic.gml:115
+fish,auto_fishing,0,Auto Fishing,fish_credits,25,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_fish_wrapper.gml:1010
+fish,auto_fishing_reel_threshold,2,Auto Fishing Threshold,fish_credits,250,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_fish_wrapper.gml:1018
+fish,fishing_auto_duration_reduction,5,Faster Auto Fishing,fish_credits,50,1.2,15,,fishing_auto_duration_reduction=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_fish_wrapper.gml:1026
+fish,max_fishing_spots,7,Fishing Spots,fish_credits,25,5,3,,fishing_spots_count=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_fish_wrapper.gml:1038
+fish,fishing_spots_search_charges,8,Search Charges,fish_credits,500,1.5,4,,fishing_spots_search_charges=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_fish_wrapper.gml:1051
+fish,fishing_spots_pity_counter,8,Pity Counter,fish_credits,2000,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_fish_wrapper.gml:1064
+fish,fishing_min_fish_length,10,Stronger Line,fish_credits,50,1.5,20,,fishing_min_fish_length=0.1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_fish_wrapper.gml:1072
+fish,fishing_max_fish_length,11,Enhanced Line,fish_credits,75,1.5,20,,fishing_max_fish_length=0.1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_fish_wrapper.gml:1084
+fish,fishing_wait_duration_reduction_multiplier,20,Reel Accelerator,fish_credits,25,1.5,10,,fishing_wait_duration_reduction_multiplier=0.025,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_fish_wrapper.gml:1096
+fish,fishing_catch_credits_multiplier,21,Rod Polishing,fish_credits,25,1.5,10,,fishing_catch_credits_multiplier=0.05,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_fish_wrapper.gml:1108
+fish,fishing_rods_max_count,100,Rod Slot,fish_credits,200,4,3,,fishing_rods_max_count=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_fish_wrapper.gml:1120
+fish,fishing_catch_rarity_multiplier,110,Rod Efficiency,fish_credits,150,2,10,,fishing_catch_rarity_multiplier=0.05,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_fish_wrapper.gml:1132
+fish,fishing_spots_rarity_multiplier,111,Fishing Goggles,fish_credits,150,2,5,,fishing_spots_rarity_multiplier=0.2,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_fish_wrapper.gml:1144
+fish,fishing_catch_tide_crystal_chance,200,Enchanted Bait,fish_credits,500,1.25,10,,fishing_catch_tide_crystal_chance=0.001,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_fish_wrapper.gml:1156
+fish,unlock_baits,300,Fish Baits,fish_credits,750,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_fish_wrapper.gml:1168
+fish,bait_farm,310,Bait Farm,fish_credits,5000,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_fish_wrapper.gml:1176
+fish,fishing_bait_farm_progress_value,311,Faster Baits,fish_credits,500,1.3,10,,fishing_bait_farm_progress_value=0.001,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_fish_wrapper.gml:1194
+fish,fishing_bait_farm_container_size,312,Container Size,fish_credits,2500,2,3,,fishing_bait_farm_container_size=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_fish_wrapper.gml:1211
+fish,fishing_bait_farm_rarity_multiplier,320,Bait Efficiency,fish_credits,500,1.5,10,,fishing_bait_farm_rarity_multiplier=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_fish_wrapper.gml:1229
+fish,auto_collect_baits,330,Auto Collect,fish_credits,7500,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_fish_wrapper.gml:1246
+fish,unlock_fishing_tournaments,400,Fishing Tournaments,fish_credits,750,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_fish_wrapper.gml:1259
+fish,unlock_fishing_tournaments_auto_win,401,Auto Win,fish_credits,5000,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_fish_wrapper.gml:1267
+flask_black,unlock_big_crunch,-1000,Unlock %s,flask_black,1000,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_flask_black.gml:8
+flask_black,unlock_flask_strange,-10,Unlock %s,flask_black,10000,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_flask_black.gml:20
+flask_black,converter_reduce_resources,0,Reduce Converter Resources,flask_black,10,2,10,,converter_reduce_input_recources=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_flask_black.gml:37
+flask_black,converter_increase_batch_count,1,Increase Converter Count,flask_black,20,2.5,10,,converter_batch_count=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_flask_black.gml:54
+flask_black,converter_increase_output_count,2,Increase Converter Output,flask_black,20,1.35,100,,converter_output_add.flask_black=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_flask_black.gml:71
+flask_black,leaf_multiplier_all,10,All Leaves++,flask_black,50,1.5,10,,leaf_multiplier=0.2,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_flask_black.gml:91
+flask_black,blc_science,20,BLC Science,flask_black,500000000,4,10,0.5,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_flask_black.gml:110
+flask_black,player_hp,200,Player HP,flask_black,10000000,1.5,0,1,player_hp=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_flask_black.gml:111
+flask_black,player_resistance,300,Leaf Shield,flask_black,2000000,4,0,6,player_resistance=6,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_flask_black.gml:112
+flask_blue,unlock_flask_magenta,-10,Unlock %s,flask_blue,1000,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_flask_blue.gml:8
+flask_blue,converter_reduce_resources,0,Reduce Converter Resources,flask_blue,10,2,10,,converter_reduce_input_recources=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_flask_blue.gml:25
+flask_blue,converter_increase_batch_count,1,Increase Converter Count,flask_blue,20,2.5,10,,converter_batch_count=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_flask_blue.gml:42
+flask_blue,converter_increase_output_count,2,Increase Converter Output,flask_blue,20,1.2,100,,converter_output_add.flask_blue=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_flask_blue.gml:59
+flask_blue,leaf_multiplier_all,10,All Leaves++,flask_blue,50,1.5,10,,leaf_multiplier=0.2,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_flask_blue.gml:79
+flask_blue,blc_science,20,BLC Science,flask_blue,500000000,4,10,0.5,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_flask_blue.gml:98
+flask_blue,player_hp,200,Player HP,flask_blue,10000000,1.5,0,1,player_hp=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_flask_blue.gml:99
+flask_blue,player_resistance,300,Leaf Shield,flask_blue,2000000,4,0,3,player_resistance=3,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_flask_blue.gml:100
+flask_green,unlock_flask_blue,-10,Unlock %s,flask_green,1000,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_flask_green.gml:8
+flask_green,converter_reduce_resources,0,Reduce Converter Resources,flask_green,10,2,10,,converter_reduce_input_recources=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_flask_green.gml:25
+flask_green,converter_increase_batch_count,1,Increase Converter Count,flask_green,20,2.5,10,,converter_batch_count=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_flask_green.gml:42
+flask_green,converter_increase_output_count,2,Increase Converter Output,flask_green,20,1.15,100,,converter_output_add.flask_green=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_flask_green.gml:59
+flask_green,leaf_multiplier_all,10,All Leaves++,flask_green,50,1.5,10,,leaf_multiplier=0.2,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_flask_green.gml:79
+flask_green,blc_science,20,BLC Science,flask_green,500000000,4,10,0.5,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_flask_green.gml:98
+flask_green,player_hp,200,Player HP,flask_green,10000000,1.5,0,1,player_hp=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_flask_green.gml:99
+flask_green,player_resistance,300,Leaf Shield,flask_green,2000000,4,0,2,player_resistance=2,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_flask_green.gml:100
+flask_magenta,unlock_flask_orange,-10,Unlock %s,flask_magenta,1000,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_flask_magenta.gml:8
+flask_magenta,converter_reduce_resources,0,Reduce Converter Resources,flask_magenta,10,2,10,,converter_reduce_input_recources=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_flask_magenta.gml:25
+flask_magenta,converter_increase_batch_count,1,Increase Converter Count,flask_magenta,20,2.5,10,,converter_batch_count=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_flask_magenta.gml:42
+flask_magenta,converter_increase_output_count,2,Increase Converter Output,flask_magenta,20,1.25,100,,converter_output_add.flask_magenta=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_flask_magenta.gml:59
+flask_magenta,leaf_multiplier_all,10,All Leaves++,flask_magenta,50,1.5,10,,leaf_multiplier=0.2,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_flask_magenta.gml:79
+flask_magenta,blc_science,20,BLC Science,flask_magenta,500000000,4,10,0.5,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_flask_magenta.gml:98
+flask_magenta,player_hp,200,Player HP,flask_magenta,10000000,1.5,0,1,player_hp=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_flask_magenta.gml:99
+flask_magenta,player_resistance,300,Leaf Shield,flask_magenta,2000000,4,0,4,player_resistance=4,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_flask_magenta.gml:100
+flask_orange,unlock_flask_black,-10,Unlock %s,flask_orange,1000,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_flask_orange.gml:8
+flask_orange,converter_reduce_resources,0,Reduce Converter Resources,flask_orange,10,2,10,,converter_reduce_input_recources=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_flask_orange.gml:25
+flask_orange,converter_increase_batch_count,1,Increase Converter Count,flask_orange,20,2.5,10,,converter_batch_count=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_flask_orange.gml:42
+flask_orange,converter_increase_output_count,2,Increase Converter Output,flask_orange,20,1.3,100,,converter_output_add.flask_orange=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_flask_orange.gml:59
+flask_orange,leaf_multiplier_all,10,All Leaves++,flask_orange,50,1.5,10,,leaf_multiplier=0.2,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_flask_orange.gml:79
+flask_orange,blc_science,20,BLC Science,flask_orange,500000000,4,10,0.5,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_flask_orange.gml:98
+flask_orange,player_hp,200,Player HP,flask_orange,10000000,1.5,0,1,player_hp=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_flask_orange.gml:99
+flask_orange,player_resistance,300,Leaf Shield,flask_orange,2000000,4,0,5,player_resistance=5,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_flask_orange.gml:100
+flask_red,unlock_flask_green,-10,Unlock %s,flask_red,1000,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_flask_red.gml:8
+flask_red,converter_reduce_resources,0,Reduce Converter Resources,flask_red,10,2,10,,converter_reduce_input_recources=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_flask_red.gml:25
+flask_red,converter_increase_batch_count,1,Increase Converter Count,flask_red,20,2.5,10,,converter_batch_count=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_flask_red.gml:42
+flask_red,converter_increase_output_count,2,Increase Converter Output,flask_red,20,1.1,100,,converter_output_add.flask_red=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_flask_red.gml:59
+flask_red,leaf_multiplier_all,10,All Leaves++,flask_red,50,1.5,10,,leaf_multiplier=0.2,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_flask_red.gml:79
+flask_red,blc_science,20,BLC Science,flask_red,500000000,4,10,0.5,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_flask_red.gml:98
+flask_red,player_hp,200,Player HP,flask_red,10000000,1.5,0,1,player_hp=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_flask_red.gml:99
+flask_red,player_resistance,300,Leaf Shield,flask_red,2000000,4,0,1,player_resistance=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_flask_red.gml:100
+flask_strange,unlock_exotic_leaves,-10,Exotic Leaves,flask_strange,100000,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_flask_strange.gml:8
+flask_strange,converter_reduce_resources,0,Reduce Converter Resources,flask_strange,10,2,10,,converter_reduce_input_recources=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_flask_strange.gml:25
+flask_strange,converter_increase_batch_count,1,Increase Converter Count,flask_strange,20,2.5,10,,converter_batch_count=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_flask_strange.gml:42
+flask_strange,converter_increase_output_count,2,Increase Converter Output,flask_strange,20,1.35,100,,converter_output_add.flask_strange=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_flask_strange.gml:59
+flask_strange,leaf_multiplier_all,10,All Leaves++,flask_strange,50,1.5,100,,leaf_multiplier=0.2,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_flask_strange.gml:79
+flask_strange,converter_increase_output_global,10,C++,flask_strange,10,2,0,,converter_output_add_global=10,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_flask_strange.gml:95
+flask_strange,blc_science,20,BLC Science,flask_strange,500000000,4,10,0.5,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_flask_strange.gml:127
+flask_strange,blc_value_adder,100,BLC++,flask_strange,10000,3,0,,blc_value_multiplier=3,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_flask_strange.gml:112
+flask_strange,player_hp,200,Player HP,flask_strange,10000000,1.5,0,1,player_hp=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_flask_strange.gml:128
+flask_strange,player_resistance,300,Leaf Shield,flask_strange,2000000,4,0,20,player_resistance=20,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_flask_strange.gml:129
+gem_leaves,combo_multiplier_multiplier,100,Super Combo,amber,25,4,0,5,combo_multiplier_multiplier=5,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gem_leaves.gml:6
+gem_leaves,leaf_marketing,105,%s Marketing,amber,20,3.5,0,1,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gem_leaves.gml:12
+gem_leaves,leaf_affect_combo,106,"sprintf(__(%s Combo), arg1.name_single)",amber,500,2,1,1,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gem_leaves.gml:19
+gem_leaves,blc_science,110,BLC Science,amber,25,4,0,0.25,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gem_leaves.gml:25
+gem_leaves,master_of_mlc,120,Master of MLC,amber,20,12,0,0.01,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gem_leaves.gml:32
+gem_leaves,craft_min_chance,130,Craft Hammer,amber,1500,3.5,3,1,craft_min_chance=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gem_leaves.gml:39
+gem_leaves,material_storage_inc,140,Material Storage,amber,75000,1.5,50,50,material_max_count=50,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gem_leaves.gml:45
+gem_leaves,critical_converters_crit_value,200,Critical Output,amethyst,15,6,50,10,converter_crit_value=10,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gem_leaves.gml:49
+gem_leaves,leaf_marketing,205,%s Marketing,amethyst,20,3.5,0,1,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gem_leaves.gml:55
+gem_leaves,leaf_affect_combo,206,"sprintf(__(%s Combo), arg1.name_single)",amethyst,500,2,1,1,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gem_leaves.gml:62
+gem_leaves,blc_science,210,BLC Science,amethyst,25,4,0,0.25,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gem_leaves.gml:68
+gem_leaves,master_of_mlc,220,Master of MLC,amethyst,20,12,0,0.01,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gem_leaves.gml:75
+gem_leaves,craft_min_chance,230,Craft Hammer,amethyst,1500,3.5,3,1,craft_min_chance=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gem_leaves.gml:82
+gem_leaves,material_storage_inc,240,Material Storage,amethyst,75000,1.5,50,50,material_max_count=50,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gem_leaves.gml:88
+gem_leaves,offline_seeds,300,Offline Seeds,emerald,50,8,0,1,offline_seeds=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gem_leaves.gml:92
+gem_leaves,leaf_marketing,305,%s Marketing,emerald,20,3.5,0,1,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gem_leaves.gml:98
+gem_leaves,leaf_affect_combo,306,"sprintf(__(%s Combo), arg1.name_single)",emerald,500,2,1,1,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gem_leaves.gml:105
+gem_leaves,blc_science,310,BLC Science,emerald,25,4,0,0.25,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gem_leaves.gml:111
+gem_leaves,master_of_mlc,320,Master of MLC,emerald,20,12,0,0.01,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gem_leaves.gml:118
+gem_leaves,craft_min_chance,330,Craft Hammer,emerald,1500,3.5,3,1,craft_min_chance=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gem_leaves.gml:125
+gem_leaves,material_storage_inc,340,Material Storage,emerald,75000,1.5,50,50,material_max_count=50,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gem_leaves.gml:131
+gem_leaves,blower_hit_damage_multiplier,400,Leaf Damage Multiplier,kyanite,35,8,0,2,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gem_leaves.gml:135
+gem_leaves,leaf_marketing,405,%s Marketing,kyanite,20,3.5,0,1,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gem_leaves.gml:142
+gem_leaves,leaf_affect_combo,406,"sprintf(__(%s Combo), arg1.name_single)",kyanite,500,2,1,1,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gem_leaves.gml:149
+gem_leaves,blc_science,410,BLC Science,kyanite,25,4,0,0.25,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gem_leaves.gml:155
+gem_leaves,master_of_mlc,420,Master of MLC,kyanite,20,12,0,0.01,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gem_leaves.gml:162
+gem_leaves,craft_min_chance,430,Craft Hammer,kyanite,1500,3.5,3,1,craft_min_chance=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gem_leaves.gml:169
+gem_leaves,material_storage_inc,440,Material Storage,kyanite,75000,1.5,50,50,material_max_count=50,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gem_leaves.gml:175
+gem_leaves,enemy_drop_multiplier,500,Worthy Enemies,rhodonite,20,3,0,5,enemy_drop_multiplier=5,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gem_leaves.gml:179
+gem_leaves,leaf_marketing,505,%s Marketing,rhodonite,20,3.5,0,1,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gem_leaves.gml:185
+gem_leaves,leaf_affect_combo,506,"sprintf(__(%s Combo), arg1.name_single)",rhodonite,500,2,1,1,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gem_leaves.gml:192
+gem_leaves,blc_science,510,BLC Science,rhodonite,25,4,0,0.25,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gem_leaves.gml:198
+gem_leaves,master_of_mlc,520,Master of MLC,rhodonite,20,12,0,0.01,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gem_leaves.gml:205
+gem_leaves,craft_min_chance,530,Craft Hammer,rhodonite,1500,3.5,3,1,craft_min_chance=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gem_leaves.gml:212
+gem_leaves,material_storage_inc,540,Material Storage,rhodonite,75000,1.5,50,50,material_max_count=50,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gem_leaves.gml:218
+gem_leaves,player_hp_multiplier,600,Vitality++,ruby,40,6,0,1,player_hp_multiplier=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gem_leaves.gml:222
+gem_leaves,leaf_marketing,605,%s Marketing,ruby,20,3.5,0,1,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gem_leaves.gml:229
+gem_leaves,leaf_affect_combo,606,"sprintf(__(%s Combo), arg1.name_single)",ruby,500,2,1,1,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gem_leaves.gml:236
+gem_leaves,blc_science,610,BLC Science,ruby,25,4,0,0.25,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gem_leaves.gml:242
+gem_leaves,master_of_mlc,620,Master of MLC,ruby,20,12,0,0.01,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gem_leaves.gml:249
+gem_leaves,craft_min_chance,630,Craft Hammer,ruby,1500,3.5,3,1,craft_min_chance=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gem_leaves.gml:256
+gem_leaves,material_storage_inc,640,Material Storage,ruby,75000,1.5,50,50,material_max_count=50,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gem_leaves.gml:262
+gem_leaves,seed_spawn_count,700,SEEDS!,tektite,250,16,10,1,seed_spawn_count=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gem_leaves.gml:266
+gem_leaves,leaf_marketing,705,%s Marketing,tektite,20,3.5,0,1,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gem_leaves.gml:272
+gem_leaves,leaf_affect_combo,706,"sprintf(__(%s Combo), arg1.name_single)",tektite,500,2,1,1,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gem_leaves.gml:279
+gem_leaves,blc_science,710,BLC Science,tektite,25,4,0,0.25,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gem_leaves.gml:285
+gem_leaves,master_of_mlc,720,Master of MLC,tektite,20,12,0,0.01,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gem_leaves.gml:292
+gem_leaves,craft_min_chance,730,Craft Hammer,tektite,1500,3.5,3,1,craft_min_chance=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gem_leaves.gml:299
+gem_leaves,material_storage_inc,740,Material Storage,tektite,75000,1.5,50,50,material_max_count=50,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gem_leaves.gml:305
+gems,keep_blower_after_prestige,-10,It's mine!,gems,75,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:10
+gems,leaf_multiplier_all,10,All Leaves+,gems,75,4,1,7.5,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:20
+gems,borbventure_auto_start,10,Auto start %s,gems,3000,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1151
+gems,borbventure_auto_finish,11,Auto finish %s,gems,3000,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1165
+gems,prestige_coins_multiplier,30,Prestige Coins x3,gems,150,2,1,,prestige_value_multiplier_adder=2,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:25
+gems,prestige_blc_multiplier,40,BLC Coins x3,gems,250,2,1,,blc_gems_upgrade=2,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:37
+gems,prestige_mlc_multiplier,41,MLC Coins x3,gems,350,2,1,,mlc_gems_upgrade=2,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:54
+gems,prestige_ulc_multiplier,42,ULC Coins x3,gems,44444,2,1,,ulc_gems_upgrade=2,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:71
+gems,prestige_speed,45,Speedstige,gems,750,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:88
+gems,borbventure_increase_reward,100,Squeeze Tutorial,gems,800,1.75,5,0.05,borbventure_increase_reward=0.05,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1179
+gems,dice_battlefield_auto_roll,100,%s auto roll,gems,3000,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1229
+gems,mines_auto_vein,100,%s auto pack,gems,5000,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1319
+gems,dice_battlefield_auto_progress,101,%s auto progress,gems,3000,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1242
+gems,mines_auto_cave,101,%s auto pack,gems,5000,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1328
+gems,dice_cursed_auto_roll,110,%s auto roll,gems,3000,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1255
+gems,dice_cursed_auto_save,111,%s auto save,gems,3000,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1268
+gems,converters_upgrade,200,Converters Output +300%,gems,150,1.5,1,,converter_output_multiplier_global=3,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:99
+gems,max_borbventure_items,200,Item Shelf,gems,600,1.15,10,3,borbventure_inventory_size=3,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1187
+gems,mines_max_veins_mine_count,200,Veins Exploit,gems,300,1.5,5,,mines_max_veins_mine_count=2,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1337
+gems,converters_static_upgrade,201,Converters Static Output +400%,gems,300,1.5,1,,converter_output_static_multiplier_global=4,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:115
+gems,mines_max_active_caves,201,Multimining,gems,500,1.5,5,,mines_max_active_caves=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1350
+gems,converters_safe_energy_storage,202,Safe Energy Converters,gems,555,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:131
+gems,fruit_value_multiplier,220,Ultra Fruits,gems,100,1.5,1,,fruit_value_multiplier=8,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:150
+gems,seed_spawn_rate,230,More Seeds,gems,250,1.5,1,,seed_spawn_chance=0.03,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:166
+gems,faster_artifacts,241,Faster Artifacts,gems,500,6,1,0.3,artifact_spawn_time_reduction=0.3,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:180
+gems,artifact_spawn_time_multiplier,242,Super Durable Artifacts,gems,500,1.5,1,,artifact_expire_duration_multiplier=5,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:188
+gems,artifact_event_max_count,243,Event Artifacts Storage,gems,1500,2,5,,artifact_max_count_add_event=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:202
+gems,trade_refresh_decrease_timer,300,Customer Acquisition,gems,200,125,1,0.25,trade_refresh_decrease_timer=0.25,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:219
+gems,borbventure_craft_cost_multiplier,300,Hagglin' %s,gems,1000,1.25,4,-0.025,borbventure_craft_cost_multiplier=-0.025,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1195
+gems,mines_mine_power_multiplier,300,Better Pickaxe,gems,400,1.5,10,,mines_mine_power_multiplier=0.5,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1364
+gems,max_trades,301,Leaf Trader,gems,300,1.5,3,1,trade_max_count=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:225
+gems,better_pets,400,Better Pets,gems,500,5,1,0.3,upgrade_section_multiplier.pets=0.3,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1044
+gems,borbventure_increase_xp,400,Efficiency Tutorial,gems,600,1.35,5,0.025,borbventure_increase_xp=0.025,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1203
+gems,better_unique_leaves,410,Better Unique Leaves,gems,500,5,1,0.3,upgrade_section_multiplier.unique=0.3,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:232
+gems,free_borb_taxi,500,Buy Borb Taxi Ltd.,gems,300,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:240
+gems,borbventure_refresh_timer_multiplier,500,Refresh Tutorial,gems,500,1.25,5,-0.02,borbventure_refresh_timer_multiplier=-0.02,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1211
+gems,alb_tower,510,ALB Outsourcing,gems,400,1.5,1,,alb_tower=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:257
+gems,crunchy_tower,520,Crunchy Tower,gems,300,1.2,10,,tower_floor_persist=500,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:284
+gems,blazing_skull_tower,530,Blazing Tower Skull,gems,666,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:307
+gems,skip_tower_floor_bosses,540,Skippable Tower Bosses,gems,850,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:325
+gems,autoloot_tower_gem_leaves,550,Autoloot Gem Leaves,gems,500,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:344
+gems,material_daily_shipment,600,Daily Material Shipment,gems,300,1.15,5,,daily_reward_materials=50,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:363
+gems,borbventure_special_recruit_chance,600,Special Type Tutorial,gems,1500,1.5,5,0.03,borbventure_special_recruit_chance=0.03,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1219
+gems,daily_quest_expansion,601,Daily Quest Expansion,gems,1500,1.5,1,,daily_quest_slots=2,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:386
+gems,daily_quest_auto_claim,602,Daily Quest Auto Claim,gems,1500,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:402
+gems,material_magnet,610,Material Magnet,gems,650,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:414
+gems,material_finder,615,Material Finder,gems,400,5,1,1,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:429
+gems,material_storage_inc,620,Material Storage,gems,250,2,5,500,material_max_count=500,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:436
+gems,dig_item_chance_reduction,700,Dig Knowledge,gems,600,2,1,0.2,dig_item_chance_reduction=0.2,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:443
+gems,dig_count_multiplier,710,Dig Muscles,gems,500,8,1,1,dig_count_multiplier=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:449
+gems,dig_reduce_timeout,720,Dig Technique,gems,300,8,1,0.25,dig_reduce_timeout=0.25,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:455
+gems,dig_auto,730,Auto Dig Bot,gems,400,1.5,1,,dig_auto=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:463
+gems,dig_auto_decrease_delay,740,Faster Auto Dig Bot,gems,100,1.05,10,,dig_auto_decrease_delay=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:486
+gems,auto_slap,750,Auto Slap Bot,gems,400,1.5,1,,auto_slap=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:509
+gems,auto_slap_decrease_delay,751,Faster Auto Slap Bot,gems,100,1.05,10,,auto_slap_decrease_delay=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:532
+gems,alchemy_brew_crit_chance,800,Alchemyritical,gems,300,1.25,5,0.01,alchemy_brew_crit_chance=0.01,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:553
+gems,alchemy_brew_time_reduction,810,SuperStirr,gems,200,1.1,10,0.02,alchemy_brew_time_reduction=0.02,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:560
+gems,leafscender_decrease_input_cost,850,Leafcheapers,gems,350,1.25,5,1,leafscender_decrease_input_cost=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:567
+gems,relics_magnet,860,Relics Magnet,gems,350,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:576
+gems,craft_improve_rng,900,Craft RNG Manipulator,gems,250,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:593
+gems,persistent_autocraft_leaves,901,Craft ALB,gems,999,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:611
+gems,autocraft_delay_reduction,905,Faster Autocraft,gems,400,1.25,3,0.15,autocraft_delay_reduction=0.15,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:627
+gems,dice_count,1000,Dice Count,gems,300,1.75,10,1,"dice_dice=get_default_struct_value(arg3, value, 1)",reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1279
+gems,dice_sides,1100,Sides Count,gems,200,1.75,10,1,"dice_sides=get_default_struct_value(arg3, value, 1)",reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1287
+gems,dice_inventory_size,1200,Bigger Dice Bag,gems,400,1.5,5,2,"dice_inventory_size=get_default_struct_value(arg3, value, 1)",reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1295
+gems,dice_timeout_reduction,1300,Faster Dice,gems,250,1.4,10,0.5,"dice_timeout_reduction=get_default_struct_value(arg3, value, 0.5)",reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1303
+gems,dice_battlefield_roll_timeout_reduction,1400,Faster Battle Dice,gems,250,1.4,10,0.5,"dice_battlefield_roll_timeout_reduction=get_default_struct_value(arg3, value, 1)",reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1311
+gems,craft_autofuse,2000,Autofuse Crafted Leaves,gems,300,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:636
+gems,loadout_sets_size,2100,More Loadout Sets,gems,200,1.2,5,,loadout_sets_size=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:653
+gems,craft_sets_size,2101,More Craft Sets,gems,100,1.2,5,1,craft_sets_size=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:674
+gems,pets_sets_size,2110,More Pet Teams,gems,100,1.2,5,,pets_sets_size=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1053
+gems,auto_pet_pets,2500,Pet Pet Bot,gems,1250,1.2,5,,pet_auto_pet_count=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1077
+gems,can_handle_gems_trade,3000,Bearo <3 Gems,gems,400,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1101
+gems,auto_trade_boost,3001,Bearo <3 Boosts,gems,400,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1119
+gems,trouto_slap_all,3100,Slap All,gems,5000,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1136
+gems,show_boss_area_timer,4000,Boss Timer,gems,150,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:682
+gems,area_enemies_decrease,5010,Less Pyramid Enemies,gems,300,1.5,5,1,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:697
+gems,auto_boosters,5100,Auto %s,gems,750,2,1,1,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:705
+gems,cards_magnet,6000,Cards Magnet,gems,350,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:721
+gems,cards_enemy_drop_chance,6010,Cards Detector,gems,750,1.25,5,0.005,cards_enemy_drop_chance=0.005,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:736
+gems,mirror_drop_relic_fragments_chance,6100,Fragment Chance,gems,500,2,5,,mirror_drop_relic_fragments_chance=0.02,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:743
+gems,mirror_drop_relic_fragments_count,6101,Fragment Count,gems,3500,1.5,3,,mirror_drop_relic_fragments_count=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:760
+gems,quark_reactor_add_chance_multiplier,7000,Quark Literacy,gems,1250,1.1,5,,quark_reactor_add_chance_multiplier=0.01,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:777
+gems,quark_reactor_auto_add,7100,Quark auto add,gems,5000,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:795
+gems,quark_reactor_auto_add_optimizer,7101,Quark auto add optimizer,gems,2000,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:808
+gems,quark_reactor_auto_quarkstige,7110,Auto Quarkstige,gems,7500,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:821
+gems,quark_auto_funnel,7200,Auto %s,gems,1500,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:834
+gems,quark_auto_structurize,7210,Auto %s,gems,2000,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:847
+gems,quark_auto_quantify,7220,Auto %s,gems,2500,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:860
+gems,quark_auto_leaftonify,7230,Auto %s,gems,3000,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:873
+gems,harbor_container_leaf_adder,7500,Container Density,gems,750,1.5,5,,harbor_container_leaf_adder=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:886
+gems,harbor_container_auto_add_count,7510,Hire Pusher,gems,2000,1.75,5,,harbor_container_auto_add_count=0.3,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:898
+gems,harbor_find_water_crystal_chance,7520,Improved Diving Goggles,gems,1250,1.5,5,,harbor_diver_find_water_crystal_chance=0.01,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:917
+gems,harbor_find_water_crystal_count,7530,Improved Lungs,gems,1500,1.5,5,,harbor_diver_find_water_crystal_count=2,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:935
+gems,harbor_ship_delivery_speed,7540,Bigger Sails,gems,750,1.75,5,,harbor_ship_speed_multiplier=0.2,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:953
+gems,harbor_ship_reward_multiplier,7550,Ship Rewards,gems,1000,2,5,,harbor_ship_reward_multiplier=0.5,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:970
+gems,auto_journey_finish,7600,Auto Journey Manager,gems,5000,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:987
+gems,booster_duration_multiplier,8000,Extra Booster,gems,1500,1.3,5,,booster_duration_multiplier=0.5,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1026
+gems,offline_multiplier,40000,Offline Profits +750%,gems,75,8,3,,offline_multiplier=7.5,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1379
+gems,offline_max_time,40010,Max Offline Time,gems,125,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1397
+gems,offline_prestige,40020,Offline Prestige,gems,450,1.5,5,1,offline_prestige=1;offline_prestige_pct=value2,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1408
+gems,offline_prestige_pct,40021,Offline Prestige Coins,gems,250,1.25,10,0.05,offline_prestige_pct=0.05,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1417
+gems,offline_crunches,40022,Offline Crunches,gems,450,1.5,5,1,offline_crunches=1;offline_crunches_blc_pct=value2,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1425
+gems,offline_crunches_blc_pct,40023,Offline BLC,gems,250,1.25,10,0.05,offline_crunches_blc_pct=0.05,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1434
+gems,offline_mlc,40024,Offline MLC,gems,750,1.5,5,1,offline_mlc=1;offline_mlc_pct=value2,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1442
+gems,offline_mlc_pct,40025,Offline MLC,gems,550,1.25,10,0.05,offline_mlc_pct=0.05,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1451
+gems,offline_seeds,40026,Offline Seeds,gems,350,1.1,10,1,offline_seeds=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1459
+gems,offline_artifacts,40027,Offline Artifacts,gems,750,15,1,5,artifact_collect_offline=5,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1467
+gems,offline_ancient,40030,Offline Ancient Leaves,gems,450,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1476
+gems,boss_offline_time_reduction,40040,Boss Offline Timer,gems,200,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1495
+gems,offline_alchemy,40100,Offlinechemy,gems,1500,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1513
+gems,offline_alchemy_brew_rate,40110,Offline Brew Rate,gems,650,1.3,10,,alchemy_offline_brew_rate=0.05,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1526
+gems,offline_alchemy_max_brews,40120,Offline Brew Count,gems,400,1.2,10,,alchemy_offline_max_brews=216,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1544
+gems,leaf_multiplier_all,50000,All Leaves+,gems,75,4,1,1,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1588
+gems,prestige_blc_multiplier_t1,50100,BLC Coins Multiplier T1,,,1.5,1,,blc_value_multiplier_supporter=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1597
+gems,crafting_backpack_size,50150,Bigger Crafting Backpack,gems,250,15,1,8,craft_backpack_size=8,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1615
+gems,prestige_mlc_multiplier_t1,50200,MLC Coins Multiplier T1,,,1.5,1,,mlc_value_multiplier_supporter=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1625
+gems,supporter_damage_t1,50300,Leaf Damage T1,,,1.5,1,,blower_enemy_damage_multiplier_supporter=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1645
+gems,offline_tower_floors,50400,Offline Tower,gems,1000000000,3000,1,1,offline_tower_floors=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1658
+gems,area_enemies_decrease,50500,Less Pyramid Enemies,gems,100000000,100,1,2,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1666
+gems,cards_enemy_drop_chance,50600,Cards Detector,gems,75,4,1,0.005,cards_enemy_drop_chance=0.005,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1675
+gems,plant_hugger,50800,Plant Hugger,gems,200,1.5,1,0.02,nature_plant_xp_multiplier_global=0.02,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1683
+gems,trade_max_gems_trades_per_day,50900,Max %s Trades,gems,1000000000000000000000,2,1,,trade_max_gems_trades_per_day=2000,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1691
+gems,max_mirrors,51000,Max Mirrors,gems,1,2,1,1,max_mirrors=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1704
+gems,leaf_multiplier_all,60000,All Leaves+,gems,75,4,1,3,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1725
+gems,prestige_blc_multiplier_t2,60100,BLC Coins Multiplier T2,,,1.5,1,,blc_value_multiplier_supporter=3,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1734
+gems,prestige_mlc_multiplier_t2,60200,MLC Coins Multiplier T2,,,1.5,1,,mlc_value_multiplier_supporter=3,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1754
+gems,crafting_backpack_size,60250,Bigger Crafting Backpack,gems,250,15,1,8,craft_backpack_size=8,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1772
+gems,supporter_damage_t2,60300,Leaf Damage T2,,,1.5,1,,blower_enemy_damage_multiplier_supporter=3,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1782
+gems,offline_tower_floors,60400,Offline Tower,gems,1000000000,3000,1,1,offline_tower_floors=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1794
+gems,area_enemies_decrease,60500,Less Pyramid Enemies,gems,100000000,100,1,3,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1801
+gems,cards_enemy_drop_chance,60600,Cards Detector,gems,75,4,1,0.01,cards_enemy_drop_chance=0.01,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1810
+gems,plant_hugger,60700,Plant Hugger,gems,200,1.5,1,0.05,nature_plant_xp_multiplier_global=0.05,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1818
+gems,trade_max_gems_trades_per_day,60800,Max %s Trades,gems,1000000000000000000000,2,1,,trade_max_gems_trades_per_day=3000,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1826
+gems,max_mirrors,61000,Max Mirrors,gems,1,2,1,2,max_mirrors=2,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1839
+gems,time_travel,510000,"sprintf(__(Time Travel %s), arg3.value_name)",gems,30,2,0,30,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1560
+gems,time_travel,511000,"sprintf(__(Time Travel %s), arg3.value_name)",gems,120,2,0,360,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1567
+gems,time_travel,512000,"sprintf(__(Time Travel %s), arg3.value_name)",gems,360,2,0,1440,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1574
+gems,time_travel,513000,"sprintf(__(Time Travel %s), arg3.value_name)",gems,600,2,0,4320,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gems.gml:1581
+gold,platinum_leaves,-11,Platinum Leaves,gold,10000,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gold.gml:10
+gold,unlock_prestige,-10,Unlock Leaf Portal,gold,300,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gold.gml:27
+gold,tree,-1,Tree,gold,10,1.5,30,,trees=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gold.gml:39
+gold,fertilizer,0,%s Fertilizer,gold,10,1.5,50,1,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gold.gml:61
+gold,leaf_marketing,1,Golden Marketing,gold,500,3.5,5,,resources_leaf_add.gold=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gold.gml:68
+gold,auto_leaf_blower,2,Auto Leaf Blower,gold,200,6,3,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gold.gml:88
+gold,nuclear_fuel,3,Nuclear Fuel,gold,100,1.5,30,,nuclear_fuel=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gold.gml:106
+gold,combo,30,Leaf Combo,gold,500,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gold.gml:122
+gold,combo_max,31,Max Combo,gold,500,3,100,,combo_max=10,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gold.gml:135
+gold,combo_rewards,32,Combo Multiplier,gold,1000,3,0,,combo_rewards=0.5,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gold.gml:163
+gold,combo_duration,33,Combo Duration,gold,100,2,20,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gold.gml:191
+gold,gold_apples,50,Unlock Gold Apples,gold,50,1.5,1,,fruit_unlocked.gold=true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gold.gml:210
+gold_token,alb_tower,0,Tower ALBs,gold_token,20,1.5,1,,alb_tower=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gold_token.gml:9
+gold_token,alb_can_collect_equipment,10,ALBs <3 Equipment Items,gold_token,10,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gold_token.gml:31
+gold_token,alb_can_collect_scrolls,11,ALBs <3 Scrolls,gold_token,25,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gold_token.gml:43
+gold_token,enemy_multiplier_rewards,50,More Tower Rewards,gold_token,50,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gold_token.gml:55
+gold_token,player_hp,100,Player HP,gold_token,30,1.5,0,200,player_hp=200,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gold_token.gml:65
+gold_token,player_hp_reg,200,Healthy Lifestyle,gold_token,20,1.5,0,50,player_hp_reg=50,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gold_token.gml:70
+gold_token,blower_hit_damage,300,Leaf Damage,gold_token,500,1.25,0,200000,blower_enemy_damage=200000,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gold_token.gml:74
+gold_token,blower_hit_damage_multiplier,400,Leaf Damage Multiplier,gold_token,20,1.5,0,0.5,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_gold_token.gml:80
+harbor,fertilizer,-20,%s Fertilizer,water_crystal,5,1.5,10,5,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_harbor_wrapper.gml:825
+harbor,harbor_albs,-10,Harborblowers,water_crystal,20,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_harbor_wrapper.gml:834
+harbor,harbor_container_leaf_adder,0,Container Density,water_crystal,15,3,0,,harbor_container_leaf_adder=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_harbor_wrapper.gml:850
+harbor,harbor_container_leaf_multiplier,1,Container Efficiency,water_crystal,15,2,0,,harbor_container_leaf_multiplier=0.25,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_harbor_wrapper.gml:862
+harbor,harbor_container_max_storage,2,Container Capacity,water_crystal,15,1.4,50,,harbor_container_max_storage=100,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_harbor_wrapper.gml:874
+harbor,harbor_container_max_count,3,Extra Container,water_crystal,100,2.5,4,,harbor_container_max_count=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_harbor_wrapper.gml:887
+harbor,harbor_container_auto_add_count,10,Hire Pusher,water_crystal,75,3.5,10,,harbor_container_auto_add_count=0.2,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_harbor_wrapper.gml:909
+harbor,harbor_jobs_max_count,100,More Delivery Jobs,water_crystal,25,3,3,,harbor_jobs_max_count=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_harbor_wrapper.gml:928
+harbor,harbor_jobs_reward_multiplier,100,Better Trucks,water_crystal,30,1.5,5,,harbor_jobs_reward_multiplier=0.2,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_harbor_wrapper.gml:940
+harbor,harbor_jobs_duration_multiplier,110,Faster Trucks,water_crystal,15,1.5,10,,harbor_jobs_duration_multiplier=0.05,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_harbor_wrapper.gml:952
+harbor,harbor_jobs_refresh_max_count,110,Refresh Storage,water_crystal,15,1.5,9,,harbor_jobs_refresh_max_count=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_harbor_wrapper.gml:964
+harbor,harbor_container_auto_add_job_leaves,120,Auto add job leaves,water_crystal,150,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_harbor_wrapper.gml:976
+harbor,harbor_jobs_auto_start,121,Auto start delivery,water_crystal,300,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_harbor_wrapper.gml:984
+harbor,harbor_jobs_auto_claim,122,Auto claim delivery,water_crystal,100000,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_harbor_wrapper.gml:992
+harbor,harbor_jobs_auto_refresh,123,Auto refresh jobs,water_crystal,75000,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_harbor_wrapper.gml:1000
+harbor,unlock_harbor_diver,150,Unlock Diver,water_crystal,200,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_harbor_wrapper.gml:1008
+harbor,harbor_diver_find_water_crystal_chance,151,Diving Goggles,water_crystal,125,1.75,20,,harbor_diver_find_water_crystal_chance=0.001,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_harbor_wrapper.gml:1016
+harbor,harbor_diver_find_water_crystal_count,152,Improved Lungs,water_crystal,175,1.8,50,,harbor_diver_find_water_crystal_count=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_harbor_wrapper.gml:1033
+harbor,unlock_harbor_ships,200,Unlock Ships,water_crystal,300,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_harbor_wrapper.gml:1050
+harbor,harbor_ship_delivery_speed,210,Bigger Sails,water_crystal,60,1.5,10,,harbor_ship_speed_multiplier=0.1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_harbor_wrapper.gml:1058
+harbor,harbor_ship_reward_multiplier,220,Ship Rewards,water_crystal,75,1.9,50,,harbor_ship_reward_multiplier=0.2,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_harbor_wrapper.gml:1075
+harbor,harbor_ship_fuel_efficiency,230,Fuel Efficiency,water_crystal,60,1.7,10,,harbor_ship_fuel_efficiency=0.05,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_harbor_wrapper.gml:1092
+harbor,harbor_special_route_chance,240,Special Routes,water_crystal,90,1.8,10,,harbor_special_route_chance=0.1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_harbor_wrapper.gml:1120
+harbor,harbor_ship_count,250,Extra Ship,water_crystal,150,4,4,,harbor_ship_count=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_harbor_wrapper.gml:1137
+harbor,harbor_ship_xp_multiplier,260,Ship Bearings,water_crystal,60,1.7,50,,harbor_ship_xp_multiplier=0.2,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_harbor_wrapper.gml:1162
+harbor,harbor_inventory_inventory_size,300,Inventory Size,water_crystal,25,1.2,30,,harbor_inventory_inventory_size=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_harbor_wrapper.gml:1179
+harbor,harbor_backpack_inventory_size,301,Backpack Size,water_crystal,10,1.1,150,,harbor_inventory_backpack_size=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_harbor_wrapper.gml:1196
+harbor,harbor_ships_auto_embark,302,Auto embark ship,water_crystal,1000,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_harbor_wrapper.gml:1213
+harbor,harbor_ships_auto_claim,303,Auto claim ship,water_crystal,50000,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_harbor_wrapper.gml:1226
+ice,unlock_obsidian_leaves,-20,Unlock %s,ice,10000000000,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ice.gml:9
+ice,fertilizer,1,%s Fertilizer,ice,100,1.5,50,1,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ice.gml:24
+ice,leaf_marketing,2,%s Marketing,ice,3000,3.5,50,,resources_leaf_add.ice=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ice.gml:31
+ice,nuclear_fuel,3,Nuclear Fuel,ice,100,1.5,50,,nuclear_fuel=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ice.gml:51
+ice,auto_leaf_blower_damage,23,ALB Blowing Power,ice,1000,1.5,50,,alb_blowing_power=40,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ice.gml:72
+ice,blc_value_adder_real,101,Moar BLC,ice,500000,2.5,50,,blc_value_adder=1000,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ice.gml:102
+ice,celestials_multiplier,150,More Celestial Leaves,ice,2000,2,0,,resources_multiplier.celestial=500,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ice.gml:124
+ice,fruit_value,175,Mega Fruits,ice,500,2.5,30,,fruit_value=500,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ice.gml:149
+ice,player_hp,200,Player HP,ice,25000,3,50,,player_hp=5,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ice.gml:167
+ice,player_hp_reg,201,Player HP Regeneration,ice,100000,4,50,,player_hp_reg=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ice.gml:189
+ice,printer_printer,350,Printer Printer,ice,200000000,8,300,3,printer_printer=3,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ice.gml:209
+ice,ice_apples,400,Unlock %s,ice,1000,1.5,1,,fruit_unlocked.ice=true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ice.gml:215
+lava,unlock_ice_leaves,-20,Unlock %s,lava,10000000000,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_lava.gml:9
+lava,fertilizer,1,%s Fertilizer,lava,100,1.5,50,1,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_lava.gml:24
+lava,leaf_marketing,2,%s Marketing,lava,3000,3.5,50,,resources_leaf_add.lava=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_lava.gml:31
+lava,nuclear_fuel,3,Nuclear Fuel,lava,100,1.5,50,,nuclear_fuel=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_lava.gml:51
+lava,auto_leaf_blower_damage,23,ALB Blowing Power,lava,1000,1.5,50,,alb_blowing_power=40,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_lava.gml:72
+lava,blc_value_adder_real,101,Moar BLC,lava,500000,2.5,50,,blc_value_adder=600,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_lava.gml:102
+lava,celestials_multiplier,150,More %s,lava,2000,2,50,,resources_multiplier.celestial=100,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_lava.gml:124
+lava,fruit_value,175,Mega Fruits,lava,500,2.5,30,,fruit_value=100,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_lava.gml:149
+lava,player_hp,200,Player HP,lava,25000,3,50,,player_hp=5,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_lava.gml:167
+lava,player_hp_reg,201,Player HP Regeneration,lava,100000,4,50,,player_hp_reg=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_lava.gml:189
+lava,fruit_offline_rewards,300,Offline Fruits,lava,100000000,3,30,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_lava.gml:211
+lava,printer_printer,350,Printer Printer,lava,200000000,8,300,2,printer_printer=2,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_lava.gml:222
+lava,lava_apples,400,Unlock %s,lava,1000,1.5,1,,fruit_unlocked.lava=true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_lava.gml:228
+malachite,unlock_resource,-300,Unlock %s,malachite,100000,2,1,global.resources.hematite,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_malachite.gml:7
+malachite,fertilizer,0,%s Fertilizer,malachite,10,1.5,50,1,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_malachite.gml:12
+malachite,leaf_marketing,10,%s Marketing,malachite,500,1.25,0,1,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_malachite.gml:13
+malachite,unlock_shardify_artifacts,50,Unlock Shardify Artifacts,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_malachite.gml:20
+malachite,shardify_increase_output,51,Shardify++,malachite,100000,40,5,1,shardify_increase_output=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_malachite.gml:27
+malachite,weapon_damage_upgrade,100,Focused Tools,,,1.05,0,,weapon_damage_upgrade=0.01,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_malachite.gml:34
+malachite,equipment_damage_upgrade,200,Focused Equipment,,,1.05,0,,equipment_damage_upgrade=0.01,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_malachite.gml:49
+malachite,pet_damage_upgrade,300,Focused Pets,,,1.05,0,,pet_damage_upgrade=0.01,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_malachite.gml:64
+malachite,unique_damage_upgrade,400,Focused Uniques,,,1.05,0,,unique_damage_upgrade=0.01,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_malachite.gml:79
+malachite,craft_min_chance,450,Craft Hammer,malachite,10000000000,3.5,5,1,craft_min_chance=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_malachite.gml:92
+malachite,cards_enemy_drop_chance,500,Cards Detector,malachite,1000000,12,5,0.001,cards_enemy_drop_chance=0.001,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_malachite.gml:97
+malachite,cards_boss_drop_chance,510,Boss Cards Detector,malachite,1000000,24,5,0.002,cards_boss_drop_chance=0.002,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_malachite.gml:104
+malachite,trade_gems_max_value,600,Gems Business,malachite,10000000,2,1,1,"trade_gems_max_value=get_default_struct_value(arg3, value, 1)",reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_malachite.gml:111
+mines,mines_enhance,1000,Enhance,diamond_coal,1,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mines.gml:7
+mines,mines_max_veins,1005,More Coal Veins,diamond_coal,5,8,4,,mines_max_veins=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mines.gml:15
+mines,mines_veins_search_reduction_multiplier,1010,Veins Discovery,diamond_coal,20,1.75,10,,mines_veins_search_reduction_multiplier=0.05,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mines.gml:27
+mines,mines_max_veins_mine_count,1020,Veins Exploit,diamond_coal,15,1.75,10,,mines_max_veins_mine_count=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mines.gml:39
+mines,mines_veins_rarity_multiplier,1030,%s Serendipity,diamond_coal,150,2,10,,mines_veins_rarity_multiplier=0.25,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mines.gml:51
+mines,mines_drill_mines,2000,Drill Mines,diamond_coal,500,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mines.gml:63
+mines,mines_drill_cd,2001,Worthwhile Drill,diamond_coal,2500,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mines.gml:71
+mines,mines_drill_sd,2002,Super Worthwhile Drill,diamond_shiny,500,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mines.gml:84
+mines,mines_max_mines,2010,Max Mines,diamond_coal,300,2.5,3,,mines_max_mines=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mines.gml:97
+mines,mines_max_caves,2100,Max Caves,diamond_coal,150,2,10,,mines_max_caves=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mines.gml:109
+mines,mines_mine_power_multiplier,2200,Better Pickaxe,diamond_coal,75,1.25,50,,mines_mine_power_multiplier=0.05,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mines.gml:121
+mines,mines_search_duration_reduction_multiplier,2300,Mine Expert,diamond_coal,75,2.5,10,,mines_search_duration_reduction_multiplier=0.025,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mines.gml:133
+mines,mines_reward_multiplier,2400,Mine Scholar,diamond_coal,150,1.5,20,,mines_reward_multiplier=0.05,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mines.gml:145
+mines,mines_min_level,2500,Mine Min Level,diamond_coal,200,3,9,,mines_min_level=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mines.gml:157
+mines,mines_max_level,2501,Mine Max Level,diamond_coal,200,2,17,,mines_max_level=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mines.gml:169
+mines,mines_max_active_caves,2600,Multimining,diamond_coal,150,3,5,,mines_max_active_caves=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mines.gml:181
+mines,mines_coal_time_sphere_efficiency,2700,Better Spheres,diamond_coal,250,1.5,10,,mines_coal_time_sphere_efficiency=0.04,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mines.gml:194
+mines,mines_inventory_size,2800,Item Shelf,diamond_coal,35,1.2,10,,mines_inventory_size=3,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mines.gml:206
+mines,mines_items_max_count,2810,Mine Backpack,diamond_coal,100,1.5,20,,mines_items_max_count=2,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mines.gml:218
+mines,mines_craft_from_codex,2820,Codex Crafter,diamond_coal,50,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mines.gml:230
+mines,mines_rarity_multiplier,2900,%s Serendipity,diamond_coal,200,2,10,,mines_rarity_multiplier=0.25,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mines.gml:238
+mines,unlock_depth_drill,3000,Unlock %s,diamond_coal,750,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mines.gml:250
+mines,mines_drill_depth_progress,3100,Drill Engine,diamond_coal,75,1.75,10,,mines_drill_depth_progress=0.01,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mines.gml:258
+mines,mines_drill_depth_progress_multiplier,3101,Drill Optimization,diamond_coal,100,1.5,10,,mines_drill_depth_progress_multiplier=0.2,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mines.gml:275
+mines,fuel_efficiency,3200,Fuel Efficiency,diamond_coal,75,1.5,10,,mines_drill_depth_fuel_drain_reduction_multiplier=0.05,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mines.gml:292
+mines,mines_drill_free_refuel_multiplier,3210,Refuel Exploit,diamond_coal,125,1.4,10,,mines_drill_free_refuel_multiplier=0.2,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mines.gml:309
+mines,unlock_auto_transmute,4000,Unlock %s,diamond_coal,25000,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mines.gml:326
+mlc,unlock_cards,-100,Unlock Cards,mlc,5000,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mlc.gml:9
+mlc,unlock_borbventures,-99,Unlock Borbventures,mlc,5000,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mlc.gml:21
+mlc,leaf_multiplier_all,10,All Leaves+,mlc,10,8,0,2.5,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mlc.gml:36
+mlc,master_of_mlc,20,Master of MLC,mlc,10,12,0,0.1,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mlc.gml:43
+mlc,blc_value_adder_real,100,Moar BLC,mlc,5,8,0,20000,blc_value_adder=20000,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mlc.gml:49
+mlc,auto_buy_blc_shop,200,%s Upgrade Bot,mlc,2500,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mlc.gml:58
+mlc,auto_buy_silver_token_shop,210,%s Upgrade Bot,mlc,5000,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mlc.gml:81
+mlc,auto_buy_gold_token_shop,220,%s Upgrade Bot,mlc,10000,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mlc.gml:104
+mlc,auto_buy_gem_leaves_shop,230,%s Upgrade Bot,mlc,10000,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mlc.gml:127
+mlc,auto_upgrade_seeds,240,%s Upgrade Bot,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mlc.gml:145
+mlc,auto_use_artifacts,250,Autofacts,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mlc.gml:161
+mlc,artifact_autouse_timer_delay_reduction_multiplier,251,Faster Autofacts,mlc,5000000,128,5,0.1,artifact_autouse_timer_delay_reduction_multiplier=0.1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mlc.gml:169
+mlc,offline_seeds,600,Offline Seeds,mlc,3,8,0,1,offline_seeds=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mlc.gml:176
+mlc,offline_mlc,700,Offline MLC,mlc,25000,96,5,1,offline_mlc=1;offline_mlc_pct=value2,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mlc.gml:180
+mlc,offline_mlc_pct,701,Offline MLC,mlc,10000,48,50,0.01,offline_mlc_pct=0.01,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mlc.gml:188
+mlc,more_tower_floors,1000,More Tower Floors,mlc,40,8,0,20,tower_floor=20,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mlc.gml:195
+mlc,crunchy_tower,1050,Crunchy Tower,mlc,2000,1.25,100,,tower_floor_persist=50,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mlc.gml:204
+mlc,offline_tower_floors,1060,Offline Tower,mlc,1000000,3000,3,1,offline_tower_floors=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mlc.gml:225
+mlc,authority,1100,Authority,mlc,1000,10,5,,tower_floor_enemies_decrease=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mlc.gml:233
+mlc,areas_persist_mlc,1150,Crunchy Areas,mlc,250000,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mlc.gml:250
+mlc,coins_persist_mlc,1200,Crunchy Coins,mlc,300,2,10,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mlc.gml:262
+mlc,blc_persist_mlc,1201,Crunchy BLC,mlc,500,2,10,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mlc.gml:275
+mlc,pets_persist_mlc,1210,Crunchy Pets,mlc,75000,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mlc.gml:288
+mlc,seeds_persist_mlc,1215,Crunchy Seeds Lite,mlc,250000,1.5,1,,prestige_persist_shops.farming=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mlc.gml:300
+mlc,unique_leaves_persist_mlc,1220,Crunchy Unique Leaves,mlc,50000,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mlc.gml:320
+mlc,printers_persist_mlc,1300,Unlimited+1 Printer Ink,mlc,15000,1.5,1,,prestige_persist_shops.printers=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mlc.gml:332
+mlc,alb_unlimited_power,2000,Leaf powered ALBs,mlc,10,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mlc.gml:353
+mlc,trade_education_advanced,2100,Advanced Trading Education,mlc,5000000,5,50,1,trade_base_level=1;trade_base_level_min=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mlc.gml:372
+mlc,faster_artifacts,2500,Faster Artifacts,mlc,500,5,25,0.01,artifact_spawn_time_reduction=0.01,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mlc.gml:378
+mlc,offline_artifacts,2510,Offline Artifacts,mlc,5000,15,5,2,artifact_collect_offline=2,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mlc.gml:384
+mlc,critical_converters_crit_chance,2600,Critical Converters,mlc,20,4,10,0.01,converter_crit_chance=0.01,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mlc.gml:390
+mlc,craft_level,2700,Craft Forge,mlc,250000,12,5,1,craft_level=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mlc.gml:396
+mlc,craft_min_chance,2701,Craft Hammer,mlc,200,3.5,25,1,craft_min_chance=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mlc.gml:400
+mlc,autocraft_delay_reduction,2710,Faster Autocraft,mlc,1000,384,5,0.05,autocraft_delay_reduction=0.05,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mlc.gml:404
+mlc,unlock_converter,2800,function,mlc,5000,2,1,global.converters.convert_flask_strange_silver_token.key,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mlc.gml:411
+mlc,unlock_converter,2800,function,mlc,50000,2,1,global.converters.convert_silver_token_gold_token.key,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mlc.gml:416
+mlc,unlock_resource,3000,Unlock %s,mlc,1000,2,1,global.resources.amber,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mlc.gml:421
+mlc,unlock_resource,3010,Unlock %s,mlc,1000,2,1,global.resources.amethyst,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mlc.gml:427
+mlc,unlock_resource,3020,Unlock %s,mlc,1000,2,1,global.resources.emerald,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mlc.gml:433
+mlc,unlock_resource,3030,Unlock %s,mlc,1000,2,1,global.resources.kyanite,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mlc.gml:439
+mlc,unlock_resource,3040,Unlock %s,mlc,1000,2,1,global.resources.rhodonite,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mlc.gml:445
+mlc,unlock_resource,3050,Unlock %s,mlc,1000,2,1,global.resources.ruby,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mlc.gml:451
+mlc,unlock_resource,3060,Unlock %s,mlc,1000,2,1,global.resources.tektite,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mlc.gml:457
+moonstone,unlock_resource,0,Unlock %s,moonstone,75000000000,2,1,global.resources.sand,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_moonstone.gml:7
+moonstone,fertilizer,1,%s Fertilizer,moonstone,10,1.5,50,1,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_moonstone.gml:13
+moonstone,leaf_marketing,2,%s Marketing,moonstone,750000000,3.5,5,,resources_leaf_add.moonstone=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_moonstone.gml:16
+moonstone,master_of_mlc,20,Master of MLC,moonstone,500000000,12,10,0.05,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_moonstone.gml:34
+moonstone,inventory_size,200,Bigger Crafting Inventory,moonstone,2500000000,20,2,1,craft_inventory_size=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_moonstone.gml:40
+moonstone,crafting_backpack_size,205,Bigger Crafting Backpack,moonstone,750000000000,15,5,1,craft_backpack_size=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_moonstone.gml:46
+moonstone,craft_rng_quality,210,Craft Beer,moonstone,50000000000,2,25,0.01,craft_min_rng_quality=0.01,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_moonstone.gml:51
+moonstone,craft_item_max_level,220,Craft Fire,moonstone,100000000,25,10,1,craft_item_max_level=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_moonstone.gml:57
+moonstone,craft_min_chance,225,Craft Hammer,moonstone,25000000000,3.5,10,1,craft_min_chance=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_moonstone.gml:63
+moonstone,craft_salvage_reward,230,Craft Cheese,,,12,20,,craft_salvage_reward=0.01,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_moonstone.gml:70
+moonstone,craft_ub_speed_decrease_multiplier,240,Craft Time,,,4,10,,craft_ub_speed_decrease_multiplier=0.05,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_moonstone.gml:84
+moonstone,autocraft_delay_reduction,250,Faster Autocraft,moonstone,10000000000,2048,5,0.025,autocraft_delay_reduction=0.025,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_moonstone.gml:104
+moonstone,leaf_counter_value,1000,Better Counting,moonstone,100000000,2048,0,1,leaf_pub_counter=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_moonstone.gml:111
+mulch,leaf_marketing,1,%s Marketing,mulch,500,3.5,100,1,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mulch.gml:7
+mulch,max_seed_count,100,Mulched Composter,mulch,150000,1.25,100,,seed_max_count=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mulch.gml:14
+mulch,upgrade_seeds,200,Mulched Seeds,mulch,500000,1.5,50,,seed_value_add_global=0.1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mulch.gml:31
+mulch,chest_spawn_chance,300,Mulched Chests,mulch,250000,1.5,20,0.005,chest_spawn_chance=0.005,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mulch.gml:81
+mulch,chest_rarity_increase,310,Mulched Luck,mulch,750000,1.5,50,1,chest_rarity_increase=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mulch.gml:87
+mulch,slots_pity_counter,1000,Mulched Slots,mulch,50000,1.75,20,,slots_pity_counter=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mulch.gml:95
+mulch,slots_offline_play,1010,Passive Slots,mulch,500000,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mulch.gml:117
+mulch,claw_items_minmax,1100,Insert More Mulch,mulch,250000,2,5,,claw_items_min=1;claw_items_max=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mulch.gml:135
+mulch,claw_pickup_size,1101,Mulched Claw,mulch,15000,2,25,,claw_pickup_size=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mulch.gml:158
+mulch,claw_curses,1102,Cursed Pub,mulch,15000,2.25,50,2,claw_curses=2,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mulch.gml:178
+mulch,claw_materials,1103,Material Pub,mulch,50000,4,10,,claw_materials=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mulch.gml:185
+mulch,claw_offline_play,1104,Passive Claw,mulch,500000,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mulch.gml:204
+mulch,trade_cap_increase,2000,Mulched Trade Caps,mulch,1000,1.25,295,,trade_cap_increase=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mulch.gml:223
+mulch,trade_decrease_input_count,2005,Trading Optimization,mulch,25000,32,50,1,trade_decrease_input_count=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mulch.gml:243
+mulch,max_trades,2010,Leaf Trader,mulch,75000,16,5,1,trade_max_count=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mulch.gml:250
+mulch,craft_min_chance,3000,Craft Hammer,mulch,25000,2,10,1,craft_min_chance=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mulch.gml:257
+mulch,crafting_backpack_size,3010,Bigger Crafting Backpack,mulch,75000,2,5,1,craft_backpack_size=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mulch.gml:263
+mulch,pub_counter_autocount,4000,Leaf Counter Macro,mulch,25000,2,5,,leaf_pub_counter_autocount=0.016666666666666666,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mulch.gml:271
+mulch,cards_enemy_drop_chance,5000,Cards Detector,mulch,125000,3,5,0.0002,cards_enemy_drop_chance=0.0002,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mulch.gml:291
+mulch,card_parts_drop_chance,5010,Card Parts Detector,mulch,50000,2.5,5,0.0005,card_parts_drop_chance=0.0005,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mulch.gml:298
+mythical,unlock_lava_leaves,-20,Unlock %s,mythical,10000000000,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mythical.gml:9
+mythical,fertilizer,1,%s Fertilizer,mythical,100,1.5,50,1,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mythical.gml:24
+mythical,leaf_marketing,2,%s Marketing,mythical,3000,3.5,50,,resources_leaf_add.mythical=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mythical.gml:31
+mythical,nuclear_fuel,3,Nuclear Fuel,mythical,1000,1.5,300,,nuclear_fuel=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mythical.gml:51
+mythical,auto_leaf_blower_damage,23,ALB Blowing Power,mythical,20000,1.5,50,,alb_blowing_power=20,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mythical.gml:72
+mythical,blc_value_adder_real,101,Moar BLC,mythical,500000,2.5,50,,blc_value_adder=500,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mythical.gml:102
+mythical,player_hp,200,Player HP,mythical,50000000,2.5,50,,player_hp=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mythical.gml:124
+mythical,player_hp_fruit,201,Healthy Fruits,mythical,20000000000,1.5,20,,player_hp=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mythical.gml:146
+mythical,enemy_offline_rewards,300,Offline Enemies,mythical,100000000,3,30,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mythical.gml:162
+mythical,printer_printer,350,Printer Printer,mythical,200000000,8,300,1,printer_printer=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mythical.gml:173
+mythical,mythical_apples,400,Unlock %s,mythical,1000,1.5,1,,fruit_unlocked.mythical=true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_mythical.gml:179
+obsidian,unlock_silicon_leaves,-20,Unlock %s,obsidian,10000000000,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_obsidian.gml:8
+obsidian,leaf_marketing,1,%s Marketing,obsidian,5000,3.5,5,,resources_leaf_add.obsidian=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_obsidian.gml:25
+obsidian,nuclear_fuel,3,Nuclear Fuel,obsidian,1000,1.5,50,,nuclear_fuel=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_obsidian.gml:45
+obsidian,combo_max,31,Max Combo,obsidian,5000,3,100,,combo_max=30,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_obsidian.gml:66
+obsidian,combo_rewards,32,Combo Multiplier,obsidian,10000,3,50,,combo_rewards=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_obsidian.gml:89
+obsidian,blower_hit_damage,50,Leaf Damage,obsidian,75,5,0,20,blower_enemy_damage=20,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_obsidian.gml:110
+obsidian,blc_value_adder_real,100,Moar BLC,obsidian,500000,2.5,50,2000,blc_value_adder=2000,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_obsidian.gml:114
+obsidian,artifact_fruits,200,Fruitifacts,obsidian,500000,12,10,1,artifact_fruit_seconds_reduction=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_obsidian.gml:118
+obsidian,longer_artifacts_duration,210,Durable Artifacts,obsidian,1000000,3,60,5,artifact_expire_duration=5,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_obsidian.gml:122
+obsidian,printer_printer,300,Printer Printer,obsidian,200000000,8,300,4,printer_printer=4,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_obsidian.gml:126
+platinum,bismuth_leaves,-10,Bismuth Leaves,platinum,10000,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_platinum.gml:10
+platinum,tree,-1,Tree,platinum,10,1.5,30,,trees=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_platinum.gml:27
+platinum,fertilizer,0,%s Fertilizer,platinum,10,1.5,50,1,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_platinum.gml:49
+platinum,leaf_marketing,1,Platinum Marketing,platinum,500,3.5,5,,resources_leaf_add.platinum=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_platinum.gml:56
+platinum,nuclear_fuel,3,Nuclear Fuel,platinum,100,1.5,30,,nuclear_fuel=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_platinum.gml:76
+platinum,auto_leaf_blower,20,Auto Leaf Blower,platinum,200,6,3,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_platinum.gml:92
+platinum,auto_leaf_blower_speed,21,ALB Speed,platinum,100,1.5,5,,alb_speed=0.5,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_platinum.gml:110
+platinum,auto_leaf_blower_damage,22,ALB Blowing Power,platinum,100,1.5,20,,alb_blowing_power=2,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_platinum.gml:136
+platinum,auto_leaf_blower_battery_capacity,23,ALB Battery Capacity,platinum,100,1.5,10,,alb_battery_capacity=0.5,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_platinum.gml:161
+platinum,auto_leaf_blower_battery_charge_rate,24,ALB Battery Charge Rate,platinum,100,1.5,10,,alb_battery_charge_rate=0.5,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_platinum.gml:187
+platinum,platinum_apples,50,Unlock Platinum Apples,platinum,50,1.5,1,,fruit_unlocked.platinum=true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_platinum.gml:213
+platinum,slap_multiplier,100,Slap Force,platinum,500,3,10,0.1,slap_multiplier=0.1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_platinum.gml:231
+prestige,prestige,0,Leaf Portal,gold,10000,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_prestige.gml:9
+sand,fertilizer,1,%s Fertilizer,sand,10,1.5,50,1,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_sand.gml:7
+sand,leaf_marketing,2,%s Marketing,sand,750000000,3.5,5,,resources_leaf_add.sand=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_sand.gml:10
+sand,master_of_mlc,20,Master of MLC,sand,2500000000,12,10,0.075,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_sand.gml:28
+sand,crafting_backpack_size,230,Bigger Crafting Backpack,sand,750000000000,15,5,1,craft_backpack_size=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_sand.gml:34
+sand,scrolls_concurrent_max,300,Concurrent Scrolls,sand,5000000000,20,3,1,scrolls_active_max=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_sand.gml:39
+sand,scrolls_duration,310,Durable Scrolls,sand,500000000,6,20,0.025,scrolls_duration=0.025,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_sand.gml:40
+sand,scroll_drop_chance,320,Frequent Scrolls,sand,75000000000,12,5,1,scroll_drop_chance=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_sand.gml:41
+sand,autocraft_delay_reduction,400,Faster Autocraft,sand,10000000000,2048,5,0.025,autocraft_delay_reduction=0.025,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_sand.gml:42
+sand,artifact_autouse_timer_delay_reduction_multiplier,500,Faster Autofacts,sand,10000000000,2048,5,0.05,artifact_autouse_timer_delay_reduction_multiplier=0.05,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_sand.gml:49
+sand,leaf_counter_value,1000,Better Counting,sand,100000000,2048,0,1,leaf_pub_counter=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_sand.gml:56
+silicon,unlock_benitoite_leaves,-20,Unlock %s,silicon,10000000000,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_silicon.gml:9
+silicon,fertilizer,1,%s Fertilizer,silicon,10,1.5,50,1,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_silicon.gml:24
+silicon,leaf_marketing,2,%s Marketing,silicon,5000,3.5,5,,resources_leaf_add.silicon=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_silicon.gml:31
+silicon,blower_hit_damage,15,Leaf Damage,silicon,75,5,0,30,blower_enemy_damage=30,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_silicon.gml:49
+silicon,blc_value_adder_real,100,Moar BLC,silicon,500000,2.5,50,3000,blc_value_adder=3000,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_silicon.gml:53
+silicon,critical_converters_crit_chance,200,Critical Converters,silicon,1000000,4,50,0.005,converter_crit_chance=0.005,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_silicon.gml:57
+silicon,critical_converters_crit_value,201,Critical Output,silicon,1000000,6,50,0.01,converter_crit_value=0.01,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_silicon.gml:61
+silicon,printer_printer,300,Printer Printer,silicon,200000000,8,300,5,printer_printer=5,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_silicon.gml:65
+silicon,leaf_merge_range_inc,350,Leaf Merginator,silicon,500000000,6,10,2,leaf_merge_range=2,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_silicon.gml:69
+silicon,autobuy_accelerator,400,Autobuy Accelerator,silicon,100000000,8,20,0.01,autobuy_accelerator=0.01,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_silicon.gml:73
+silicon,trade_refresh_decrease_timer,500,Customer Acquisition,silicon,3000000,125,10,0.01,trade_refresh_decrease_timer=0.01,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_silicon.gml:74
+silver_token,player_hp,0,Player HP,silver_token,30,1.5,0,20,player_hp=20,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_silver_token.gml:7
+silver_token,player_hp_reg,20,Healthy Lifestyle,silver_token,20,1.25,0,5,player_hp_reg=5,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_silver_token.gml:13
+silver_token,damage_resistance,50,Leaf Armor,silver_token,300,1.5,50,0.005,damage_resistance=0.005,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_silver_token.gml:18
+silver_token,blower_hit_damage,100,Leaf Damage,silver_token,500,1.25,0,5000,blower_enemy_damage=5000,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_silver_token.gml:24
+silver_token,blower_hit_damage_multiplier,105,Leaf Damage Multiplier,silver_token,20,1.5,0,0.25,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_silver_token.gml:30
+silver_token,item_drop_chance,200,Item Drop Chance,silver_token,50,4,30,0.001,item_drop_chance=0.001,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_silver_token.gml:36
+silver_token,auto_restart_tower,300,Borb Tower Taxi,silver_token,500,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_silver_token.gml:42
+silver_token,auto_restart_tower_peak,310,Borb Taxi End of Party,silver_token,25000,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_silver_token.gml:55
+silver_token,auto_restart_tower_enemy_count,320,Borb Taxi Observer,silver_token,250,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_silver_token.gml:68
+skins,def,-500,Default,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:8
+skins,def_female,-499,Default Female,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:20
+skins,alb_def,-498,Autoblower Default,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:32
+skins,santa,-400,Santa,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:44
+skins,angel_male,-300,Angel Male,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:52
+skins,angel_female,-299,Angel Female,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:60
+skins,demon_male,-298,Demon Male,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:68
+skins,demon_female,-297,Demon Female,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:76
+skins,borb_party,-296,Borb Party,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:84
+skins,superleaf,-295,Superleaf,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:92
+skins,electric,-294,Electric,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:100
+skins,fairy,-27,Fairy,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:108
+skins,leafcape_male,-26,Leafcape Male,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:116
+skins,leafcape_female,-25,Leafcape Female,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:124
+skins,tree,-22,Tree,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:132
+skins,afro,-21,Afro,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:140
+skins,rainbow,-20,Rainbow,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:148
+skins,robot,-19,Robot,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:156
+skins,robot2,-18,Alternate Robot,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:164
+skins,gnome,-15,Garden Gnome,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:172
+skins,hitman,-10,Hitman,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:180
+skins,grandma,-9,Grandma,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:188
+skins,grandpa,-8,Grandpa,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:196
+skins,flokc200k,-7,Flokc 200k,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:204
+skins,grim,-6,"69,420",,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:213
+skins,cat,-5,CAT,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:222
+skins,sacred_flokcette,-4,Sacred Flokcette,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:230
+skins,black,1,Black,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:238
+skins,gray,2,Gray,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:246
+skins,green,3,Green,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:254
+skins,orange,4,Orange,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:262
+skins,pink,5,Pink,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:270
+skins,purple,6,Purple,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:278
+skins,red,8,Red,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:286
+skins,turquoise,9,Turquoise,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:294
+skins,white,10,White,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:302
+skins,yellow,11,Yellow,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:310
+skins,f_black,201,Female Black,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:318
+skins,f_green,203,Female Green,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:326
+skins,f_orange,204,Female Orange,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:334
+skins,f_pink,205,Female Pink,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:342
+skins,f_purple,206,Female Purple,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:350
+skins,f_red,208,Female Red,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:358
+skins,f_turquoise,209,Female Turquoise,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:366
+skins,f_white,2010,Female White,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:374
+skins,f_yellow,2011,Female Yellow,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:382
+skins,alb_player,2100,Autoblower Player,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:390
+skins,bee_player,2101,Bee Player,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:398
+skins,bird_player,2102,Bird Player,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:406
+skins,flask_red_player,2103,Red Flask,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:414
+skins,leaf_blower_player,2104,Leaf Blower,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:422
+skins,ace_of_spades_player,2105,Ace of Spades,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:430
+skins,cookie_player,2106,Cookie,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:438
+skins,fruit_player,2500,Fruit,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:446
+skins,printer_player,2501,Printer,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:455
+skins,gold_leaf_player,2502,Gold Leaf,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:463
+skins,borb_player,2600,Borb,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:471
+skins,borb_christmas_player,2601,Christmas Borb,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:480
+skins,borb_cool,2602,Cool Borb,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:488
+skins,borb_excited,2603,Excited Borb,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:496
+skins,borb_helper,2604,Helper Borb,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:504
+skins,borb_love,2605,Love Borb,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:512
+skins,borb_sip,2606,Sip Borb,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:520
+skins,borb_viking,2607,Viking Borb,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:528
+skins,borb_o_lantern,2608,Borb o'Lantern,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:536
+skins,borb_blush,2609,Blush Borb,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:544
+skins,borb_fish,2610,Fisher Borb,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:552
+skins,borb_square,2611,Square Borb,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:560
+skins,borb_square_pink,2612,Pink Square Borb,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:568
+skins,borb_symmetrical,2613,Symmetrical Borb,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:576
+skins,borb_heart,2614,Heart Borb,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:584
+skins,borb_nerd,2615,Nerd Borb,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:592
+skins,borb_hollow,2616,Hollow Borb,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:600
+skins,cursed_cheese,2700,Cursed Cheese,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:608
+skins,cursed_cheese_cool,2701,Cool Cursed Cheese,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:617
+skins,die,2710,Die,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:626
+skins,power_die,2711,Power Die,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:634
+skins,birthday_cake,2720,Birthday Cake,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:642
+skins,birthday_hat,2721,Birthday Hat,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:650
+skins,candle,2722,Candle,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:658
+skins,ship,2730,Ship,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:666
+skins,container,2731,Container,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:674
+skins,rce,3000,Real Civil Engineer,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:682
+skins,alb_fidget,4500,ALB Fidget Spinner,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:691
+skins,alb_minime,4901,Autoblower Minime,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:701
+skins,alb_black,5001,Autoblower Black,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:709
+skins,alb_blue,5002,Autoblower Blue,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:717
+skins,alb_gold,5003,Autoblower Gold,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:725
+skins,alb_green,5004,Autoblower Green,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:733
+skins,alb_pink,5006,Autoblower Pink,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:741
+skins,alb_rainbow,5007,Autoblower Rainbow,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:749
+skins,alb_red,5008,Autoblower red,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:757
+skins,alb_white,5009,Autoblower White,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:765
+skins,alb_flower,5010,Autoflower,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:773
+skins,alb_ladybug,5011,Autoblower Ladybug,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:781
+skins,alb_mushroom,5012,Autoblower Mushroom,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:789
+skins,alb_leaf,5013,Autoblower Leaf,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:797
+skins,alb_cookie,5014,Autoblower Cookie,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:805
+skins,alb_nose,5016,ALB Red Nose,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:813
+skins,alb_borb,5017,ALB Borb,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:821
+skins,alb_flockfly,5018,ALB Flying Flokco,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:830
+skins,alb_spider,5019,ALB Spider,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:839
+skins,alb_borb_ua,5020,UA Borb,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:848
+skins,alb_borb_o_lantern,5020.1,Borb o'Lantern,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:861
+skins,alb_troll,5021,ALB Troll,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:869
+skins,alb_die,5022,"concatstr(__(ALB),  , __(Die))",,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:877
+skins,alb_quark,5023,"concatstr(__(ALB),  , __(Quark))",,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:885
+skins,alb_df,6000,DangerouslyFunny,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:893
+skins,alb_dragoon,6010,Dragoon,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:902
+skins,alb_miltontpike,6020,MiltonTPike1,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:911
+skins,cursor_def,10000,Default,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:920
+skins,cursor_black,10005,Black,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:933
+skins,cursor_blue,10010,Blue,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:942
+skins,cursor_gray,10020,Gray,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:951
+skins,cursor_green,10030,Green,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:960
+skins,cursor_pink,10040,Pink,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:969
+skins,cursor_purple,10050,Purple,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:978
+skins,cursor_red,10060,Red,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:987
+skins,cursor_teal,10070,Teal,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:996
+skins,cursor_cheese,11000,Cheese,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:1005
+skins,cursor_borb,11001,Borb,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:1014
+skins,cursor_cursed_cheese,11002,Cursed,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:1030
+skins,cursor_cookie,11002.5,Cookie,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:1022
+skins,bunny_small,20000,Smol,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:1038
+skins,cat_small,20100,Smol,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:1048
+skins,cheese_alt,20110,Alternative,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:1058
+skins,deer_small,20200,Smol,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:1068
+skins,dog_rce,20300,RealCivilEngineer's,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:1078
+skins,dog_small,20301,Smol,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:1088
+skins,fox_small,20400,Smol,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:1098
+skins,pig_blue,21000,Blue,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:1108
+skins,pig_green,21000.1,Green,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:1117
+skins,penguin_small,21400,Smol,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:1126
+skins,raccoon_small,21500,Smol,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:1136
+skins,spider_burning,22000,Burning,,,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_skins.gml:1146
+soul_forge,auto_collect_soul_empty,1000,%s Generator,,,1.3,0,,resources_auto_collect.soul_empty=0.02,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_soul_forge.gml:9
+soul_forge,auto_collect_soul_empty_multiplier,1001,%s Multiplier,,,1.2,0,,soul_forge_count_multiplier=0.05,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_soul_forge.gml:31
+soul_forge,soul_forge_complete_count,1010,Completion Reward,,,1.5,0,,soul_forge_complete_count=0.1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_soul_forge.gml:50
+soul_forge,soul_forge_complete_count_multiplier,1011,Completion Reward Multiplier,,,1.4,0,,soul_forge_complete_count_multiplier=0.05,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_soul_forge.gml:69
+soul_forge,soul_forge_counter_decrease,1100,Soul Forge Compressor,,,1.3,20,,soul_forge_counter_decrease=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_soul_forge.gml:88
+soul_forge,auto_collect_soul_empty_advanced,2000,Advanced %s Generator,,,1.4,0,,resources_auto_collect.soul_empty=0.2,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_soul_forge.gml:107
+soul_forge,auto_collect_soul_empty_advanced_multiplier,2010,Advanced %s Multiplier,,,1.3,0,,soul_forge_count_multiplier=0.15,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_soul_forge.gml:129
+soul_forge,soul_forge_complete_count_advanced,2100,Advanced Completion Reward,,,1.6,0,,soul_forge_complete_count=0.5,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_soul_forge.gml:148
+soul_forge,soul_forge_complete_count_multiplier_advanced,2101,Advanced Completion Reward Multiplier,,,1.5,0,,soul_forge_complete_count_multiplier=0.25,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_soul_forge.gml:167
+soul_forge,soul_forge_counter_decrease_advanced,2200,Advanced Soul Forge Compressor,,,1.3,20,,soul_forge_counter_decrease=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_soul_forge.gml:186
+soul_forge,soul_crypt_floors,3000,Soul Crypt Floors,,,1.05,80,,soul_crypt_floors=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_soul_forge.gml:205
+soul_forge,blower_hit_damage_multiplier,4000,Leaf Damage Multiplier,soul,150,1.15,150,1000,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_soul_forge.gml:222
+soul_forge,craft_level,7000,Craft Forge,soul,5000,12,1,1,craft_level=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_soul_forge.gml:230
+soul_forge,craft_min_chance,7010,Craft Hammer,soul,25000,3,10,1,craft_min_chance=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_soul_forge.gml:236
+ulc,ulc_min_sacrifices_decrease_count,-9000,Less Sacrifices,ulc,2500,2,3,,ulc_min_sacrifices_decrease_count=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ulc.gml:7
+ulc,areas_persist_ulc,-100,Stable Areas,ulc,5000,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ulc.gml:19
+ulc,crunchy_pyramid,-90,Crunchy Pyramid,ulc,1000,1.5,10,,pyramid_floors_persist=10,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ulc.gml:27
+ulc,leaf_multiplier_all,10,All Leaves+,ulc,50,2,0,25,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ulc.gml:40
+ulc,prestige_value_multiplier,20,Lord of %s,ulc,25,2,0,10,prestige_value_multiplier=10,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ulc.gml:47
+ulc,blc_value_multiplier,21,Lord of %s,ulc,40,2,0,10,blc_value_multiplier=10,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ulc.gml:61
+ulc,mlc_value_multiplier,22,Lord of %s,ulc,80,2,0,10,mlc_value_multiplier=10,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ulc.gml:75
+ulc,max_pets,30,Pet House,ulc,2000,6,1,,max_pets=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ulc.gml:89
+ulc,printers_persist_mlc,40,Unlimited Printer Ink %s,ulc,500,2,1,,prestige_persist_shops.printers=2,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ulc.gml:94
+ulc,albs_slap,50,Autoblowerslapper,ulc,750,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ulc.gml:111
+ulc,slap_critical_chance,51,Critical Slaps,ulc,350,1.25,10,,slap_critical_chance=0.02,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ulc.gml:118
+ulc,slap_critical_multiplier,52,Critical Slap Multiplier,ulc,250,1.2,10,,slap_critical_multiplier=0.05,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ulc.gml:130
+ulc,craft_min_chance,60,Craft Hammer,ulc,500,1.5,10,8,craft_min_chance=8,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ulc.gml:142
+ulc,craft_max_tier,61,Higher Craft Tier,ulc,1000,3,3,,craft_max_tier=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ulc.gml:149
+ulc,craft_max_tier,70,Craft Formula: %s,ulc,750,2,1,,craft_leaf_type_manual.malachite=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ulc.gml:161
+ulc,craft_max_tier,71,Craft Formula: %s,ulc,1250,2,1,,craft_leaf_type_manual.hematite=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ulc.gml:175
+ulc,craft_max_tier,72,Craft Formula: %s,ulc,1500,2,1,,craft_leaf_type_manual.plasma=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ulc.gml:194
+ulc,craft_max_tier,73,Craft Formula: %s,ulc,2000,2,1,,craft_leaf_type_manual.coal=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ulc.gml:213
+ulc,craft_max_tier,74,Craft Formula: %s,ulc,2500,2,1,,craft_leaf_type_manual.soul=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ulc.gml:232
+ulc,craft_max_tier,75,Craft Formula: %s,ulc,3000,2,1,,craft_leaf_type_manual.quark=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ulc.gml:251
+ulc,max_borbventures,1000,More %s,ulc,300,2,4,,borbventure_max_borbventures=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ulc.gml:270
+ulc,max_borbventure_borbs,1001,More %s,ulc,450,2.5,4,,borbventure_max_borbs=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ulc.gml:283
+ulc,borbventure_items_max_count,1010,%s Backpack,ulc,75,1.5,10,3,borbventure_items_max_count=3,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ulc.gml:296
+ulc,auto_craft_bv_items,1100,Auto Craft,ulc,750,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ulc.gml:309
+ulc,auto_craft_bv_items_count,1101,Auto Craft Count,ulc,1000,1.5,5,,borbventure_auto_craft_count=5,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ulc.gml:317
+ulc,cards_enemy_drop_chance,2000,Cards Detector,ulc,75,1.5,10,0.05,cards_enemy_drop_chance=0.05,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ulc.gml:335
+ulc,cards_decrease_transcension_count_multiplier,2010,Cheap Transcension,ulc,250,1.75,5,1,cards_decrease_transcension_count_multiplier=0.02,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ulc.gml:342
+ulc,dice_power_roll_count,4000,Power Roll Count,ulc,200,2.5,5,,dice_power_roll_count=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ulc.gml:355
+ulc,dice_battlefield_die_drop_chance,4010,Lucky Dice,ulc,300,2.5,5,,dice_battlefield_die_drop_chance=0.01,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ulc.gml:367
+ulc,dice_inventory_size,4020,Bigger Dice Bag,ulc,250,1.5,5,1,"dice_inventory_size=get_default_struct_value(arg3, value, 1)",reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ulc.gml:379
+ulc,dice_backpack_size,4021,Bigger Dice Backpack,ulc,150,1.5,5,1,"dice_backpack_size=get_default_struct_value(arg3, value, 1)",reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ulc.gml:386
+ulc,auto_collect_equipment,5000,Equipment Harvester,ulc,200,1.2,0,,result_auto_collect.equipment_random=1000,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ulc.gml:393
+ulc,leafscender_output_count,6000,Leafscender Enhancer,ulc,300,1.5,10,,leafscender_output_count=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ulc.gml:408
+ulc,material_spawn_chance_add_base,7000,Material Finder,ulc,150,1.3,10,,material_spawn_chance_add_base=0.02,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ulc.gml:420
+ulc,material_collect_count,7001,Material Collector,ulc,250,1.3,5,,material_collect_count=2,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ulc.gml:432
+ulc,reactor_size,8000,Bigger Reactor,ulc,200,1.2,0,100,quark_reactor_size=100,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ulc.gml:444
+ulc,banks_auto_start_deposit,9000,Auto Banks,ulc,300,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ulc.gml:450
+ulc,autobuy_shop,10000,%s Upgrade Bot,ulc,25,2,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_ulc.gml:458
+void,unlock_red_flask,-10,Unlock Red Flasks,void,10000,1.5,1,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_void.gml:10
+void,tree,-1,Tree,void,10,1.5,30,,trees=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_void.gml:27
+void,fertilizer,0,%s Fertilizer,void,10,1.5,50,1,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_void.gml:49
+void,leaf_marketing,1,Void Marketing,void,500,3.5,5,,resources_leaf_add.void=1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_void.gml:56
+void,auto_leaf_blower,5,Auto Leaf Blower,void,200,6,3,,,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_void.gml:76
+void,void_apples,20,Unlock Void Apples,void,50,1.5,1,,fruit_unlocked.void=true,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_void.gml:94
+void,player_hp,200,Player HP,void,2500000000,7,200,,player_hp=0.5,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_void.gml:114
+void,player_hp_reg,201,Player HP Regeneration,void,10000000000,7,200,,player_hp_reg=0.1,reference/leaf-blower-revolution/lbr-utmt-code/CodeEntries/gml_GlobalScript_init_shop_void.gml:136

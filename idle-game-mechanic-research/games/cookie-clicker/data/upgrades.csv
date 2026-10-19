@@ -1,0 +1,878 @@
+# upgrades.csv — Cookie Clicker web 2.058;sha256:d530a13b; accessed 2026-10-18; source: reference/cookie-clicker/main.js
+name,kind,base_price,price_note,effect,pool,tier,source
+Reinforced index finger,tiered,100,,The mouse and cursors are twice as efficient.,,1,main.js:10236
+Carpal tunnel prevention cream,tiered,500,,The mouse and cursors are twice as efficient.,,2,main.js:10237
+Ambidextrous,tiered,10000,,The mouse and cursors are twice as efficient.,,3,main.js:10238
+Thousand fingers,tiered,100000,,The mouse and cursors gain +0.1 cookies for each non-cursor building owned.,,4,main.js:10239
+Million fingers,tiered,10000000,,Multiplies the gain from Thousand fingers by 5.,,5,main.js:10241
+Billion fingers,tiered,100000000,,Multiplies the gain from Thousand fingers by 10.,,6,main.js:10242
+Trillion fingers,tiered,1000000000,,Multiplies the gain from Thousand fingers by 20.,,7,main.js:10243
+Forwards from grandma,tiered,1000,,,,1,main.js:10246
+Steel-plated rolling pins,tiered,5000,,,,2,main.js:10247
+Lubricated dentures,tiered,50000,,,,3,main.js:10248
+Cheap hoes,tiered,11000,,,,1,main.js:10251
+Fertilizer,tiered,55000,,,,2,main.js:10252
+Cookie trees,tiered,550000,,,,3,main.js:10253
+Sturdier conveyor belts,tiered,1300000,,,,1,main.js:10256
+Child labor,tiered,6500000,,,,2,main.js:10257
+Sweatshop,tiered,65000000,,,,3,main.js:10258
+Sugar gas,tiered,120000,,,,1,main.js:10261
+Megadrill,tiered,600000,,,,2,main.js:10262
+Ultradrill,tiered,6000000,,,,3,main.js:10263
+Vanilla nebulae,tiered,51000000000,,,,1,main.js:10266
+Wormholes,tiered,255000000000,,,,2,main.js:10267
+Frequent flyer,tiered,2550000000000,,,,3,main.js:10268
+Antimony,tiered,750000000000,,,,1,main.js:10271
+Essence of dough,tiered,3750000000000,,,,2,main.js:10272
+True chocolate,tiered,37500000000000,,,,3,main.js:10273
+Ancient tablet,tiered,10000000000000,,,,1,main.js:10276
+Insane oatling workers,tiered,50000000000000,,,,2,main.js:10277
+Soul bond,tiered,500000000000000,,,,3,main.js:10278
+Flux capacitors,tiered,140000000000000,,,,1,main.js:10281
+Time paradox resolver,tiered,700000000000000,,,,2,main.js:10282
+Quantum conundrum,tiered,7000000000000000,,,,3,main.js:10283
+Kitten helpers,tiered,9000000,,You gain more CpS the more milk you have.,,1,main.js:10286
+Kitten workers,tiered,9000000000,,You gain more CpS the more milk you have.,,2,main.js:10287
+Plain cookies,cookie,999999,,Cookie production multiplier +1%.,cookie,,main.js:10290
+Sugar cookies,cookie,4999995,,Cookie production multiplier +1%.,cookie,,main.js:10291
+Oatmeal raisin cookies,cookie,9999999,,Cookie production multiplier +1%.,cookie,,main.js:10292
+Peanut butter cookies,cookie,49999995,,Cookie production multiplier +2%.,cookie,,main.js:10293
+Coconut cookies,cookie,99999999,,Cookie production multiplier +2%.,cookie,,main.js:10294
+White chocolate cookies,cookie,499999995,,Cookie production multiplier +2%.,cookie,,main.js:10296
+Macadamia nut cookies,cookie,99999999,,Cookie production multiplier +2%.,cookie,,main.js:10298
+Double-chip cookies,cookie,4999999995,,Cookie production multiplier +2%.,cookie,,main.js:10300
+White chocolate macadamia nut cookies,cookie,9999999999,,Cookie production multiplier +2%.,cookie,,main.js:10301
+All-chocolate cookies,cookie,49999999995,,Cookie production multiplier +2%.,cookie,,main.js:10302
+Quadrillion fingers,tiered,10000000000,,Multiplies the gain from Thousand fingers by 20.,,8,main.js:10305
+Prune juice,tiered,5000000,,,,4,main.js:10307
+Genetically-modified cookies,tiered,55000000,,,,4,main.js:10308
+Radium reactors,tiered,6500000000,,,,4,main.js:10309
+Ultimadrill,tiered,600000000,,,,4,main.js:10310
+Warp drive,tiered,255000000000000,,,,4,main.js:10311
+Ambrosia,tiered,3750000000000000,,,,4,main.js:10312
+Sanity dance,tiered,50000000000000000,,,,4,main.js:10313
+Causality enforcer,tiered,700000000000000000,,,,4,main.js:10314
+Lucky day,misc,777777777,,Golden cookies appear twice as often and stay twice as long.,,,main.js:10317
+Serendipity,misc,77777777777,,Golden cookies appear twice as often and stay twice as long.,,,main.js:10318
+Kitten engineers,tiered,90000000000000,,You gain more CpS the more milk you have.,,3,main.js:10321
+Dark chocolate-coated cookies,cookie,99999999999,,Cookie production multiplier +5%.,cookie,,main.js:10324
+White chocolate-coated cookies,cookie,99999999999,,Cookie production multiplier +5%.,cookie,,main.js:10325
+Farmer grandmas,misc,55000,,Grandmas are twice as efficient. Farms gain +1% CpS per 1 grandma.,,,main.js:10342
+Miner grandmas,misc,600000,,Grandmas are twice as efficient. Mines gain +1% CpS per 2 grandma.,,,main.js:10343
+Worker grandmas,misc,6500000,,Grandmas are twice as efficient. Factories gain +1% CpS per 3 grandma.,,,main.js:10344
+Cosmic grandmas,misc,255000000000,,Grandmas are twice as efficient. Shipments gain +1% CpS per 7 grandma.,,,main.js:10345
+Transmuted grandmas,misc,3750000000000,,Grandmas are twice as efficient. Alchemy labs gain +1% CpS per 8 grandma.,,,main.js:10346
+Altered grandmas,misc,50000000000000,,Grandmas are twice as efficient. Portals gain +1% CpS per 9 grandma.,,,main.js:10347
+Grandmas' grandmas,misc,700000000000000,,Grandmas are twice as efficient. Time machines gain +1% CpS per 10 grandma.,,,main.js:10348
+Bingo center/Research facility,misc,1000000000000000,,Grandma-operated science lab and leisure club. Grandmas are 4 times as efficient. Regularly unlocks new upgrades.,,,main.js:10364
+Specialized chocolate chips,tech,1000000000000000,,Cookie production multiplier +1%.,tech,,main.js:10367
+Designer cocoa beans,tech,2000000000000000,,Cookie production multiplier +2%.,tech,,main.js:10368
+Ritual rolling pins,tech,4000000000000000,,Grandmas are twice as efficient.,tech,,main.js:10369
+Underworld ovens,tech,8000000000000000,,Cookie production multiplier +3%.,tech,,main.js:10370
+One mind,tech,16000000000000000,,Each grandma gains +0.0 2 base CpS per grandma. Note: the grandmothers are growing restless. Do not encourage them.,tech,,main.js:10371
+Exotic nuts,tech,32000000000000000,,Cookie production multiplier +4%.,tech,,main.js:10374
+Communal brainsweep,tech,64000000000000000,,Each grandma gains another +0.0 2 base CpS per grandma. Note: proceeding any further in scientific research may have unexpected results. You have been warned.,tech,,main.js:10375
+Arcane sugar,tech,128000000000000000,,Cookie production multiplier +5%.,tech,,main.js:10376
+Elder Pact,tech,256000000000000000,,Each grandma gains +0.0 5 base CpS per portal. Note: this is a bad idea.,tech,,main.js:10377
+Elder Pledge,toggle,1,dynamic priceFunc,"Contains the wrath of the elders, at least for a while.",toggle,,main.js:10378
+Plastic mouse,tiered,50000,,Clicking gains +1% of your CpS.,,1,main.js:10399
+Iron mouse,tiered,5000000,,Clicking gains +1% of your CpS.,,2,main.js:10400
+Titanium mouse,tiered,500000000,,Clicking gains +1% of your CpS.,,3,main.js:10401
+Adamantium mouse,tiered,50000000000,,Clicking gains +1% of your CpS.,,4,main.js:10402
+Ultrascience,debug,7,,Research takes only 5 seconds.,debug,,main.js:10405
+Eclipse cookies,cookie,499999999995,,Cookie production multiplier +2%.,cookie,,main.js:10409
+Zebra cookies,cookie,999999999999,,Cookie production multiplier +2%.,cookie,,main.js:10410
+Quintillion fingers,tiered,10000000000000,,Multiplies the gain from Thousand fingers by 20.,,9,main.js:10413
+Gold hoard,debug,7,,Golden cookies appear really often.,debug,,main.js:10416
+Elder Covenant,toggle,66666666666666,,"Puts a permanent end to the elders' wrath, at the cost of 5% of your CpS.",toggle,,main.js:10420
+Revoke Elder Covenant,toggle,6666666666,,"You will get 5% of your CpS back, but the grandmatriarchs will return.",toggle,,main.js:10432
+Get lucky,misc,77777777777777,,Golden cookie effects last twice as long.,,,main.js:10440
+Sacrificial rolling pins,misc,2888888888888,,Elder pledges last twice as long.,,,main.js:10443
+Snickerdoodles,cookie,4999999999995,,Cookie production multiplier +2%.,cookie,,main.js:10446
+Stroopwafels,cookie,9999999999999,,Cookie production multiplier +2%.,cookie,,main.js:10447
+Macaroons,cookie,49999999999995,,Cookie production multiplier +2%.,cookie,,main.js:10448
+Neuromancy,debug,7,,Can toggle upgrades on and off at will in the stats menu.,debug,,main.js:10451
+Empire biscuits,cookie,99999999999999,,Cookie production multiplier +2%.,cookie,,main.js:10455
+British tea biscuits,cookie,99999999999999,,Cookie production multiplier +2%.,cookie,,main.js:10457
+Chocolate british tea biscuits,cookie,99999999999999,,Cookie production multiplier +2%.,cookie,,main.js:10458
+Round british tea biscuits,cookie,99999999999999,,Cookie production multiplier +2%.,cookie,,main.js:10459
+Round chocolate british tea biscuits,cookie,99999999999999,,Cookie production multiplier +2%.,cookie,,main.js:10460
+Round british tea biscuits with heart motif,cookie,99999999999999,,Cookie production multiplier +2%.,cookie,,main.js:10461
+Round chocolate british tea biscuits with heart motif,cookie,99999999999999,,Cookie production multiplier +2%.,cookie,,main.js:10462
+Sugar bosons,tiered,1700000000000000,,,,1,main.js:10465
+String theory,tiered,8500000000000000,,,,2,main.js:10466
+Large macaron collider,tiered,85000000000000000,,,,3,main.js:10467
+Big bang bake,tiered,8500000000000000000,,,,4,main.js:10468
+Antigrandmas,misc,8500000000000000,,Grandmas are twice as efficient. Antimatter condensers gain +1% CpS per 11 grandma.,,,main.js:10471
+Madeleines,cookie,499999999999995,,Cookie production multiplier +2%.,cookie,,main.js:10474
+Palmiers,cookie,499999999999995,,Cookie production multiplier +2%.,cookie,,main.js:10475
+Palets,cookie,999999999999999,,Cookie production multiplier +2%.,cookie,,main.js:10476
+Sabl&eacute;s,cookie,999999999999999,,Cookie production multiplier +2%.,cookie,,main.js:10477
+Kitten overseers,tiered,90000000000000000,,You gain more CpS the more milk you have.,,4,main.js:10480
+Sextillion fingers,tiered,10000000000000000,,Multiplies the gain from Thousand fingers by 20.,,10,main.js:10484
+Double-thick glasses,tiered,500000000,,,,5,main.js:10486
+Gingerbread scarecrows,tiered,5500000000,,,,5,main.js:10487
+Recombobulators,tiered,650000000000,,,,5,main.js:10488
+H-bomb mining,tiered,60000000000,,,,5,main.js:10489
+Chocolate monoliths,tiered,25500000000000000,,,,5,main.js:10490
+Aqua crustulae,tiered,375000000000000000,,,,5,main.js:10491
+Brane transplant,tiered,5000000000000000000,,,,5,main.js:10492
+Yestermorrow comparators,tiered,70000000000000000000,,,,5,main.js:10493
+Reverse cyclotrons,tiered,850000000000000000000,,,,5,main.js:10494
+Unobtainium mouse,tiered,5000000000000,,Clicking gains +1% of your CpS.,,5,main.js:10497
+Caramoas,cookie,10000000000000000,,Cookie production multiplier +3%.,cookie,,main.js:10500
+Sagalongs,cookie,10000000000000000,,Cookie production multiplier +3%.,cookie,,main.js:10501
+Shortfoils,cookie,10000000000000000,,Cookie production multiplier +3%.,cookie,,main.js:10502
+Win mints,cookie,10000000000000000,,Cookie production multiplier +3%.,cookie,,main.js:10503
+Perfect idling,debug,7,,You keep producing cookies even while the game is closed.,debug,,main.js:10506
+Fig gluttons,cookie,4999999999999995,,Cookie production multiplier +2%.,cookie,,main.js:10510
+Loreols,cookie,4999999999999995,,Cookie production multiplier +2%.,cookie,,main.js:10511
+Jaffa cakes,cookie,4999999999999995,,Cookie production multiplier +2%.,cookie,,main.js:10512
+Grease's cups,cookie,4999999999999995,,Cookie production multiplier +2%.,cookie,,main.js:10513
+Heavenly chip secret,misc,11,,Unlocks 5% of the potential of your prestige level.,,,main.js:10516
+Heavenly cookie stand,misc,1111,,Unlocks 25% of the potential of your prestige level.,,,main.js:10517
+Heavenly bakery,misc,111111,,Unlocks 50% of the potential of your prestige level.,,,main.js:10518
+Heavenly confectionery,misc,11111111,,Unlocks 75% of the potential of your prestige level.,,,main.js:10519
+Heavenly key,misc,1111111111,,Unlocks 100% of the potential of your prestige level.,,,main.js:10520
+Skull cookies,cookie,444444444444,,Cookie production multiplier +2%.,cookie,,main.js:10523
+Ghost cookies,cookie,444444444444,,Cookie production multiplier +2%.,cookie,,main.js:10524
+Bat cookies,cookie,444444444444,,Cookie production multiplier +2%.,cookie,,main.js:10525
+Slime cookies,cookie,444444444444,,Cookie production multiplier +2%.,cookie,,main.js:10526
+Pumpkin cookies,cookie,444444444444,,Cookie production multiplier +2%.,cookie,,main.js:10527
+Eyeball cookies,cookie,444444444444,,Cookie production multiplier +2%.,cookie,,main.js:10528
+Spider cookies,cookie,444444444444,,Cookie production multiplier +2%.,cookie,,main.js:10529
+Persistent memory,heavenly,500,,Subsequent research will be 10 times as fast.,prestige,,main.js:10545
+Wrinkler doormat,debug,7,,Wrinklers spawn much more frequently.,debug,,main.js:10548
+Christmas tree biscuits,cookie,252525252525,,Cookie production multiplier +2%.,cookie,,main.js:10552
+Snowflake biscuits,cookie,252525252525,,Cookie production multiplier +2%.,cookie,,main.js:10553
+Snowman biscuits,cookie,252525252525,,Cookie production multiplier +2%.,cookie,,main.js:10554
+Holly biscuits,cookie,252525252525,,Cookie production multiplier +2%.,cookie,,main.js:10555
+Candy cane biscuits,cookie,252525252525,,Cookie production multiplier +2%.,cookie,,main.js:10556
+Bell biscuits,cookie,252525252525,,Cookie production multiplier +2%.,cookie,,main.js:10557
+Present biscuits,cookie,252525252525,,Cookie production multiplier +2%.,cookie,,main.js:10558
+Gingerbread men,cookie,10000000000000000,,Cookie production multiplier +2%.,cookie,,main.js:10561
+Gingerbread trees,cookie,10000000000000000,,Cookie production multiplier +2%.,cookie,,main.js:10562
+A festive hat,misc,25,,Unlocks... something.,,,main.js:10565
+Increased merriness,misc,2525,,Cookie production multiplier +15%. Cost scales with Santa level.,,,main.js:10572
+Improved jolliness,misc,2525,,Cookie production multiplier +15%. Cost scales with Santa level.,,,main.js:10573
+A lump of coal,misc,2525,,Cookie production multiplier +1%. Cost scales with Santa level.,,,main.js:10574
+An itchy sweater,misc,2525,,Cookie production multiplier +1%. Cost scales with Santa level.,,,main.js:10575
+Reindeer baking grounds,misc,2525,,Reindeer appear twice as frequently. Cost scales with Santa level.,,,main.js:10576
+Weighted sleighs,misc,2525,,Reindeer are twice as slow. Cost scales with Santa level.,,,main.js:10577
+Ho ho ho-flavored frosting,misc,2525,,Reindeer give twice as much. Cost scales with Santa level.,,,main.js:10578
+Season savings,misc,2525,,All buildings are 1% cheaper. Cost scales with Santa level.,,,main.js:10579
+Toy workshop,misc,2525,,All upgrades are 5% cheaper. Cost scales with Santa level.,,,main.js:10580
+Naughty list,misc,2525,,Grandmas are twice as efficient. Cost scales with Santa level.,,,main.js:10581
+Santa's bottomless bag,misc,2525,,Random drops are 10% more common. Cost scales with Santa level.,,,main.js:10582
+Santa's helpers,misc,2525,,Clicking is 10% more powerful. Cost scales with Santa level.,,,main.js:10583
+Santa's legacy,misc,2525,,Cookie production multiplier +3% per Santa's levels. Cost scales with Santa level.,,,main.js:10584
+Santa's milk and cookies,misc,2525,,Milk is 5% more powerful. Cost scales with Santa level.,,,main.js:10585
+Reindeer season,debug,7,,Reindeer spawn much more frequently.,debug,,main.js:10588
+Santa's dominion,misc,2525252525252525,,Cookie production multiplier +20%. All buildings are 1% cheaper. All upgrades are 2% cheaper.,,,main.js:10592
+Pure heart biscuits,cookie,1000000,,Cookie production multiplier +function(){ var pow=2; if (Game.Has('Starlove')) pow=3; if (Game.hasGod) { var godLvl=Game.hasGod('seasons'); if (godLvl==1) pow*=1.3; else if (godLvl==2) pow*=1.2; else if (godLvl==3) pow*=1.1; } return pow; },cookie,,main.js:10607
+Ardent heart biscuits,cookie,1000000000,,Cookie production multiplier +function(){ var pow=2; if (Game.Has('Starlove')) pow=3; if (Game.hasGod) { var godLvl=Game.hasGod('seasons'); if (godLvl==1) pow*=1.3; else if (godLvl==2) pow*=1.2; else if (godLvl==3) pow*=1.1; } return pow; },cookie,,main.js:10608
+Sour heart biscuits,cookie,1000000000000,,Cookie production multiplier +function(){ var pow=2; if (Game.Has('Starlove')) pow=3; if (Game.hasGod) { var godLvl=Game.hasGod('seasons'); if (godLvl==1) pow*=1.3; else if (godLvl==2) pow*=1.2; else if (godLvl==3) pow*=1.1; } return pow; },cookie,,main.js:10609
+Weeping heart biscuits,cookie,1000000000000000,,Cookie production multiplier +function(){ var pow=2; if (Game.Has('Starlove')) pow=3; if (Game.hasGod) { var godLvl=Game.hasGod('seasons'); if (godLvl==1) pow*=1.3; else if (godLvl==2) pow*=1.2; else if (godLvl==3) pow*=1.1; } return pow; },cookie,,main.js:10610
+Golden heart biscuits,cookie,1000000000000000000,,Cookie production multiplier +function(){ var pow=2; if (Game.Has('Starlove')) pow=3; if (Game.hasGod) { var godLvl=Game.hasGod('seasons'); if (godLvl==1) pow*=1.3; else if (godLvl==2) pow*=1.2; else if (godLvl==3) pow*=1.1; } return pow; },cookie,,main.js:10611
+Eternal heart biscuits,cookie,1000000000000000000000,,Cookie production multiplier +function(){ var pow=2; if (Game.Has('Starlove')) pow=3; if (Game.hasGod) { var godLvl=Game.hasGod('seasons'); if (godLvl==1) pow*=1.3; else if (godLvl==2) pow*=1.2; else if (godLvl==3) pow*=1.1; } return pow; },cookie,,main.js:10612
+Gem polish,tiered,21000000000000000,,,,1,main.js:10624
+9th color,tiered,105000000000000000,,,,2,main.js:10625
+Chocolate light,tiered,1050000000000000000,,,,3,main.js:10626
+Grainbow,tiered,105000000000000000000,,,,4,main.js:10627
+Pure cosmic light,tiered,10499999999999998951424,,,,5,main.js:10628
+Rainbow grandmas,misc,105000000000000000,,Grandmas are twice as efficient. Prisms gain +1% CpS per 12 grandma.,,,main.js:10631
+Season switcher,heavenly,1111,,"Allows you to trigger seasonal events at will, for a price.",prestige,,main.js:10635
+Festive biscuit,toggle,1000000000,,Triggers Christmas season for the next 24 hours. Triggering another season will cancel this one. Cost scales with unbuffed CpS and increases with every season switch.,toggle,,main.js:10636
+Ghostly biscuit,toggle,1000000000,,Triggers Halloween season for the next 24 hours. Triggering another season will cancel this one. Cost scales with unbuffed CpS and increases with every season switch.,toggle,,main.js:10637
+Lovesick biscuit,toggle,1000000000,,Triggers Valentine's day season for the next 24 hours. Triggering another season will cancel this one. Cost scales with unbuffed CpS and increases with every season switch.,toggle,,main.js:10638
+Fool's biscuit,toggle,1000000000,,Triggers Business day season for the next 24 hours. Triggering another season will cancel this one. Cost scales with unbuffed CpS and increases with every season switch.,toggle,,main.js:10639
+Eternal seasons,debug,7,,Seasons now last forever.,debug,,main.js:10643
+Kitten managers,tiered,900000000000000000000,,You gain more CpS the more milk you have.,,5,main.js:10648
+Septillion fingers,tiered,10000000000000000000,,Multiplies the gain from Thousand fingers by 20.,,11,main.js:10651
+Octillion fingers,tiered,10000000000000000000000,,Multiplies the gain from Thousand fingers by 20.,,12,main.js:10652
+Eludium mouse,tiered,500000000000000,,Clicking gains +1% of your CpS.,,6,main.js:10654
+Wishalloy mouse,tiered,50000000000000000,,Clicking gains +1% of your CpS.,,7,main.js:10655
+Aging agents,tiered,50000000000,,,,6,main.js:10656
+Pulsar sprinklers,tiered,550000000000,,,,6,main.js:10657
+Deep-bake process,tiered,65000000000000,,,,6,main.js:10658
+Coreforge,tiered,6000000000000,,,,6,main.js:10659
+Generation ship,tiered,2550000000000000000,,,,6,main.js:10660
+Origin crucible,tiered,37500000000000000000,,,,6,main.js:10661
+Deity-sized portals,tiered,500000000000000000000,,,,6,main.js:10662
+Far future enactment,tiered,7000000000000000000000,,,,6,main.js:10663
+Nanocosmics,tiered,84999999999999997902848,,,,6,main.js:10664
+Glow-in-the-dark,tiered,1050000000000000062914560,,,,6,main.js:10666
+Rose macarons,cookie,9999,,Cookie production multiplier +3%.,cookie,,main.js:10669
+Lemon macarons,cookie,9999999,,Cookie production multiplier +3%.,cookie,,main.js:10670
+Chocolate macarons,cookie,9999999999,,Cookie production multiplier +3%.,cookie,,main.js:10671
+Pistachio macarons,cookie,9999999999999,,Cookie production multiplier +3%.,cookie,,main.js:10672
+Hazelnut macarons,cookie,10000000000000000,,Cookie production multiplier +3%.,cookie,,main.js:10673
+Violet macarons,cookie,10000000000000000000,,Cookie production multiplier +3%.,cookie,,main.js:10674
+Magic shenanigans,debug,7,,"Cookie production multiplied by 1,000.",debug,,main.js:10677
+Bunny biscuit,toggle,1000000000,,Triggers Easter season for the next 24 hours. Triggering another season will cancel this one. Cost scales with unbuffed CpS and increases with every season switch.,toggle,,main.js:10682
+Chicken egg,misc,999999999999,dynamic priceFunc,Cookie production multiplier +1%. Cost scales with how many eggs you own.,,,main.js:10686
+Duck egg,misc,999999999999,dynamic priceFunc,Cookie production multiplier +1%. Cost scales with how many eggs you own.,,,main.js:10687
+Turkey egg,misc,999999999999,dynamic priceFunc,Cookie production multiplier +1%. Cost scales with how many eggs you own.,,,main.js:10688
+Quail egg,misc,999999999999,dynamic priceFunc,Cookie production multiplier +1%. Cost scales with how many eggs you own.,,,main.js:10689
+Robin egg,misc,999999999999,dynamic priceFunc,Cookie production multiplier +1%. Cost scales with how many eggs you own.,,,main.js:10690
+Ostrich egg,misc,999999999999,dynamic priceFunc,Cookie production multiplier +1%. Cost scales with how many eggs you own.,,,main.js:10691
+Cassowary egg,misc,999999999999,dynamic priceFunc,Cookie production multiplier +1%. Cost scales with how many eggs you own.,,,main.js:10692
+Salmon roe,misc,999999999999,dynamic priceFunc,Cookie production multiplier +1%. Cost scales with how many eggs you own.,,,main.js:10693
+Frogspawn,misc,999999999999,dynamic priceFunc,Cookie production multiplier +1%. Cost scales with how many eggs you own.,,,main.js:10694
+Shark egg,misc,999999999999,dynamic priceFunc,Cookie production multiplier +1%. Cost scales with how many eggs you own.,,,main.js:10695
+Turtle egg,misc,999999999999,dynamic priceFunc,Cookie production multiplier +1%. Cost scales with how many eggs you own.,,,main.js:10696
+Ant larva,misc,999999999999,dynamic priceFunc,Cookie production multiplier +1%. Cost scales with how many eggs you own.,,,main.js:10697
+Golden goose egg,misc,99999999999999,dynamic priceFunc,Golden cookies appear 5% more often. Cost scales with how many eggs you own.,,,main.js:10698
+Faberge egg,misc,99999999999999,dynamic priceFunc,All buildings and upgrades are 1% cheaper. Cost scales with how many eggs you own.,,,main.js:10699
+Wrinklerspawn,misc,99999999999999,dynamic priceFunc,Wrinklers explode into 5% more cookies. Cost scales with how many eggs you own.,,,main.js:10700
+Cookie egg,misc,99999999999999,dynamic priceFunc,Clicking is 10% more powerful. Cost scales with how many eggs you own.,,,main.js:10701
+Omelette,misc,99999999999999,dynamic priceFunc,Other eggs appear 10% more frequently. Cost scales with how many eggs you own.,,,main.js:10702
+Chocolate egg,misc,99999999999999,dynamic priceFunc,Contains a lot of cookies. Cost scales with how many eggs you own.,,,main.js:10703
+Century egg,misc,99999999999999,dynamic priceFunc,You continually gain more CpS the longer you've played in the current ascension. Cost scales with how many eggs you own.,,,main.js:10709
+"""egg""",misc,99999999999999,dynamic priceFunc,+9 CpS,,,main.js:10716
+Caramel macarons,cookie,10000000000000000000000,,Cookie production multiplier +3%.,cookie,,main.js:10766
+Licorice macarons,cookie,10000000000000000905969664,,Cookie production multiplier +3%.,cookie,,main.js:10767
+Taller tellers,tiered,14000000,,,,1,main.js:10771
+Scissor-resistant credit cards,tiered,70000000,,,,2,main.js:10772
+Acid-proof vaults,tiered,700000000,,,,3,main.js:10773
+Chocolate coins,tiered,70000000000,,,,4,main.js:10774
+Exponential interest rates,tiered,7000000000000,,,,5,main.js:10775
+Financial zen,tiered,700000000000000,,,,6,main.js:10776
+Golden idols,tiered,200000000,,,,1,main.js:10779
+Sacrifices,tiered,1000000000,,,,2,main.js:10780
+Delicious blessing,tiered,10000000000,,,,3,main.js:10781
+Sun festival,tiered,1000000000000,,,,4,main.js:10782
+Enlarged pantheon,tiered,100000000000000,,,,5,main.js:10783
+Great Baker in the sky,tiered,10000000000000000,,,,6,main.js:10784
+Pointier hats,tiered,3300000000,,,,1,main.js:10787
+Beardlier beards,tiered,16500000000,,,,2,main.js:10788
+Ancient grimoires,tiered,165000000000,,,,3,main.js:10789
+Kitchen curses,tiered,16500000000000,,,,4,main.js:10790
+School of sorcery,tiered,1650000000000000,,,,5,main.js:10791
+Dark formulas,tiered,165000000000000000,,,,6,main.js:10792
+Banker grandmas,misc,70000000,,Grandmas are twice as efficient. Banks gain +1% CpS per 4 grandma.,,,main.js:10796
+Priestess grandmas,misc,1000000000,,Grandmas are twice as efficient. Temples gain +1% CpS per 5 grandma.,,,main.js:10797
+Witch grandmas,misc,16500000000,,Grandmas are twice as efficient. Wizard towers gain +1% CpS per 6 grandma.,,,main.js:10798
+Tin of british tea biscuits,heavenly,25,,Contains an assortment of fancy biscuits.,prestige,,main.js:10803
+Box of macarons,heavenly,25,,Contains an assortment of macarons.,prestige,,main.js:10804
+Box of brand biscuits,heavenly,25,,Contains an assortment of popular biscuits.,prestige,,main.js:10805
+Pure black chocolate cookies,cookie,50000000000000000,,Cookie production multiplier +5%.,cookie,,main.js:10808
+Pure white chocolate cookies,cookie,50000000000000000,,Cookie production multiplier +5%.,cookie,,main.js:10809
+Ladyfingers,cookie,100000000000000000,,Cookie production multiplier +3%.,cookie,,main.js:10810
+Tuiles,cookie,500000000000000000,,Cookie production multiplier +3%.,cookie,,main.js:10811
+Chocolate-stuffed biscuits,cookie,1000000000000000000,,Cookie production multiplier +3%.,cookie,,main.js:10812
+Checker cookies,cookie,5000000000000000000,,Cookie production multiplier +3%.,cookie,,main.js:10813
+Butter cookies,cookie,10000000000000000000,,Cookie production multiplier +3%.,cookie,,main.js:10814
+Cream cookies,cookie,50000000000000000000,,Cookie production multiplier +3%.,cookie,,main.js:10815
+Permanent upgrade slot I,heavenly,100,,Placing an upgrade in this slot will make its effects permanent across all playthroughs.,prestige,,main.js:10819
+Permanent upgrade slot II,heavenly,20000,,Placing an upgrade in this slot will make its effects permanent across all playthroughs.,prestige,,main.js:10820
+Permanent upgrade slot III,heavenly,3000000,,Placing an upgrade in this slot will make its effects permanent across all playthroughs.,prestige,,main.js:10821
+Permanent upgrade slot IV,heavenly,400000000,,Placing an upgrade in this slot will make its effects permanent across all playthroughs.,prestige,,main.js:10822
+Permanent upgrade slot V,heavenly,50000000000,,Placing an upgrade in this slot will make its effects permanent across all playthroughs.,prestige,,main.js:10823
+Starspawn,heavenly,111111,,Eggs drop 10% more often. Golden cookies appear 2% more often during Easter.,prestige,,main.js:10889
+Starsnow,heavenly,111111,,Christmas cookies drop 5% more often. Reindeer appear 5% more often.,prestige,,main.js:10890
+Starterror,heavenly,111111,,Spooky cookies drop 10% more often. Golden cookies appear 2% more often during Halloween.,prestige,,main.js:10891
+Starlove,heavenly,111111,,Heart cookies are 50% more powerful. Golden cookies appear 2% more often during Valentine's day.,prestige,,main.js:10892
+Startrade,heavenly,111111,,Golden cookies appear 5% more often during Business day.,prestige,,main.js:10893
+Angels,heavenly,7,,"You gain another +10% of your regular CpS while the game is closed, for a total of 15%.",prestige,,main.js:10897
+Archangels,heavenly,49,,"You gain another +10% of your regular CpS while the game is closed, for a total of 25%.",prestige,,main.js:10898
+Virtues,heavenly,343,,"You gain another +10% of your regular CpS while the game is closed, for a total of 35%.",prestige,,main.js:10899
+Dominions,heavenly,2401,,"You gain another +10% of your regular CpS while the game is closed, for a total of 45%.",prestige,,main.js:10900
+Cherubim,heavenly,16807,,"You gain another +10% of your regular CpS while the game is closed, for a total of 55%.",prestige,,main.js:10901
+Seraphim,heavenly,117649,,"You gain another +10% of your regular CpS while the game is closed, for a total of 65%.",prestige,,main.js:10902
+God,heavenly,823543,,"You gain another +10% of your regular CpS while the game is closed, for a total of 75%.",prestige,,main.js:10903
+Twin Gates of Transcendence,heavenly,1,,"You now keep making cookies while the game is closed, at the rate of 5% of your regular CpS and up to 1 hour after the game is closed. (Beyond 1 hour, this is reduced by a further 90% - your rate goes down to 0.5% of your CpS.)",prestige,,main.js:10905
+Heavenly luck,heavenly,77,,Golden cookies appear 5% more often.,prestige,,main.js:10907
+Lasting fortune,heavenly,777,,Golden cookie effects last 10% longer.,prestige,,main.js:10908
+Decisive fate,heavenly,7777,,Golden cookies stay 5% longer.,prestige,,main.js:10909
+Divine discount,heavenly,99999,,All buildings are 1% cheaper.,prestige,,main.js:10911
+Divine sales,heavenly,99999,,All upgrades are 1% cheaper.,prestige,,main.js:10912
+Divine bakeries,heavenly,399999,,Cookie upgrades are 5 times cheaper.,prestige,,main.js:10913
+Starter kit,heavenly,50,,You start with 10 cursor.,prestige,,main.js:10915
+Starter kitchen,heavenly,5000,,You start with 5 grandma.,prestige,,main.js:10916
+Halo gloves,heavenly,55555,,Clicking is 10% more powerful.,prestige,,main.js:10917
+Kitten angels,heavenly,9000,,You gain more CpS the more milk you have.,prestige,,main.js:10919
+Unholy bait,heavenly,44444,,Wrinklers appear 5 times as fast.,prestige,,main.js:10921
+Sacrilegious corruption,heavenly,444444,,Wrinklers explode into 5% more cookies.,prestige,,main.js:10922
+Xtreme walkers,tiered,50000000000000,,,,7,main.js:10925
+Fudge fungus,tiered,550000000000000,,,,7,main.js:10926
+Planetsplitters,tiered,6000000000000000,,,,7,main.js:10927
+Cyborg workforce,tiered,65000000000000000,,,,7,main.js:10928
+Way of the wallet,tiered,700000000000000000,,,,7,main.js:10929
+Creation myth,tiered,10000000000000000000,,,,7,main.js:10930
+Cookiemancy,tiered,165000000000000000000,,,,7,main.js:10931
+Dyson sphere,tiered,2550000000000000000000,,,,7,main.js:10932
+Theory of atomic fluidity,tiered,37500000000000001048576,,,,7,main.js:10933
+End of times back-up plan,tiered,499999999999999991611392,,,,7,main.js:10934
+Great loop hypothesis,tiered,7000000000000000419430400,,,,7,main.js:10935
+The Pulse,tiered,85000000000000006627000320,,,,7,main.js:10936
+Lux sanctorum,tiered,1049999999999999972720246784,,,,7,main.js:10938
+The Unbridling,tiered,50000000000000000,,,,8,main.js:10941
+Wheat triffids,tiered,550000000000000000,,,,8,main.js:10942
+Canola oil wells,tiered,6000000000000000000,,,,8,main.js:10943
+78-hour days,tiered,65000000000000000000,,,,8,main.js:10944
+The stuff rationale,tiered,700000000000000000000,,,,8,main.js:10945
+Theocracy,tiered,10000000000000000000000,,,,8,main.js:10946
+Rabbit trick,tiered,165000000000000014680064,,,,8,main.js:10947
+The final frontier,tiered,2549999999999999769313280,,,,8,main.js:10948
+Beige goo,tiered,37499999999999999639289856,,,,8,main.js:10949
+Maddening chants,tiered,500000000000000006643777536,,,,8,main.js:10950
+Cookietopian moments of maybe,tiered,7000000000000000367890792448,,,,8,main.js:10951
+Some other super-tiny fundamental particle? Probably?,tiered,84999999999999995357006135296,,,,8,main.js:10952
+Reverse shadows,tiered,1050000000000000006805107245056,,,,8,main.js:10954
+Kitten accountants,tiered,899999999999999958056960,,You gain more CpS the more milk you have.,,6,main.js:10958
+Kitten specialists,tiered,899999999999999956983218176,,You gain more CpS the more milk you have.,,7,main.js:10959
+Kitten experts,tiered,900000000000000046043660025856,,You gain more CpS the more milk you have.,,8,main.js:10960
+How to bake your dragon,heavenly,9,,Allows you to purchase a crumbly egg once you have earned 1 million cookies.,prestige,,main.js:10962
+A crumbly egg,misc,25,,Unlocks the cookie dragon egg.,,,main.js:10965
+Chimera,heavenly,40353607,,Synergy upgrades are 2% cheaper. You gain another +5% of your regular CpS while the game is closed. You retain optimal cookie production while the game is closed for 2 more days.,prestige,,main.js:10967
+Tin of butter cookies,heavenly,25,,Contains an assortment of rich butter cookies.,prestige,,main.js:10969
+Golden switch,heavenly,999,,"Unlocks the golden switch, which passively boosts your CpS by 50% but disables golden cookies.",prestige,,main.js:10971
+Classic dairy selection,heavenly,9,,"Unlocks the milk selector, letting you pick which milk is displayed under your cookie. Comes with a variety of basic flavors.",prestige,,main.js:10973
+Fanciful dairy selection,heavenly,1000000,,Contains more exotic flavors for your milk selector.,prestige,,main.js:10975
+Dragon cookie,cookie,70000000000000000,,Cookie production multiplier +5%.,cookie,,main.js:10978
+Golden switch [off],toggle,1000000,dynamic priceFunc,"Turning this on will give you a passive +50% CpS, but prevents golden cookies from spawning. Cost is equal to 1 hour of production.",toggle,,main.js:10982
+Golden switch [on],toggle,1000000,dynamic priceFunc,The switch is currently giving you a passive +50% CpS; it also prevents golden cookies from spawning. Turning it off will revert those effects. Cost is equal to 1 hour of production.,toggle,,main.js:10997
+Milk selector,toggle,0,,Lets you pick what flavor of milk to display.,toggle,,main.js:11003
+Milk chocolate butter biscuit,cookie,99999999999999991433150857216,,Cookie production multiplier +10%.,cookie,,main.js:11041
+Dark chocolate butter biscuit,cookie,100000000000000005366162204393472,,Cookie production multiplier +10%.,cookie,,main.js:11042
+White chocolate butter biscuit,cookie,99999999999999996863366107917975552,,Cookie production multiplier +10%.,cookie,,main.js:11043
+Ruby chocolate butter biscuit,cookie,99999999999999997748809823456034029568,,Cookie production multiplier +10%.,cookie,,main.js:11044
+Gingersnaps,cookie,100000000000000000000,,Cookie production multiplier +4%.,cookie,,main.js:11047
+Cinnamon cookies,cookie,500000000000000000000,,Cookie production multiplier +4%.,cookie,,main.js:11048
+Vanity cookies,cookie,1000000000000000000000,,Cookie production multiplier +4%.,cookie,,main.js:11049
+Cigars,cookie,5000000000000000000000,,Cookie production multiplier +4%.,cookie,,main.js:11050
+Pinwheel cookies,cookie,10000000000000000000000,,Cookie production multiplier +4%.,cookie,,main.js:11051
+Fudge squares,cookie,49999999999999995805696,,Cookie production multiplier +4%.,cookie,,main.js:11052
+Digits,cookie,4999999999999995,,Cookie production multiplier +2%.,cookie,,main.js:11055
+Butter horseshoes,cookie,99999999999999991611392,,Cookie production multiplier +4%.,cookie,,main.js:11058
+Butter pucks,cookie,499999999999999991611392,,Cookie production multiplier +4%.,cookie,,main.js:11059
+Butter knots,cookie,999999999999999983222784,,Cookie production multiplier +4%.,cookie,,main.js:11060
+Butter slabs,cookie,4999999999999999379243008,,Cookie production multiplier +4%.,cookie,,main.js:11061
+Butter swirls,cookie,10000000000000000905969664,,Cookie production multiplier +4%.,cookie,,main.js:11062
+Shortbread biscuits,cookie,99999999999999991611392,,Cookie production multiplier +4%.,cookie,,main.js:11065
+Millionaires' shortbreads,cookie,499999999999999991611392,,Cookie production multiplier +4%.,cookie,,main.js:11066
+Caramel cookies,cookie,999999999999999983222784,,Cookie production multiplier +4%.,cookie,,main.js:11067
+Belphegor,heavenly,7,,"You retain optimal cookie production while the game is closed for twice as long, for a total of 0 seconds.",prestige,,main.js:11073
+Mammon,heavenly,49,,"You retain optimal cookie production while the game is closed for twice as long, for a total of 0 seconds.",prestige,,main.js:11074
+Abaddon,heavenly,343,,"You retain optimal cookie production while the game is closed for twice as long, for a total of 0 seconds.",prestige,,main.js:11075
+Satan,heavenly,2401,,"You retain optimal cookie production while the game is closed for twice as long, for a total of 0 seconds.",prestige,,main.js:11076
+Asmodeus,heavenly,16807,,"You retain optimal cookie production while the game is closed for twice as long, for a total of 0 seconds.",prestige,,main.js:11077
+Beelzebub,heavenly,117649,,"You retain optimal cookie production while the game is closed for twice as long, for a total of 0 seconds.",prestige,,main.js:11078
+Lucifer,heavenly,823543,,"You retain optimal cookie production while the game is closed for twice as long, for a total of 0 seconds.",prestige,,main.js:11079
+Golden cookie alert sound,heavenly,999999,,"Unlocks the golden cookie sound selector, which lets you pick whether golden cookies emit a sound when appearing or not.",prestige,,main.js:11081
+Golden cookie sound selector,toggle,0,,Lets you change the sound golden cookies make when they spawn.,toggle,,main.js:11084
+Basic wallpaper assortment,heavenly,99,,"Unlocks the background selector, letting you select the game's background. Comes with a variety of basic flavors.",prestige,,main.js:11118
+Legacy,heavenly,1,,"This is the first heavenly upgrade; it unlocks the Heavenly chips system. Each time you ascend, the cookies you made in your past life are turned into heavenly chips and prestige. Heavenly chips can be spent on a variety of permanent transc",prestige,,main.js:11120
+Elder spice,heavenly,444444,,You can attract 2 more wrinklers.,prestige,,main.js:11122
+Residual luck,heavenly,99999,,"While the golden switch is on, you gain an additional +10% CpS per golden cookie upgrade owned.",prestige,,main.js:11124
+Fantasteel mouse,tiered,5000000000000000000,,Clicking gains +1% of your CpS.,,8,main.js:11126
+Nevercrack mouse,tiered,500000000000000000000,,Clicking gains +1% of your CpS.,,9,main.js:11127
+Five-finger discount,heavenly,555555,,All upgrades are 1% cheaper per 100 cursor.,prestige,,main.js:11130
+Future almanacs,synergy,2800000002200000000,,,,synergy1,main.js:11134
+Rain prayer,synergy,4002200000000000000,,,,synergy2,main.js:11135
+Seismic magic,synergy,66024000000000,,,,synergy1,main.js:11137
+Asteroid mining,synergy,1020024000000000000000,,,,synergy2,main.js:11138
+Quantum electronics,synergy,34000000259999997952,,,,synergy1,main.js:11140
+Temporal overclocking,synergy,2800000259999999738249216,,,,synergy2,main.js:11141
+Contracts from beyond,synergy,200002800000000000,,,,synergy1,main.js:11143
+Printing presses,synergy,540000000000000000,,,,synergy2,main.js:11144
+Paganism,synergy,200040000000000000,,,,synergy1,main.js:11146
+God particle,synergy,34000040000000001986002944,,,,synergy2,main.js:11147
+Arcane knowledge,synergy,15660000000000000,,,,synergy1,main.js:11149
+Magical botany,synergy,66002200000000000000,,,,synergy2,main.js:11150
+Fossil fuels,synergy,1020024000000000,,,,synergy1,main.js:11152
+Shipyards,synergy,1020260000000000000000,,,,synergy2,main.js:11153
+Primordial ores,synergy,15000024000000000,,,,synergy1,main.js:11155
+Gold fund,synergy,15002800000000000524288,,,,synergy2,main.js:11156
+Infernal crops,synergy,200000002200000000,,,,synergy1,main.js:11158
+Abysmal glimmer,synergy,421999999999999968223952896,,,,synergy2,main.js:11159
+Relativistic parsec-skipping,synergy,2810200000000000000,,,,synergy1,main.js:11161
+Primeval glow,synergy,448000000000000026843545600,,,,synergy2,main.js:11162
+Extra physics funding,synergy,34000002800000000000,,,,synergy1,main.js:11164
+Chemical proficiency,synergy,34150000000000000742391808,,,,synergy2,main.js:11165
+Light magic,synergy,420000659999999983616,,,,synergy1,main.js:11167
+Mystical energies,synergy,420000040000000007321157632,,,,synergy2,main.js:11168
+Synergies Vol. I,heavenly,222222,,Unlocks a new tier of upgrades that affect 2 buildings at the same time. Synergies appear once you have 15 of both buildings.,prestige,,main.js:11171
+Synergies Vol. II,heavenly,2222222,,Unlocks a new tier of upgrades that affect 2 buildings at the same time. Synergies appear once you have 75 of both buildings.,prestige,,main.js:11172
+Heavenly cookies,heavenly,3,,Cookie production multiplier +10% permanently.,prestige,,main.js:11174
+Wrinkly cookies,heavenly,6666666,,Cookie production multiplier +10% permanently.,prestige,,main.js:11175
+Distilled essence of redoubled luck,heavenly,7777777,,"Golden cookies (and all other things that spawn, such as reindeer) have 1% chance of being doubled.",prestige,,main.js:11176
+Occult obstruction,debug,7,,Cookie production reduced to 0.,debug,,main.js:11179
+Glucose-charged air,debug,7,,Sugar lumps coalesce a whole lot faster.,debug,,main.js:11181
+Lavender chocolate butter biscuit,cookie,100000000000000000620008645040778319495168,,Cookie production multiplier +10%.,cookie,,main.js:11185
+Lombardia cookies,cookie,5000000000000000000000,,Cookie production multiplier +3%.,cookie,,main.js:11188
+Bastenaken cookies,cookie,5000000000000000000000,,Cookie production multiplier +3%.,cookie,,main.js:11189
+Pecan sandies,cookie,4999999999999999379243008,,Cookie production multiplier +4%.,cookie,,main.js:11192
+Moravian spice cookies,cookie,10000000000000000905969664,,Cookie production multiplier +4%.,cookie,,main.js:11193
+Anzac biscuits,cookie,50000000000000002382364672,,Cookie production multiplier +4%.,cookie,,main.js:11194
+Buttercakes,cookie,100000000000000004764729344,,Cookie production multiplier +4%.,cookie,,main.js:11195
+Ice cream sandwiches,cookie,500000000000000006643777536,,Cookie production multiplier +4%.,cookie,,main.js:11196
+Stevia Caelestis,heavenly,100000000,,Sugar lumps ripen 0 seconds sooner.,prestige,,main.js:11198
+Diabetica Daemonicus,heavenly,300000000,,Sugar lumps mature 0 seconds sooner.,prestige,,main.js:11199
+Sucralosia Inutilis,heavenly,1000000000,,Bifurcated sugar lumps appear 5% more often and are 5% more likely to drop 2 lumps.,prestige,,main.js:11200
+Lucky digit,heavenly,777,,+1% prestige level effect on CpS. +1% golden cookie effect duration. +1% golden cookie lifespan.,prestige,,main.js:11202
+Lucky number,heavenly,77777,,+1% prestige level effect on CpS. +1% golden cookie effect duration. +1% golden cookie lifespan.,prestige,,main.js:11203
+Lucky payout,heavenly,77777777,,+1% prestige level effect on CpS. +1% golden cookie effect duration. +1% golden cookie lifespan.,prestige,,main.js:11204
+Background selector,toggle,0,,Lets you pick which wallpaper to display.,toggle,,main.js:11207
+Lucky grandmas,misc,1300000000000000000,,Grandmas are twice as efficient. Chancemakers gain +1% CpS per 13 grandma.,,,main.js:11279
+Your lucky cookie,tiered,260000000000000000,,,,1,main.js:11282
+"""All Bets Are Off"" magic coin",tiered,1300000000000000000,,,,2,main.js:11283
+Winning lottery ticket,tiered,13000000000000000000,,,,3,main.js:11284
+Four-leaf clover field,tiered,1300000000000000000000,,,,4,main.js:11285
+A recipe book about books,tiered,129999999999999995805696,,,,5,main.js:11286
+Leprechaun village,tiered,12999999999999999245025280,,,,6,main.js:11287
+Improbability drive,tiered,13000000000000000997371936768,,,,7,main.js:11288
+Antisuperstistronics,tiered,12999999999999999977025146191872,,,,8,main.js:11289
+Gemmed talismans,synergy,5200000000023999807488,,,,synergy1,main.js:11292
+Kitten consultants,tiered,900000000000000066309858349023232,,You gain more CpS the more milk you have.,,9,main.js:11295
+Birthday cookie,cookie,99999999999999991433150857216,,Cookie production multiplier +0%.,cookie,,main.js:11308
+Armythril mouse,tiered,49999999999999995805696,,Clicking gains +1% of your CpS.,,10,main.js:11311
+Reverse dementia,tiered,50000000000000000000,,,,9,main.js:11313
+Humane pesticides,tiered,550000000000000000000,,,,9,main.js:11314
+Mole people,tiered,6000000000000000000000,,,,9,main.js:11315
+Machine learning,tiered,64999999999999997902848,,,,9,main.js:11316
+Edible money,tiered,700000000000000041943040,,,,9,main.js:11317
+Sick rap prayers,tiered,10000000000000000905969664,,,,9,main.js:11318
+Deluxe tailored wands,tiered,164999999999999996694888448,,,,9,main.js:11319
+Autopilot,tiered,2549999999999999992651579392,,,,9,main.js:11320
+The advent of chemistry,tiered,37499999999999998986454827008,,,,9,main.js:11321
+The real world,tiered,500000000000000009942312419328,,,,9,main.js:11322
+Second seconds,tiered,7000000000000000420667350581248,,,,9,main.js:11323
+Quantum comb,tiered,84999999999999994653318693519360,,,,9,main.js:11324
+Crystal mirrors,tiered,1050000000000000029323105381908480,,,,9,main.js:11325
+Bunnypedes,tiered,12999999999999999868938755134980096,,,,9,main.js:11326
+Kitten assistants to the regional manager,tiered,899999999999999934876806823842676736,,You gain more CpS the more milk you have.,,10,main.js:11329
+Charm quarks,synergy,5539999999999999518359683072,,,,synergy2,main.js:11332
+Pink biscuits,cookie,1000000000000000013287555072,,Cookie production multiplier +4%.,cookie,,main.js:11336
+Whole-grain cookies,cookie,4999999999999999791559868416,,Cookie production multiplier +4%.,cookie,,main.js:11337
+Candy cookies,cookie,9999999999999999583119736832,,Cookie production multiplier +4%.,cookie,,main.js:11338
+Big chip cookies,cookie,49999999999999995716575428608,,Cookie production multiplier +4%.,cookie,,main.js:11339
+One chip cookies,cookie,99999999999999991433150857216,,Cookie production multiplier +1%.,cookie,,main.js:11340
+Sugar baking,heavenly,200000000,,Each unspent sugar lump (up to 100) gives +1% CpS. Note: this means that spending sugar lumps will decrease your CpS until they grow back.,prestige,,main.js:11343
+Sugar craving,heavenly,400000000,,"Once an ascension, you may use the ""Sugar frenzy"" switch to triple your CpS for 1 hour, at the cost of 1 sugar lump.",prestige,,main.js:11344
+Sugar aging process,heavenly,600000000,,Each grandma (up to 600) makes sugar lumps ripen 0 seconds sooner.,prestige,,main.js:11345
+Sugar frenzy,toggle,0,,"Activating this will triple your CpS for 1 hour, at the cost of 1 sugar lump. May only be used once per ascension.",toggle,,main.js:11348
+Sprinkles cookies,cookie,499999999999999939573568241664,,Cookie production multiplier +4%.,cookie,,main.js:11359
+Peanut butter blossoms,cookie,1000000000000000019884624838656,,Cookie production multiplier +4%.,cookie,,main.js:11360
+No-bake cookies,cookie,4999999999999999817948147482624,,Cookie production multiplier +4%.,cookie,,main.js:11361
+Florentines,cookie,9999999999999999635896294965248,,Cookie production multiplier +4%.,cookie,,main.js:11362
+Chocolate crinkles,cookie,49999999999999993675881847455744,,Cookie production multiplier +4%.,cookie,,main.js:11363
+Maple cookies,cookie,100000000000000005366162204393472,,Cookie production multiplier +4%.,cookie,,main.js:11364
+Turbo-charged soil,debug,7,,Garden plants grow every second. Garden seeds are free to plant. You can switch soils at any time.,debug,,main.js:11368
+Technobsidian mouse,tiered,5000000000000000452984832,,Clicking gains +1% of your CpS.,,11,main.js:11373
+Plasmarble mouse,tiered,500000000000000006643777536,,Clicking gains +1% of your CpS.,,12,main.js:11374
+Kitten marketeers,tiered,899999999999999960849822479625725411328,,You gain more CpS the more milk you have.,,11,main.js:11377
+Festivity loops,cookie,4999999999999999379243008,,Cookie production multiplier +2%.,cookie,,main.js:11380
+Persian rice cookies,cookie,500000000000000044845209531449344,,Cookie production multiplier +4%.,cookie,,main.js:11383
+Norwegian cookies,cookie,999999999999999945575230987042816,,Cookie production multiplier +4%.,cookie,,main.js:11384
+Crispy rice cookies,cookie,4999999999999999727876154935214080,,Cookie production multiplier +4%.,cookie,,main.js:11385
+Ube cookies,cookie,9999999999999999455752309870428160,,Cookie production multiplier +4%.,cookie,,main.js:11386
+Butterscotch cookies,cookie,49999999999999998431683053958987776,,Cookie production multiplier +4%.,cookie,,main.js:11387
+Speculaas,cookie,99999999999999996863366107917975552,,Cookie production multiplier +4%.,cookie,,main.js:11388
+Elderwort biscuits,cookie,120,dynamic priceFunc,Cookie production multiplier +2%. Grandmas are 2% more powerful. Dropped by elderwort plants. Cost scales with CpS.,cookie,,main.js:11391
+Bakeberry cookies,cookie,60,dynamic priceFunc,Cookie production multiplier +2%. Dropped by bakeberry plants. Cost scales with CpS.,cookie,,main.js:11392
+Duketater cookies,cookie,180,dynamic priceFunc,Cookie production multiplier +10%. Dropped by duketater plants. Cost scales with CpS.,cookie,,main.js:11393
+Green yeast digestives,cookie,180,dynamic priceFunc,Golden cookies give 1% more cookies. Golden cookie effects last 1% longer. Golden cookies appear 1% more often. Random drops are 3% more common. Dropped by green rot plants. Cost scales with CpS.,cookie,,main.js:11394
+Fern tea,misc,60,dynamic priceFunc,You gain another +3% of your regular CpS while the game is closed. (Must own the Twin Gates of Transcendence upgrade.) Dropped by drowsyfern plants. Cost scales with CpS.,,,main.js:11397
+Ichor syrup,misc,120,dynamic priceFunc,You gain another +7% of your regular CpS while the game is closed. (Must own the Twin Gates of Transcendence upgrade.) Sugar lumps mature 0 seconds sooner. Dropped by ichorpuff plants. Cost scales with CpS.,,,main.js:11398
+Wheat slims,cookie,30,dynamic priceFunc,Cookie production multiplier +1%. Dropped by baker's wheat plants. Cost scales with CpS.,cookie,,main.js:11401
+Synthetic chocolate green honey butter biscuit,cookie,100000000000000008821361405306422640701865984,,Cookie production multiplier +10%.,cookie,,main.js:11415
+Royal raspberry chocolate butter biscuit,cookie,99999999999999984102174700855949311516153479168,,Cookie production multiplier +10%.,cookie,,main.js:11416
+Ultra-concentrated high-energy chocolate butter biscuit,cookie,100000000000000007629769841091887003294964970946560,,Cookie production multiplier +10%.,cookie,,main.js:11417
+Timeproof hair dyes,tiered,49999999999999995805696,,,,10,main.js:11421
+Barnstars,tiered,550000000000000004194304,,,,10,main.js:11422
+Mine canaries,tiered,5999999999999999899336704,,,,10,main.js:11423
+Brownie point system,tiered,65000000000000000520093696,,,,10,main.js:11424
+Grand supercycles,tiered,699999999999999981813497856,,,,10,main.js:11425
+Psalm-reading,tiered,9999999999999999583119736832,,,,10,main.js:11426
+Immobile spellcasting,tiered,164999999999999992021964029952,,,,10,main.js:11427
+Restaurants at the end of the universe,tiered,2550000000000000177369532858368,,,,10,main.js:11428
+On second thought,tiered,37499999999999999760511012962304,,,,10,main.js:11429
+Dimensional garbage gulper,tiered,499999999999999972787615493521408,,,,10,main.js:11430
+Additional clock hands,tiered,7000000000000000195487369212723200,,,,10,main.js:11431
+Baking Nobel prize,tiered,85000000000000002867884413843144704,,,,10,main.js:11432
+Reverse theory of light,tiered,1050000000000000022405576354267398144,,,,10,main.js:11433
+Revised probabilistics,tiered,12999999999999999518450617734498615296,,,,10,main.js:11434
+Kitten analysts,tiered,900000000000000024922890919201071670755328,,You gain more CpS the more milk you have.,,12,main.js:11437
+Eye of the wrinkler,heavenly,99999999,,Mouse over a wrinkler to see how many cookies are in its stomach.,prestige,,main.js:11440
+Inspired checklist,heavenly,900000,,"Unlocks the Buy all feature, which lets you instantly purchase every upgrade in your store (starting from the cheapest one). Also unlocks the Vault, a store section where you can place upgrades you do not wish to auto-buy.",prestige,,main.js:11442
+Pure pitch-black chocolate butter biscuit,cookie,99999999999999999322094867436162797646170844194406400,,Cookie production multiplier +10%.,cookie,,main.js:11445
+Chocolate oatmeal cookies,cookie,499999999999999947423342392170774528,,Cookie production multiplier +4%.,cookie,,main.js:11448
+Molasses cookies,cookie,1000000000000000042420637374017961984,,Cookie production multiplier +4%.,cookie,,main.js:11449
+Biscotti,cookie,5000000000000000359677139459766222848,,Cookie production multiplier +4%.,cookie,,main.js:11450
+Waffle cookies,cookie,9999999999999999538762658202121142272,,Cookie production multiplier +4%.,cookie,,main.js:11451
+Almond cookies,cookie,99999999,,Cookie production multiplier +2%.,cookie,,main.js:11456
+Hazelnut cookies,cookie,99999999,,Cookie production multiplier +2%.,cookie,,main.js:11457
+Walnut cookies,cookie,99999999,,Cookie production multiplier +2%.,cookie,,main.js:11458
+Label printer,heavenly,5000000,,Mouse over an upgrade to see its tier. Note: only some upgrades have tiers. Tiers are purely cosmetic and have no effect on gameplay.,prestige,,main.js:11461
+Good manners,tiered,500000000000000075363254272,,,,11,main.js:11466
+Lindworms,tiered,5500000000000000760276320256,,,,11,main.js:11467
+Bore again,tiered,60000000000000001896764932096,,,,11,main.js:11468
+"""Volunteer"" interns",tiered,650000000000000111441247993856,,,,11,main.js:11469
+Rules of acquisition,tiered,7000000000000000420667350581248,,,,11,main.js:11470
+War of the gods,tiered,100000000000000005366162204393472,,,,11,main.js:11471
+Electricity,tiered,1650000000000000169606469665161216,,,,11,main.js:11472
+Universal alphabet,tiered,25500000000000001782702527838420992,,,,11,main.js:11473
+Public betterment,tiered,374999999999999997460994941547184128,,,,11,main.js:11474
+Embedded microportals,tiered,5000000000000000359677139459766222848,,,,11,main.js:11475
+Nostalgia,tiered,70000000000000009757846435306372333568,,,,11,main.js:11476
+The definite molecule,tiered,850000000000000122535877985465645662208,,,,11,main.js:11477
+Light capture measures,tiered,10500000000000000500314202790548226441216,,,,11,main.js:11478
+0-sided dice,tiered,130000000000000002740292549936418494873600,,,,11,main.js:11479
+Heralds,heavenly,100,,You now benefit from the boost provided by heralds. Each herald gives you +1% CpS. Look on the purple flag at the top to see how many heralds are active at any given time.,prestige,,main.js:11482
+Metagrandmas,misc,15500000000000000000,,Grandmas are twice as efficient. Fractal engines gain +1% CpS per 14 grandma.,,,main.js:11485
+Metabakeries,tiered,3100000000000000000,,,,1,main.js:11488
+Mandelbrown sugar,tiered,15500000000000000000,,,,2,main.js:11489
+Fractoids,tiered,155000000000000000000,,,,3,main.js:11490
+Nested universe theory,tiered,15500000000000001048576,,,,4,main.js:11491
+Menger sponge cake,tiered,1550000000000000054525952,,,,5,main.js:11492
+One particularly good-humored cow,tiered,154999999999999997936402432,,,,6,main.js:11493
+Chocolate ouroboros,tiered,154999999999999994637867548672,,,,7,main.js:11494
+Nested,tiered,154999999999999996608192385646592,,,,8,main.js:11495
+Space-filling fibers,tiered,154999999999999993293543059901906944,,,,9,main.js:11496
+Endless book of prose,tiered,155000000000000008788808081817930301440,,,,10,main.js:11497
+The set of all sets,tiered,1550000000000000077309979896551297735720960,,,,11,main.js:11508
+Recursive mirrors,synergy,66200000000000002097152,,,,synergy1,main.js:11511
+Mice clicking mice,synergy,62000000000000027761863294976,,,,synergy2,main.js:11513
+Custard creams,cookie,49999999999999998874404911728017014784,,Cookie production multiplier +4%.,cookie,,main.js:11526
+Bourbon biscuits,cookie,99999999999999997748809823456034029568,,Cookie production multiplier +4%.,cookie,,main.js:11527
+Keepsakes,heavenly,1111111111,,Seasonal random drops have a 1/5 chance to carry over through ascensions.,prestige,,main.js:11530
+Mini-cookies,cookie,499999999999999969854583185801589293056,,Cookie production multiplier +5%.,cookie,,main.js:11533
+Sugar crystal cookies,heavenly,1000000000,,"Cookie production multiplier +5% permanently, and +1% for every building type level 10 or higher.",prestige,,main.js:11535
+Box of maybe cookies,heavenly,333000000000,,Contains an assortment of...something.,prestige,,main.js:11551
+Box of not cookies,heavenly,333000000000,,Contains an assortment of...something.,prestige,,main.js:11552
+Box of pastries,heavenly,333000000000,,Contains an assortment of delicious pastries.,prestige,,main.js:11553
+Profiteroles,cookie,9999999999999999635896294965248,,Cookie production multiplier +4%.,cookie,,main.js:11556
+Jelly donut,cookie,999999999999999945575230987042816,,Cookie production multiplier +4%.,cookie,,main.js:11557
+Glazed donut,cookie,99999999999999996863366107917975552,,Cookie production multiplier +4%.,cookie,,main.js:11558
+Chocolate cake,cookie,9999999999999999538762658202121142272,,Cookie production multiplier +4%.,cookie,,main.js:11559
+Strawberry cake,cookie,999999999999999939709166371603178586112,,Cookie production multiplier +4%.,cookie,,main.js:11560
+Apple pie,cookie,100000000000000000620008645040778319495168,,Cookie production multiplier +4%.,cookie,,main.js:11561
+Lemon meringue pie,cookie,10000000000000000139372116959414099130712064,,Cookie production multiplier +4%.,cookie,,main.js:11562
+Butter croissant,cookie,999999999999999929757289024535551219930759168,,Cookie production multiplier +4%.,cookie,,main.js:11563
+Cookie dough,cookie,99999999999999996863366107917975552,,Cookie production multiplier +4%.,cookie,,main.js:11566
+Burnt cookie,cookie,9999999999999999538762658202121142272,,Cookie production multiplier +4%.,cookie,,main.js:11567
+A chocolate chip cookie but with the chips picked off for some reason,cookie,999999999999999939709166371603178586112,,Cookie production multiplier +3%.,cookie,,main.js:11568
+Flavor text cookie,cookie,100000000000000000620008645040778319495168,,Cookie production multiplier +4%.,cookie,,main.js:11569
+High-definition cookie,cookie,10000000000000000139372116959414099130712064,,Cookie production multiplier +5%.,cookie,,main.js:11570
+Toast,cookie,9999999999999999455752309870428160,,Cookie production multiplier +4%.,cookie,,main.js:11573
+Peanut butter & jelly,cookie,1000000000000000042420637374017961984,,Cookie production multiplier +4%.,cookie,,main.js:11574
+Wookies,cookie,99999999999999997748809823456034029568,,Cookie production multiplier +4%.,cookie,,main.js:11575
+Cheeseburger,cookie,10000000000000000303786028427003666890752,,Cookie production multiplier +4%.,cookie,,main.js:11576
+One lone chocolate chip,cookie,1000000000000000044885712678075916785549312,,Cookie production multiplier +1%.,cookie,,main.js:11577
+Genius accounting,heavenly,2000000,,"Unlocks extra price information. Each displayed cost now specifies how long it'll take you to afford it, and how much of your bank it represents.",prestige,,main.js:11580
+Shimmering veil,heavenly,999999999,,"Unlocks the shimmering veil, a switch that passively boosts your CpS by 50%. You start with the veil turned on; however, it is very fragile, and clicking the big cookie or any golden cookie or reindeer will turn it off, requiring 0 seconds ",prestige,,main.js:11583
+Shimmering veil [off],toggle,1000000,dynamic priceFunc,,toggle,,main.js:11591
+Shimmering veil [on],toggle,0,,,toggle,,main.js:11595
+Whoopie pies,cookie,999999999999999939709166371603178586112,,Cookie production multiplier +5%.,cookie,,main.js:11631
+Caramel wafer biscuits,cookie,3162277660168379210390973908752751656960,,Cookie production multiplier +5%.,cookie,,main.js:11632
+Chocolate chip mocha cookies,cookie,9999999999999999094860208812374492184576,,Cookie production multiplier +5%.,cookie,,main.js:11633
+Earl Grey cookies,cookie,31622776601683789686058099858269167157248,,Cookie production multiplier +5%.,cookie,,main.js:11634
+Corn syrup cookies,cookie,100000000000000000620008645040778319495168,,Cookie production multiplier +5%.,cookie,,main.js:11635
+Icebox cookies,cookie,316227766016837945217613783167858659819520,,Cookie production multiplier +5%.,cookie,,main.js:11636
+Graham crackers,cookie,999999999999999890143207767403382423158784,,Cookie production multiplier +5%.,cookie,,main.js:11637
+Hardtack,cookie,3162277660168379297433632921006052235804672,,Cookie production multiplier +5%.,cookie,,main.js:11638
+Cornflake cookies,cookie,9999999999999998901432077674033824231587840,,Cookie production multiplier +5%.,cookie,,main.js:11639
+Tofu cookies,cookie,31622776601683789260516211353919697660674048,,Cookie production multiplier +5%.,cookie,,main.js:11640
+Gluten-free cookies,cookie,31622776601683789260516211353919697660674048,,Cookie production multiplier +5%.,cookie,,main.js:11641
+Russian bread cookies,cookie,99999999999999989014320776740338242315878400,,Cookie production multiplier +5%.,cookie,,main.js:11642
+Lebkuchen,cookie,316227766016837902508682427822239175799734272,,Cookie production multiplier +5%.,cookie,,main.js:11643
+Aachener Printen,cookie,999999999999999929757289024535551219930759168,,Cookie production multiplier +5%.,cookie,,main.js:11644
+Canistrelli,cookie,3162277660168379500455799363808417319261044736,,Cookie production multiplier +5%.,cookie,,main.js:11645
+Nice biscuits,cookie,9999999999999999931398190359470212947659194368,,Cookie production multiplier +5%.,cookie,,main.js:11646
+French pure butter cookies,cookie,31622776601683787398654392268707764212391215104,,Cookie production multiplier +5%.,cookie,,main.js:11647
+Petit beurre,cookie,31622776601683787398654392268707764212391215104,,Cookie production multiplier +5%.,cookie,,main.js:11648
+Nanaimo bars,cookie,99999999999999984102174700855949311516153479168,,Cookie production multiplier +5%.,cookie,,main.js:11649
+Berger cookies,cookie,316227766016837934833772733642088913965666009088,,Cookie production multiplier +5%.,cookie,,main.js:11650
+Chinsuko,cookie,999999999999999881586566215862833963056037363712,,Cookie production multiplier +5%.,cookie,,main.js:11651
+Panda koala biscuits,cookie,999999999999999881586566215862833963056037363712,,Cookie production multiplier +5%.,cookie,,main.js:11652
+Putri salju,cookie,3162277660168379267208088921814207443867654946816,,Cookie production multiplier +5%.,cookie,,main.js:11653
+Milk cookies,cookie,9999999999999999464902769475481793196872414789632,,Cookie production multiplier +5%.,cookie,,main.js:11654
+Cookie crumbs,cookie,100,,Cookie production multiplier +1%.,cookie,,main.js:11657
+Chocolate chip cookie,cookie,1000000000000,,Cookie production multiplier +10%.,cookie,,main.js:11658
+Cosmic beginner's luck,heavenly,14999999985,,"Prior to purchasing the Heavenly chip secret upgrade in a run, random drops are 5 times more common.",prestige,,main.js:11661
+Reinforced membrane,heavenly,14999999985,,"The shimmering veil is more resistant, and has a 10% chance not to break. It also gives +10% more CpS.",prestige,,main.js:11680
+Binary grandmas,misc,3550000000000000000000,,Grandmas are twice as efficient. Javascript consoles gain +1% CpS per 15 grandma.,,,main.js:11684
+The JavaScript console for dummies,tiered,710000000000000000000,,,,1,main.js:11687
+64bit arrays,tiered,3550000000000000000000,,,,2,main.js:11688
+Stack overflow,tiered,35500000000000001048576,,,,3,main.js:11689
+Enterprise compiler,tiered,3549999999999999752536064,,,,4,main.js:11690
+Syntactic sugar,tiered,354999999999999973106122752,,,,5,main.js:11691
+A nice cup of coffee,tiered,35499999999999999509635530752,,,,6,main.js:11692
+Just-in-time baking,tiered,35499999999999998031891903021056,,,,7,main.js:11693
+cookies++,tiered,35499999999999997779690323888308224,,,,8,main.js:11694
+Software updates,tiered,35500000000000002317589366020857921536,,,,9,main.js:11695
+Game.Loop,tiered,35500000000000001864242183665371981021184,,,,10,main.js:11696
+eval(),tiered,355000000000000035277241114551017254168821760,,,,11,main.js:11697
+Script grannies,synergy,14199999999999999010144256,,,,synergy1,main.js:11700
+Tombola computing,synergy,14251999999999999086564072226816,,,,synergy2,main.js:11701
+Kruidnoten,cookie,31622776601683792672080889218142074438676549468160,,Cookie production multiplier +5%.,cookie,,main.js:11714
+Marie biscuits,cookie,99999999999999986860582406952576489172979654066176,,Cookie production multiplier +5%.,cookie,,main.js:11715
+Meringue cookies,cookie,316227766016837916336215175111765487325772836241408,,Cookie production multiplier +5%.,cookie,,main.js:11716
+Pizza,cookie,100000000000000008821361405306422640701865984,,Cookie production multiplier +5%.,cookie,,main.js:11719
+Crackers,cookie,999999999999999929757289024535551219930759168,,Cookie production multiplier +4%.,cookie,,main.js:11722
+Havabreaks,cookie,4999999999999999791559868416,,Cookie production multiplier +2%.,cookie,,main.js:11725
+Kitten executives,tiered,900000000000000000164090133493466172772843520,,You gain more CpS the more milk you have.,,13,main.js:11728
+Chai tea cookies,cookie,31622776601683789686058099858269167157248,,Cookie production multiplier +5%.,cookie,,main.js:11732
+Yogurt cookies,cookie,999999999999999993220948674361627976461708441944064,,Cookie production multiplier +5%.,cookie,,main.js:11734
+Thumbprint cookies,cookie,3162277660168379495669150697346623099209493432500224,,Cookie production multiplier +5%.,cookie,,main.js:11735
+Pizzelle,cookie,9999999999999999932209486743616279764617084419440640,,Cookie production multiplier +5%.,cookie,,main.js:11736
+Zilla wafers,cookie,4999999999999999817948147482624,,Cookie production multiplier +2%.,cookie,,main.js:11739
+Dim Dams,cookie,4999999999999999727876154935214080,,Cookie production multiplier +2%.,cookie,,main.js:11740
+Candy,cookie,9999999999999999931398190359470212947659194368,,Cookie production multiplier +5%.,cookie,,main.js:11743
+Fortune #001,fortune,1166666666666666642952899526656,,,,fortune,main.js:11747
+Fortune #002,fortune,7777777777777778370285934739456,,,,fortune,main.js:11748
+Fortune #003,fortune,85555555555555551940046120550400,,,,fortune,main.js:11749
+Fortune #004,fortune,933333333333333359398315895029760,,,,fortune,main.js:11750
+Fortune #005,fortune,10111111111111111777788923731771392,,,,fortune,main.js:11751
+Fortune #006,fortune,108888888888888890392574848277676032,,,,fortune,main.js:11752
+Fortune #007,fortune,1555555555555555555954790319727312896,,,,fortune,main.js:11753
+Fortune #008,fortune,25666666666666667411123803223882727424,,,,fortune,main.js:11754
+Fortune #009,fortune,396666666666666693626930902851571941376,,,,fortune,main.js:11755
+Fortune #010,fortune,5833333333333334014260941421847628480512,,,,fortune,main.js:11756
+Fortune #011,fortune,77777777777777780409208181013279447973888,,,,fortune,main.js:11757
+Fortune #012,fortune,1088888888888889003100166989522179452829696,,,,fortune,main.js:11758
+Fortune #013,fortune,13222222222222223520649167780956445148708864,,,,fortune,main.js:11759
+Fortune #014,fortune,163333333333333331895924459147622794437591040,,,,fortune,main.js:11760
+Fortune #015,fortune,2022222222222222453428527872372771796555923456,,,,fortune,main.js:11761
+Fortune #016,fortune,24111111111111112551395285933590977558513451008,,,,fortune,main.js:11762
+Fortune #017,fortune,5522222222222222257017412867148147724685005553664,,,,fortune,main.js:11763
+Fortune #100,fortune,7777777777777778379293133994196992,dynamic priceFunc,All buildings and upgrades are 1% cheaper. Cookie production multiplier +1%.,,fortune,main.js:11768
+Fortune #101,fortune,7777777777777778074921856777989390336,dynamic priceFunc,Cookie production multiplier +7%.,,fortune,main.js:11771
+Fortune #102,fortune,7777777777777778282705982024253779738624,dynamic priceFunc,You gain another +1% of your regular CpS while the game is closed. (Must own the Twin Gates of Transcendence upgrade.),,fortune,main.js:11773
+Fortune #103,fortune,7777777777777777886178313190655410434998272,dynamic priceFunc,You gain more CpS the more milk you have.,,fortune,main.js:11775
+Fortune #104,fortune,7777777777777778282705982024253779738624,dynamic priceFunc,Clicking gains +1% of your CpS.,,fortune,main.js:11777
+Fortune cookies,heavenly,77777777777,,"The news ticker may occasionally have fortunes, which may be clicked for something good.",prestige,,main.js:11780
+A really good guide book,debug,7,,???,debug,,main.js:11784
+Prism heart biscuits,cookie,999999999999999983222784,,Cookie production multiplier +function(){ var pow=2; if (Game.Has('Starlove')) pow=3; if (Game.hasGod) { var godLvl=Game.hasGod('seasons'); if (godLvl==1) pow*=1.3; else if (godLvl==2) pow*=1.2; else if (godLvl==3) pow*=1.1; } return pow; },cookie,,main.js:11790
+Kitten wages,heavenly,9000000000,,"Through clever accounting, this actually makes kitten upgrades 10% cheaper.",prestige,,main.js:11793
+Pet the dragon,heavenly,99999999999,,Unlocks the ability to pet your dragon by clicking on it once hatched.,prestige,,main.js:11794
+Dragon scale,misc,999,dynamic priceFunc,"Cookie production multiplier +3%. Cost scales with CpS, but 10 times cheaper with a fully-trained dragon.",,,main.js:11798
+Dragon claw,misc,999,dynamic priceFunc,"Clicking is 3% more powerful. Cost scales with CpS, but 10 times cheaper with a fully-trained dragon.",,,main.js:11799
+Dragon fang,misc,999,dynamic priceFunc,"Golden cookies give 3% more cookies. Dragon harvest and Dragonflight are 10% stronger. Cost scales with CpS, but 10 times cheaper with a fully-trained dragon.",,,main.js:11800
+Dragon teddy bear,misc,999,dynamic priceFunc,"Random drops are 3% more common. Cost scales with CpS, but 10 times cheaper with a fully-trained dragon.",,,main.js:11801
+Granola cookies,cookie,31622776601683792298235515403634485184480813764313088,,Cookie production multiplier +5%.,cookie,,main.js:11804
+Ricotta cookies,cookie,99999999999999999322094867436162797646170844194406400,,Cookie production multiplier +5%.,cookie,,main.js:11805
+Roze koeken,cookie,316227766016837901714707221477690885383895173157617664,,Cookie production multiplier +5%.,cookie,,main.js:11806
+Peanut butter cup cookies,cookie,999999999999999908150356944127012110618056584002011136,,Cookie production multiplier +5%.,cookie,,main.js:11807
+Sesame cookies,cookie,3162277660168379187288255675246140585526255447460282368,,Cookie production multiplier +5%.,cookie,,main.js:11808
+Taiyaki,cookie,9999999999999998741221202520331657642805958408251899904,,Cookie production multiplier +5%.,cookie,,main.js:11809
+Vanillekipferl,cookie,31622776601683789150623621384953698148265695020457132032,,Cookie production multiplier +5%.,cookie,,main.js:11810
+Cosmic chocolate butter biscuit,cookie,100000000000000009190283508143378238084034459715684532224,,Cookie production multiplier +10%.,cookie,,main.js:11813
+Nonillion fingers,tiered,10000000000000000905969664,,Multiplies the gain from Thousand fingers by 20.,,13,main.js:11815
+Miraculite mouse,tiered,49999999999999995716575428608,,Clicking gains +1% of your CpS.,,13,main.js:11816
+Generation degeneration,tiered,4999999999999999817948147482624,,,,12,main.js:11817
+Global seed vault,tiered,54999999999999991242030181253120,,,,12,main.js:11818
+Air mining,tiered,599999999999999924110582169468928,,,,12,main.js:11819
+Behavioral reframing,tiered,6499999999999999934469377567490048,,,,12,main.js:11820
+Altruistic loop,tiered,69999999999999990425658646058762240,,,,12,main.js:11821
+A novel idea,tiered,999999999999999894846684784341549056,,,,12,main.js:11822
+Spelling bees,tiered,16499999999999998117396346351959146496,,,,12,main.js:11823
+Toroid universe,tiered,254999999999999968758686042316802621440,,,,12,main.js:11824
+Hermetic reconciliation,tiered,3749999999999999660572578304640434569216,,,,12,main.js:11825
+His advent,tiered,50000000000000000310004322520389159747584,,,,12,main.js:11826
+Split seconds,tiered,699999999999999984997247401451381441167360,,,,12,main.js:11827
+Flavor itself,tiered,8499999999999999066217266022928750596849664,,,,12,main.js:11828
+Light speed limit,tiered,104999999999999993416796972718876254028169216,,,,12,main.js:11829
+A touch of determinism,tiered,1299999999999999876993210726190481548492406784,,,,12,main.js:11830
+This upgrade,tiered,15499999999999998752781654851772368721838866432,,,,12,main.js:11831
+Your biggest fans,tiered,3549999999999999466050816285863706194744325439488,,,,12,main.js:11832
+Battenberg biscuits,cookie,99999999999999987412212025203316576428059584082518999040,,Cookie production multiplier +5%.,cookie,,main.js:11836
+Rosette cookies,cookie,316227766016837935062379179729660304794606701470902386688,,Cookie production multiplier +5%.,cookie,,main.js:11837
+Gangmakers,cookie,999999999999999874122120252033165764280595840825189990400,,Cookie production multiplier +5%.,cookie,,main.js:11838
+Welsh cookies,cookie,3162277660168379524848363660817096341193866019774348132352,,Cookie production multiplier +5%.,cookie,,main.js:11839
+Raspberry cheesecake cookies,cookie,9999999999999999438119489974413630815797154428513196965888,,Cookie production multiplier +5%.,cookie,,main.js:11840
+Alternate grandmas,misc,600000000000000016777216,,Grandmas are twice as efficient. Idleverses gain +1% CpS per 16 grandma.,,,main.js:11845
+Manifest destiny,tiered,120000000000000000000000,,,,1,main.js:11848
+The multiverse in a nutshell,tiered,600000000000000016777216,,,,2,main.js:11849
+All-conversion,tiered,5999999999999999899336704,,,,3,main.js:11850
+Multiverse agents,tiered,599999999999999994228637696,,,,4,main.js:11851
+Escape plan,tiered,60000000000000001896764932096,,,,5,main.js:11852
+Game design,tiered,5999999999999999556357795610624,,,,6,main.js:11853
+Sandbox universes,tiered,5999999999999999673451385922256896,,,,7,main.js:11854
+Multiverse wars,tiered,5999999999999999959375919064754946048,,,,8,main.js:11855
+Mobile ports,tiered,5999999999999999940486453133276365193216,,,,9,main.js:11856
+Encapsulated realities,tiered,6000000000000000578799285889800569438076928,,,,10,main.js:11857
+Extrinsic clicking,tiered,60000000000000004658991543069738883672767987712,,,,11,main.js:11858
+Universal idling,tiered,599999999999999962701869309994079963281848558157824,,,,12,main.js:11859
+Perforated mille-feuille cosmos,synergy,2400000002000000082967003136,,,,synergy1,main.js:11862
+Infraverses and superverses,synergy,2400620000000000203498050692317184,,,,synergy2,main.js:11863
+Fortune #018,fortune,933333333333333349160018692486117326427712217153536,,,,fortune,main.js:11866
+Butter biscuit (with butter),cookie,99999999999999997168788049560464200849936328366177157906432,,Cookie production multiplier +10%.,cookie,,main.js:11869
+Visits,tiered,49999999999999998431683053958987776,,,,13,main.js:11872
+Reverse-veganism,tiered,550000000000000001195257667258417152,,,,13,main.js:11873
+Caramel alloys,tiered,5999999999999999959375919064754946048,,,,13,main.js:11874
+The infinity engine,tiered,64999999999999997592253088672493076480,,,,13,main.js:11875
+Diminishing tax returns,tiered,700000000000000003131134695670819061760,,,,13,main.js:11876
+Apparitions,tiered,9999999999999999094860208812374492184576,,,,13,main.js:11877
+Wizard basements,tiered,164999999999999982647341806174920771633152,,,,13,main.js:11878
+Prime directive,tiered,2549999999999999967453187663954680158879744,,,,13,main.js:11879
+Chromatic cycling,tiered,37499999999999998356250369848387390666702848,,,,13,main.js:11880
+Domestic rifts,tiered,499999999999999964878644512267775609965379584,,,,13,main.js:11881
+Patience abolished,tiered,6999999999999999191388373114691508165339512832,,,,13,main.js:11882
+Delicious pull,tiered,84999999999999995613932817370808605564993536000,,,,13,main.js:11883
+Occam's laser,tiered,1049999999999999924343677575419984678682242318336,,,,13,main.js:11884
+On a streak,tiered,12999999999999999434181021781497021869196547457024,,,,13,main.js:11885
+A box,tiered,155000000000000001441549536622769598046203046526976,,,,13,main.js:11886
+Hacker shades,tiered,35499999999999999759343677939837793164390649689014272,,,,13,main.js:11887
+Break the fifth wall,tiered,5999999999999999789184508585700536127082946935780278272,,,,13,main.js:11888
+Cat ladies,heavenly,9000000000,,Each kitten upgrade boosts grandma CpS by 29%.,prestige,,main.js:11891
+Milkhelp&reg; lactose intolerance relief tablets,heavenly,900000000000,,Each rank of milk boosts grandma CpS by 5%.,prestige,,main.js:11892
+Aura gloves,heavenly,555555555,,Cursor levels boost clicks by 5% each (up to cursor level 10).,prestige,,main.js:11894
+Luminous gloves,heavenly,55555555555,,Aura gloves are now effective up to cursor level 20.,prestige,,main.js:11895
+Bokkenpootjes,cookie,31622776601683788279500762067351231682026699995130510704640,,Cookie production multiplier +5%.,cookie,,main.js:11898
+Fat rascals,cookie,99999999999999997168788049560464200849936328366177157906432,,Cookie production multiplier +5%.,cookie,,main.js:11899
+Ischler cookies,cookie,316227766016837927396498017734758599891703545248028119007232,,Cookie production multiplier +5%.,cookie,,main.js:11900
+Matcha cookies,cookie,316227766016837927396498017734758599891703545248028119007232,,Cookie production multiplier +5%.,cookie,,main.js:11901
+Earl Grey macarons,cookie,9999999999999999583119736832,,Cookie production multiplier +3%.,cookie,,main.js:11904
+Pokey,cookie,5000000000000000359677139459766222848,,Cookie production multiplier +2%.,cookie,,main.js:11907
+Cashew cookies,cookie,99999999,,Cookie production multiplier +2%.,cookie,,main.js:11910
+Milk chocolate cookies,cookie,499999995,,Cookie production multiplier +2%.,cookie,,main.js:11912
+Brainy grandmas,misc,95000000000000005385486336,,Grandmas are twice as efficient. Cortex bakers gain +1% CpS per 17 grandma.,,,main.js:11917
+Principled neural shackles,tiered,19000000000000000218103808,,,,1,main.js:11920
+Obey,tiered,95000000000000005385486336,,,,2,main.js:11921
+A sprinkle of irrationality,tiered,950000000000000053854863360,,,,3,main.js:11922
+Front and back hemispheres,tiered,95000000000000010333288660992,,,,4,main.js:11923
+Neural networking,tiered,9500000000000000329641424322560,,,,5,main.js:11924
+Cosmic brainstorms,tiered,950000000000000005942544668033024,,,,6,main.js:11925
+Megatherapy,tiered,950000000000000062435698393768525824,,,,7,main.js:11926
+Synaptic lubricant,tiered,950000000000000101395221877443098836992,,,,8,main.js:11927
+Psychokinesis,tiered,950000000000000112275554253974761409347584,,,,9,main.js:11928
+Spines,tiered,950000000000000044188852093278846289895751680,,,,10,main.js:11929
+Neuraforming,tiered,9500000000000000984442977830470646739546488700928,,,,11,main.js:11930
+Epistemological trickery,tiered,94999999999999999355990124064354657763862301984686080,,,,12,main.js:11931
+Every possible idea,tiered,949999999999999967528300171191754122690465551316592623616,,,,13,main.js:11932
+Kitchen cabinets,tiered,499999999999999969854583185801589293056,,,,14,main.js:11935
+Cookie mulch,tiered,5499999999999999743958278769731805642752,,,,14,main.js:11936
+Delicious mineralogy,tiered,59999999999999994569161252874246953107456,,,,14,main.js:11937
+N-dimensional assembly lines,tiered,649999999999999975015836522013958883770368,,,,14,main.js:11938
+Cookie Points,tiered,6999999999999999231002454371823676962111488,,,,14,main.js:11939
+Negatheism,tiered,99999999999999989014320776740338242315878400,,,,14,main.js:11940
+Magical realism,tiered,1650000000000000026710219416159467181264863232,,,,14,main.js:11941
+Cosmic foreground radiation,tiered,25499999999999998684179845211242581669498060800,,,,14,main.js:11942
+Arcanized glassware,tiered,374999999999999996159781538251903584040516583424,,,,14,main.js:11943
+Portal guns,tiered,4999999999999999732451384737740896598436207394816,,,,14,main.js:11944
+Timeproof upholstery,tiered,69999999999999994956245171694665645245482821222400,,,,14,main.js:11945
+Employee minification,tiered,849999999999999961007106478584486957397275668643840,,,,14,main.js:11946
+Hyperblack paint,tiered,10499999999999999928819961080797093752847938640412672,,,,14,main.js:11947
+Silver lining maximization,tiered,129999999999999999118723327667011636940022097452728320,,,,14,main.js:11948
+Multiscale profiling,tiered,1549999999999999968224822512701869397054735120527785984,,,,14,main.js:11949
+PHP containment vats,tiered,354999999999999998869495655351897169631561274759273512960,,,,14,main.js:11950
+Opposite universe,tiered,59999999999999993841123790030153892202818142490033993547776,,,,14,main.js:11951
+The land of dreams,tiered,9499999999999999875989708498693149500726119967001179789983744,,,,14,main.js:11952
+Thoughts & prayers,synergy,380000000000000041333154643968,,,,synergy1,main.js:11956
+Fertile minds,synergy,379999999999999995459488839572127744,,,,synergy2,main.js:11957
+Fortune #019,fortune,147777777777777795680560577485577437820152882629967872,,,,fortune,main.js:11960
+Decillion fingers,tiered,9999999999999999583119736832,,Multiplies the gain from Thousand fingers by 20.,,14,main.js:11962
+Aetherice mouse,tiered,4999999999999999817948147482624,,Clicking gains +1% of your CpS.,,14,main.js:11963
+Kitten admins,tiered,899999999999999958331620325961895923381637742592,,You gain more CpS the more milk you have.,,14,main.js:11966
+Everybutter biscuit,cookie,100000000000000003502199685943161173046080317798311825604870144,,Cookie production multiplier +10%.,cookie,,main.js:11969
+Unshackled cursors,heavenly,15000000,,Multiplies the gain from Thousand fingers by 25.,prestige,,main.js:11984
+Unshackled grandmas,heavenly,1920000000,,Tiered upgrades for Grandmas provide an extra +50% production. Only works with unshackled upgrade tiers.,prestige,,main.js:11985
+Unshackled farms,heavenly,32805000000,,Tiered upgrades for Farms provide an extra +180% production. Only works with unshackled upgrade tiers.,prestige,,main.js:11986
+Unshackled mines,heavenly,245760000000,,Tiered upgrades for Mines provide an extra +170% production. Only works with unshackled upgrade tiers.,prestige,,main.js:11987
+Unshackled factories,heavenly,1171875000000,,Tiered upgrades for Factories provide an extra +160% production. Only works with unshackled upgrade tiers.,prestige,,main.js:11988
+Unshackled banks,heavenly,4199040000000,,Tiered upgrades for Banks provide an extra +150% production. Only works with unshackled upgrade tiers.,prestige,,main.js:11989
+Unshackled temples,heavenly,12353145000000,,Tiered upgrades for Temples provide an extra +140% production. Only works with unshackled upgrade tiers.,prestige,,main.js:11990
+Unshackled wizard towers,heavenly,31457280000000,,Tiered upgrades for Wizard towers provide an extra +130% production. Only works with unshackled upgrade tiers.,prestige,,main.js:11991
+Unshackled shipments,heavenly,71744535000000,,Tiered upgrades for Shipments provide an extra +120% production. Only works with unshackled upgrade tiers.,prestige,,main.js:11992
+Unshackled alchemy labs,heavenly,150000000000000,,Tiered upgrades for Alchemy labs provide an extra +110% production. Only works with unshackled upgrade tiers.,prestige,,main.js:11993
+Unshackled portals,heavenly,292307565000000,,Tiered upgrades for Portals provide an extra +100% production. Only works with unshackled upgrade tiers.,prestige,,main.js:11994
+Unshackled time machines,heavenly,537477120000000,,Tiered upgrades for Time machines provide an extra +90% production. Only works with unshackled upgrade tiers.,prestige,,main.js:11995
+Unshackled antimatter condensers,heavenly,941227755000000,,Tiered upgrades for Antimatter condensers provide an extra +80% production. Only works with unshackled upgrade tiers.,prestige,,main.js:11996
+Unshackled prisms,heavenly,1581202560000000,,Tiered upgrades for Prisms provide an extra +70% production. Only works with unshackled upgrade tiers.,prestige,,main.js:11997
+Unshackled chancemakers,heavenly,2562890625000000,,Tiered upgrades for Chancemakers provide an extra +60% production. Only works with unshackled upgrade tiers.,prestige,,main.js:11998
+Unshackled fractal engines,heavenly,4026531840000000,,Tiered upgrades for Fractal engines provide an extra +50% production. Only works with unshackled upgrade tiers.,prestige,,main.js:11999
+Unshackled javascript consoles,heavenly,6155080095000000,,Tiered upgrades for Javascript consoles provide an extra +40% production. Only works with unshackled upgrade tiers.,prestige,,main.js:12000
+Unshackled idleverses,heavenly,9183300480000000,,Tiered upgrades for Idleverses provide an extra +30% production. Only works with unshackled upgrade tiers.,prestige,,main.js:12001
+Unshackled cortex bakers,heavenly,13408076085000000,,Tiered upgrades for Cortex bakers provide an extra +20% production. Only works with unshackled upgrade tiers.,prestige,,main.js:12002
+Unshackled flavor,heavenly,10000000,,"Unshackles all [Tier]Plain-tier upgrades, making them more powerful. Only applies to unshackled buildings.",prestige,,main.js:12021
+Unshackled berrylium,heavenly,1810193359.8375618,,"Unshackles all [Tier]Berrylium-tier upgrades, making them more powerful. Only applies to unshackled buildings.",prestige,,main.js:12022
+Unshackled blueberrylium,heavenly,37879951161.53135,,"Unshackles all [Tier]Blueberrylium-tier upgrades, making them more powerful. Only applies to unshackled buildings.",prestige,,main.js:12023
+Unshackled chalcedhoney,heavenly,327680000000,,"Unshackles all [Tier]Chalcedhoney-tier upgrades, making them more powerful. Only applies to unshackled buildings.",prestige,,main.js:12024
+Unshackled buttergold,heavenly,1746928107421.7107,,"Unshackles all [Tier]Buttergold-tier upgrades, making them more powerful. Only applies to unshackled buildings.",prestige,,main.js:12025
+Unshackled sugarmuck,heavenly,6857003606357.518,,"Unshackles all [Tier]Sugarmuck-tier upgrades, making them more powerful. Only applies to unshackled buildings.",prestige,,main.js:12026
+Unshackled jetmint,heavenly,21788899719680.66,,"Unshackles all [Tier]Jetmint-tier upgrades, making them more powerful. Only applies to unshackled buildings.",prestige,,main.js:12027
+Unshackled cherrysilver,heavenly,59316416015157.23,,"Unshackles all [Tier]Cherrysilver-tier upgrades, making them more powerful. Only applies to unshackled buildings.",prestige,,main.js:12028
+Unshackled hazelrald,heavenly,143489070000000,,"Unshackles all [Tier]Hazelrald-tier upgrades, making them more powerful. Only applies to unshackled buildings.",prestige,,main.js:12029
+Unshackled mooncandy,heavenly,316227766016837.94,,"Unshackles all [Tier]Mooncandy-tier upgrades, making them more powerful. Only applies to unshackled buildings.",prestige,,main.js:12030
+Unshackled astrofudge,heavenly,646316344324948.2,,"Unshackles all [Tier]Astrofudge-tier upgrades, making them more powerful. Only applies to unshackled buildings.",prestige,,main.js:12031
+Unshackled alabascream,heavenly,1241250239661059.2,,"Unshackles all [Tier]Alabascream-tier upgrades, making them more powerful. Only applies to unshackled buildings.",prestige,,main.js:12032
+Unshackled iridyum,heavenly,2262429955028238.5,,"Unshackles all [Tier]Iridyum-tier upgrades, making them more powerful. Only applies to unshackled buildings.",prestige,,main.js:12033
+Unshackled glucosmium,heavenly,3944212159073244.5,,"Unshackles all [Tier]Glucosmium-tier upgrades, making them more powerful. Only applies to unshackled buildings.",prestige,,main.js:12034
+Delicate touch,heavenly,149999999985,,"The shimmering veil is more resistant, and has a 10% chance not to break. It also gives +5% more CpS.",prestige,,main.js:12036
+Steadfast murmur,heavenly,14999999999985,,"The shimmering veil is more resistant, and has a 10% chance not to break. It also gives +5% more CpS.",prestige,,main.js:12037
+Glittering edge,heavenly,1499999999999985,,"The shimmering veil is more resistant, and has a 10% chance not to break. It also gives +5% more CpS.",prestige,,main.js:12038
+Distinguished wallpaper assortment,heavenly,10000000,,Contains more wallpapers for your background selector.,prestige,,main.js:12040
+Sound test,heavenly,99999999999,,"Unlocks the jukebox, which allows you to play through every sound file in the game.",prestige,,main.js:12043
+Jukebox,toggle,0,,Play through the game's sound files!,toggle,,main.js:12046
+Dalgona cookies,cookie,999999999999999949387135297074018866963645011013410073083904,,Cookie production multiplier +5%.,cookie,,main.js:12230
+Spicy cookies,cookie,3162277660168379184761999383225093432774162361886835166150656,,Cookie production multiplier +5%.,cookie,,main.js:12231
+Smile cookies,cookie,9999999999999999493871352970740188669636450110134100730839040,,Cookie production multiplier +5%.,cookie,,main.js:12232
+Kolachy cookies,cookie,31622776601683792561243840185230874856884608343615919852879872,,Cookie production multiplier +5%.,cookie,,main.js:12233
+Gomma cookies,cookie,100000000000000003502199685943161173046080317798311825604870144,,Cookie production multiplier +5%.,cookie,,main.js:12234
+Vegan cookies,cookie,316227766016837902776475318556950651636270572244237016404852736,,Cookie production multiplier +5%.,cookie,,main.js:12235
+Coyotas,cookie,999999999999999875170255276364105051932774599639662981181079552,,Cookie production multiplier +5%.,cookie,,main.js:12236
+Frosted sugar cookies,cookie,3162277660168379210452457851932371291823309811977747621040095232,,Cookie production multiplier +5%.,cookie,,main.js:12237
+Marshmallow sandwich cookies,cookie,10000000000000000213204190094543968723012578712679649467743338496,,Cookie production multiplier +5%.,cookie,,main.js:12238
+Web cookies,debug,31622776601683795027527853181129549325602763552343515522266038272,,Cookie production multiplier +0%.,debug,,main.js:12240
+Steamed cookies,cookie,31622776601683795027527853181129549325602763552343515522266038272,,Cookie production multiplier +5%.,cookie,,main.js:12241
+Deep-fried cookie dough,cookie,100000000000000004384584304507619735463404765184,,Cookie production multiplier +5%.,cookie,,main.js:12244
+Wrapping paper,heavenly,999999,,You may now send and receive gifts with other players through buttons in the top-right of the Options menu.,prestige,,main.js:12247
+Havreflarn,cookie,99999999999999999209038626283633850822756121694230455365568299008,,Cookie production multiplier +5%.,cookie,,main.js:12585
+Alfajores,cookie,316227766016837926891252334516848801997070312062906840727739695104,,Cookie production multiplier +5%.,cookie,,main.js:12586
+Gaufrettes,cookie,999999999999999945322333868247445125709646570021247924665841614848,,Cookie production multiplier +5%.,cookie,,main.js:12587
+Cookie bars,cookie,3162277660168379268912523345168488019970703120629068407277396951040,,Cookie production multiplier +5%.,cookie,,main.js:12588
+Nines,cookie,4999999999999999547430104406187246092288,,Cookie production multiplier +2%.,cookie,,main.js:12591
+Clone grandmas,misc,27000000000000001733153521664,,Grandmas are twice as efficient. You gain +1% CpS per 18 grandma.,,,main.js:12596
+Cloning vats,tiered,5399999999999999467021402112,,,,1,main.js:12599
+Energized nutrients,tiered,27000000000000001733153521664,,,,2,main.js:12600
+Stunt doubles,tiered,269999999999999999739349172224,,,,3,main.js:12601
+Clone recycling plant,tiered,26999999999999998566560033669120,,,,4,main.js:12602
+Free-range clones,tiered,2699999999999999910699198895357952,,,,5,main.js:12603
+Genetic tailoring,tiered,270000000000000002599134935604264960,,,,6,main.js:12604
+Power in diversity,tiered,269999999999999995810733116479149965312,,,,7,main.js:12605
+Self-betterment,tiered,269999999999999999739742030226694783107072,,,,8,main.js:12606
+Source control,tiered,270000000000000000049227040048039851831853056,,,,9,main.js:12607
+United workforce,tiered,269999999999999995612449939249236946593391837184,,,,10,main.js:12608
+Safety patrols,tiered,2700000000000000247542160577759570117208024849317888,,,,11,main.js:12609
+Clone rights,tiered,26999999999999997690200820951898558718374831483938406400,,,,12,main.js:12610
+One big family,tiered,269999999999999966709870755503036729528752073043062594469888,,,,13,main.js:12611
+Fine-tuned body plans,tiered,2699999999999999809109852979273375460586974690655392014782169088,,,,14,main.js:12612
+Foam-tipped canes,tiered,5000000000000000069686058479707049565356032,,,,15,main.js:12615
+Self-driving tractors,tiered,54999999999999998909636584348707132870230016,,,,15,main.js:12616
+Mineshaft supports,tiered,599999999999999973700005917574198250667245568,,,,15,main.js:12617
+Universal automation,tiered,6500000000000000335704003802124458864989437952,,,,15,main.js:12618
+The big shortcake,tiered,69999999999999996984486132059832687640207949824,,,,15,main.js:12619
+Temple traps,tiered,1000000000000000043845843045076197354634047651840,,,,15,main.js:12620
+Polymorphism,tiered,16499999999999999181993280366230304131470688518144,,,,15,main.js:12621
+At your doorstep in 30 minutes or your money back,tiered,254999999999999988302131943575346087219182700593152,,,,15,main.js:12622
+The dose makes the poison,tiered,3749999999999999974578557528856104911731406657290240,,,,15,main.js:12623
+A way home,tiered,49999999999999999661047433718081398823085422097203200,,,,15,main.js:12624
+Rectifying a mistake,tiered,700000000000000037789959937170447516445021838331871232,,,,15,main.js:12625
+Candied atoms,tiered,8499999999999999474489809215783450537784436537843253248,,,,15,main.js:12626
+Lab goggles but like cool shades,tiered,105000000000000008560894109403544066905437438919810482176,,,,15,main.js:12627
+Gambler's fallacy fallacy,tiered,1300000000000000010583328191163608786812573598138071252992,,,,15,main.js:12628
+The more they stay the same,tiered,15499999999999999616914010678198508985579426578378363240448,,,,15,main.js:12629
+Simulation failsafes,tiered,3550000000000000284179830434049728321663879860183525083840512,,,,15,main.js:12630
+The other routes to Rome,tiered,599999999999999998177235032363608941343906395597948771505274880,,,,15,main.js:12631
+Intellectual property theft,tiered,95000000000000002756190624563619161970461914128598179771527987200,,,,15,main.js:12632
+Reading your clones bedtime stories,tiered,26999999999999999084919643177747738984375433153626373513855820103680,,,,15,main.js:12633
+Accelerated development,synergy,108000000000027988641523869679616,,,,synergy1,main.js:12637
+Peer review,synergy,108000141999999996776953025706124640256,,,,synergy2,main.js:12638
+Fortune #020,fortune,42000000000000001246550495467411460596577488004607639552,,,,fortune,main.js:12641
+Personal biscuit,cookie,99999999999999999209038626283633850822756121694230455365568299008,,Cookie production multiplier +10%.,cookie,,main.js:12644
+Unshackled glimmeringue,heavenly,6617355139184079,,"Unshackles all [Tier]Glimmeringue-tier upgrades, making them more powerful. Only applies to unshackled buildings.",prestige,,main.js:12647
+Unshackled You,heavenly,19200000000000000,,Tiered upgrades for You provide an extra +10% production. Only works with unshackled upgrade tiers.,prestige,,main.js:12649
+Kitten strategists,tiered,900000000000000027129553701548362001410714104758272,,You gain more CpS the more milk you have.,,15,main.js:12652
+Baklavas,cookie,100000000000000004384584304507619735463404765184,,Cookie production multiplier +4%.,cookie,,main.js:12655
+Snowball cookies,cookie,9999999999999998330790081212341010076666514174107120150902223142912,,Cookie production multiplier +5%.,cookie,,main.js:12658
+Sequilhos,cookie,31622776601683791940836395138262586079420396855553778008936507506688,,Cookie production multiplier +5%.,cookie,,main.js:12659
+Hazelnut swirlies,cookie,99999999999999983307900812123410100766665141741071201509022231429120,,Cookie production multiplier +5%.,cookie,,main.js:12660
+Spritz cookies,cookie,316227766016837907435742538367869154869617818943747283067965683007488,,Cookie production multiplier +5%.,cookie,,main.js:12661
+Mbatata cookies,cookie,999999999999999880969493773293127831364996015857874003175819882528768,,Cookie production multiplier +5%.,cookie,,main.js:12662
+Springerles,cookie,3162277660168379265919367991914798843489556583226120783022047103025152,,Cookie production multiplier +5%.,cookie,,main.js:12663
+Undecillion fingers,tiered,9999999999999999635896294965248,,Multiplies the gain from Thousand fingers by 20.,,15,main.js:12665
+Omniplast mouse,tiered,499999999999999972787615493521408,,Clicking gains +1% of your CpS.,,15,main.js:12666
+Wrinkler ambergris,misc,60,dynamic priceFunc,Cookie production multiplier +6%. All upgrades are 1% cheaper. Cost scales with CpS.,,,main.js:12669

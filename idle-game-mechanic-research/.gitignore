@@ -1,0 +1,33 @@
+# Raw game artifacts — references only, never committed (proprietary / unclear license).
+# Keep them under reference/ so they survive sessions (bind-mounted /workspace).
+reference/
+downloads/
+*.apk
+*.obb
+*.jar
+*.dex
+*.dll
+*.so
+*.bin
+data.win
+*.asar
+
+# Extracted/decompiled trees (derived from proprietary artifacts; regenerate with tools/).
+out-jadx/
+out-apktool/
+decompiled/
+
+# Toolchain + caches
+node_modules/
+.jadx/
+*.log
+
+# Python
+__pycache__/
+*.pyc
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+*.swp
