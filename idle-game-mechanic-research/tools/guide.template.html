@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>How Idle Games Work — a study of four incrementals</title>
+<title>How Idle Games Work — a study of five incrementals</title>
 <style>
   :root{
     --bg:#fbfaf7; --fg:#23262b; --muted:#6b7280; --rule:#e7e2d8; --link:#2f6f4f;
@@ -101,13 +101,13 @@
 <header>
   <p class="kicker">A study of four incremental games</p>
   <h1>How idle games work</h1>
-  <p class="standfirst">Four games, taken apart. The machinery they share, the maths behind their
+  <p class="standfirst">Five games, taken apart. The machinery they share, the maths behind their
   pacing, and the design vocabulary that ties it together — followed by the original six-part
   essay series that named half of these ideas.</p>
   <p class="note">Sources: Cookie Clicker 2.058, Exponential Idle 1.4.46, Revolution Idle 1.078,
-  Leaf Blower Revolution 2.29.6. Numbers were read from each game's own code or decompiled binary
-  where possible, and cross-checked against community wikis; see the research folder for the
-  full sourced breakdown.</p>
+  Leaf Blower Revolution 2.29.6, and NGU Idle 1.260 (added last, for its enemy side). Numbers were
+  read from each game's own code or decompiled binary where possible, and cross-checked against
+  community sources; see the research folder for the full sourced breakdown.</p>
 </header>
 
 <nav class="toc">
@@ -124,6 +124,7 @@
         <li><a href="#prestige">Prestige and reset layers</a></li>
         <li><a href="#active">Active play: clicks, streaks, events</a></li>
         <li><a href="#walls">Caps, walls, and failure</a></li>
+        <li><a href="#twosided">Two-sided scaling (combat)</a></li>
         <li><a href="#bignum">Big numbers</a></li>
         <li><a href="#vocab">A shared vocabulary</a></li>
       </ol>
@@ -135,6 +136,7 @@
         <li><a href="#ei">Exponential Idle</a></li>
         <li><a href="#ri">Revolution Idle</a></li>
         <li><a href="#lbr">Leaf Blower Revolution</a></li>
+        <li><a href="#ngu">NGU Idle</a></li>
       </ol>
     </li>
     <li><a href="#sidebyside">Side by side</a></li>
@@ -333,6 +335,37 @@ a tower defence where upgrading the enemy stream too fast can kill you — was b
 there is no losing, walls can only ever be delays. When there is losing, a wall becomes a genuine
 dilemma, and we will come back to that in the last part.</p>
 
+<h3 id="twosided">Two-sided scaling (when there are enemies)</h3>
+<p>Every game in the main study is one-sided. You buy production, production earns money, and
+the only thing pushing back is the cost curve. Even Revolution Idle, which looks like a battle,
+has no enemy — its "circles" are just generators. This is a real blind spot, because our tower
+defence is <em>two-sided</em>: the thing you invest in also gets stronger and tries to kill you. So
+we added a fifth game, <strong>NGU Idle</strong>, precisely because it has an enemy side.</p>
+<p>NGU Idle's combat is refreshingly simple, and scale-free. Your health is ten times your Attack,
+and you regenerate your Defense divided by twenty each second. When you fight a boss, the damage
+you deal per second is your Attack minus the boss's Defense; the damage you take is the boss's
+Attack minus your Defense. So the whole fight reduces to a race between two pairs of numbers, and
+the strategy is a ratio: once your Defense exceeds five times the boss's Attack, you take nothing
+and can safely skip ahead. Because your health is tied to your Attack the same way the enemy's
+health is tied to its Attack, the two sides are measured on one ruler — which is exactly the
+property that makes the danger legible to a player.</p>
+<p>The interesting part is how the enemy side grows. Each boss from the fifth to the twentieth is
+five times the previous one; from the twenty-first onward, ten times. Meanwhile the reward for
+resetting — a permanent multiplier proportional to the bosses you have beaten — grows by only
+about two times per boss, and less as you raise the difficulty. The enemy ladder is therefore
+<em>steeper than the reward ladder</em>, deliberately. Raw prestige can never keep pace, which
+forces the player to lean on the game's other systems to stay ahead. That is the same mechanism our
+game needs: if upgrading the stream were self-sufficiently rewarding, there would be no risk. The
+gap between the two ladders is what creates the decision.</p>
+<p>NGU also adds two forms of soft enrage, both worth stealing. Titans gain one percent more power
+with every attack they take, so a slow kill becomes a losing one; and a thousand-floor endless
+dungeon increases each floor's enemies by five percent, an endless gentle ramp. Neither is a hard
+wall, but both convert "I am barely winning" into "I am on a timer." And then the twist that makes
+NGU a cautionary tale as much as a model: it has <em>no lose condition</em>. Being defeated
+teleports you to a safe zone with no penalty at all. That safety net is what lets its enemy ladder
+be as brutal as ten-times-per-step without feeling unfair. Our game removes the net, and the final
+part is about what changes when it is gone.</p>
+
 <h3 id="bignum">Big numbers</h3>
 <p>Idle games get to numbers that ordinary arithmetic cannot hold. A 64-bit floating-point number,
 the normal kind, tops out around 1.8 × 10<sup>308</sup>; past that it becomes <code>Infinity</code>
@@ -511,6 +544,36 @@ the four. Offline income is a quarter of your best-ever rate, capped at a day.</
   <tr><td>Offline</td><td class="n">best-ever ÷ 4, capped 1→7 days</td></tr>
 </table>
 
+<h3 id="ngu">NGU Idle — the two-sided race</h3>
+<p class="shape">The only game here with an enemy: a scale-free stats race where the enemy ladder
+outpaces the reward ladder on purpose — and where losing still costs nothing.</p>
+<p>NGU Idle is an enormous, finished, cult-classic incremental from 2019, and the reason we studied
+it is narrow: it is the one reference game with a genuine enemy side. Its economy is otherwise
+classic — training energy and magic to raise your core Stats, augmenting them, and resetting — but
+threaded through all of it is a combat system that runs on two matching stat pairs.</p>
+<p>Fighting reduces to arithmetic. Your Health is <code>10 × Attack</code> and you regenerate
+<code>Defense / 20</code> per second; the damage each side deals is its attack minus the other's
+defense. Bosses from the fifth to the twentieth are each five times the previous, and from the
+twenty-first each ten times — a ladder that outpaces the player's prestige reward, which grows only
+about two times per boss and less at higher difficulties. Titans add one percent of power with every
+hit they take, and the thousand-floor ITOPOD dungeon scales five percent per floor. Every one of
+these is a pressure that punishes standing still.</p>
+<p>What makes it a reference rather than a template is the safety net. Losing a fight in NGU Idle
+sends you to a safe zone with no penalty; there is no way to actually fail. That is what licenses
+the brutal ten-times-per-step enemy growth. Our game keeps the two-sided structure and throws away
+the net, which is the whole design question — and Part Five takes it up directly.</p>
+<table>
+  <tr><th>At a glance</th><th class="n">&nbsp;</th></tr>
+  <tr><td>Health</td><td class="n">10 × Attack (both sides)</td></tr>
+  <tr><td>Damage</td><td class="n">attacker − defender</td></tr>
+  <tr><td>Safe skip</td><td class="n">Defense ≥ 5 × enemy Attack</td></tr>
+  <tr><td>Enemy ladder</td><td class="n">×5 (bosses 5–20), ×10 (21+)</td></tr>
+  <tr><td>Rebirth reward</td><td class="n">2^bosses → 1.5^ → 1.2^</td></tr>
+  <tr><td>Titan enrage</td><td class="n">+1% power per attack</td></tr>
+  <tr><td>Endless dungeon</td><td class="n">×1.05 per floor (1600)</td></tr>
+  <tr><td>Lose condition</td><td class="n">none (Safe Zone)</td></tr>
+</table>
+
 <!-- ===================== PART IV ===================== -->
 <h2 id="sidebyside"><span class="partno">Part Four</span>Side by side</h2>
 
@@ -547,6 +610,25 @@ breadth requirement — neglect one circle and the product collapses. Leaf Blowe
 counts, forcing you to keep finding new lanes. And none of them puts it in <em>failure</em>, which
 is the axis we intend to push on.</p>
 
+<h4>Two-sided scaling (NGU Idle — the others have no enemy)</h4>
+<table>
+  <thead><tr><th>Quantity</th><th>Rule</th></tr></thead>
+  <tbody>
+    <tr><td>Health / regeneration</td><td class="n">HP = 10 × Attack; regen = Defense / 20</td></tr>
+    <tr><td>Damage per second</td><td class="n">max(0, attacker stat − defender stat)</td></tr>
+    <tr><td>Safe skip ("nuke")</td><td class="n">Defense ≥ 5 × enemy Attack (a guide says ~1000×; disputed)</td></tr>
+    <tr><td>Enemy ladder</td><td class="n">×5 per boss (5–20), ×10 per boss (21+)</td></tr>
+    <tr><td>Player reward</td><td class="n">2^bosses → 1.5^ → 1.2^ (by difficulty)</td></tr>
+    <tr><td>Soft enrage</td><td class="n">Titan +1% / attack; ITOPOD ×1.05 / floor</td></tr>
+    <tr><td>Failure</td><td class="n">none — Safe Zone, no penalty</td></tr>
+  </tbody>
+</table>
+<p>The mismatch is the machinery. Enemies compound by 5–10× per step while the player's reward
+compounds by only 1.2–2× per step, so prestige alone can never keep pace — the player has to stay
+ahead through the other systems, which is what makes the moment-to-moment play matter. But NGU can
+afford that brutality only because losing is free. Our game is the same race without the net, and
+that single subtraction is where all the tension we want comes from.</p>
+
 <!-- ===================== PART V ===================== -->
 <h2 id="ours"><span class="partno">Part Five</span>Into our own game</h2>
 
@@ -566,8 +648,11 @@ follow purchase efficiency almost reflexively — they will buy whatever gives t
 spent. If upgrading the stream is the efficient buy (which it should be, since it is the risk), the
 player will naturally reach for it. But pair that temptation with a <em>preview</em>: show the
 projected enemy health and arrival rate next to the current tower damage, so that "I can afford to
-push this" and "I will survive if I do" are two separate, visible facts. The goal is that losing
-feels like a decision, never a trap.</p>
+push this" and "I will survive if I do" are two separate, visible facts. NGU Idle hands us a
+ready-made instrument for this: because both sides are measured on one scale (health is ten times
+attack, for everyone), a single ratio — your defence divided by the wave's attack — states exactly
+how safe you are. Surface that ratio before the player commits, and the goal is met: losing feels
+like a decision, never a trap.</p>
 
 <p><strong>Let the wall move only when you bank a reset.</strong> Exponential Idle's moving
 Infinity wall is the best idea we found for a risk game. Make the cap on total threat something that

@@ -39,6 +39,7 @@ Numbers are meaningless without the build they came from.
 | Exponential Idle | Android **1.4.46** (vCode 313) | Store 2026-09-13; fetched 2026-10-18 | XAPK (APKPure) sha256 `9bbce1c02375e8e4f48e81655ccf41904676f6a9adef54608835d3323bdfc982` (80,482,240 B) | **no native Steam** — Windows via Google Play Games; AssemblyStore **v3** |
 | Revolution Idle | Steam **v1.076** build 25263079; Android **1.078** (vCode 1078) | Steam 2026-09-11; Android 2026-09-18; fetched 2026-10-18 | XAPK (APKPure) sha256 `3a1a8736aff65cf819ea8b7c49e0422726ef18f746ccae668b6ec3136723071b` (83,437,735 B) | Unity IL2CPP, metadata **v31**; wiki.gg "Official" |
 | Leaf Blower Revolution | **v2.29.7** build 22692235 (Steam); Android **2.29.6** (vCode 2029006) | v2.29.7 2026-04-08; APK fetched 2026-10-18 | APK (Aptoide) sha256 `08bd4b0ec3253e15a8ffe60947a33ad24db1d04e1e68da0b9565c230f0ca4ddb` (90,920,003 B) | GameMaker **`assets/game.droid`** (not `data.win`) sha256 `99b95417…` |
+| NGU Idle | Steam **1.260** build **6938742** | final content build 2021-06-26 | Unity **5.6.3p2 Mono**; depot 1147691 manifest `4836368868395801255` (191,764,352 B); **not yet in-sandbox** | game is finished/frozen; Windows-only, no mobile |
 
 ## Source registry
 
@@ -75,6 +76,28 @@ Numbers are meaningless without the build they came from.
 | lbr-saveeditor | Leaf Blower Revolution | lbr-save-editor (Redcrafter) | tool | https://redcrafter.github.io/lbr-save-editor/ | 2026-10-18 | workable | save format; original unmaintained |
 | lbr-saveparser | Leaf Blower Revolution | LBR_Save_Parser (Quas-NaArt) | tool | https://github.com/Quas-NaArt/LBR_Save_Parser | 2026-10-18 | workable | save → CSV for sheets |
 | lbr-fandom | Leaf Blower Revolution | Fandom wiki (legacy) | wiki | https://leaf-blower-revolution.fandom.com/wiki/Version_Information | 2026-10-18 | avoid | frozen ~v2.15, superseded |
+
+### NGU Idle
+
+| id | game | source | type | url / location | accessed | quality | notes |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| ngu-steam | NGU Idle | Steam store / SteamDB | store | https://store.steampowered.com/app/1147690/NGU_IDLE/ | 2026-10-18 | workable | F2P; platform links, no math; Unity Mono |
+| ngu-steamcmd | NGU Idle | SteamCMD build API | artifact | https://api.steamcmd.net/v1/info/1147690 | 2026-10-18 | rich | buildid 6938742 (2021-06-26); depot 1147691 |
+| ngu-wiki | NGU Idle | NGU Idle Wiki (Fandom) | wiki | https://ngu-idle.fandom.com/wiki/NGU_Idle_Wiki | 2026-10-18 | workable | 958 pages, WIP; real formulas; 403 to curl → use `webfetch`/`api.php` |
+| ngu-wiki-boss | NGU Idle | Fandom Boss Fights | wiki | https://ngu-idle.fandom.com/wiki/Boss_Fights | 2026-10-18 | rich | per-boss stats + unlock table + scaling (×5/×10) |
+| ngu-sayo | NGU Idle | Sayo's Guide (130-page) | guide | https://sayolove.github.io/ngu-guide/en/intro | 2026-10-18 | rich | formulas (NGU, AT, difficulties); Discord-derived meta |
+| ngu-gearopt-repo | NGU Idle | gmiclotte/gear-optimizer (GitHub) | artifact | https://github.com/gmiclotte/gear-optimizer | 2026-10-18 | rich | datamined item DB (`data/Items.js`, `decode.py`) — fetchable |
+| ngu-gearopt | NGU Idle | Gear Optimizer (web) | tool | https://gmiclotte.github.io/gear-optimizer/ | 2026-10-18 | rich | loads saves; item/stat optimizer |
+| ngu-decoder | NGU Idle | bumrocky/NGU_Idle_Decoder | tool | https://github.com/bumrocky/NGU_Idle_Decoder | 2026-10-18 | workable | save ⇄ JSON (MS-NRBF), recomputes checksum |
+| ngu-nrbf | NGU Idle | BodrickLight/ngu-decoder | tool | https://github.com/BodrickLight/ngu-decoder | 2026-10-18 | workable | documents the `.NET` BinaryFormatter save format |
+| ngu-wiki-builds | NGU Idle | Fandom Build History | changelog | https://ngu-idle.fandom.com/wiki/Build_History | 2026-10-18 | rich | full history to 1.260 |
+| ngu-discord | NGU Idle | NGU Idle Discord | community | https://discordapp.com/invite/5revMxD | 2026-10-18 | rich | dev + meta hub |
+| ngu-reddit | NGU Idle | r/nguidle | community | https://www.reddit.com/r/nguidle/ | 2026-10-18 | workable | 403 in-sandbox → Arctic Shift |
+| ngu-namu | NGU Idle | NamuWiki Strategy | guide | https://en.namu.wiki/w/NGU%20Idle/%EA%B3%B5%EB%9E%B5 | 2026-10-18 | workable | thresholds; Korean |
+| ngu-gvault | NGU Idle | game-vault.net wiki | wiki | https://ngu-idle.game-vault.net/wiki/Main_Page | 2026-10-18 | thin | 3 stale articles — ignore |
+| ngu-earlyguides | NGU Idle | EarlyGuides | guide | https://earlyguides.com/ngu-idle | 2026-10-18 | avoid | AI/SEO aggregation |
+| ngu-kong | NGU Idle | Kongregate (legacy) | store | https://www.kongregate.com/games/somethingggg/ngu-idle | 2026-10-18 | avoid | build 1.220, behind |
+| ngu-armor | NGU Idle | Armor Games (legacy) | store | https://armorgames.com/ngu-idle-game/18444 | 2026-10-18 | avoid | build 0.423, stale |
 | ei-apk | Exponential Idle | APKPure APK/XAPK | artifact | https://d.apkpure.net/b/XAPK/com.conicgames.exponentialidle?version=latest | 2026-10-18 | artifact | 1.4.46/313; sha256 `9bbce1c0…`; AssemblyStore v3 → ILSpy 9.1 (378 `.cs`) |
 | ri-apk | Revolution Idle | APKPure XAPK | artifact | https://d.apkpure.net/b/XAPK/com.oninou.revolution?version=latest | 2026-10-18 | artifact | 1.078/1078; sha256 `3a1a8736…`; metadata v31; Il2CppDumper v6.7.46 (**signatures only**) |
 | lbr-apk | Leaf Blower Revolution | Aptoide APK | artifact | https://ws75.aptoide.com/api/7/app/getMeta?package_name=com.ezplugins.leafblowerrevolution | 2026-10-18 | artifact | 2.29.6/2029006; sha256 `08bd4b0e…`; `game.droid` → UTMT source build (1,233 `.gml`) |

@@ -1,0 +1,28 @@
+clicker tower defense game
+
+tower defense
+add tower costs currency
+upgrade towers
+lots of towers
+
+Horizontal map, guns on left side, enemies walk in from right toward guns. can destroy guns. eventually mass amount of enemies with horde mechanics and feel
+
+maybe forced to prestige if enemies overcome your firepower and destroy towers
+
+breadth importance could be cool like revolution idle - breadth of tower types
+
+I'm not married to being able to "lose" the run if it's hard to implement or unfun. Maybe towers regenerate life over time, maybe enemiess steal another resource or asset or there's another mechanic when they get too far
+
+"units" in addition to towers come from the side of the towers and move across towards enemies like game nexus wars starcraft 2 mod. Maybe units become a big part of the game and it behaves more like nexus wars with towers as 50% or less of assistance.
+
+the pitch mentions waves but I might want a stream of enemies? maybe it can be waves behind the scenes but I don't want gaps in the enemy stream or a wait period between waves. maybe a break after bosses maybe not
+
+## Open questions for you (the fun part)
+
+- **What is the "clicking" actually?** Do you click enemies, click an upgrade
+  button, or click to place/shoot? (NGU has manual combat; RI has none.)
+- **Tower placement:** For now, you see a tower of each purchased type on the left side of the map, with a x # underneath. Ammunitions will fire from the left edge of the map toward the horde in accordance to how many are purchased. each shot chooses its y axis.
+- **Failure shape:** Maybe gradually worsens depending on how much damage they do. taking currency, disabling towers for a time, a full loverwhelm forces prestige
+- **Is the enemy stream one dial or several** stream speed, chance of neighbor enemy spawn (this is how enemy horde stream widens, neighbor enemies spawn at the same time at different verticies), health
+- **Meta layer:** one reset, or a stack with different metrics per layer (`#21`)?
+- **Theme/skin** sprite tower defense, zoom in / out for more / less detail

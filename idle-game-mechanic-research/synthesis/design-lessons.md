@@ -400,9 +400,102 @@ marked `[der.]` are arithmetic derived in `ANALYSIS.md`.
 *Next pass appends its own numbered entries below, keeping the Lesson / Evidence
 / Application shape; keep numbering global and never renumber existing entries.
 Entries so far: Cookie Clicker #1–#7, Exponential Idle #8–#12, Revolution Idle
-#13–#17, Leaf Blower Revolution #18–#22.*
+#13–#17, Leaf Blower Revolution #18–#22, NGU Idle #23–#26.*
 
 *Numbering check (2026-10-18, synthesis pass): **22 headings, `#1`–`#22`
 contiguous, all as `## N. <title>`** — no gaps, duplicates, or renumbers.
 Offline lessons are contiguous in intent but not duplicated: **#6** is canonical,
 **#12** and **#22** explicitly extend it with their game-specific variants.*
+
+---
+
+Provenance: entries #23–#26 are from the NGU Idle pass
+(`../games/ngu-idle/ANALYSIS.md`; Steam **1.260**, build **6938742**, final content
+build 2021-06-26, frozen; Unity 5.6.3p2 Mono; **no in-sandbox binary**, so
+combat/formula rows are wiki/guide **transcription**, not artifact-derived;
+sources accessed 2026-10-18). **Path convention:** NGU-local citations
+(`data/…`, `MECHANICS.md`, `MATH.md`) are relative to `games/ngu-idle/`; figures
+marked `[der.]` are arithmetic derived in `ANALYSIS.md`, the rest are
+`data/*.csv` rows. No NGU `VERIFY.md` pass exists yet.
+
+## 23. Tune the enemy ×-per-step *strictly above* the player's safe-lane income multiplier per step — then surface the gap.
+
+- **Evidence (NGU Idle):** enemy stats step **×5/boss (5–20)** then **×10/boss
+  (21+)** (`data/combat.csv` `boss.scaling_5to20`, `boss.scaling_21plus`),
+  e.g. boss 4 `1.3e6` → boss 20 `1.984e17` (`×5^16 = 1.526e11`) → boss 21
+  `1.984e18` (`×10`; `data/bosses.csv`). The player's rebirth **Number** boss
+  factor is only **×2/boss (Normal) → ×1.5 (Evil) → ×1.2 (Sadistic)**
+  (`data/prestige.csv` `number.current_boss.*`). The mismatch is **5.0×**
+  (Normal), **6.67×** (Evil), **8.33×** (Sadistic) per ×10 step; matching one
+  ×10 enemy step from prestige alone needs `log₂10 = 3.32` (Normal) up to
+  `log₁.₂10 = 12.63` (Sadistic) bosses **[der.]**. The gap is closed only by the
+  *non-prestige* lanes (gear, Basic/Advanced Training, Augments, NGU Power α/β at
+  +5%/+1%/level; `data/formulas.csv` `ngu.power_alpha`,`ngu.power_beta`).
+- **Application:** set enemy HP to grow `g` per wave and the **tower-only** income
+  to grow `h` per wave with `h < g`, so the safe lane mathematically stalls and
+  the **stream upgrade — which raises income *and* threat — is the only term that
+  closes `g/h`** (theory §4 interdependent; CC #2–#3; RI #16). Display the gap
+  ("next stream buy: +18% income, +22% enemy HP; defence margin today 3.1× →
+  2.5×") so acceleration is informed. Keep `g` gentler than NGU's ×10 because our
+  failure is real (#25).
+
+## 24. Add a soft enrage / pressure term that converts a stat check into a time budget.
+
+- **Evidence (NGU Idle):** Titans grow **+1% per attack**
+  (`data/constants.csv` `titan_enrage=0.01`; `ngu-wiki-titans`), doubling power
+  every `ln2/ln1.01 = 69.66` attacks — **~35 s at the titans' `attack_rate ≈ 2`**
+  (`data/titans.csv`) — and reaching **×393** over a 5-minute fight (`1.01^600`)
+  **[der.]**. ITOPOD floors scale **×1.05** each (`data/constants.csv`
+  `itopod_floor_mult`), doubling every **14.2 floors** and spanning
+  `1.05^1600 = 8.0e33` across 1600 floors, with **10 kills/floor** and PPP
+  `200/700/2000+floor` by difficulty (`ngu-wiki-itopod`) **[der.]**.
+- **Application:** make an under-defended wave worsen while it lives — enemy HP or
+  DPS `+~1%/s` held (or `×1.05` per breach step) — so a barely-adequate wall
+  eventually fails, active play (fast kills, focused single-target towers) pays,
+  and the horde is *building* rather than arriving at a static size. Tune so a
+  reasonably built defence holds indefinitely and only neglect is punished; NGU's
+  own steepness (×393/5 min) is too harsh for a real-lose game.
+
+## 25. A penalty-free safety net is what makes a steep enemy ladder playable; if failure is real, gentler ratios + a *banked* recovery replace it.
+
+- **Evidence (NGU Idle):** defeat returns the player to the **Safe Zone**
+  (`5×`/`10×` HP regen, **no enemies**) with **no penalty**
+  (`MECHANICS.md` §5–§6); being defeated by a Titan sends you to the Safe Zone
+  **without even resetting its cooldown** (`ngu-wiki-titans`); quitting a
+  challenge has **no penalty** (`MECHANICS.md` §8.14). NGU has **no lose
+  condition** anywhere — which is exactly why it can afford ×5/×10 per-boss
+  enemies. Contrast LBR: HP 0 → teleport and lose **25% of one random resource**
+  (`design-lessons.md` #18 context), a *soft*, recoverable loss.
+- **Application:** our brief inverts this ("lose if you upgrade the enemy stream
+  too fast"): the enemy ratio must stay nearer CC's `×1.15` / LBR's `×1.5–4`
+  capped cliffs (#1, #3, #18) than NGU's ×10; failure must be **previewable and
+  self-inflicted** (the scale-free `Attack/Defense vs boss` ratio race of NGU §1
+  is a ready-made margin readout); and recovery routes through the **banked
+  reset** (lifetime kills → permanent buff → wall move; #7, #10, #14), so
+  over-accelerating is punished *within* a run and recovered *between* runs.
+  Alternatively make death soft/recoverable (LBR-style fraction loss) rather than
+  terminal.
+
+## 26. Make difficulty a player-chosen multiplier axis — enemy ÷ vs reward exponent vs meta-currency — gated on a milestone.
+
+- **Evidence (NGU Idle):** Evil and Sadistic each **divide boss Attack/Defense by
+  `1e30`** (`data/prestige.csv` `difficulty.evil.boss_ad_divisor`,
+  `difficulty.sadistic.boss_ad_divisor`), **decelerate the Number boss exponent**
+  (`2 → 1.5 → 1.2`; `number.current_boss.*`), and **raise ITOPOD PP** per kill
+  (`200 → 700 → 2000+floor`; `difficulty.*.itopod_ppp`). Replaying the 301-boss
+  climb yields `2^301 = 4.1e90` (Normal) vs `1.5^301 = 1.0e53` (Evil) vs
+  `1.2^301 = 6.8e23` (Sadistic) Number while the enemy is `1e30` weaker (Evil boss
+  301 Attack `= 1.984e187/1e30 = 1.98e157`) with richer PP **[der.]**. Unlocks are
+  milestone-gated (boss 301 + Titan form; `difficulty.evil.unlock`,
+  `difficulty.sadistic.unlock`).
+- **Application:** offer **opt-in pressure presets** that trade safe income (a
+  gentler reward exponent) for a richer **meta-currency per kill/wave**, and gate
+  the higher presets on a **milestone**. The player self-selects grind intensity,
+  and the reward exponent becomes a second, independent difficulty dial alongside
+  the enemy numbers — orthogonal to L1's stream ratchet.
+
+---
+
+*Numbering check (2026-10-19, NGU pass): **26 headings, `#1`–`#26` contiguous,
+all as `## N. <title>`** — no gaps, duplicates, or renumbers. Total: CC #1–#7,
+EI #8–#12, RI #13–#17, LBR #18–#22, NGU #23–#26.*

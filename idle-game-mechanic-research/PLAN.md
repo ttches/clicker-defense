@@ -10,14 +10,16 @@
 > (Arctic Shift API + safereddit). **S2** CC artifact lane. **S3–S5**:
 > EI ✅ (378 C#), RI ⚠️ (IL2CPP signatures only), LBR ✅ (1,233 GML).
 >
-> **All four game passes COMPLETE** (Decode → Harvest → Verify → Analyze), each
-> independently verified (all PASS-WITH-CAVEATS) with findings fixed:
-> **Cookie Clicker** (5 CSVs; 8 fixes), **Exponential Idle** (8 CSVs; 3 fixes),
-> **Revolution Idle** (7 CSVs; 4 fixes), **Leaf Blower Revolution** (7 CSVs;
-> prose fixes; 189 unresolved helper costs registered as D-LBR). **Theory track
-> done** (6 Guildenstern posts + taxonomy + decode checklist).
-> `synthesis/design-lessons.md` now holds **22 lessons**. **Next: cross-game
-> comparison + finalize lessons.**
+> **All five game passes COMPLETE** (Decode → Harvest → Verify → Analyze), each
+> independently verified (PASS-WITH-CAVEATS) with findings fixed: **Cookie
+> Clicker** (5 CSVs; 8 fixes), **Exponential Idle** (8 CSVs; 3 fixes),
+> **Revolution Idle** (7 CSVs; 4 fixes), **Leaf Blower** (7 CSVs; prose fixes;
+> D-LBR), **NGU Idle** (8 CSVs; parser/label fixes; +2 enemies recovered). **Theory
+> track done** (6 Guildenstern posts + taxonomy + decode checklist).
+> `synthesis/design-lessons.md` holds **26 lessons**; `guide.html` is a long-form
+> study (now includes the Reddit series in full + an NGU/two-sided chapter). A
+> repeatable [`PLAYBOOK.md`](PLAYBOOK.md) documents the per-game process.
+> **Next: optional cleanups / apply the lessons to the game design.**
 
 ## Mission
 
@@ -35,23 +37,29 @@ Two equal deliverables:
 2. **Reference tables** — the hard numbers, kept as machine-readable CSVs with
    citations, not abstracted away by summaries.
 
-## Games in scope (fixed)
+## Games in scope
 
-| game | engine | artifact readability | expected source quality (to verify) |
-| --- | --- | --- | --- |
-| Cookie Clicker | Electron (Steam) / plain JS (web) / LibGDX (Android) | excellent | likely **rich** |
-| Exponential Idle | C# / Xamarin | good (`.NET` → near-source) | likely **workable** |
-| Revolution Idle | Unity **IL2CPP** | hard | unknown (**workable?**) |
-| Leaf Blower Revolution | **GameMaker** (2.3+) | hardest | likely **workable/rich** wiki, hard binary |
+| game | engine | artifact readability | source quality | status |
+| --- | --- | --- | --- | --- |
+| Cookie Clicker | Electron/JS (web) / LibGDX (Android) | excellent | **rich** | done |
+| Exponential Idle | C# / Xamarin (.NET MAUI) | good (`.NET` → near-source) | **workable** | done |
+| Revolution Idle | Unity **IL2CPP** | hard (signatures only) | **rich** | done |
+| Leaf Blower Revolution | **GameMaker** (2.3+) | good (readable GML) | **rich** | done |
+| **NGU Idle** | TBD (Flash/AIR-wrapped? verify) | TBD | TBD | **in progress** |
 
-Out of scope (for now): adding more games; the "plant clicker" idea in
-`../readme.md`. See §Deferred.
+Additions are allowed when they fill a gap the current set doesn't cover. **NGU
+Idle** was added because it has real **enemy/combat scaling** — the reference set
+has no lose condition and no two-sided (tower vs enemy) scaling, which is exactly
+our game's twist. Use [`PLAYBOOK.md`](PLAYBOOK.md) to add further games.
+
+Out of scope (for now): the "plant clicker" idea in `../readme.md`. See §Deferred.
 
 ## Locked decisions
 
 1. **Live in `clicker-defence/idle-game-mechanic-research/`** (self-contained,
    sibling to the game).
-2. **The four games listed only** — no additions for now.
+2. **The four games listed, plus additions that fill a gap.** **NGU Idle** added
+   for combat/two-sided scaling; see `PLAYBOOK.md` to add more.
 3. **Source-first, extract-to-confirm.** Lead with wikis/guides/dev posts;
    use live-object dumps, APK decompiles, and measurement only to confirm or
    fill gaps. We are *not* reproducing clickpoc's full deobfuscation effort.
@@ -170,6 +178,8 @@ tools/<game>/*.mjs
 | 12  | All four wikis (`rich`: CC/RI/LBR; `workable`: EI) are the primary lane; artifacts are confirm-only | RI IL2CPP loses method bodies, so binaries cannot be the main source anyway |
 | 13  | CC pass gated by an independent verifier (PASS-WITH-CAVEATS → fix pass) | the verifier caught 8 real prose/citation defects while confirming all numeric tables; fixes re-render byte-identically |
 | 14  | opencode config moved to the repo root `.opencode/` | opencode only discovers project config at the worktree root; nested `.opencode/` is ignored |
+| 15  | `PLAYBOOK.md` is the canonical per-game process | lets us repeat the research for any new game and extend the guide |
+| 16  | Added **NGU Idle** to scope | it has enemy/combat scaling — the two-sided mechanic our game needs that the original four lack |
 
 ## Deferred-work register
 
@@ -184,6 +194,8 @@ tools/<game>/*.mjs
 | S6  | Black-box pacing-measurement harness (browser automation)   | P0     | per-game | open (CC live dump partly proves it) |
 | S7  | Optional formula simulator for pacing tables                | P0     | synth  | open   |
 | S8  | Add more games / the plant-clicker idea                     | —      | later  | open   |
+| D-NGU | NGU Idle artifact not in-sandbox (no `Assembly-CSharp.dll`): acquire the Steam `NGUIdle_Data`/Managed folder and decompile to confirm the transcribed combat/prestige math | NGU | NGU | open |
+| D-NGU2 | NGU disputes: titan PPP (ITOPOD 600k/800k vs infoboxes 500k/700k); nuke threshold (5× vs ~1000×); boss-4 stats | NGU | NGU | open |
 | D-LBR | Resolve 189 blank `base_cost` rows in `leaf-blower-revolution/data/shops.csv` (helper `build_resource_cost()` costs) | LBR | LBR | open |
 | D-LBR2 | LBR minor errata: combo-leaves inner `floor`; offline-formula file citation; `offline_rewards` compounding/dead-code note | LBR | LBR | open |
 | D-CITE | Standardize GML/EI citation paths: GML files are `gml_GlobalScript_*.gml`; EI classes live under `ExponentialIdle.*` subdirs | all | cleanup | open |
@@ -209,13 +221,12 @@ node tools/<game>/<extractor>.mjs      # -> games/<game>/data/*.csv (determinist
 
 ## Next actions (resume here)
 
-1. Run the **Exponential Idle pass** (T0 done; web guides `rich`; `.NET`
-   decompile available as confirm-only): Decode → Harvest → Verify → Analyze.
-2. Then **Revolution Idle** (wiki `rich`; IL2CPP gives signatures only, so the
-   wiki is the formula source) and **Leaf Blower Revolution** (wiki `rich`;
-   1,233 GML available to confirm).
-3. After all four: fill `synthesis/cross-game-comparison.md` and finalize the
-   lessons for our clicker tower-defence.
+1. Optional cleanups from the deferred register (D-LBR, D-LBR2, D-CITE, D-NGU,
+   D-NGU2).
+2. Apply the research: turn the `synthesis/design-lessons.md` Top-5 into a
+   concrete clicker tower-defence economy spec.
+3. Add further games at any time via [`PLAYBOOK.md`](PLAYBOOK.md), then extend
+   `guide.html` §6.
 
 ## For an orchestration agent
 

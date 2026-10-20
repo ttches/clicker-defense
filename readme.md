@@ -1,5 +1,3 @@
-clicker tower defense game
-
 enemy stream
 dead enemies become currency
 clicker upgrade path to increase enemies + stronger = more currency
