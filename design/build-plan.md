@@ -12,7 +12,7 @@
 | --- | --- | --- |
 | M0 | Bullets & enemies | not started |
 | M1 | First tower | not started |
-| M2 | Depth (damage/speed) | not started |
+| M2 | Depth (damage & speed tiers) | not started |
 | M3 | Eras & boss (forced reset) | not started |
 | M4 | Prestige (tokens & upgrades) | not started |
 | M5 | Spawn reduction | not started |
@@ -37,16 +37,19 @@ M4 once M2 exists, so they can move earlier if useful.
 
 **Scope**
 - One enemy type: 10 HP, spawns at 0.2/s, walks right → left, ~12 s to cross.
-- Tap fires a 1-damage bullet from the left; bullets travel and hit the nearest
-  enemy in their lane (random lane per shot).
+- Tap fires a 1-damage bullet from the left; bullets travel and hit the front-most
+  enemy in an **occupied lane** (never an empty lane).
 - Holding fires every 0.33 s.
-- Killing an enemy grants `enemyHP / 10` currency (1 at base).
+- Killing an enemy grants its **bounty** (set by its HP; ≈1 at base), collected on
+  death. The HUD can show it filling as damage lands, but **overkill never
+  increases it**.
 - Enemies that reach the left line are destroyed (no penalty — pre-alpha rule).
-- HUD: currency, current enemy HP/flow (basic).
+- HUD: currency, enemy HP/flow, and a visible bounty on/near enemies.
 
 **Acceptance**
 - Holding for ~15 s earns enough for the first tower (3 currency).
-- A bullet visibly travels, hits the front-most enemy in its lane, and can kill it.
+- A bullet visibly travels, hits the front-most enemy in an occupied lane, and can
+  kill it; killing shows the bounty payout.
 - Tap and hold both fire; hold repeats at a steady interval.
 - Nothing punishes the player for letting an enemy reach the line yet.
 
@@ -94,22 +97,27 @@ M4 once M2 exists, so they can move earlier if useful.
 
 **Scope**
 - Per-tower-type upgrade lanes (one type for now):
-  - **Damage:** +20% DPS per level, cost `10 × 1.55^level`.
-  - **Speed:** +15% fire rate per level, cost `10 × 1.55^level`.
-- Both multiply total DPS: `count × 2 × 1.2^dmg × 1.15^spd`.
+  - **Damage:** +20% DPS per level, cost `10 × 1.55^level` (the common repeatable
+    lane).
+  - **Speed:** 3 rare tiers, each +25% fire rate, cost `40 × 2.5^tier`, capped ≈×2.
+- Both multiply total DPS: `count × 2 × 1.2^dmg × 1.25^speedTier`.
 - Preview shows the DPS delta (and projected safety).
-- Show the current level and next cost for each lane.
+- Show the current level/tier and next cost for each lane.
 
 **Acceptance**
-- Buying damage or speed raises DPS and safety immediately.
-- Alternating the two lanes is roughly as good as stacking one (5×5 > 1×10).
+- Buying damage raises DPS and safety immediately.
+- Buying a speed tier is a **noticeable jump** in ammo feel; it is rare and
+  expensive.
+- Speed is capped (~×2) and never scales to crazy amounts.
 - Costs grow on their curves; the UI shows the next cost.
-- When count becomes expensive, damage/speed are visibly the better buy.
+- When count becomes expensive, damage is visibly the better common buy; speed is
+  a rare, deliberate purchase.
 
 **Playtest / tuning**
-- Do players understand damage vs speed? (Consider showing "DPS" only.)
-- Is ×1.55 the right steepness, or does it dead-end too fast?
-- Does the "best buy moves to levels" cadence actually happen?
+- Does a speed tier feel meaningfully better than no speed?
+- Does speed ever feel pointless, or conversely trivialise the game?
+- Is damage ×1.55 the right steepness, or does it dead-end too fast?
+- Does the "best buy moves to damage" cadence actually happen?
 
 **Out of scope:** spawn reduction, eras.
 
@@ -152,7 +160,7 @@ M4 once M2 exists, so they can move earlier if useful.
 **Scope**
 - Boss kills grant **1 boss token** (persistent).
 - **Voluntary prestige** available at any time (recommended at the wall).
-- Prestige resets: currency, tower count, damage/speed levels, era.
+- Prestige resets: currency, tower count, damage level / speed tier, era.
 - Prestige keeps: boss tokens, prestige upgrades.
 - **Token shop (two paths, to trial):**
   - **+% currency** — repeatable, e.g. +10% per level, cost `1, 2, 4, 8 …`.
@@ -236,7 +244,8 @@ Breadth (**new tower types**, and thus the ×1.25 spawn / new enemy types), ally
 units, full overwhelm/harm (tower damage, currency theft), the richer safety
 dashboard, capped cliffs, multi-layer prestige, counters/traits, and art/zoom
 polish. The breadth rule is **specified but dormant** until a second tower type
-exists.
+exists. An **optimized headless balance simulator** is also deferred (unit tests +
+manual playtests for now).
 
 The later "enemy types as leaf colours" idea (new tower → new enemy → rarer
 resource, LBR-style) is recorded in `design.md` under *Parked / future*; it is not

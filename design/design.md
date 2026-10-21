@@ -11,6 +11,9 @@
 >
 > **Build plan:** [`build-plan.md`](build-plan.md) — milestones M0–M6 with
 > acceptance criteria and playtest gates.
+>
+> **Technical plan:** [`technical-plan.md`](technical-plan.md) — foundation and
+> architecture (recommends `../eco-evo`'s three.js/WebGL + simulator patterns).
 
 ## Core concept
 
@@ -21,9 +24,10 @@
 - **Two-sided economy, driven by the fun action.** Rather than a separate "make
   enemies stronger" button, the horde reacts to the player: **levelling** a tower
   is *safe* power, **adding a count** nudges spawn, **adding a new tower type**
-  grows the horde, and enemy **eras** step it up occasionally. More enemies earns
-  more by *count*; tougher enemies earn more *per kill* (health = reward). (Lessons
-  `#23`, `#25`.)
+  grows the horde, and enemy **eras** step it up occasionally. Currency is a
+  **per-kill bounty** collected on the kill and set by the enemy's HP (the UI can
+  show it filling as damage lands; overkill never increases it); tougher enemies
+  carry a bigger bounty. (Lessons `#23`, `#25`.)
 - **Render:** enemies walk right → left; ammo fires from the left edge toward the
   horde; each purchased tower type is shown on the left with a `×N` count.
 
@@ -34,8 +38,9 @@ Three tiers of spending, with risk concentrated in the rare ones:
 1. **Returning a tower type (common).** Adding a count to a type you already own
    raises firepower and raises spawn frequency slightly (**×1.03 per tower**).
    This is the button pressed most; the creep is mostly texture, but it also acts
-   as an eventual soft wall — DPS grows linearly while incoming HP flow grows
-   geometrically (~125 towers at 3%).
+   as an eventual soft wall — count-DPS grows linearly while incoming HP flow grows
+   geometrically (count-based ~125 towers at 3%; wall timing is under review — see
+   `review-findings.md`).
 2. **First purchase of a new tower type (rare).** Raises firepower, **×1.25 spawn
    frequency**, and **unlocks a new enemy type**. This is the real expansion/risk
    moment.
@@ -48,20 +53,20 @@ Depth (levelling an owned tower) is safe; **breadth and eras carry the risk**.
 
 ### Baseline numbers (first pass — all tunable)
 
-Normalized to **HP/second**. Enemy HP 10; reward per kill = HP/10 (health =
-reward).
+Normalized to **HP/second**. Enemy HP 10; currency is a **per-kill bounty** set by
+the enemy's HP and collected on the kill (overkill never increases it).
 
 | knob | value |
 | --- | --- |
 | base spawn | 0.2 enemies/s (1 per 5 s) |
 | first tower purchase | spawn → 0.5/s |
 | each additional same-type tower | spawn ×1.03 |
-| first new tower type | spawn ×1.25 (+ maybe a new unit/enemy type) |
+| first new tower type | spawn ×1.25, and unlocks a new enemy type |
 | enemy HP (base) | 10 |
-| reward per kill | HP / 10 |
+| reward per kill | bounty `0.25 + 0.075 × enemyHP` (≈1 at full 10 HP); overkill never increases it |
 | tower DPS | 2 HP/s |
 | click shot / hold | 1 damage per shot; hold every 0.33 s (≈3 HP/s) |
-| tower cost | 5 × 1.15^(owned) |
+| tower cost | 3 × 1.15^(owned) |
 | era (early → later) | spawn ×1.15, health ×1.25 → ×1.5–2 |
 | era boss | ~20× a normal enemy's HP, slow, big reward |
 
@@ -81,24 +86,31 @@ click damage would add a little margin.
 ### Eras
 
 - **Effect:** spawn **×1.15**, health **×1.25** early, rising to **×1.5–2**
-  later; possibly a new enemy type. Health → reward stays **linear** for now.
+  later; possibly a new enemy type. Health raises the **bounty ceiling**, so
+  tougher enemies pay more (see the bounty formula below).
 - **Boss:** ~20× a normal enemy's HP, slow, big reward — a pure DPS check and a
   natural pause (the "floor boss" rhythm; `#19`, `#21`).
 - **Small drift** between eras (e.g. +1–2% health occasionally) is fine as
   seasoning; speed buffs should be rarer because they change the feel more.
-- **Trigger:** a **manual *Call the Horde* button** (available once the current
-  era is cleared).
+- **Trigger:** a **manual *Call the Horde* button**, available whenever the player
+  chooses (placeholder; gating rules TBD).
 - **Boss failure:** if the era boss reaches the line, it **forces a prestige**.
 
-**Reward model:** no separate auto-scaled reward multiplier. Income ≈ *count ×
-health-ish*; count rises with breadth, health rises with eras, and reward per kill
-scales with health.
+**Reward model:** currency is a **per-kill bounty**, not a damage trickle. The
+bounty is **set by the enemy's HP** (`0.25 + 0.075 × enemyHP`; ≈1 at 10 HP) and is
+collected on death. The UI can show it filling as damage lands, but the payout is
+fixed — **overkill never increases it**, so a hugely overpowered gun does not farm
+weak enemies. A leaked enemy yields no bounty (soft penalty; leaks are otherwise
+harmless in pre-alpha). Larger/era enemies pay more.
 
 ### Per-tower-type upgrades
 
 Each unlocked tower type has its own lanes:
 
-- **Damage** (+DPS) and **Speed** (+fire rate).
+- **Damage** (+DPS, the common repeatable lane) and **Speed** (+fire rate, **rare
+  and chunky**: 3 tiers of +25%, capped ≈×2). Speed should make the ammo feel
+  meaningfully better than no speed without scaling to crazy amounts (CC's tiered
+  doubles are the reference).
 - **Spawn reduction** — lowers the spawn increase that adding that type attracts.
   This is the direct answer to the wall below.
 
@@ -124,6 +136,10 @@ would overpower you, calling the horde is worse, and the safe lane (per-type
 damage/speed/spawn-reduction) is slow and expensive. The sensible move is to reset.
 **Voluntary prestige = the player reaches this wall; forced prestige = a boss
 reaches the line.**
+
+> **Note (pending tuning):** the wall numbers are under review — the reviewer's
+> math puts the marginal-safety point much later than the intended 20–40 min. Creep
+> and era tuning are deliberately deferred; see `review-findings.md` §1–2.
 
 ## Decided so far
 

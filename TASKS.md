@@ -27,7 +27,18 @@ things land. Research detail lives in `idle-game-mechanic-research/PLAN.md`
       build order, tuning targets). First pass; tune by play.
 - [x] Turn the milestones into a **build plan** — `design/build-plan.md` (M0–M6
       with scope, acceptance criteria, playtest/tuning gates, and non-goals).
-- [ ] **Build M0–M6** (start with M0: bullets & enemies) and log tuning as you play.
+- [x] Write the **technical plan** — `design/technical-plan.md` (foundation:
+      `../eco-evo`'s three.js/WebGL, fixed loop, SoA sim, instancing, headless
+      simulator patterns; architecture; risks).
+- [x] **Lock the technical decisions** — root app, npm, eco-evo foundation,
+      borrow/adapt code, both projectile models, higher-res zoomable look
+      (`design/technical-plan.md` §0).
+- [x] **Apply the review decisions** — per-kill **bounty** (kills are the payout,
+      build-up → payout), **rare/chunky speed** (3 × +25%, cap ≈×2), and the
+      **optimized simulator deferred**. See `design/review-findings.md`.
+- [ ] **Next session: scaffold the root app** (npm) per `technical-plan.md` §12,
+      then start **M0**.
+- [ ] **Build M0–M6** and log tuning as you play.
 
 ## Explorations (later, not pre-alpha)
 
@@ -36,8 +47,9 @@ things land. Research detail lives in `idle-game-mechanic-research/PLAN.md`
       resource that feeds that tower's upgrades. Prestige could grant the next tower
       type, opening its enemy + resource. See `design/design.md` → *Parked / future*.
       Watch for currency bloat.
-- [ ] Optional: a tiny **curves simulator** to sanity-check proposed cost/enemy
-      curves before building the game.
+- [ ] **Deferred:** an optimized headless **balance/curves simulator**. Not now —
+      use unit tests + manual playtests for pre-alpha (see
+      `design/technical-plan.md` §7).
 
 ## Research cleanups (from `idle-game-mechanic-research/PLAN.md` §Deferred)
 
