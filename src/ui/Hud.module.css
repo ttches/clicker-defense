@@ -1,0 +1,36 @@
+aside.hud {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  display: grid;
+  gap: 0.15rem;
+  min-width: 9.5rem;
+  padding: 0.55rem 0.7rem;
+  background: rgb(8 10 12 / 78%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--foreground);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  line-height: 1.35;
+  pointer-events: none;
+  user-select: none;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.label {
+  color: var(--muted-foreground);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.value {
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  color: var(--foreground);
+}

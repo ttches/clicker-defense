@@ -1,18 +1,26 @@
 import { useEffect, useRef } from 'react'
+import { WORLD } from '@/data/balance'
 import type { Camera } from '@/engine/camera'
 import { createFitCamera } from '@/engine/camera'
 import { FIXED_STEP } from '@/engine/config'
 import { activeLoopCount, createLoop } from '@/engine/loop'
-import { WORLD } from '@/data/balance'
 import { Renderer } from '@/render/renderer'
+import { spawnRate } from '@/sim/economy'
+import { createRun, stepRun } from '@/sim/run'
+import { createRenderView } from '@/sim/view'
 import { countFrame, createDebugState, getFrameCount } from '@/ui/debug'
-import { Stage } from './ui/Stage.tsx'
+import { Hud } from '@/ui/Hud'
+import { publishHud } from '@/ui/hud-store'
+import { Stage } from '@/ui/Stage'
+import { stressEnemies } from '@/ui/stress'
 
 type Measurement = {
   width: number
   height: number
   dpr: number
 }
+
+const HUD_INTERVAL_MS = 100
 
 /** CSS size plus the raw device pixel ratio; Renderer applies DPR_CAP. */
 const measure = (canvas: HTMLCanvasElement): Measurement => {
@@ -31,14 +39,60 @@ export const App = () => {
     const canvas = canvasRef.current
     if (!canvas) return
 
+    const run = createRun()
+    const view = createRenderView(run.enemies)
     const renderer = new Renderer(canvas)
-    const debug = createDebugState()
+    const debug = createDebugState(renderer.drawn)
     window.__game = debug
-    debug.drawn = renderer.drawn
+
+    const stressParam = new URLSearchParams(location.search).get('stress')
+    const requested = Number(stressParam)
+    const stress =
+      import.meta.env.DEV && stressParam !== null && Number.isFinite(requested)
+        ? stressEnemies(run, requested)
+        : 0
+    debug.stress = stress
 
     let size = measure(canvas)
     let camera: Camera | null = null
     let started = false
+    let lastHudPublish = Number.NEGATIVE_INFINITY
+
+    const readStats = () => ({
+      tick: run.tick,
+      currency: run.currency,
+      enemies: run.enemies.count,
+      spawnRate: spawnRate(run.towerCount),
+      leaks: run.stats.leaks,
+      kills: run.stats.kills,
+    })
+
+    const syncDebug = (): void => {
+      const stats = readStats()
+      debug.tick = stats.tick
+      debug.currency = stats.currency
+      debug.enemies = stats.enemies
+      debug.spawnRate = stats.spawnRate
+      debug.leaks = stats.leaks
+      debug.kills = stats.kills
+      debug.renderCalls = renderer.stats.calls
+      debug.renderTriangles = renderer.stats.triangles
+    }
+
+    const publishStats = (now: number): void => {
+      lastHudPublish = now
+      const stats = readStats()
+      publishHud({
+        currency: stats.currency,
+        enemies: stats.enemies,
+        spawnRate: stats.spawnRate,
+        leaks: stats.leaks,
+      })
+      debug.hudPublishes += 1
+    }
+
+    syncDebug()
+    publishStats(performance.now())
 
     const writeCanvas = (): void => {
       debug.canvas.cssWidth = size.width
@@ -51,13 +105,18 @@ export const App = () => {
 
     const loop = createLoop(FIXED_STEP, {
       step: () => {
-        debug.tick += 1
+        stepRun(run)
       },
       frame: (steps) => {
         countFrame()
         debug.framesTotal = getFrameCount()
         debug.loops = activeLoopCount()
-        if (steps > 0 && started && camera) renderer.draw(camera)
+        syncDebug()
+
+        const now = performance.now()
+        if (now - lastHudPublish >= HUD_INTERVAL_MS) publishStats(now)
+
+        if (steps > 0 && started && camera) renderer.draw(camera, view)
       },
     })
 
@@ -70,7 +129,7 @@ export const App = () => {
         { width: size.width, height: size.height },
         WORLD,
       )
-      renderer.draw(camera)
+      renderer.draw(camera, view)
       writeCanvas()
       loop.start()
       debug.running = true
@@ -98,7 +157,7 @@ export const App = () => {
         { width: next.width, height: next.height },
         WORLD,
       )
-      renderer.draw(camera)
+      renderer.draw(camera, view)
       writeCanvas()
     }
 
@@ -134,5 +193,5 @@ export const App = () => {
     }
   }, [])
 
-  return <Stage canvasRef={canvasRef} />
+  return <Stage canvasRef={canvasRef} overlay={<Hud />} />
 }

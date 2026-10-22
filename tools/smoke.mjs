@@ -131,6 +131,7 @@ const runPass = async (browser, deviceScaleFactor) => {
         tick: game.tick,
         frames: game.framesTotal,
         background: game.drawn.background,
+        hudPublishes: game.hudPublishes,
       }
     })
     await page.waitForTimeout(800)
@@ -152,6 +153,15 @@ const runPass = async (browser, deviceScaleFactor) => {
         loops: game.loops,
         pixelRatio: game.canvas.pixelRatio,
         background: game.drawn.background,
+        currency: game.currency,
+        enemies: game.enemies,
+        hudPublishes: game.hudPublishes,
+        renderCalls: game.renderCalls,
+        renderTriangles: game.renderTriangles,
+        hudCurrency:
+          document.querySelector('[data-hud="currency"]')?.textContent ?? '',
+        hudEnemies:
+          document.querySelector('[data-hud="enemies"]')?.textContent ?? '',
         running: game.running,
       }
     })
@@ -159,9 +169,12 @@ const runPass = async (browser, deviceScaleFactor) => {
     const tickDelta = data.tick - start.tick
     const framesDelta = data.frames - start.frames
     const backgroundDelta = data.background - start.background
+    const hudDelta = data.hudPublishes - start.hudPublishes
     const scale = data.pixelRatio
     const expectedWidth = Math.floor(data.rectWidth * scale)
     const expectedHeight = Math.floor(data.rectHeight * scale)
+    const hudCurrency = Number.parseFloat(data.hudCurrency)
+    const hudEnemies = Number.parseInt(data.hudEnemies, 10)
 
     checks.push(
       [
@@ -191,6 +204,122 @@ const runPass = async (browser, deviceScaleFactor) => {
         `${data.width}x${data.height} expected ${expectedWidth}x${expectedHeight}`,
       ],
       ['loop running', data.running === true, `running=${data.running}`],
+      [
+        'render call budget',
+        data.renderCalls <= 8,
+        `calls=${data.renderCalls}`,
+      ],
+      [
+        'background triangles drawn',
+        data.renderTriangles >= 6,
+        `triangles=${data.renderTriangles}`,
+      ],
+      [
+        'HUD publishes near 10 Hz',
+        hudDelta >= 4 && hudDelta <= 12,
+        `hudDelta=${hudDelta}`,
+      ],
+      [
+        'HUD currency matches debug',
+        Number.isFinite(hudCurrency) &&
+          Math.abs(hudCurrency - data.currency) <= 0.01,
+        `hud=${data.hudCurrency} debug=${data.currency}`,
+      ],
+      [
+        'HUD enemies matches debug',
+        hudEnemies === data.enemies,
+        `hud=${data.hudEnemies} debug=${data.enemies}`,
+      ],
+      ['no page or console errors', errors.length === 0, errors.join(' | ')],
+    )
+
+    await page.screenshot({ path: screenshotPath })
+  } finally {
+    await context.close().catch(() => {})
+  }
+
+  return { checks, screenshotPath }
+}
+
+const runStressPass = async (browser) => {
+  const screenshotPath = '/tmp/clicker-smoke-stress.png'
+  const context = await browser.newContext({
+    viewport: { width: 1280, height: 720 },
+    deviceScaleFactor: 1,
+  })
+  const page = await context.newPage()
+  const errors = []
+  page.on('pageerror', (error) => {
+    errors.push(`pageerror: ${error.message}`)
+  })
+  page.on('console', (message) => {
+    if (message.type() === 'error') errors.push(`console: ${message.text()}`)
+  })
+
+  const checks = []
+  try {
+    await page.goto(`${url}?stress=2048`, { waitUntil: 'commit' })
+    await page.waitForFunction(
+      () => globalThis.__game?.enemies === 2048,
+      undefined,
+      { timeout: 30000 },
+    )
+
+    const start = await page.evaluate(() => {
+      const game = globalThis.__game
+      if (!game) throw new Error('window.__game missing')
+      return {
+        enemies: game.enemies,
+        drawn: game.drawn.enemies,
+        frames: game.framesTotal,
+        renderCalls: game.renderCalls,
+        renderTriangles: game.renderTriangles,
+        hudEnemies:
+          document.querySelector('[data-hud="enemies"]')?.textContent ?? '',
+      }
+    })
+    await page.waitForTimeout(1000)
+    const end = await page.evaluate(() => {
+      const game = globalThis.__game
+      if (!game) throw new Error('window.__game missing')
+      return {
+        frames: game.framesTotal,
+        enemies: game.enemies,
+        drawn: game.drawn.enemies,
+        renderCalls: game.renderCalls,
+        renderTriangles: game.renderTriangles,
+      }
+    })
+
+    const framesDelta = end.frames - start.frames
+    checks.push(
+      ['stress spawned 2,048', start.enemies === 2048, `n=${start.enemies}`],
+      [
+        'stress draws every instance',
+        start.drawn === 2048,
+        `drawn=${start.drawn}`,
+      ],
+      [
+        'stress HUD matches 2,048',
+        Number.parseInt(start.hudEnemies, 10) === 2048,
+        `hud=${start.hudEnemies}`,
+      ],
+      [
+        'stress is one instanced call',
+        start.renderCalls <= 8,
+        `calls=${start.renderCalls}`,
+      ],
+      [
+        'stress triangles cover the horde',
+        start.renderTriangles >= 6000,
+        `triangles=${start.renderTriangles}`,
+      ],
+      [
+        'stress wave survives the window',
+        end.enemies === 2048 && end.drawn === 2048,
+        `enemies=${end.enemies} drawn=${end.drawn}`,
+      ],
+      ['stress frame floor', framesDelta >= 8, `framesDelta=${framesDelta}`],
       ['no page or console errors', errors.length === 0, errors.join(' | ')],
     )
 
@@ -213,6 +342,7 @@ try {
   for (const deviceScaleFactor of [1, 2]) {
     passes.push(await runPass(browser, deviceScaleFactor))
   }
+  passes.push(await runStressPass(browser))
 
   failed = false
   for (const { checks, screenshotPath } of passes) {

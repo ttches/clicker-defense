@@ -139,6 +139,10 @@ export const createRun = (seed = DEFAULT_SEED): RunState => {
   }
 }
 
+/** Vertical centre of a lane, in world units. */
+export const laneY = (lane: number): number =>
+  ((lane + 0.5) * WORLD.height) / ENEMY.lanes
+
 export const spawnEnemy = (run: RunState): number => {
   const slot = run.enemies.alloc()
   if (slot === NO_SLOT) {
@@ -155,7 +159,7 @@ export const spawnEnemy = (run: RunState): number => {
   )
 
   columns.x[slot] = ENEMY.spawnX
-  columns.y[slot] = ((lane + 0.5) * WORLD.height) / ENEMY.lanes
+  columns.y[slot] = laneY(lane)
   columns.lane[slot] = lane
   columns.maxHp[slot] = ENEMY.baseHp
   columns.hp[slot] = ENEMY.baseHp

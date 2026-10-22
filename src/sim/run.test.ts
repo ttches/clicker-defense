@@ -1,11 +1,12 @@
 import { describe, expect, it } from 'vitest'
-import { CAPS, DEFAULT_SEED, ENEMY } from '@/data/balance'
+import { CAPS, DEFAULT_SEED, ENEMY, WORLD } from '@/data/balance'
 import { SIMULATION } from '@/engine/config'
 import { XorShift32 } from '@/engine/math'
 import {
   createRun,
   hashRun,
   hydrateRun,
+  laneY,
   serializeRun,
   spawnEnemy,
   stepRun,
@@ -40,6 +41,16 @@ describe('createRun', () => {
 
   it('substitutes a zero seed the same way as XorShift32', () => {
     expect(createRun(0).seed).toBe(new XorShift32(0).state)
+  })
+})
+
+describe('laneY', () => {
+  it('centres lanes in the field', () => {
+    expect(laneY(0)).toBeCloseTo(WORLD.height / (ENEMY.lanes * 2), 6)
+    expect(laneY(ENEMY.lanes - 1)).toBeCloseTo(
+      WORLD.height - WORLD.height / (ENEMY.lanes * 2),
+      6,
+    )
   })
 })
 
