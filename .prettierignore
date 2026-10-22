@@ -1,0 +1,14 @@
+node_modules
+dist
+package-lock.json
+dist-ssr
+*.local
+CHANGELOG.md
+
+# Pre-existing docs, research tree, and agent config are outside the app.
+design
+idle-game-mechanic-research
+.opencode
+TASKS.md
+readme.md
+research.md
