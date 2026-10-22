@@ -40,9 +40,14 @@ things land. Research detail lives in `idle-game-mechanic-research/PLAN.md`
       (damage at fire), **horde count lever** (era neighbour clusters),
       **cost/income prestige wall**, **boss sizing + era-indexed tokens**; speed and
       leaks deferred. See `design/claude-review-findings.md` / `review-findings.md`.
-- [ ] **Next session: scaffold the root app** (npm) per `technical-plan.md` §12,
-      then start **M0**.
-- [ ] **Build M0–M6** and log tuning as you play.
+- [ ] **Build M0–M6** and log tuning as you play. Execution is split into slices
+      (see `design/build-plan.md` §Coding slices); **SP1 is in progress**.
+  - [ ] **SP1** foundation audit → `design/foundation-notes.md`
+  - [ ] **E1** foundation: scaffold + engine + balance/economy
+  - [ ] **SP2** browser/perf spike (instancing + DPR + 2,048 enemies)
+  - [ ] **E2** M0a: sim stream + enemy render + HUD
+  - [ ] **E3** M0b: input/cadence + targeting/damage + bounty → **M0 playable**
+  - [ ] **E4** M1: tower purchase + auto-fire + preview → **M1 playable**
 
 ## Explorations (later, not pre-alpha)
 

@@ -21,6 +21,70 @@
 **Sequencing:** M0 → M1 → M2 → M3 → M4 → M5 → M6. M5 and M6 are independent of
 M4 once M2 exists, so they can move earlier if useful.
 
+## Coding slices (execution view of M0/M1)
+
+M0 and M1 are too large to build, verify, or review as single units. They are
+split into **two spikes and four implementation runs**. Each run lands as one
+commit, is verified independently, and is reviewed by `game-dev-review` before
+the next run starts. M0 = E2 + E3; M1 = E4.
+
+| run | covers | substeps | gate |
+| --- | --- | --- | --- |
+| **SP1** | foundation audit (read-only) | which eco-evo modules to copy/adapt/skip, aliases, canvas/DPR, loop↔React, SoA view | `design/foundation-notes.md` ratified |
+| **E1** | foundation | 1.1 scaffold · 1.2 engine · 1.3 balance + economy | build/test/lint; empty field boots |
+| **SP2** | browser/perf spike | instanced silhouettes + native×DPR + 2,048 enemies | measured ms/frame, not vibes |
+| **E2** | M0 part 1 | 2.1 sim stream · 2.2 enemy render · 2.3 HUD readout | deterministic spawn/walk/leak tests |
+| **E3** | M0 part 2 (**M0 done**) | 3.1 input/cadence · 3.2 targeting+damage · 3.3 tracer · 3.4 bounty+popups | M0 acceptance; playable checkpoint |
+| **E4** | **M1 done** | 4.1 tower purchase · 4.2 auto-fire · 4.3 render+preview · 4.4 acceptance | M1 table matches; playtest log |
+
+### Substeps and evidence
+
+| id | slice | evidence |
+| --- | --- | --- |
+| 1.1 | Scaffold: pinned deps, Vite/Vitest/TS/oxlint/prettier, app shell, provenance note | build/test/lint clean; dev server boots |
+| 1.2 | Engine: fixed loop (injectable clock), RNG/clamp, camera fit + world↔screen | unit tests; no browser needed for loop |
+| 1.3 | `data/balance.ts` (every spec constant) + pure `sim/economy.ts` | early-table test (0–3 towers), cost ladder, bounty |
+| 2.1 | SoA world, spawner, walk, leak-removal, 2,048 cap (overflow = leaks) | same seed ⇒ same hash; 5 s spawn; 12 s walk |
+| 2.2 | Enemy silhouette layer (per-instance colour + HP tint), background | drawn count == sim count |
+| 2.3 | HUD readout at 10 Hz: currency, alive, spawn/s, leaks | no per-frame React renders; values match |
+| 3.1 | Tap/hold → commands queued for next tick, 20-tick cadence, tap cap | cadence test from a recorded input script |
+| 3.2 | Global front-most targeting (boss hook), damage at fire, single kill | multi-lane test; no double-kill; determinism |
+| 3.3 | Tracer layer (visual only, random y) | state hash identical tracer on/off |
+| 3.4 | Bounty once on kill, overkill never pays, popup, currency HUD | scripted hold ≈15 s → 3 currency |
+| 4.1 | Tower count purchase, `3×1.15^n`, first-tower jump, ×1.03 creep | cost ladder + spawn-mult tests |
+| 4.2 | Tower auto-fire (1 dmg / 0.5 s) through the same fire path | DPS test; kills with no input |
+| 4.3 | Tower silhouette + ×N, panel with +DPS / +spawn% / safety before→after | **preview-after == actual-after**; screenshot |
+| 4.4 | M1 acceptance vs the 0/1/2/3-tower table | table matches; tuning-log entry |
+
+### Verification contract
+
+| evidence | produced by | cost |
+| --- | --- | --- |
+| build / test / lint output | coordinator, from the shell | text only |
+| deterministic sim assertions | committed Vitest tests | pass/fail names |
+| behavioural smoke test | committed `tools/smoke.mjs`: boots the app, drives scripted input, asserts HUD text + `window.__game` debug snapshot | ~10 lines |
+| "is it visible / does it look right" | one delegated visual check per run (≤8-line verdict; screenshots stay in `/tmp`) | one short paragraph |
+| feel / fun | the user at the playtest gate | free |
+
+The debug snapshot (`tick, currency, enemies, bullets, towers, spawnRate,
+safety, leaks, drawn.*`) lets the smoke test assert **sim state** rather than
+pixels; `drawn.*` proves each render layer is being fed. The coordinator takes
+**one** screenshot itself at the M1 checkpoint, where the question is feel rather
+than correctness.
+
+### Agent loop (every implementation run)
+
+1. Coordinator writes a self-contained brief: substeps in order, exact file list,
+   contracts, acceptance commands, and rules (no design-doc edits, no commits, no
+   tunables outside `src/data/balance.ts`, `sim/` free of DOM/React/three).
+2. One `general` agent implements the substeps, stopping at the first failed gate
+   to report rather than papering over it.
+3. Coordinator reruns the gates itself, reads the risky diff, and runs the smoke
+   test. Agent reports are not evidence.
+4. `game-dev-review` reviews the working-tree diff (read-only, prioritized). The
+   coordinator applies the findings it agrees with and records skipped ones.
+5. Commit the run; update this table, `TASKS.md`, and the tuning log.
+
 ## Definition of Done (every milestone)
 
 - The milestone's behavior works end-to-end in a playable session.
