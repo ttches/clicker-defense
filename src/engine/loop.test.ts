@@ -1,6 +1,11 @@
 import { describe, expect, it } from 'vitest'
 import { FIXED_STEP, MAX_FRAME_SECONDS } from '@/engine/config'
-import { createLoop, type Loop, type LoopScheduler } from '@/engine/loop'
+import {
+  activeLoopCount,
+  createLoop,
+  type Loop,
+  type LoopScheduler,
+} from '@/engine/loop'
 
 const createFakeScheduler = () => {
   let time = 0
@@ -287,5 +292,29 @@ describe('createLoop', () => {
     fake.advance(12)
     expect(steps).toBe(1)
     loop.stop()
+  })
+
+  it('tracks active loops so a leak is observable', () => {
+    const fake = createFakeScheduler()
+    const first = createLoop(
+      FIXED_STEP,
+      { step: () => {}, frame: () => {} },
+      fake.scheduler,
+    )
+    const second = createLoop(
+      FIXED_STEP,
+      { step: () => {}, frame: () => {} },
+      fake.scheduler,
+    )
+
+    expect(activeLoopCount()).toBe(0)
+    first.start()
+    expect(activeLoopCount()).toBe(1)
+    second.start()
+    expect(activeLoopCount()).toBe(2)
+    first.stop()
+    expect(activeLoopCount()).toBe(1)
+    second.stop()
+    expect(activeLoopCount()).toBe(0)
   })
 })

@@ -17,6 +17,11 @@ export type Loop = {
   readonly running: boolean
 }
 
+const activeLoops = new Set<object>()
+
+/** Loops currently started anywhere in the process; 1 means no leak. */
+export const activeLoopCount = (): number => activeLoops.size
+
 const defaultScheduler: LoopScheduler = {
   request: (callback) => requestAnimationFrame(callback),
   cancel: (id) => cancelAnimationFrame(id),
@@ -42,6 +47,7 @@ export const createLoop = (
   let accumulator = 0
   let previousTime = 0
   let running = false
+  const token = {}
 
   const tick = (timeMs: number): void => {
     if (!running) return
@@ -65,6 +71,7 @@ export const createLoop = (
   const start = (): void => {
     if (running) return
     running = true
+    activeLoops.add(token)
     previousTime = scheduler.now()
     accumulator = 0
     frameHandle = scheduler.request(tick)
@@ -73,6 +80,7 @@ export const createLoop = (
   const stop = (): void => {
     if (!running) return
     running = false
+    activeLoops.delete(token)
     if (frameHandle !== null) {
       scheduler.cancel(frameHandle)
       frameHandle = null

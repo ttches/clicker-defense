@@ -44,9 +44,10 @@ things land. Research detail lives in `idle-game-mechanic-research/PLAN.md`
       (see `design/build-plan.md` §Coding slices); **SP1 is in progress**.
   - [x] **SP1** foundation audit → `design/foundation-notes.md`
   - [x] **E1a** headless foundation: scaffold + engine + SoA store
-  - [ ] **E1b** visible foundation: balance/economy + renderer + app mount + smoke
-  - [ ] **SP2** browser/perf spike (instancing + DPR + 2,048 enemies)
-  - [ ] **E2** M0a: sim stream + enemy render + HUD
+  - [x] **E1b** visible foundation: balance/economy + renderer + app mount + smoke
+  - [x] ~~**SP2** browser/perf spike~~ — merged into E2b (2,048-instance burst)
+  - [ ] **E2a** M0 sim: RunState + spawner + walk + leaks
+  - [ ] **E2b** M0 visible: enemy layer + HUD + 2,048 burst
   - [ ] **E3** M0b: input/cadence + targeting/damage + bounty → **M0 playable**
   - [ ] **E4** M1: tower purchase + auto-fire + preview → **M1 playable**
 

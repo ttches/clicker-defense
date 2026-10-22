@@ -33,8 +33,9 @@ the next run starts. M0 = E2 + E3; M1 = E4.
 | **SP1** | foundation audit (read-only) | which eco-evo modules to copy/adapt/skip, aliases, canvas/DPR, loop↔React, SoA view | `design/foundation-notes.md` ratified |
 | **E1a** | foundation (headless) | 1.1 scaffold · 1.2 engine · 1.3 SoA store | build/test/lint; page boots; no DOM in `sim/` |
 | **E1b** | foundation (visible) | 1.4 balance + economy · 1.5 renderer/background · 1.6 app mount + smoke harness | empty field at DPR 1/2; early-table tests; smoke PASS |
-| **SP2** | browser/perf spike | instanced silhouettes + native×DPR + 2,048 enemies | measured ms/frame, not vibes |
-| **E2** | M0 part 1 | 2.1 sim stream · 2.2 enemy render · 2.3 HUD readout | deterministic spawn/walk/leak tests |
+| ~~**SP2**~~ | merged into E2b | instanced silhouettes + native×DPR + 2,048 enemies | measured in the enemy layer |
+| **E2a** | M0 part 1 (sim) | 2.1 RunState + spawner + walk + leaks | deterministic spawn/walk/leak tests |
+| **E2b** | M0 part 1 (visible) | 2.2 enemy layer · 2.3 HUD readout · 2,048 burst | drawn counts match sim; smoke PASS |
 | **E3** | M0 part 2 (**M0 done**) | 3.1 input/cadence · 3.2 targeting+damage · 3.3 tracer · 3.4 bounty+popups | M0 acceptance; playable checkpoint |
 | **E4** | **M1 done** | 4.1 tower purchase · 4.2 auto-fire · 4.3 render+preview · 4.4 acceptance | M1 table matches; playtest log |
 
@@ -45,11 +46,11 @@ the next run starts. M0 = E2 + E3; M1 = E4.
 | 1.1 | Scaffold: pinned deps, Vite/Vitest/TS/oxlint/prettier, app shell, provenance note | build/test/lint clean; dev server boots |
 | 1.2 | Engine: fixed loop (injectable clock, idempotent start/stop), RNG with serializable state, camera fit + world↔screen | unit tests; loop runs on a fake clock |
 | 1.3 | SoA store: typed-array columns, alloc/zero/stable-id, swap-remove, full-capacity sentinel | store tests; capacity + id invariants |
-| 1.4 | `data/balance.ts` (every spec constant) + pure `sim/economy.ts` | early-table test (0–3 towers), cost ladder, bounty, time-to-afford |
+| 1.4 | `data/balance.ts` (M0/M1 spec constants; upgrade curves included, era/boss/prestige land with their milestones) + pure `sim/economy.ts` | early-table test (0–3 towers), cost ladder, bounty, time-to-afford |
 | 1.5 | Renderer: ortho fit, native×DPR, resize; palette + background | static field at DPR 1/2; no colour-space mixing |
-| 1.6 | App mount (canvas, resize/DPR), `window.__game` debug snapshot, `tools/smoke.mjs` | smoke test PASS; one `createLoop` after StrictMode remount |
-| 2.1 | SoA world, spawner, walk, leak-removal, 2,048 cap (overflow = leaks) | same seed ⇒ same hash; 5 s spawn; 12 s walk |
-| 2.2 | Enemy silhouette layer (per-instance colour + HP tint), background | drawn count == sim count |
+| 1.6 | App mount (canvas, resize/DPR), `window.__game` debug state, `tools/smoke.mjs` | smoke PASS; exactly one active loop under StrictMode |
+| 2.1 | `RunState` (integer tick, spawn/combat/visual RNG streams, serialize/hydrate) + spawner + walk + leak removal + cap overflow | same seed ⇒ same hash; 5 s spawn; 12 s walk; overflow counted as leaks |
+| 2.2 | Enemy instanced silhouette layer (per-instance colour + HP tint); 2,048-instance burst perf check | drawn count == sim count; measured frame cost |
 | 2.3 | HUD readout at 10 Hz: currency, alive, spawn/s, leaks | no per-frame React renders; values match |
 | 3.1 | Tap/hold → commands queued for next tick, 20-tick cadence, tap cap | cadence test from a recorded input script |
 | 3.2 | Global front-most targeting (boss hook), damage at fire, single kill | multi-lane test; no double-kill; determinism |
