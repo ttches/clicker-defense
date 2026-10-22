@@ -3,11 +3,13 @@ import { SIMULATION } from '@/engine/config'
 import { clamp, XorShift32 } from '@/engine/math'
 import {
   fireAtTarget,
+  MAX_EVENTS,
   NO_COMMANDS,
   type Command,
   type SimEvents,
 } from '@/sim/combat'
-import { bountyFor, spawnRate } from '@/sim/economy'
+import { bountyFor, nextTowerCost, spawnRate } from '@/sim/economy'
+import { buyTower } from '@/sim/purchase'
 import {
   createBulletStore,
   createEnemyStore,
@@ -157,6 +159,10 @@ export const createRun = (seed = DEFAULT_SEED): RunState => {
 export const laneY = (lane: number): number =>
   ((lane + 0.5) * WORLD.height) / ENEMY.lanes
 
+const assertNever = (value: never): never => {
+  throw new Error(`unhandled command: ${String(value)}`)
+}
+
 export const spawnEnemy = (run: RunState): number => {
   const slot = run.enemies.alloc()
   if (slot === NO_SLOT) {
@@ -194,6 +200,30 @@ export const stepRun = (
 ): void => {
   if (run.clickCooldown > 0) run.clickCooldown -= 1
 
+  // Purchases resolve in command order before spawns, so a tower bought this
+  // tick both raises the spawn rate and gets its shot this same tick.
+  let wantsFire = false
+  for (const command of commands) {
+    switch (command.kind) {
+      case 'buyTower': {
+        const cost = nextTowerCost(run.towerCount)
+        if (buyTower(run) && events && events.purchases.length < MAX_EVENTS) {
+          events.purchases.push({
+            kind: 'tower',
+            cost,
+            towerCount: run.towerCount,
+          })
+        }
+        break
+      }
+      case 'fire':
+        wantsFire = true
+        break
+      default:
+        assertNever(command)
+    }
+  }
+
   run.spawnProgress += spawnRate(run.towerCount) / SIMULATION.updatesPerSecond
 
   while (run.spawnProgress >= 1 - SPAWN_DRIFT) {
@@ -202,15 +232,8 @@ export const stepRun = (
   }
   if (run.spawnProgress < 0) run.spawnProgress = 0
 
-  // Multiple fire commands in one tick coalesce; a tap into an empty field
-  // still burns the cooldown, so rapid tapping cannot beat the hold rate.
-  let wantsFire = false
-  for (const command of commands) {
-    if (command.kind === 'fire') {
-      wantsFire = true
-      break
-    }
-  }
+  // Multiple fire commands coalesce; a tap into an empty field still burns
+  // the cooldown, so rapid tapping cannot beat the hold rate.
   if (wantsFire && run.clickCooldown === 0) {
     fireAtTarget(run, CLICK.damage, 'click', events)
     run.clickCooldown = CLICK.intervalTicks

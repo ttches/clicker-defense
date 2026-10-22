@@ -62,7 +62,7 @@ export const App = () => {
     const fire = createFireInput()
     const detachFire = fire.attach(canvas)
     // Frame-scoped visual sink; cleared on every frame that consumes it.
-    const events: SimEvents = { shots: [], kills: [] }
+    const events: SimEvents = { shots: [], kills: [], purchases: [] }
     const debug = createDebugState(renderer.drawn)
     window.__game = debug
 
@@ -161,6 +161,7 @@ export const App = () => {
             // Documented sink contract: drain after a frame consumed it.
             events.shots.length = 0
             events.kills.length = 0
+            events.purchases.length = 0
           }
         }
       },

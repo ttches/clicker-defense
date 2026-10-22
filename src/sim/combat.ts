@@ -1,7 +1,7 @@
 import { ENEMY, WORLD } from '@/data/balance'
 import type { RunState } from '@/sim/run'
 
-export type Command = { readonly kind: 'fire' }
+export type Command = { readonly kind: 'fire' } | { readonly kind: 'buyTower' }
 
 export type ShotEvent = {
   kind: 'click' | 'tower'
@@ -17,17 +17,30 @@ export type KillEvent = {
   bounty: number
 }
 
-/** Visual sink. The caller clears both arrays once per render frame. */
+export type PurchaseEvent = {
+  kind: 'tower'
+  cost: number
+  towerCount: number
+}
+
+/** Feedback sink. The caller clears the arrays once per render frame. */
 export type SimEvents = {
   shots: ShotEvent[]
   kills: KillEvent[]
+  purchases: PurchaseEvent[]
 }
 
-export const FIRE_COMMANDS: readonly Command[] = [{ kind: 'fire' }]
+export const FIRE_COMMAND: Command = { kind: 'fire' }
+
+export const BUY_TOWER_COMMAND: Command = { kind: 'buyTower' }
+
+export const FIRE_COMMANDS: readonly Command[] = [FIRE_COMMAND]
+
+export const BUY_TOWER_COMMANDS: readonly Command[] = [BUY_TOWER_COMMAND]
 
 export const NO_COMMANDS: readonly Command[] = []
 
-const MAX_EVENTS = 512
+export const MAX_EVENTS = 512
 
 /**
  * Bosses outrank grunts; within a group the front-most (smallest x) wins.

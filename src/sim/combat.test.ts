@@ -31,7 +31,7 @@ const spawnAt = (
   return slot
 }
 
-const sink = (): SimEvents => ({ shots: [], kills: [] })
+const sink = (): SimEvents => ({ shots: [], kills: [], purchases: [] })
 
 /** Fires on ticks where run.tick % every === 0. */
 const stepScheduled = (

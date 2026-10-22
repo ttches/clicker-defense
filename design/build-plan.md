@@ -38,7 +38,8 @@ the next run starts. M0 = E2 + E3; M1 = E4.
 | **E2b** | M0 part 1 (visible) | 2.2 enemy layer · 2.3 HUD readout · 2,048 burst | drawn counts match sim; smoke PASS |
 | **E3a** | M0 part 2 (combat) | 3.1 input/cadence · 3.2 targeting + damage + kills + bounty | determinism + cadence tests; playable |
 | **E3b** | **M0 done** (feel) | 3.3 tracer/FX · 3.4 popups + HUD + acceptance | M0 acceptance; playtest checkpoint |
-| **E4** | **M1 done** | 4.1 tower purchase · 4.2 auto-fire · 4.3 render+preview · 4.4 acceptance | M1 table matches; playtest log |
+| **E4a** | M1 part 1 (sim) | 4.1 tower purchase + preview math · verify 4.2 auto-fire | purchase/preview/acceptance tests |
+| **E4b** | **M1 done** | 4.3 tower render + ×N + purchase panel · 4.4 acceptance | M1 table matches; playtest checkpoint |
 
 ### Substeps and evidence
 
@@ -58,8 +59,8 @@ the next run starts. M0 = E2 + E3; M1 = E4.
 | 3.3 | Tracer/FX layer (visual only, random y) | state hash identical tracer on/off |
 | 3.4 | Bounty/currency in run state; overkill never pays | scripted hold → 3 currency |
 | 3.5 | Bounty popups + HUD currency/kills | M0 acceptance; screenshot |
-| 4.1 | Tower count purchase, `3×1.15^n`, first-tower jump, ×1.03 creep | cost ladder + spawn-mult tests |
-| 4.2 | Tower auto-fire (1 dmg / 0.5 s) through the same fire path | DPS test; kills with no input |
+| 4.1 | Tower count purchase, `3×1.15^n`, currency deduction, first-tower jump, ×1.03 creep, preview deltas | cost ladder + spawn-mult tests; preview==actual |
+| 4.2 | Tower auto-fire (1 dmg / 0.5 s) through the same fire path | DPS test; kills with no input (landed in E3a) |
 | 4.3 | Tower silhouette + ×N, panel with +DPS / +spawn% / safety before→after | **preview-after == actual-after**; screenshot |
 | 4.4 | M1 acceptance vs the 0/1/2/3-tower table | table matches; tuning-log entry |
 

@@ -50,7 +50,8 @@ things land. Research detail lives in `idle-game-mechanic-research/PLAN.md`
   - [x] **E2b** M0 visible: enemy layer + HUD + 2,048 burst
   - [x] **E3a** M0 combat: input/cadence + targeting/damage/kills/bounty
   - [x] **E3b** M0 feel: tracer/FX + popups + HUD + acceptance → **M0 done**
-  - [ ] **E4** M1: tower purchase + auto-fire + preview → **M1 playable**
+  - [ ] **E4a** M1 sim: tower purchase + preview math
+  - [ ] **E4b** M1 UI: tower render + ×N + purchase panel → **M1 playable**
 
 ## Explorations (later, not pre-alpha)
 

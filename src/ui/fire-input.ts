@@ -1,6 +1,7 @@
 export type FireInput = {
   attach: (canvas: HTMLCanvasElement) => () => void
   consume: () => boolean
+  isHolding: () => boolean
 }
 
 /**
@@ -74,5 +75,7 @@ export const createFireInput = (): FireInput => {
     return firing
   }
 
-  return { attach, consume }
+  const isHolding = (): boolean => active.size > 0
+
+  return { attach, consume, isHolding }
 }
