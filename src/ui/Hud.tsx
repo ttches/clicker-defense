@@ -20,7 +20,7 @@ const Row = ({ label, field, value }: RowProps) => (
 )
 
 export const Hud = () => {
-  const { currency, enemies, spawnRate, leaks } = useSyncExternalStore(
+  const { currency, enemies, spawnRate, leaks, kills } = useSyncExternalStore(
     subscribeHud,
     getHudValues,
   )
@@ -31,6 +31,7 @@ export const Hud = () => {
       <Row label="Enemies" field="enemies" value={String(enemies)} />
       <Row label="Spawn/s" field="spawnRate" value={fixed(spawnRate)} />
       <Row label="Leaks" field="leaks" value={String(leaks)} />
+      <Row label="Kills" field="kills" value={String(kills)} />
     </aside>
   )
 }

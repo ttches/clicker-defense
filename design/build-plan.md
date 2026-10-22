@@ -36,7 +36,8 @@ the next run starts. M0 = E2 + E3; M1 = E4.
 | ~~**SP2**~~ | merged into E2b | instanced silhouettes + native×DPR + 2,048 enemies | measured in the enemy layer |
 | **E2a** | M0 part 1 (sim) | 2.1 RunState + spawner + walk + leaks | deterministic spawn/walk/leak tests |
 | **E2b** | M0 part 1 (visible) | 2.2 enemy layer · 2.3 HUD readout · 2,048 burst | drawn counts match sim; smoke PASS |
-| **E3** | M0 part 2 (**M0 done**) | 3.1 input/cadence · 3.2 targeting+damage · 3.3 tracer · 3.4 bounty+popups | M0 acceptance; playable checkpoint |
+| **E3a** | M0 part 2 (combat) | 3.1 input/cadence · 3.2 targeting + damage + kills + bounty | determinism + cadence tests; playable |
+| **E3b** | **M0 done** (feel) | 3.3 tracer/FX · 3.4 popups + HUD + acceptance | M0 acceptance; playtest checkpoint |
 | **E4** | **M1 done** | 4.1 tower purchase · 4.2 auto-fire · 4.3 render+preview · 4.4 acceptance | M1 table matches; playtest log |
 
 ### Substeps and evidence
@@ -53,9 +54,10 @@ the next run starts. M0 = E2 + E3; M1 = E4.
 | 2.2 | Enemy instanced silhouette layer (per-instance colour + HP tint); 2,048-instance burst perf check | drawn count == sim count; measured frame cost |
 | 2.3 | HUD readout at 10 Hz: currency, alive, spawn/s, leaks | no per-frame React renders; values match |
 | 3.1 | Tap/hold → commands queued for next tick, 20-tick cadence, tap cap | cadence test from a recorded input script |
-| 3.2 | Global front-most targeting (boss hook), damage at fire, single kill | multi-lane test; no double-kill; determinism |
-| 3.3 | Tracer layer (visual only, random y) | state hash identical tracer on/off |
-| 3.4 | Bounty once on kill, overkill never pays, popup, currency HUD | scripted hold ≈15 s → 3 currency |
+| 3.2 | Global front-most targeting (boss hook), damage at fire, single kill, bounty once | multi-lane test; no double-kill; determinism |
+| 3.3 | Tracer/FX layer (visual only, random y) | state hash identical tracer on/off |
+| 3.4 | Bounty/currency in run state; overkill never pays | scripted hold → 3 currency |
+| 3.5 | Bounty popups + HUD currency/kills | M0 acceptance; screenshot |
 | 4.1 | Tower count purchase, `3×1.15^n`, first-tower jump, ×1.03 creep | cost ladder + spawn-mult tests |
 | 4.2 | Tower auto-fire (1 dmg / 0.5 s) through the same fire path | DPS test; kills with no input |
 | 4.3 | Tower silhouette + ×N, panel with +DPS / +spawn% / safety before→after | **preview-after == actual-after**; screenshot |
@@ -118,7 +120,8 @@ than correctness.
 - HUD: currency, enemy HP/flow, and a visible bounty on/near enemies.
 
 **Acceptance**
-- Holding for ~15 s earns enough for the first tower (3 currency).
+- Holding for ~15 s earns enough for the first tower (3 currency; measured
+  **18.0 s**, tick 1081 — see the tuning log).
 - A tracer visibly travels, the damage lands on the front-most enemy across all
   lanes, and a kill shows the bounty payout.
 - Tap and hold both fire; hold repeats at a steady interval.
@@ -341,4 +344,4 @@ part of M0–M6.
 
 | date | milestone | observation | change |
 | --- | --- | --- | --- |
-| | | | |
+| 2026-10-22 | M0 | First tower at **tick 1081 (18.0 s)**: spawn at tick 300, then 10 hits/kill and a 300-tick spawn cadence give kills at 481/781/1081. The spec's "~15 s" is an income-rate estimate, not the ramp. | None — still inside the 10–20 s target. If it feels slow, the cheapest honest lever is base spawn 0.2 → 0.25 (≈15.0 s); do **not** lower base HP, because bounty scales with HP. |

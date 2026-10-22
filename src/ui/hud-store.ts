@@ -3,6 +3,7 @@ export type HudValues = {
   enemies: number
   spawnRate: number
   leaks: number
+  kills: number
 }
 
 const initial: HudValues = {
@@ -10,6 +11,7 @@ const initial: HudValues = {
   enemies: 0,
   spawnRate: 0,
   leaks: 0,
+  kills: 0,
 }
 
 let values = initial

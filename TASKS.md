@@ -47,8 +47,9 @@ things land. Research detail lives in `idle-game-mechanic-research/PLAN.md`
   - [x] **E1b** visible foundation: balance/economy + renderer + app mount + smoke
   - [x] ~~**SP2** browser/perf spike~~ — merged into E2b (2,048-instance burst)
   - [x] **E2a** M0 sim: RunState + spawner + walk + leaks
-  - [ ] **E2b** M0 visible: enemy layer + HUD + 2,048 burst
-  - [ ] **E3** M0b: input/cadence + targeting/damage + bounty → **M0 playable**
+  - [x] **E2b** M0 visible: enemy layer + HUD + 2,048 burst
+  - [x] **E3a** M0 combat: input/cadence + targeting/damage/kills/bounty
+  - [ ] **E3b** M0 feel: tracer/FX + popups + HUD + acceptance
   - [ ] **E4** M1: tower purchase + auto-fire + preview → **M1 playable**
 
 ## Explorations (later, not pre-alpha)

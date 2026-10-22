@@ -1,14 +1,16 @@
 import { useEffect, useRef } from 'react'
-import { WORLD } from '@/data/balance'
+import { CLICK, WORLD } from '@/data/balance'
 import type { Camera } from '@/engine/camera'
 import { createFitCamera } from '@/engine/camera'
 import { FIXED_STEP } from '@/engine/config'
 import { activeLoopCount, createLoop } from '@/engine/loop'
 import { Renderer } from '@/render/renderer'
+import { FIRE_COMMANDS, NO_COMMANDS } from '@/sim/combat'
 import { spawnRate } from '@/sim/economy'
 import { createRun, stepRun } from '@/sim/run'
 import { createRenderView } from '@/sim/view'
 import { countFrame, createDebugState, getFrameCount } from '@/ui/debug'
+import { createFireInput } from '@/ui/fire-input'
 import { Hud } from '@/ui/Hud'
 import { publishHud } from '@/ui/hud-store'
 import { Stage } from '@/ui/Stage'
@@ -42,6 +44,8 @@ export const App = () => {
     const run = createRun()
     const view = createRenderView(run.enemies)
     const renderer = new Renderer(canvas)
+    const fire = createFireInput()
+    const detachFire = fire.attach(canvas)
     const debug = createDebugState(renderer.drawn)
     window.__game = debug
 
@@ -75,6 +79,8 @@ export const App = () => {
       debug.spawnRate = stats.spawnRate
       debug.leaks = stats.leaks
       debug.kills = stats.kills
+      debug.clickCooldown = run.clickCooldown
+      debug.clickIntervalTicks = CLICK.intervalTicks
       debug.renderCalls = renderer.stats.calls
       debug.renderTriangles = renderer.stats.triangles
     }
@@ -87,6 +93,7 @@ export const App = () => {
         enemies: stats.enemies,
         spawnRate: stats.spawnRate,
         leaks: stats.leaks,
+        kills: stats.kills,
       })
       debug.hudPublishes += 1
     }
@@ -105,7 +112,7 @@ export const App = () => {
 
     const loop = createLoop(FIXED_STEP, {
       step: () => {
-        stepRun(run)
+        stepRun(run, fire.consume() ? FIRE_COMMANDS : NO_COMMANDS)
       },
       frame: (steps) => {
         countFrame()
@@ -184,6 +191,7 @@ export const App = () => {
     return () => {
       debug.running = false
       loop.stop()
+      detachFire()
       observer.disconnect()
       window.removeEventListener('resize', resize)
       resolutionQuery?.removeEventListener('change', rearmResolution)

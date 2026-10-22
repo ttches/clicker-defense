@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { CAPS, DEFAULT_SEED, ENEMY, WORLD } from '@/data/balance'
+import { CAPS, CLICK, DEFAULT_SEED, ENEMY, TOWER, WORLD } from '@/data/balance'
 import { SIMULATION } from '@/engine/config'
 import { XorShift32 } from '@/engine/math'
 import {
@@ -297,6 +297,31 @@ describe('serialization', () => {
     expect(() =>
       hydrateRun({ ...data, nextId: { ...data.nextId, enemies: 0 } }),
     ).toThrow(RangeError)
+    expect(() =>
+      hydrateRun({ ...data, clickCooldown: CLICK.intervalTicks + 1 }),
+    ).toThrow(RangeError)
+    expect(() =>
+      hydrateRun({ ...data, towerFireTicks: TOWER.fireIntervalTicks }),
+    ).toThrow(RangeError)
+  })
+
+  it('rejects corrupt enemy rows', () => {
+    const run = createRun(4)
+    spawnEnemy(run)
+    const data = serializeRun(run)
+
+    const badBoss = structuredClone(data)
+    badBoss.enemies[0].boss = 2
+    expect(() => hydrateRun(badBoss)).toThrow(RangeError)
+
+    const badBounty = structuredClone(data)
+    badBounty.enemies[0].bounty = -1
+    expect(() => hydrateRun(badBounty)).toThrow(RangeError)
+
+    const duplicate = structuredClone(data)
+    duplicate.enemies.push({ ...duplicate.enemies[0], x: 100 })
+    duplicate.nextId.enemies += 1
+    expect(() => hydrateRun(duplicate)).toThrow(RangeError)
   })
 
   it('round-trips bullet rows', () => {

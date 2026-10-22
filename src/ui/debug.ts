@@ -10,6 +10,8 @@ export type DebugState = {
   spawnRate: number
   leaks: number
   kills: number
+  clickCooldown: number
+  clickIntervalTicks: number
   stress: number
   hudPublishes: number
   renderCalls: number
@@ -56,6 +58,8 @@ export const createDebugState = (
   spawnRate: 0,
   leaks: 0,
   kills: 0,
+  clickCooldown: 0,
+  clickIntervalTicks: 0,
   stress: 0,
   hudPublishes: 0,
   renderCalls: 0,

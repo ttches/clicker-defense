@@ -1,6 +1,12 @@
-import { CAPS, DEFAULT_SEED, ENEMY, WORLD } from '@/data/balance'
+import { CAPS, CLICK, DEFAULT_SEED, ENEMY, TOWER, WORLD } from '@/data/balance'
 import { SIMULATION } from '@/engine/config'
 import { clamp, XorShift32 } from '@/engine/math'
+import {
+  fireAtTarget,
+  NO_COMMANDS,
+  type Command,
+  type SimEvents,
+} from '@/sim/combat'
 import { bountyFor, spawnRate } from '@/sim/economy'
 import {
   createBulletStore,
@@ -28,6 +34,10 @@ export type RunState = {
   currency: number
   /** Fractional progress toward the next spawn, in [0, 1). */
   spawnProgress: number
+  /** Ticks remaining before a click can fire again. */
+  clickCooldown: number
+  /** Accumulated tower fire ticks, always below TOWER.fireIntervalTicks. */
+  towerFireTicks: number
   towerCount: number
   readonly enemies: Store<EnemyColumns>
   readonly bullets: Store<BulletColumns>
@@ -43,6 +53,8 @@ export type SerializedRun = {
   tick: number
   currency: number
   spawnProgress: number
+  clickCooldown: number
+  towerFireTicks: number
   towerCount: number
   rng: { spawn: number; combat: number; visual: number }
   nextId: { enemies: number; bullets: number }
@@ -129,6 +141,8 @@ export const createRun = (seed = DEFAULT_SEED): RunState => {
     tick: 0,
     currency: 0,
     spawnProgress: 0,
+    clickCooldown: 0,
+    towerFireTicks: 0,
     towerCount: 0,
     enemies: createEnemyStore(CAPS.enemies),
     bullets: createBulletStore(CAPS.bullets),
@@ -173,7 +187,13 @@ export const spawnEnemy = (run: RunState): number => {
   return slot
 }
 
-export const stepRun = (run: RunState): void => {
+export const stepRun = (
+  run: RunState,
+  commands: readonly Command[] = NO_COMMANDS,
+  events?: SimEvents,
+): void => {
+  if (run.clickCooldown > 0) run.clickCooldown -= 1
+
   run.spawnProgress += spawnRate(run.towerCount) / SIMULATION.updatesPerSecond
 
   while (run.spawnProgress >= 1 - SPAWN_DRIFT) {
@@ -181,6 +201,27 @@ export const stepRun = (run: RunState): void => {
     run.spawnProgress -= 1
   }
   if (run.spawnProgress < 0) run.spawnProgress = 0
+
+  // Multiple fire commands in one tick coalesce; a tap into an empty field
+  // still burns the cooldown, so rapid tapping cannot beat the hold rate.
+  let wantsFire = false
+  for (const command of commands) {
+    if (command.kind === 'fire') {
+      wantsFire = true
+      break
+    }
+  }
+  if (wantsFire && run.clickCooldown === 0) {
+    fireAtTarget(run, CLICK.damage, 'click', events)
+    run.clickCooldown = CLICK.intervalTicks
+  }
+
+  // Due tower shots are never banked: if the field is empty they are lost.
+  run.towerFireTicks += run.towerCount
+  while (run.towerFireTicks >= TOWER.fireIntervalTicks) {
+    run.towerFireTicks -= TOWER.fireIntervalTicks
+    fireAtTarget(run, TOWER.bulletDamage, 'tower', events)
+  }
 
   const { columns } = run.enemies
   leakedSlots.length = 0
@@ -205,6 +246,8 @@ export const hashRun = (run: RunState): number => {
   let hash = mixHash(HASH_OFFSET, run.tick)
   hash = mixNumber(hash, run.currency)
   hash = mixNumber(hash, run.spawnProgress)
+  hash = mixHash(hash, run.clickCooldown)
+  hash = mixHash(hash, run.towerFireTicks)
   hash = mixHash(hash, run.towerCount)
   hash = mixHash(hash, run.spawnRng.state)
   hash = mixHash(hash, run.combatRng.state)
@@ -264,6 +307,8 @@ export const serializeRun = (run: RunState): SerializedRun => {
     tick: run.tick,
     currency: run.currency,
     spawnProgress: run.spawnProgress,
+    clickCooldown: run.clickCooldown,
+    towerFireTicks: run.towerFireTicks,
     towerCount: run.towerCount,
     rng: {
       spawn: run.spawnRng.state,
@@ -307,6 +352,14 @@ export const hydrateRun = (data: SerializedRun): RunState => {
   if (data.spawnProgress < 0 || data.spawnProgress >= 1) {
     throw new RangeError('hydrate: spawnProgress must be in [0, 1)')
   }
+  requireInteger(data.clickCooldown, 'clickCooldown')
+  if (data.clickCooldown > CLICK.intervalTicks) {
+    throw new RangeError('hydrate: clickCooldown out of range')
+  }
+  requireInteger(data.towerFireTicks, 'towerFireTicks')
+  if (data.towerFireTicks >= TOWER.fireIntervalTicks) {
+    throw new RangeError('hydrate: towerFireTicks out of range')
+  }
   requireInteger(data.stats.spawned, 'stats.spawned')
   requireInteger(data.stats.kills, 'stats.kills')
   requireInteger(data.stats.leaks, 'stats.leaks')
@@ -329,6 +382,7 @@ export const hydrateRun = (data: SerializedRun): RunState => {
   }
 
   let maxEnemyId = 0
+  const enemyIds = new Set<number>()
   for (const row of data.enemies) {
     requireInteger(row.id, 'enemy.id', 1)
     for (const [key, value] of Object.entries(row)) {
@@ -341,6 +395,16 @@ export const hydrateRun = (data: SerializedRun): RunState => {
     if (row.hp < 0 || row.maxHp <= 0 || row.speed < 0) {
       throw new RangeError('hydrate: enemy health or speed out of range')
     }
+    if (row.hp > row.maxHp || row.bounty < 0) {
+      throw new RangeError('hydrate: enemy bounty or hp out of range')
+    }
+    if (row.boss !== 0 && row.boss !== 1) {
+      throw new RangeError('hydrate: enemy.boss must be 0 or 1')
+    }
+    if (enemyIds.has(row.id)) {
+      throw new RangeError('hydrate: duplicate enemy id')
+    }
+    enemyIds.add(row.id)
     maxEnemyId = Math.max(maxEnemyId, row.id)
   }
   if (data.nextId.enemies <= maxEnemyId) {
@@ -348,6 +412,7 @@ export const hydrateRun = (data: SerializedRun): RunState => {
   }
 
   let maxBulletId = 0
+  const bulletIds = new Set<number>()
   for (const row of data.bullets) {
     requireInteger(row.id, 'bullet.id', 1)
     for (const [key, value] of Object.entries(row)) {
@@ -356,6 +421,10 @@ export const hydrateRun = (data: SerializedRun): RunState => {
     requireInteger(row.ttlTicks, 'bullet.ttlTicks')
     requireInteger(row.targetId, 'bullet.targetId')
     requireInteger(row.kind, 'bullet.kind')
+    if (bulletIds.has(row.id)) {
+      throw new RangeError('hydrate: duplicate bullet id')
+    }
+    bulletIds.add(row.id)
     maxBulletId = Math.max(maxBulletId, row.id)
   }
   if (data.nextId.bullets <= maxBulletId) {
@@ -366,6 +435,8 @@ export const hydrateRun = (data: SerializedRun): RunState => {
   run.tick = data.tick
   run.currency = data.currency
   run.spawnProgress = data.spawnProgress
+  run.clickCooldown = data.clickCooldown
+  run.towerFireTicks = data.towerFireTicks
   run.towerCount = data.towerCount
   run.spawnRng.state = data.rng.spawn
   run.combatRng.state = data.rng.combat

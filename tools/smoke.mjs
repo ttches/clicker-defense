@@ -226,12 +226,24 @@ const runPass = async (browser, deviceScaleFactor) => {
         `hud=${data.hudCurrency} debug=${data.currency}`,
       ],
       [
-        'HUD enemies matches debug',
+        'hud enemies matches debug',
         hudEnemies === data.enemies,
         `hud=${data.hudEnemies} debug=${data.enemies}`,
       ],
       ['no page or console errors', errors.length === 0, errors.join(' | ')],
     )
+
+    await page.mouse.click(640, 360)
+    await page.mouse.click(640, 360)
+    const { cooldown, interval } = await page.evaluate(() => ({
+      cooldown: globalThis.__game?.clickCooldown ?? -1,
+      interval: globalThis.__game?.clickIntervalTicks ?? 0,
+    }))
+    checks.push([
+      'pointer fire reaches sim',
+      interval > 0 && cooldown >= 1 && cooldown <= interval,
+      `cooldown=${cooldown} interval=${interval}`,
+    ])
 
     await page.screenshot({ path: screenshotPath })
   } finally {
