@@ -10,12 +10,16 @@ export type DebugState = {
   spawnRate: number
   leaks: number
   kills: number
+  popups: number
+  tracersSpawned: number
   clickCooldown: number
   clickIntervalTicks: number
   stress: number
   hudPublishes: number
   renderCalls: number
   renderTriangles: number
+  tracersSeen: number
+  popupsPushed: number
   canvas: {
     cssWidth: number
     cssHeight: number
@@ -58,12 +62,16 @@ export const createDebugState = (
   spawnRate: 0,
   leaks: 0,
   kills: 0,
+  popups: 0,
+  tracersSpawned: 0,
   clickCooldown: 0,
   clickIntervalTicks: 0,
   stress: 0,
   hudPublishes: 0,
   renderCalls: 0,
   renderTriangles: 0,
+  tracersSeen: 0,
+  popupsPushed: 0,
   canvas: {
     cssWidth: 0,
     cssHeight: 0,

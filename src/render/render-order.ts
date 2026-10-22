@@ -6,4 +6,5 @@ export const RENDER_ORDER = {
   ground: -3,
   edge: -2,
   enemies: 0,
+  tracers: 1,
 } as const

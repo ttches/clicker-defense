@@ -9,3 +9,7 @@ export const SPAWN_EDGE_COLOR = 0x8f2f43
 export const ENEMY_COLOR = 0xd9523f
 
 export const ENEMY_HURT_COLOR = 0xf2d29b
+
+export const TRACER_CLICK_COLOR = 0x9fe8ff
+
+export const TRACER_TOWER_COLOR = 0xf2d29b

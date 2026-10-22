@@ -1,18 +1,31 @@
 import { useEffect, useRef } from 'react'
 import { CLICK, WORLD } from '@/data/balance'
 import type { Camera } from '@/engine/camera'
-import { createFitCamera } from '@/engine/camera'
+import { createFitCamera, worldToScreen } from '@/engine/camera'
 import { FIXED_STEP } from '@/engine/config'
 import { activeLoopCount, createLoop } from '@/engine/loop'
 import { Renderer } from '@/render/renderer'
-import { FIRE_COMMANDS, NO_COMMANDS } from '@/sim/combat'
+import {
+  FIRE_COMMANDS,
+  NO_COMMANDS,
+  type ShotEvent,
+  type SimEvents,
+} from '@/sim/combat'
 import { spawnRate } from '@/sim/economy'
 import { createRun, stepRun } from '@/sim/run'
 import { createRenderView } from '@/sim/view'
 import { countFrame, createDebugState, getFrameCount } from '@/ui/debug'
+import { formatCurrency } from '@/ui/format'
 import { createFireInput } from '@/ui/fire-input'
 import { Hud } from '@/ui/Hud'
 import { publishHud } from '@/ui/hud-store'
+import { Popups } from '@/ui/Popups'
+import {
+  getPopups,
+  getPopupsPushed,
+  prunePopups,
+  pushPopup,
+} from '@/ui/popup-store'
 import { Stage } from '@/ui/Stage'
 import { stressEnemies } from '@/ui/stress'
 
@@ -23,6 +36,8 @@ type Measurement = {
 }
 
 const HUD_INTERVAL_MS = 100
+
+const NO_SHOTS: readonly ShotEvent[] = []
 
 /** CSS size plus the raw device pixel ratio; Renderer applies DPR_CAP. */
 const measure = (canvas: HTMLCanvasElement): Measurement => {
@@ -46,6 +61,8 @@ export const App = () => {
     const renderer = new Renderer(canvas)
     const fire = createFireInput()
     const detachFire = fire.attach(canvas)
+    // Frame-scoped visual sink; cleared on every frame that consumes it.
+    const events: SimEvents = { shots: [], kills: [] }
     const debug = createDebugState(renderer.drawn)
     window.__game = debug
 
@@ -79,10 +96,12 @@ export const App = () => {
       debug.spawnRate = stats.spawnRate
       debug.leaks = stats.leaks
       debug.kills = stats.kills
+      debug.tracersSpawned = renderer.stats.tracersSpawned
       debug.clickCooldown = run.clickCooldown
       debug.clickIntervalTicks = CLICK.intervalTicks
       debug.renderCalls = renderer.stats.calls
       debug.renderTriangles = renderer.stats.triangles
+      debug.tracersSeen = renderer.stats.tracersSeen
     }
 
     const publishStats = (now: number): void => {
@@ -95,6 +114,9 @@ export const App = () => {
         leaks: stats.leaks,
         kills: stats.kills,
       })
+      prunePopups(now)
+      debug.popups = getPopups().length
+      debug.popupsPushed = getPopupsPushed()
       debug.hudPublishes += 1
     }
 
@@ -112,7 +134,7 @@ export const App = () => {
 
     const loop = createLoop(FIXED_STEP, {
       step: () => {
-        stepRun(run, fire.consume() ? FIRE_COMMANDS : NO_COMMANDS)
+        stepRun(run, fire.consume() ? FIRE_COMMANDS : NO_COMMANDS, events)
       },
       frame: (steps) => {
         countFrame()
@@ -123,7 +145,24 @@ export const App = () => {
         const now = performance.now()
         if (now - lastHudPublish >= HUD_INTERVAL_MS) publishStats(now)
 
-        if (steps > 0 && started && camera) renderer.draw(camera, view)
+        if (steps > 0 && started && camera) {
+          try {
+            renderer.draw(camera, view, events.shots, steps * FIXED_STEP)
+            for (const kill of events.kills) {
+              const screen = worldToScreen(camera, kill.x, kill.y)
+              pushPopup(
+                screen.x,
+                screen.y,
+                `+${formatCurrency(kill.bounty)}`,
+                now,
+              )
+            }
+          } finally {
+            // Documented sink contract: drain after a frame consumed it.
+            events.shots.length = 0
+            events.kills.length = 0
+          }
+        }
       },
     })
 
@@ -136,7 +175,7 @@ export const App = () => {
         { width: size.width, height: size.height },
         WORLD,
       )
-      renderer.draw(camera, view)
+      renderer.draw(camera, view, NO_SHOTS, 0)
       writeCanvas()
       loop.start()
       debug.running = true
@@ -164,7 +203,7 @@ export const App = () => {
         { width: next.width, height: next.height },
         WORLD,
       )
-      renderer.draw(camera, view)
+      renderer.draw(camera, view, NO_SHOTS, 0)
       writeCanvas()
     }
 
@@ -201,5 +240,15 @@ export const App = () => {
     }
   }, [])
 
-  return <Stage canvasRef={canvasRef} overlay={<Hud />} />
+  return (
+    <Stage
+      canvasRef={canvasRef}
+      overlay={
+        <>
+          <Hud />
+          <Popups />
+        </>
+      }
+    />
+  )
 }

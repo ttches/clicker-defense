@@ -1,0 +1,44 @@
+/* Doubled class beats Stage's `.overlay > *` pointer-events rule. */
+.popups.popups {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.popup {
+  position: absolute;
+  display: block;
+  padding: 0.05rem 0.2rem;
+  color: #ffe6a3;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+  text-shadow:
+    0 1px 2px rgb(0 0 0 / 85%),
+    0 0 6px rgb(0 0 0 / 60%);
+  transform: translate(-50%, -50%);
+  animation-name: popup-rise;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  will-change: transform, opacity;
+}
+
+@keyframes popup-rise {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    transform: translate(-50%, calc(-50% - 2.5rem)) scale(1);
+  }
+}

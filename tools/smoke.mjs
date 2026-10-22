@@ -235,6 +235,13 @@ const runPass = async (browser, deviceScaleFactor) => {
 
     await page.mouse.click(640, 360)
     await page.mouse.click(640, 360)
+    // Input queues for the next tick, so wait for the shot to land instead of
+    // reading a cooldown that a mid-frame evaluate could still see as zero.
+    await page.waitForFunction(
+      () => (globalThis.__game?.clickCooldown ?? 0) >= 1,
+      undefined,
+      { timeout: 1000 },
+    )
     const { cooldown, interval } = await page.evaluate(() => ({
       cooldown: globalThis.__game?.clickCooldown ?? -1,
       interval: globalThis.__game?.clickIntervalTicks ?? 0,
@@ -300,6 +307,8 @@ const runStressPass = async (browser) => {
         drawn: game.drawn.enemies,
         renderCalls: game.renderCalls,
         renderTriangles: game.renderTriangles,
+        popups: game.popups,
+        tracersSpawned: game.tracersSpawned,
       }
     })
 
@@ -332,10 +341,74 @@ const runStressPass = async (browser) => {
         `enemies=${end.enemies} drawn=${end.drawn}`,
       ],
       ['stress frame floor', framesDelta >= 8, `framesDelta=${framesDelta}`],
-      ['no page or console errors', errors.length === 0, errors.join(' | ')],
     )
 
     await page.screenshot({ path: screenshotPath })
+
+    // The 2,048 wave's front-most enemy leaks before ten 1-damage hits land
+    // (measured: 0 kills / 1,228 leaks in 8 s), so the combat chain is proven
+    // on a clean run inside this pass instead of faking stress-page state.
+    await page.goto(url, { waitUntil: 'load' })
+    await page.waitForFunction(
+      () => globalThis.__game?.running === true,
+      undefined,
+      { timeout: 15000 },
+    )
+    await page.waitForFunction(
+      () => (globalThis.__game?.enemies ?? 0) >= 1,
+      undefined,
+      { timeout: 15000 },
+    )
+    await page.mouse.move(640, 360)
+    await page.mouse.down()
+    await page.waitForFunction(
+      () => (globalThis.__game?.kills ?? 0) >= 1,
+      undefined,
+      { timeout: 8000 },
+    )
+    await page.mouse.up()
+    await page.waitForTimeout(150)
+
+    const combat = await page.evaluate(() => {
+      const game = globalThis.__game
+      if (!game) throw new Error('window.__game missing')
+      return {
+        kills: game.kills,
+        currency: game.currency,
+        tracersSpawned: game.tracersSpawned,
+        tracersSeen: game.tracersSeen,
+        popups: game.popups,
+        popupsPushed: game.popupsPushed,
+      }
+    })
+    checks.push(
+      [
+        'click reaches damage and kill',
+        combat.kills >= 1,
+        `kills=${combat.kills}`,
+      ],
+      ['kill pays bounty', combat.currency >= 1, `currency=${combat.currency}`],
+      [
+        'tracers spawned',
+        combat.tracersSpawned > 0,
+        `tracersSpawned=${combat.tracersSpawned}`,
+      ],
+      [
+        'tracers rendered',
+        combat.tracersSeen > 0,
+        `tracersSeen=${combat.tracersSeen}`,
+      ],
+      ['bounty popup visible', combat.popups >= 1, `popups=${combat.popups}`],
+      [
+        'bounty popup pushed',
+        combat.popupsPushed > 0,
+        `popupsPushed=${combat.popupsPushed}`,
+      ],
+      ['no page or console errors', errors.length === 0, errors.join(' | ')],
+    )
+
+    await page.screenshot({ path: '/tmp/clicker-smoke-combat.png' })
+    console.log('screenshot /tmp/clicker-smoke-combat.png')
   } finally {
     await context.close().catch(() => {})
   }

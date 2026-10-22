@@ -1,10 +1,12 @@
 import * as THREE from 'three'
 import { viewBounds, type Camera } from '@/engine/camera'
-import { DPR_CAP } from '@/engine/config'
+import { DPR_CAP, FIXED_STEP } from '@/engine/config'
 import { BackgroundLayer } from '@/render/background'
 import { createDrawnCounts } from '@/render/drawn'
 import { EnemyLayer } from '@/render/enemy-layer'
 import { WORLD_BACKGROUND } from '@/render/palette'
+import { TracerLayer } from '@/render/tracer-layer'
+import type { ShotEvent } from '@/sim/combat'
 import type { RenderableWorld } from '@/sim/view'
 
 export class Renderer {
@@ -13,8 +15,14 @@ export class Renderer {
   private readonly camera: THREE.OrthographicCamera
   private readonly background = new BackgroundLayer()
   private readonly enemies = new EnemyLayer()
+  private readonly tracers = new TracerLayer()
   public readonly drawn = createDrawnCounts()
-  public readonly stats = { calls: 0, triangles: 0 }
+  public readonly stats = {
+    calls: 0,
+    triangles: 0,
+    tracersSpawned: 0,
+    tracersSeen: 0,
+  }
 
   public constructor(canvas: HTMLCanvasElement) {
     this.renderer = new THREE.WebGLRenderer({
@@ -25,7 +33,7 @@ export class Renderer {
     })
     this.renderer.setClearColor(WORLD_BACKGROUND, 1)
     this.camera = new THREE.OrthographicCamera(0, 1, 0, 1, -10, 10)
-    this.scene.add(this.background.mesh, this.enemies.mesh)
+    this.scene.add(this.background.mesh, this.enemies.mesh, this.tracers.mesh)
   }
 
   public resize(cssWidth: number, cssHeight: number, dpr: number): void {
@@ -33,7 +41,12 @@ export class Renderer {
     this.renderer.setSize(cssWidth, cssHeight, false)
   }
 
-  public draw(camera: Camera, world: RenderableWorld): void {
+  public draw(
+    camera: Camera,
+    world: RenderableWorld,
+    shots: readonly ShotEvent[],
+    deltaSeconds: number,
+  ): void {
     const bounds = viewBounds(camera)
     // Y is down, so top < bottom: the negative Y scale flips triangle winding.
     // Every material rendered here must therefore be THREE.DoubleSide.
@@ -44,12 +57,19 @@ export class Renderer {
     this.camera.updateProjectionMatrix()
 
     this.enemies.update(world, bounds)
+    this.tracers.spawn(shots)
+    // Cosmetic lifetime is frame-clamped: a 0.1 s hitch must not consume a
+    // 0.12 s tracer inside the same draw.
+    this.tracers.update(Math.min(deltaSeconds, FIXED_STEP))
     this.renderer.render(this.scene, this.camera)
     const info = this.renderer.info.render
     this.stats.calls = info.calls
     this.stats.triangles = info.triangles
+    this.stats.tracersSpawned = this.tracers.spawned
+    this.stats.tracersSeen += this.tracers.visible
     this.drawn.background += 1
     this.drawn.enemies = this.enemies.visible
+    this.drawn.tracers = this.tracers.visible
   }
 
   /** Ratio actually applied after the DPR cap. */
@@ -60,6 +80,7 @@ export class Renderer {
   public dispose(): void {
     this.background.dispose()
     this.enemies.dispose()
+    this.tracers.dispose()
     this.renderer.dispose()
   }
 }

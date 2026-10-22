@@ -1,8 +1,7 @@
 import { useSyncExternalStore } from 'react'
+import { formatCurrency } from '@/ui/format'
 import { getHudValues, subscribeHud, type HudValues } from '@/ui/hud-store'
 import styles from './Hud.module.css'
-
-const fixed = (value: number): string => value.toFixed(2)
 
 type RowProps = {
   label: string
@@ -27,9 +26,13 @@ export const Hud = () => {
 
   return (
     <aside className={styles.hud} aria-label="Run stats">
-      <Row label="Currency" field="currency" value={fixed(currency)} />
+      <Row label="Currency" field="currency" value={formatCurrency(currency)} />
       <Row label="Enemies" field="enemies" value={String(enemies)} />
-      <Row label="Spawn/s" field="spawnRate" value={fixed(spawnRate)} />
+      <Row
+        label="Spawn/s"
+        field="spawnRate"
+        value={formatCurrency(spawnRate)}
+      />
       <Row label="Leaks" field="leaks" value={String(leaks)} />
       <Row label="Kills" field="kills" value={String(kills)} />
     </aside>

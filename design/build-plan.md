@@ -10,7 +10,7 @@
 
 | # | milestone | status |
 | --- | --- | --- |
-| M0 | Bullets & enemies | not started |
+| M0 | Bullets & enemies | **done** (playtested) |
 | M1 | First tower | not started |
 | M2 | Depth (damage & speed tiers) | not started |
 | M3 | Eras & boss (forced reset) | not started |
@@ -345,3 +345,4 @@ part of M0–M6.
 | date | milestone | observation | change |
 | --- | --- | --- | --- |
 | 2026-10-22 | M0 | First tower at **tick 1081 (18.0 s)**: spawn at tick 300, then 10 hits/kill and a 300-tick spawn cadence give kills at 481/781/1081. The spec's "~15 s" is an income-rate estimate, not the ramp. | None — still inside the 10–20 s target. If it feels slow, the cheapest honest lever is base spawn 0.2 → 0.25 (≈15.0 s); do **not** lower base HP, because bounty scales with HP. |
+| 2026-10-22 | M0 | Playtest/screenshot pass: tap-hold, front-most damage, `+1.00` popup, tracer streak and HUD (`1.00`, 1 kill) all read correctly. 0.2/s is very sparse: one enemy per 5 s, dead after ~3.3 s of holding, so the field is empty most of the time; the 5 s first spawn reads as dead time. | None yet — M1's first-tower spawn jump to 0.5/s is the intended fix. Watch the empty-field feel and whether the first 5 s needs a starter enemy. |

@@ -49,7 +49,7 @@ things land. Research detail lives in `idle-game-mechanic-research/PLAN.md`
   - [x] **E2a** M0 sim: RunState + spawner + walk + leaks
   - [x] **E2b** M0 visible: enemy layer + HUD + 2,048 burst
   - [x] **E3a** M0 combat: input/cadence + targeting/damage/kills/bounty
-  - [ ] **E3b** M0 feel: tracer/FX + popups + HUD + acceptance
+  - [x] **E3b** M0 feel: tracer/FX + popups + HUD + acceptance → **M0 done**
   - [ ] **E4** M1: tower purchase + auto-fire + preview → **M1 playable**
 
 ## Explorations (later, not pre-alpha)
