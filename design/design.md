@@ -37,10 +37,8 @@ Three tiers of spending, with risk concentrated in the rare ones:
 
 1. **Returning a tower type (common).** Adding a count to a type you already own
    raises firepower and raises spawn frequency slightly (**×1.03 per tower**).
-   This is the button pressed most; the creep is mostly texture, but it also acts
-   as an eventual soft wall — count-DPS grows linearly while incoming HP flow grows
-   geometrically (count-based ~125 towers at 3%; wall timing is under review — see
-   `review-findings.md`).
+   This is the button pressed most; the creep is mostly texture and feeds the
+   cost/income wall (see below).
 2. **First purchase of a new tower type (rare).** Raises firepower, **×1.25 spawn
    frequency**, and **unlocks a new enemy type**. This is the real expansion/risk
    moment.
@@ -88,8 +86,17 @@ click damage would add a little margin.
 - **Effect:** spawn **×1.15**, health **×1.25** early, rising to **×1.5–2**
   later; possibly a new enemy type. Health raises the **bounty ceiling**, so
   tougher enemies pay more (see the bounty formula below).
-- **Boss:** ~20× a normal enemy's HP, slow, big reward — a pure DPS check and a
-  natural pause (the "floor boss" rhythm; `#19`, `#21`).
+- **Horde width (count lever):** some era growth goes into **count**. Each spawn
+  event spawns a cluster of `1 + neighbours` enemies at adjacent lanes;
+  `maxNeighbours` starts at 0 in era 0 and grows with era (first pass:
+  `min(20, era)`, each possible neighbour with p ≈ 0.5). Era 0 is unchanged;
+  clusters start at era 1. If total pressure gets too high, flatten HP growth (e.g.
+  ×1.15) to shift the budget from HP into bodies. This is the lever that turns tens
+  of enemies into hundreds.
+- **Boss:** sized in **seconds of stream**, `bossHP = K × incoming ×
+  bossWalkTime` (K ≈ 1, boss walk ≈ 24 s), not a fixed ×20. Preview:
+  "boss needs safety ≥ 1 + K". This keeps the boss a real check as the stream grows
+  (`#19`, `#21`).
 - **Small drift** between eras (e.g. +1–2% health occasionally) is fine as
   seasoning; speed buffs should be rarer because they change the feel more.
 - **Trigger:** a **manual *Call the Horde* button**, available whenever the player
@@ -112,40 +119,36 @@ Each unlocked tower type has its own lanes:
   meaningfully better than no speed without scaling to crazy amounts (CC's tiered
   doubles are the reference).
 - **Spawn reduction** — lowers the spawn increase that adding that type attracts.
-  This is the direct answer to the wall below.
+  This is a **safety dial**, not the prestige wall (see below), and it cuts income.
 
 Spawn reduction must have a **hard floor and diminishing returns**; it must never
-reach 0% (the discount hazard, `#8`), or adding towers becomes free again and the
-wall disappears. These lanes are the "safe but expensive" option: a determined
-player can push the wall back instead of resetting.
+reach 0% (the discount hazard, `#8`), or adding towers becomes free again. These
+lanes are the "safe but expensive" option: damage/speed raise DPS, while spawn
+reduction lowers incoming at the cost of income. None of them move the cost/income
+wall much.
 
 ### The prestige wall (core pacing loop)
 
-Because spawn grows multiplicatively with tower count while damage grows linearly,
-adding a tower eventually makes the player *less* safe. The threshold is when the
-spawn it attracts outweighs the flat DPS it adds:
+The official prestige signal is **cost vs income**, not the safety ratio. Cost
+grows **×1.15** per tower while income grows about **×1.03**, so the wait for the
+next count grows ~1.117× per tower; the practical wall lands around **25–40 min**
+with no tuning (`review-findings.md` §2.1). The player resets when progress is
+slowing and the next useful upgrade is far away.
 
-```
-incoming HP/s  >  tower DPS ÷ creep rate
-```
+`safety` (DPS ÷ incoming) stays as a **danger readout** for eras/bosses, not as the
+prestige trigger: it peaks around ~34 towers at ~5× and does not bind before the
+cost wall. The old "≈67 HP/s ceiling" and "~125 towers" figures were two other
+definitions of the wall and are retired.
 
-At baseline (2 DPS, ×1.03) that is roughly **67 HP/s** of incoming flow.
-
-This produces the genre's classic prestige moment **emergently**: the next tower
-would overpower you, calling the horde is worse, and the safe lane (per-type
-damage/speed/spawn-reduction) is slow and expensive. The sensible move is to reset.
-**Voluntary prestige = the player reaches this wall; forced prestige = a boss
+**Voluntary prestige = the player chooses the cost wall; forced prestige = a boss
 reaches the line.**
-
-> **Note (pending tuning):** the wall numbers are under review — the reviewer's
-> math puts the marginal-safety point much later than the intended 20–40 min. Creep
-> and era tuning are deliberately deferred; see `review-findings.md` §1–2.
 
 ## Decided so far
 
-- **Targeting:** each shot picks a random lane (y) and hits the **nearest
-  (front-most)** enemy in its path. (Revisit with a research spike later — see
-  Parked.)
+- **Targeting:** every shot hits the **front-most enemy across all lanes** (boss
+  first), so damage isn't spread; the tracer renders at a random y so the horde
+  still looks alive. **Damage applies at fire time** (the tracer is visual), which
+  avoids travel/rounding loss.
 - **Click / active layer (kept deliberately simple for now):**
   - Tapping fires a basic ammunition → earns the currency needed for the first
     tower.
@@ -160,16 +163,17 @@ reaches the line.**
   show the deltas — **+DPS**, **+spawn%** — and the projected safety ratio
   before → after (e.g. `1.4× → 1.2×`). This is the minimal legibility that makes
   the wall a decision, not a mystery. Full overwhelm/harm stays deferred.
-- **Prestige:** wall-driven (voluntary) or boss-forced. The persistent prestige
-  currency is **boss-kill tokens**; total currency earned may factor into a
+- **Prestige:** cost/income-driven (voluntary) or boss-forced. The persistent
+  prestige currency is **boss-kill tokens**, **era-indexed** (`era + 1` per boss),
+  so early-boss farming doesn't dominate. Total currency earned may factor into a
   payout/score but is **not** carried as a token. Two upgrade paths to trial:
   **permanent +% currency** and **unlocks** (new tower types / later units).
-- **Failure (pre-alpha simplification):** normal enemies that reach the towers are
-  simply **destroyed** — no harm, no currency. The only failure for now is an **era
-  boss reaching the line, which forces a prestige** (run reset; prestige reward
-  TBD). The cost of a forced prestige is **timing / opportunity** (too early in a
-  run, or short of a rare-currency upgrade). Overwhelm/harm is deferred until we
-  have a playable build. (`#10`, `#14`, `#25`.)
+- **Failure (pre-alpha simplification, deferred):** normal enemies that reach the
+  towers are simply **destroyed** — no harm, no currency. Note: with free leaks,
+  more towers is always better; the cost/income wall is the real in-run check until
+  leaks cost something. The only failure for now is an **era boss reaching the
+  line, which forces a prestige** (run reset; prestige reward TBD), and its cost is
+  **timing / opportunity**. (`#10`, `#14`, `#25`.)
 - **Breadth:** a new tower type **grows the horde** (**×1.25** spawn) and **unlocks
   a new enemy type** — the risk vector, not a free global multiplier. Adding a
   count to an owned type also nudges spawn (**×1.03**). Enemy-counter traits could
@@ -188,13 +192,15 @@ The first playable build — the core loop and a single prestige layer, no polis
 - Tap to fire / hold to auto-fire; kills pay currency.
 - Buy towers (count and level) on a pure ×1.15 ladder; each type has its own
   **damage / speed / spawn-reduction** upgrade lanes.
-- Enemy stream scales with **count creep (×1.03)** and **first-of-type (×1.25)**;
-  a new tower type **unlocks a new enemy type**.
+- Enemy stream scales with **count creep (×1.03)**, **first-of-type (×1.25)**, and
+  **era horde width** (clusters of neighbours); a new tower type **unlocks a new
+  enemy type**.
 - **Purchase preview:** +DPS, +spawn%, and the projected safety margin before → after.
 - **Manual *Call the Horde*** eras with an era boss; the boss reaching the line
   **forces a prestige**.
-- **Prestige (single layer for now):** voluntary at the wall or boss-forced;
-  **boss-kill tokens** buy permanent **+% currency** and **unlocks** (both trialled).
+- **Prestige (single layer for now):** voluntary at the cost wall or boss-forced;
+  **era-indexed boss-kill tokens** (`era + 1`) buy permanent **+% currency** and
+  **unlocks** (both trialled).
 - Normal enemies that reach the towers are **destroyed** (no harm).
 - Offline rate based on the last ~2 min of live play.
 
@@ -208,13 +214,16 @@ The first playable build — the core loop and a single prestige layer, no polis
 
 ## Open questions
 
-- **Prestige payout:** the exact token rate, whether total currency earned
-  contributes (without being carried), and the cost of the first upgrades.
+- **Prestige payout:** **era-indexed tokens (`era + 1`) adopted**; still open:
+  whether total currency earned contributes, and the cost of the first upgrades.
 - **Prestige upgrade balance:** how much **+% currency** vs how much **unlocks**,
   and which unlocks (new tower types now vs ally units later).
+- **Horde width:** tune `maxNeighbours` and the HP/count split so eras feel like a
+  horde without becoming a wall.
+- **Speed pricing (deferred):** the current 3 tiers are a placeholder; the review
+  says they are cheaper per % than damage — reprice later.
 - **Spawn reduction:** the exact curve and its hard floor (must never reach 0%).
-- **Forced-prestige timing:** how far through a run the era boss gate sits, and how
-  the payout scales with progress so an early forced reset costs something.
+- **Forced-prestige timing:** how far through a run the era boss gate sits.
 - **Full overwhelm / safety dashboard (deferred):** enemy harm and the richer
   danger readout — parked until there is a playable build.
 
@@ -223,8 +232,8 @@ The first playable build — the core loop and a single prestige layer, no polis
 - **Deeper click mechanics** (multipliers, tempo dials, click-power scaling) — the
   current click is intentionally basic: tap fires, hold auto-fires.
 - **Ally units** (second, mobile ammo source that is also a target).
-- **Targeting research spike:** survey how other games make targeting/aiming
-  interesting, vs. sticking with nearest.
+- **Tap aiming:** whether a tap should hit the enemy under the cursor (the
+  cheapest active-play reward) — open. Global front-most is the base targeting.
 - **Breadth via counters** (enemy traits).
 - **Offline refinement** (duration cap, fraction).
 - **Theme:** sprite art with zoom in/out for more/less detail.

@@ -35,11 +35,10 @@ consequence (buying raises both your power and the threat).
 - `towerCount` — how many of the one tower type you own.
 - `damageLevel`, `speedTier` (0–3), `spawnReductionLevel` — per tower type.
 - `era` — current difficulty tier (0 upward).
-- `bossTokensThisRun` — earned, carried through prestige.
 
 **Persistent state (kept on prestige):**
 
-- `bossTokens` — the prestige currency.
+- `bossTokens` — the prestige currency (era-indexed boss kills; kept on prestige).
 - `prestigeUpgrades` — permanent bonuses.
 
 **Derived each moment:**
@@ -47,8 +46,10 @@ consequence (buying raises both your power and the threat).
 - `towerDPS` = `towerCount × 2 × 1.2^damageLevel × 1.25^speedTier`
 - `effectiveCreep` = `max(0.005, 0.03 − 0.0025 × spawnReductionLevel)`
 - `spawnRate` = `0.2` if no tower, else `0.5 × (1+effectiveCreep)^(towerCount−1) × eraSpawnMult`
-- `incoming` = `spawnRate × enemyHP`
-- `safety` = `towerDPS ÷ incoming` (the headline number; > 1 means holding)
+- `clusterSize` = `1 + neighbours` per spawn event (era horde width)
+- `incoming` = `spawnRate × clusterSize × enemyHP`
+- `safety` = `towerDPS ÷ incoming` (danger readout, not the prestige trigger)
+- `timeToAfford` = next upgrade cost ÷ income/s (**the official prestige signal**)
 
 ---
 
@@ -62,10 +63,11 @@ consequence (buying raises both your power and the threat).
 | reward per kill | **bounty** `0.25 + 0.075 × enemyHP` (≈1 at full 10 HP), collected on kill; **overkill never increases it** | kills are the payout event; reward is set by the enemy, not damage dealt (`#20`) |
 | base spawn | 0.2/s (1 per 5 s) | slow tutorial; clicks can keep up |
 | spawn after first tower | 0.5/s (×2.5) | "building attracts the horde" |
-| spawn per extra tower | ×1.03 | count creep; eventual soft wall (`#23`) |
+| spawn per extra tower | ×1.03 | count creep (`#23`) |
+| horde width (era) | era 0: 0 neighbours; else `maxNeighbours = min(20, era)`, each with p ≈ 0.5 | **count lever** for horde feel; era 0 unchanged |
 | tower base DPS | 2 HP/s | a tower alone can't hold the first horde |
 | bullet | 1 damage, 0.5 s fire interval | simple, readable |
-| click bullet | 1 damage; hold fires every 0.33 s (≈3 DPS) | bootstrap + light active play |
+| click bullet | 1 damage; hold fires every 0.33 s (≈3 DPS); **tap rate capped at the hold rate** | bootstrap + light active play; no fast-tapper advantage |
 | tower cost | `3 × 1.15^towerCount` | Cookie Clicker ladder (`#1`, `#4`) |
 | damage upgrade | +20% DPS/level, cost `10 × 1.55^level` | common repeatable lane (`#4`) |
 | speed upgrade | **3 rare tiers**, each +25% fire rate, cost `40 × 2.5^tier`, capped ≈×2 | a meaningful ammo jump without crazy scaling (CC tiered doubles, `#4`) |
@@ -99,8 +101,11 @@ movement is the cadence.
 | count | 3 | ×1.15 | +per-tower DPS, +3% spawn | early, while cheap |
 | damage | 10 | ×1.55 | +20% DPS | when a count costs more than the next level |
 | speed | 40 | ×2.5 | +25% rate, 3 tiers (cap ≈×2) | rarely — when a big ammo-feel jump is worth the cost |
-| spawn reduction | 25 | ×2.0 | −0.25 pp creep | late, as the wall approaches |
+| spawn reduction | 25 | ×2.0 | −0.25 pp creep (−0.5% floor) | as pressure rises; note it cuts income (a sandbox option) |
 | era (boss) | free | — | harder, richer | when comfortably safe |
+
+> **Speed pricing is deferred.** The current 3 tiers are a placeholder; the review
+> notes they are cheaper per % than damage, so "rare" isn't true yet.
 
 **Timing targets (to tune, not hard-code):**
 
@@ -111,8 +116,8 @@ movement is the cadence.
    tier is a rare, noticeable jump; call era 1 when comfortable.
 4. **The squeeze — 10:00–30:00.** Counts add more danger than safety; spawn
    reduction becomes attractive; eras 2–3.
-5. **The wall — ~25:00+.** The next count lowers your safety, an era would kill
-   you, and the next level is far away. Prestige.
+5. **The wall — ~25:00+.** The next count or useful upgrade is minutes away, an era
+   would push you too far, and progress has stalled. Prestige.
 
 **Why the lanes move:** counts are flat DPS and a growing spawn penalty; levels are
 multiplicative DPS with geometric costs; spawn reduction is a bounded discount.
@@ -130,64 +135,67 @@ Each has a moment (`#1`, `#4`, `#8`, `#18`).
 
 ### Era table (compounding)
 
-| era | spawn mult | HP mult | notes |
-| --- | --- | --- | --- |
-| 0 | 1.00 | 1.00 | start |
-| 1 | 1.15 | 1.25 | first boss |
-| 2 | 1.15 | 1.25 | |
-| 3 | 1.15 | 1.50 | |
-| 4 | 1.15 | 1.50 | |
-| 5+ | 1.15 | 2.00 | steepens |
+| era | spawn mult | HP mult | max neighbours | notes |
+| --- | --- | --- | --- | --- |
+| 0 | 1.00 | 1.00 | 0 | start |
+| 1 | 1.15 | 1.25 | 1 | first boss |
+| 2 | 1.15 | 1.25 | 2 | |
+| 3 | 1.15 | 1.50 | 3 | |
+| 4 | 1.15 | 1.50 | 4 | |
+| 5+ | 1.15 | 2.00 | `min(20, era)` | count rises |
+
+> The neighbour column is the **count lever**. These multipliers are first-pass:
+> flatten HP growth toward ×1.15 if total pressure gets too high once the horde is
+> in (tune later).
 
 ### The era boss
 
 - Trigger: **manual** *Call the Horde* button, available whenever the player
   chooses (recommended: always visible, with a warning).
-- Boss HP: **20×** the current normal enemy HP; walks **half speed**.
-- On kill: **+1 boss token**, a currency burst (≈50 normal kills), and the **next
-  era's multipliers apply**.
+- **Boss HP is sized in seconds of stream:** `bossHP = K × incoming ×
+  bossWalkTime` (K ≈ 1, boss walk ≈ 24 s). The preview says "boss needs safety ≥
+  1 + K".
+- **Boss priority:** all shots target the boss first (it is the priority target).
+- On kill: **era-indexed boss tokens (`era + 1`)**, a currency burst of ≈2× 60 s of
+  current income, and the **next era's multipliers apply**.
 - On reaching the line: **forced prestige**.
-- Design intent: a pure DPS/safety check and a rhythm beat (`#19`, `#21`, NGU).
+- Design intent: a real DPS/safety check and a rhythm beat (`#19`, `#21`, NGU).
 
 ---
 
-## 6. The wall
+## 6. The prestige wall
 
-Adding a tower is safe only while the DPS it adds beats the spawn it attracts:
+The **official prestige signal is cost vs income**, not the safety ratio. Cost
+grows ×1.15 per tower while income grows about ×1.03, so the wait for the next
+count grows ~1.117× per tower; the practical wall lands around **25–40 min** with
+no tuning (`review-findings.md` §2.1).
 
-```
-towerDPS_per_tower  >  effectiveCreep × incoming
-```
+**When it binds:** the next count or useful upgrade is minutes away, an era would
+push you too far, and progress has stalled. That is the voluntary prestige signal.
 
-or, solving for the ceiling:
-
-```
-incoming  <  towerDPS_per_tower ÷ effectiveCreep
-```
-
-At the baseline (2 DPS, 0.03 creep) that ceiling is **≈67 HP/s**. Damage/speed
-levels raise `towerDPS_per_tower` and push the ceiling out; eras and counts raise
-`incoming`. Spawn reduction lowers `effectiveCreep`, also pushing it out — but it
-is expensive and floored, so it extends a run rather than removing the wall.
-
-**When the wall binds:** the next count lowers safety, calling an era is suicidal,
-and the next useful level is far away. That is the voluntary prestige signal.
+`safety = towerDPS ÷ incoming` stays as a **danger readout** for eras/bosses, not
+as the wall. It peaks around ~34 towers at ~5× and doesn't bind before the cost
+wall. The old "≈67 HP/s ceiling" is retired. The margin check
+`perTowerDPS > effectiveCreep × incoming` is a secondary diagnostic, not the
+prestige trigger.
 
 ---
 
 ## 7. Prestige
 
-- **Trigger:** voluntary (at the wall) or forced (boss reaches the line).
-- **Resets:** currency, tower count, per-type levels, era.
+- **Trigger:** voluntary (at the cost wall) or forced (boss reaches the line).
+- **Resets:** currency, tower count, damage level / speed tier / spawn reduction,
+  era.
 - **Keeps:** `bossTokens`, `prestigeUpgrades`.
-- **Tokens:** **1 per boss killed** this run. (Total currency may contribute to a
-  payout/score but is not carried as a token — open.)
+- **Tokens:** **era-indexed** — a boss killed at era *e* gives `e + 1` tokens
+  (era 0 = 1, era 1 = 2, …). Tokens are kept on prestige (including forced). Total
+  currency may contribute to a payout/score but is not carried as a token — open.
 - **Two upgrade paths to trial** (to learn what's fun):
   1. **+% currency** — repeatable, e.g. +10% per level, cost `1, 2, 4, 8 …` tokens.
   2. **Unlocks** — one-time, e.g. start with +1 tower; later, the next tower type.
-- **Payout should scale with progress**, so an early forced prestige costs the
-  player the tokens they *would* have earned. This is the reward for pushing to the
-  wall (`#7`, `#10`, `#14`).
+- **Payout scales with progress** via era-indexed tokens, so an early forced
+  prestige costs the player the tokens they *would* have earned by pushing further
+  (`#7`, `#10`, `#14`).
 
 ---
 
@@ -200,14 +208,18 @@ Every purchase shows its deltas before confirmation:
 - Damage: `+{damage}% DPS`; Speed: `+25% fire rate (tier {n}/3)`. Also show the
   **bounty value** when an enemy is targeted/killed, so the payout is visible.
 - Spawn reduction: `creep {before}% → {after}%`.
-- Era: `next era: +15% spawn, +25% HP, boss`.
+- Era: read from the era table — `+{spawn%} spawn, +{HP%} HP, +{neighbours} max
+  neighbours, boss`; show "boss needs safety ≥ 1 + K".
 
-The preview is what turns the wall from a mystery into a decision (`#2`, NGU
-ratio). If `after < 1`, warn visibly.
+`safety` includes **click DPS** as well as tower DPS. The preview is what turns the
+cost wall from a mystery into a decision (`#2`, NGU ratio). If `after < 1`, warn
+visibly (a danger readout, not the prestige trigger).
 
 ---
 
 ## 9. Offline
+
+> **Deferred:** offline is not a pre-alpha priority; these numbers are placeholders.
 
 - On return: `currency += recentRate × min(elapsed, cap) × fraction`.
 - `recentRate` = average currency/s over the **last ~2 minutes** of play.
@@ -225,7 +237,7 @@ ratio). If `after < 1`, warn visibly.
 3. **M2 — depth.** Damage (common) + speed (rare tiers) per type.
 4. **M3 — eras.** Manual *Call the Horde*, boss, forced prestige.
 5. **M4 — prestige.** Boss tokens + the two upgrade paths.
-6. **M5 — spawn reduction.** The wall extender.
+6. **M5 — spawn reduction.** A safety dial (it cuts income; sandbox option).
 7. **M6 — offline.** Recent-rate accrual + welcome-back summary.
 
 Each milestone should be playable and tunable on its own.
@@ -255,14 +267,14 @@ Each milestone should be playable and tunable on its own.
 - Time to tower 1: **10–20 s**. Time to "self-sufficient at 3 towers": **< 1 min**.
 - First era should feel like a *choice*, not an obligation: reachable comfortably
   by ~5–10 min.
-- The wall should arrive in a first run at roughly **20–40 min** (tune creep and
-  era multipliers).
-- If players never feel the wall, raise creep (3% → 4–5%) or era HP.
-- If the wall is a dead end rather than a choice, cheapen spawn reduction or
-  damage.
-- Speed should feel clearly better when bought, but not trivialise the game — if it
-  does, lower the tier cap (~×2); if it feels pointless, raise the jump (+25% → +35%
-  or cut the cost).
+- The **cost/income wall** should arrive in a first run at roughly **25–40 min**
+  (tune cost growth / income).
+- If progress never stalls, raise count cost growth or lower income; if it stalls
+  too early, lower cost growth.
+- **Horde feel:** on-screen count should climb into the **hundreds** by the
+  mid/late eras (neighbour count lever). If it stays in the tens, raise
+  `maxNeighbours`.
+- **Speed is deferred**; current tiers are placeholders.
 - If adding towers feels bad *early*, the first-tower jump or the creep is too
   high.
 

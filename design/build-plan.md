@@ -37,9 +37,11 @@ M4 once M2 exists, so they can move earlier if useful.
 
 **Scope**
 - One enemy type: 10 HP, spawns at 0.2/s, walks right → left, ~12 s to cross.
-- Tap fires a 1-damage bullet from the left; bullets travel and hit the front-most
-  enemy in an **occupied lane** (never an empty lane).
-- Holding fires every 0.33 s.
+- Tap fires a 1-damage bullet from the left; shots hit the **front-most enemy
+  across all lanes** (boss first when present), and the tracer renders at a random
+  y for visual spread. **Damage applies at fire time** (the tracer is visual).
+- Holding fires every 0.33 s; **tap rate is capped at the hold rate** (no
+  fast-tapper advantage).
 - Killing an enemy grants its **bounty** (set by its HP; ≈1 at base), collected on
   death. The HUD can show it filling as damage lands, but **overkill never
   increases it**.
@@ -48,8 +50,8 @@ M4 once M2 exists, so they can move earlier if useful.
 
 **Acceptance**
 - Holding for ~15 s earns enough for the first tower (3 currency).
-- A bullet visibly travels, hits the front-most enemy in an occupied lane, and can
-  kill it; killing shows the bounty payout.
+- A tracer visibly travels, the damage lands on the front-most enemy across all
+  lanes, and a kill shows the bounty payout.
 - Tap and hold both fire; hold repeats at a steady interval.
 - Nothing punishes the player for letting an enemy reach the line yet.
 
@@ -129,24 +131,33 @@ M4 once M2 exists, so they can move earlier if useful.
 
 **Scope**
 - **Manual *Call the Horde*** button, always visible, with a warning.
-- Summons an **era boss**: 20× current normal HP, half speed.
-- On boss kill: currency burst (≈50 normal kills) and the **next era multipliers
-  apply** (spawn ×1.15, HP ×1.25 → ×1.5 → ×2 by era).
+- Each era also raises **horde width**: `maxNeighbours` = era (cap 20), each
+  possible neighbour with p ≈ 0.5; era 0 stays single-spawn. This is the **count
+  lever** (clusters at adjacent lanes).
+- Summons an **era boss** sized in seconds of stream: `bossHP = K × incoming ×
+  bossWalkTime` (K ≈ 1, ~24 s). Boss priority: all shots target it first. Normal
+  spawning continues during the fight.
+- On boss kill: **era-indexed tokens (`era + 1`)** recorded (spendable in M4), a
+  currency burst of ≈2× 60 s of income, and the **next era multipliers apply**
+  (spawn ×1.15, HP ×1.25 → ×1.5 → ×2 by era).
 - On boss reaching the line: **forced prestige**.
-- For this milestone, "prestige" = reset the run (placeholder, no permanent
-  reward yet) — M4 adds tokens.
+- For this milestone, "prestige" = reset the run (placeholder); M4 makes tokens
+  spendable.
 
 **Acceptance**
-- Calling the horde spawns exactly one boss with the stated stats.
-- Killing it advances the era and applies the multipliers.
+- Calling the horde spawns exactly one boss with `bossHP = K × incoming ×
+  bossWalkTime`; all shots target it first.
+- Killing it advances the era, applies the multipliers, and records `era + 1`
+  tokens.
+- Each era adds its neighbour cluster (count lever); era 0 stays single-spawn.
 - If the boss reaches the line, the run resets to a fresh state.
 - The warning makes it clear the boss is a check, not free progress.
 - Multiple eras compound correctly.
 
 **Playtest / tuning**
-- Is the boss a meaningful DPS check, or trivial/impossible?
-- Does 20× HP + half speed feel right?
+- Is the boss a meaningful DPS check at every stream size (not just early)?
 - Does the era cadence (player-chosen) create good pacing?
+- Does the horde visibly thicken with era, and does it stay readable?
 - Is the forced reset (placeholder) understandable without rewards yet?
 
 **Out of scope:** tokens, permanent upgrades.
@@ -158,8 +169,8 @@ M4 once M2 exists, so they can move earlier if useful.
 **Goal:** resetting is rewarding, and the wall becomes a real choice.
 
 **Scope**
-- Boss kills grant **1 boss token** (persistent).
-- **Voluntary prestige** available at any time (recommended at the wall).
+- Boss kills grant **era-indexed tokens** (`era + 1`) — persistent.
+- **Voluntary prestige** available at any time (recommended at the cost wall).
 - Prestige resets: currency, tower count, damage level / speed tier, era.
 - Prestige keeps: boss tokens, prestige upgrades.
 - **Token shop (two paths, to trial):**
@@ -169,7 +180,7 @@ M4 once M2 exists, so they can move earlier if useful.
 - Show tokens earned this run and the projected result.
 
 **Acceptance**
-- Boss kills increment a persistent token balance.
+- Boss kills increment a persistent token balance by `era + 1`.
 - Voluntary prestige resets the run and keeps tokens/upgrades.
 - Spending tokens changes the next run (higher income or a starting tower).
 - A forced prestige resets the run but keeps earned tokens.
@@ -187,7 +198,11 @@ M4 once M2 exists, so they can move earlier if useful.
 
 ## M5 — Spawn reduction
 
-**Goal:** the wall is movable — at a price.
+**Goal:** a safety dial — at a price. (Keep it as an option to play with.)
+
+> **Note:** until leaks cost something, this is a **pure income cut** (fewer
+> spawns, and free leaks) — the review's §2.6. That's acceptable while it's a
+> sandbox option; give it a benefit later if it should be a real choice.
 
 **Scope**
 - Per-tower-type **spawn reduction** lane:
@@ -201,18 +216,20 @@ M4 once M2 exists, so they can move earlier if useful.
 - Buying a level lowers the spawn-per-tower and raises safety.
 - The floor is enforced (cannot reach 0%).
 - The lane is visibly expensive (it competes with prestige).
-- With it, a run can push further; without it, the wall arrives sooner.
+- It lowers incoming/safety pressure but costs income; tune whether it's worth it.
 
 **Playtest / tuning**
 - Is the floor (0.5%) noticeable but safe?
 - Is ×2 cost too steep to ever buy?
-- Does it extend runs without removing the wall?
+- Does it feel like a choice once leaks matter (later), or a trap now?
 
 **Out of scope:** discount-style effects on other costs.
 
 ---
 
 ## M6 — Offline
+
+> **Deferred:** not a pre-alpha priority; these numbers are placeholders.
 
 **Goal:** leaving the game is rewarded, safely.
 

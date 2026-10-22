@@ -119,7 +119,9 @@ The research tree lives in `idle-game-mechanic-research/`.
   and `../clickpoc/research/android/`.
 - Agent roster (`task` tool): `game-source-recon`, `mechanics-decoder`,
   `number-harvester`, `source-verifier`, `design-analyst`, plus `explore`
-  (fast search) and `general` (ad-hoc).
+  (fast search) and `general` (ad-hoc). For code work, `game-dev-review`
+  (read-only) checks game-dev hygiene: determinism, hot paths, tunables,
+  data layout, and fit with surrounding patterns.
 - This `.opencode/` lives at the **repo root** (opencode only discovers config
   there; nested `.opencode/` dirs are ignored).
 

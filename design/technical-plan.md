@@ -77,8 +77,8 @@ scale.
   pattern: one `InstancedMesh`, instance matrices/colors, `DynamicDrawUsage`,
   frustum culling off, draw order.
 - `render/lod.ts` — the idea of switching detail by zoom (later).
-- `tools/simulator/` — **the pattern**, not the code: a headless deterministic
-  runner, seed sweeps, baselines/benchmarks.
+- `tools/simulator/` — **the pattern only, if/when we build it later**: a headless
+  deterministic runner, seed sweeps, baselines/benchmarks. Not a pre-alpha scaffold.
 - Conventions: Vite, strict TS, `const` arrows, `type` aliases, kebab-case files,
   named exports, no barrels, oxlint + Prettier, Vitest.
 
@@ -89,7 +89,7 @@ scale.
 - `render/` layers — enemy, bullet, tower, muzzle/hit effects, background.
 - `ui/` — React HUD: currency, safety/preview, purchase panel, era/prestige.
 - `data/` — every tuning number from the pre-alpha spec, in one typed module.
-- `tools/simulator/` — our economy runner (see §7).
+- No simulator scaffold for pre-alpha — the optimized simulator is deferred (see §7).
 
 **Do not** reuse eco-evo's genetics/predation/grass/lineage logic — it's a
 different game; only the engine and patterns carry over.
@@ -115,7 +115,6 @@ src/
   ui/        App/HUD, purchase-panel, era-prestige, selectors
   data/      balance.ts (all tuning constants), enemies.ts, eras.ts, upgrades.ts
 tools/
-  simulator/ headless deterministic runs (balance sweeps)
   bench/     optional render benchmark
 design/      (already here)
 idle-game-mechanic-research/  (already here)
@@ -131,24 +130,26 @@ coexist. If you prefer, put the app under `game/` instead — no design impact.
 - **Fixed step 60 Hz**, decoupled from render (eco-evo's loop).
 - **Struct-of-arrays** for enemies and bullets (typed arrays). Stable ids;
   swap-remove compaction; no per-entity objects.
-- **Caps:** `MAX_ENEMIES` (start 4096), `MAX_BULLETS` (start 2048), `MAX_TOWERS`
-  (small). Raise by constant.
-- **Lanes & targeting:** quantize y into ~24 lanes. Enemies are bucketed by lane;
-  the target is the front-most (smallest x) in the lane, so a shot resolves its
-  target in near-O(1) and scales to thousands.
-- **Projectile model — support both (decided):**
-  - **Tracer** — instant/very fast ray with a visual tracer; damage at fire time or
-    on first contact. Cheap; good for rapid-fire guns.
-  - **Locked-target homing missile** — the shot stores a target id, travels, and
-    resolves on arrival; if the target dies first it fizzles or re-targets. Good for
-    slower, heavier weapons.
-  - M0 ships one simple type (tracer); the bullet data model includes `kind` +
-    optional `targetId` from day one so missiles drop in later.
-- **Determinism:** seeded `XorShift32` for spawn timing, random lane, and any
-  scatter. Same seed + same inputs ⇒ same state (hashable for tests).
+- **Caps:** `MAX_ENEMIES` (start 2048), `MAX_BULLETS` (start 2048), `MAX_TOWERS`
+  (small). Benchmark at the caps before raising them. **Overflow:** drop new spawns
+  but count them as **leaks**, so the economy stays honest.
+- **Targeting:** the **front-most enemy across all lanes** (smallest x), **boss
+  first**. With ≤~100 enemies a linear scan is trivial; lane buckets are a future
+  optimization, not pre-alpha. Bullets render at a random y for visual spread.
+- **Projectile model:** M0 applies **damage at fire time**; the tracer is visual
+  only. Keep `kind` + optional `targetId` in the data model so locked-target
+  missiles can drop in later (use `pendingDamage` if travel-time honesty is wanted).
+- **Determinism:** express timings as **ticks** (hold 0.33 s → 20 ticks at 60 Hz);
+  taps/auto-fire are **commands queued for the next tick**; use **separate RNG
+  streams** (spawn / combat / visual) and serialize RNG state. Hash
+  `{config, tick, RNG, state}` for tests.
+- **Background tabs:** `requestAnimationFrame` stops while hidden. On
+  `visibilitychange`, treat hidden time over ~5 s as **offline** (the M6 path), so
+  there is only one catch-up code path.
 - **Offline is analytic**, not simulated: `recentRate × min(elapsed, cap)` per the
-  spec. No background simulation, no save-state complexity.
-- **State hash / snapshot** for determinism tests and the simulator.
+  spec. Reset the 2-minute `recentRate` window on prestige and exclude boss bursts
+  from it.
+- **State hash / snapshot** for determinism tests.
 
 ---
 
@@ -163,11 +164,10 @@ coexist. If you prefer, put the app under `game/` instead — no design impact.
     velocity).
   - Towers: a few instances (one per type shown, with a `×N` label in the HUD/DOM).
   - Effects (muzzle flash, hit sparks): instanced or a small pool.
-- **Resolution & zoom (decided):** render at a **higher internal resolution than
-  eco-evo** (start ~640 px on the short side; tune), with **zoom-based LOD** — zoom
-  in for more detail, zoom out to see the horde. Nearest-neighbor upscale stays
-  available as a style knob, not the default ceiling. HUD is DOM (React), so text
-  stays crisp at any zoom.
+- **Resolution (pre-alpha):** render at **native size × `devicePixelRatio`** — the
+  entity counts are small. A fixed low-res backing store magnifies pixels when you
+  zoom; it does not add detail. **Zoom detail / LOD / pixel-art upscale are later
+  style choices**, not pre-alpha. HUD is DOM, so text stays crisp.
 - **Draw per display frame** while the sim is running; optional "draw only when
   something changed" later.
 - **Health bars** are optional in pre-alpha; if added, use instanced quads or a
@@ -182,8 +182,9 @@ coexist. If you prefer, put the app under `game/` instead — no design impact.
   prestige, offline.
 - The **game and the simulator import the same data** — no second source of
   tunables (eco-evo's `sim/config.ts` pattern).
-- A `scenario.ts` describes a purchase policy (e.g. "always buy the best
-  cost-per-DPS") so the headless runner can play the economy without a human.
+- Expose pure functions (`income(state)`, `safety(state)`, `nextCost(lane)`) so
+  unit tests (and a later simulator) share the same math. No `scenario.ts` yet; the
+  simulator is deferred.
 
 ### Headless economy simulator (deferred — not pre-alpha)
 
@@ -221,11 +222,11 @@ DOM/React/three (as eco-evo does) is what makes this possible.
 
 | milestone | technical work |
 | --- | --- |
-| M0 | scaffold; loop; SoA enemies; spawner; click firing; bullet/target; currency; basic enemy render |
+| M0 | scaffold; loop; SoA enemies; spawner; click firing; front-most targeting (damage at fire); currency; ticks/command queue; split RNG; `RunState` serialize; native × DPR render |
 | M1 | tower count + auto-fire; spawn jump; safety calc; purchase preview UI |
 | M2 | damage + speed tiers; DPS updates; upgrade UI |
-| M3 | manual era button; boss entity; forced reset; era multipliers |
-| M4 | boss tokens; prestige reset; token shop; persistence |
+| M3 | manual era button; horde-width neighbours; boss sized in seconds of stream; boss snapshot; forced reset |
+| M4 | era-indexed tokens; prestige reset; token shop; versioned save |
 | M5 | spawn-reduction lane + floor |
 | M6 | offline accrual + welcome-back summary |
 
@@ -240,8 +241,12 @@ tests + manual playtests for M0–M6.
   WebGL layer can replace the renderer behind the same sim/UI boundary.
 - **Too many entities + effects.** Instancing + caps + a tuned internal resolution;
   raise caps or move to a Worker only when measured.
-- **Per-shot target search.** Lane buckets keep it near O(1); avoid per-bullet
-  full scans.
+- **Target search.** A global front-most scan is fine at pre-alpha counts; revisit
+  lane buckets only if the horde grows past the cap.
+- **Entity-cap overflow.** Drop new spawns as leaks (§5), not silent loss.
+- **Homing missiles.** Maintain an id→slot map; swap-remove invalidates indices.
+- **Background tab.** Use `visibilitychange` so hidden time is offline, not a burst
+  of catch-up.
 - **Determinism drift.** Fixed timestep + seeded RNG + state hashes in CI-style
   tests.
 - **Scope creep into breadth/units/prestige depth.** Keep M0–M6 to the spec; the
@@ -252,15 +257,15 @@ tests + manual playtests for M0–M6.
 ## 11. Decisions & remaining opens
 
 **Resolved** (see §0): root app · npm · eco-evo foundation · borrow/adapt code ·
-both projectile models · higher-res, zoomable look.
+both projectile models · **global front-most targeting (damage at fire)** · **native
+× DPR for pre-alpha** · optimized simulator deferred.
 
 **Remaining** (can decide while scaffolding):
 
-1. **Exact internal resolution** — 540 vs 640 vs 720 px short side (tune).
-2. **Which projectile M0 ships** — tracer (recommended) vs locked projectile.
-3. **Lane count / map size** — 24 lanes is a starting point.
-4. **Zoom range** — how far in/out; reuse eco-evo's camera, then tune.
-5. **Optimized headless simulator** — future; not a pre-alpha priority.
+1. **Map size / enemy cap** — start at 2048 enemies and benchmark; no lanes needed
+   at pre-alpha counts.
+2. **M0 projectile** — tracer (recommended; damage at fire).
+3. **Zoom range** — later; pre-alpha renders at native resolution.
 
 ---
 
@@ -272,14 +277,16 @@ Context may reset; start here.
    [`build-plan.md`](build-plan.md).
 2. **Scaffold at the repo root with npm**: `package.json`, `index.html`,
    `vite.config.ts`, `vitest.config.ts`, `tsconfig*.json`, and
-   `src/{engine,sim,render,ui,data}` + `tools/simulator`. Mirror eco-evo's configs.
+   `src/{engine,sim,render,ui,data}`. Mirror eco-evo's configs.
 3. **Borrow/adapt** `engine/{loop,math,camera,config}` and one instanced render
    layer as a template; delete eco-evo-specific logic; add the provenance note.
 4. Implement **M0** (`build-plan.md` §M0): fixed loop → spawner → click firing →
-   lane targeting → currency → basic enemy render. Ship a **tracer** bullet first.
+   **front-most targeting** → currency → basic enemy render. Apply **damage at fire
+   time** (tracer visual), **ticks + command queue + split RNG + `RunState`**, and
+   **native × DPR** rendering.
 5. Note the optimized **headless simulator** as future work; don't build it yet.
 6. Acceptance criteria and Definition of Done live in `build-plan.md`; log tuning
    in its tuning log.
 
-**Defaults if still unanswered:** root app · npm · tracer for M0 · 640 px short
-side · 24 lanes · borrow the small engine modules.
+**Defaults if still unanswered:** root app · npm · tracer for M0 · native × DPR ·
+2048 enemy cap · borrow the small engine modules.

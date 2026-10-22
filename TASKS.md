@@ -33,9 +33,13 @@ things land. Research detail lives in `idle-game-mechanic-research/PLAN.md`
 - [x] **Lock the technical decisions** — root app, npm, eco-evo foundation,
       borrow/adapt code, both projectile models, higher-res zoomable look
       (`design/technical-plan.md` §0).
-- [x] **Apply the review decisions** — per-kill **bounty** (kills are the payout,
-      build-up → payout), **rare/chunky speed** (3 × +25%, cap ≈×2), and the
+- [x] **Apply the first review's decisions** — per-kill **bounty** (kills are the
+      payout, build-up → payout), **rare/chunky speed** (3 × +25%, cap ≈×2), and the
       **optimized simulator deferred**. See `design/review-findings.md`.
+- [x] **Apply the second review's decisions** — **global front-most targeting**
+      (damage at fire), **horde count lever** (era neighbour clusters),
+      **cost/income prestige wall**, **boss sizing + era-indexed tokens**; speed and
+      leaks deferred. See `design/claude-review-findings.md` / `review-findings.md`.
 - [ ] **Next session: scaffold the root app** (npm) per `technical-plan.md` §12,
       then start **M0**.
 - [ ] **Build M0–M6** and log tuning as you play.

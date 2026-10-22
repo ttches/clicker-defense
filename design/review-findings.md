@@ -189,7 +189,31 @@ visible payout, and health is still the bounty ceiling.
 
 ---
 
+---
+
+## 9. Second review (2026-10-22, `claude-review-findings.md`) — decisions
+
+| # | topic | decision | status |
+| --- | --- | --- | --- |
+| 1 | Targeting | **Global front-most across all lanes**, boss first; tracer renders at a random y; **damage at fire time** | **Applied** |
+| 2 | Horde count | **Add the count lever now**: era clusters (`maxNeighbours = min(20, era)`, p ≈ 0.5); era 0 unchanged | **Applied** |
+| 3 | Prestige signal | **Cost/income** is the official signal; `safety` is a danger readout | **Applied** |
+| 4 | Speed pricing | **Deferred**; current tiers are placeholders | **Deferred** |
+| 5 | Leaks | **Deferred**; enemies still die at the line | **Deferred** |
+| 6 | Boss/tokens | Boss HP = `K × incoming × bossWalkTime`; boss priority; **era-indexed tokens (`era + 1`)**; burst ≈2× 60 s income | **Applied** |
+| 7 | Determinism / save | Ticks, command queue, split RNG streams, `RunState` from M0, boss snapshot M3 | **Applied to tech plan** |
+| 8 | Pre-alpha simplifications | Damage at fire; native × DPR; drop lane buckets + simulator scaffold; cap overflow = leaks | **Applied to tech plan** |
+
+Retired the competing wall definitions (`≈67 HP/s`, `~125 towers`); the
+**cost/income wall** is the one that binds (25–40 min).
+
+**Still open:** horde-width tuning, boss gate/timing, prestige upgrade balance,
+offline, speed pricing, tap aiming.
+
+---
+
 *Applied to the plan docs on 2026-10-19: **per-kill bounty** (`design.md`,
 `pre-alpha-spec.md`, `build-plan.md`), **rare/chunky speed**, and the **optimized
-simulator deferred** (`technical-plan.md`). The remaining findings stay staged
-here; see `TASKS.md` for the build backlog.*
+simulator deferred** (`technical-plan.md`). On 2026-10-22 the second-review
+decisions above were also applied. The remaining findings stay staged here; see
+`TASKS.md` for the build backlog.*
