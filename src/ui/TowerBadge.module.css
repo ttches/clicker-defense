@@ -1,0 +1,16 @@
+/* Doubled class beats Stage's `.overlay > *` pointer-events rule. */
+.badge.badge {
+  position: absolute;
+  padding: 0.1rem 0.35rem;
+  transform: translate(-50%, -50%);
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) / 2);
+  background: rgb(8 10 12 / 82%);
+  color: var(--foreground);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.2;
+  user-select: none;
+  pointer-events: none;
+}

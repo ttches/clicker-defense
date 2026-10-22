@@ -51,7 +51,8 @@ things land. Research detail lives in `idle-game-mechanic-research/PLAN.md`
   - [x] **E3a** M0 combat: input/cadence + targeting/damage/kills/bounty
   - [x] **E3b** M0 feel: tracer/FX + popups + HUD + acceptance → **M0 done**
   - [ ] **E4a** M1 sim: tower purchase + preview math
-  - [ ] **E4b** M1 UI: tower render + ×N + purchase panel → **M1 playable**
+  - [x] **E4b** M1 UI: tower render + ×N + purchase panel → **M1 playable**
+  - [ ] **User playtest M1** (dev server) and log feel/tuning
 
 ## Explorations (later, not pre-alpha)
 

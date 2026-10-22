@@ -8,6 +8,9 @@ export type DebugState = {
   currency: number
   enemies: number
   spawnRate: number
+  towers: number
+  dps: number
+  safety: number
   leaks: number
   kills: number
   popups: number
@@ -60,6 +63,9 @@ export const createDebugState = (
   currency: 0,
   enemies: 0,
   spawnRate: 0,
+  towers: 0,
+  dps: 0,
+  safety: 0,
   leaks: 0,
   kills: 0,
   popups: 0,

@@ -1,17 +1,20 @@
-import { useEffect, useRef } from 'react'
-import { CLICK, WORLD } from '@/data/balance'
+import { useCallback, useEffect, useRef } from 'react'
+import { CLICK, ENEMY, WORLD } from '@/data/balance'
 import type { Camera } from '@/engine/camera'
 import { createFitCamera, worldToScreen } from '@/engine/camera'
 import { FIXED_STEP } from '@/engine/config'
 import { activeLoopCount, createLoop } from '@/engine/loop'
 import { Renderer } from '@/render/renderer'
+import { TOWER_ANCHOR } from '@/render/tower-layer'
 import {
-  FIRE_COMMANDS,
-  NO_COMMANDS,
+  BUY_TOWER_COMMAND,
+  FIRE_COMMAND,
+  type Command,
   type ShotEvent,
   type SimEvents,
 } from '@/sim/combat'
-import { spawnRate } from '@/sim/economy'
+import { safety, spawnRate, towerDps } from '@/sim/economy'
+import { previewTowerBuy } from '@/sim/purchase'
 import { createRun, stepRun } from '@/sim/run'
 import { createRenderView } from '@/sim/view'
 import { countFrame, createDebugState, getFrameCount } from '@/ui/debug'
@@ -28,6 +31,8 @@ import {
 } from '@/ui/popup-store'
 import { Stage } from '@/ui/Stage'
 import { stressEnemies } from '@/ui/stress'
+import { TowerBadge } from '@/ui/TowerBadge'
+import { TowerPanel } from '@/ui/TowerPanel'
 
 type Measurement = {
   width: number
@@ -51,12 +56,20 @@ const measure = (canvas: HTMLCanvasElement): Measurement => {
 
 export const App = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null)
+  // One-shot command queue shared by the frame loop and the purchase panel.
+  const commandsRef = useRef<Command[]>([])
+
+  const onBuy = useCallback((): void => {
+    commandsRef.current.push(BUY_TOWER_COMMAND)
+  }, [])
 
   useEffect(() => {
     const canvas = canvasRef.current
     if (!canvas) return
 
     const run = createRun()
+    const commands = commandsRef.current
+    commands.length = 0
     const view = createRenderView(run.enemies)
     const renderer = new Renderer(canvas)
     const fire = createFireInput()
@@ -66,13 +79,25 @@ export const App = () => {
     const debug = createDebugState(renderer.drawn)
     window.__game = debug
 
-    const stressParam = new URLSearchParams(location.search).get('stress')
+    const params = new URLSearchParams(location.search)
+    const stressParam = params.get('stress')
     const requested = Number(stressParam)
     const stress =
       import.meta.env.DEV && stressParam !== null && Number.isFinite(requested)
         ? stressEnemies(run, requested)
         : 0
     debug.stress = stress
+
+    const bankParam = params.get('bank')
+    const bank = Number(bankParam)
+    if (
+      import.meta.env.DEV &&
+      bankParam !== null &&
+      Number.isFinite(bank) &&
+      bank > 0
+    ) {
+      run.currency = bank
+    }
 
     let size = measure(canvas)
     let camera: Camera | null = null
@@ -96,6 +121,9 @@ export const App = () => {
       debug.spawnRate = stats.spawnRate
       debug.leaks = stats.leaks
       debug.kills = stats.kills
+      debug.towers = run.towerCount
+      debug.dps = towerDps(run.towerCount)
+      debug.safety = safety(run.towerCount, ENEMY.baseHp, fire.isHolding())
       debug.tracersSpawned = renderer.stats.tracersSpawned
       debug.clickCooldown = run.clickCooldown
       debug.clickIntervalTicks = CLICK.intervalTicks
@@ -107,12 +135,25 @@ export const App = () => {
     const publishStats = (now: number): void => {
       lastHudPublish = now
       const stats = readStats()
+      const preview = previewTowerBuy(run, fire.isHolding())
+      const anchor = camera
+        ? worldToScreen(camera, TOWER_ANCHOR.x, TOWER_ANCHOR.y + 34)
+        : null
       publishHud({
         currency: stats.currency,
         enemies: stats.enemies,
         spawnRate: stats.spawnRate,
         leaks: stats.leaks,
         kills: stats.kills,
+        towers: run.towerCount,
+        towerCost: preview.cost,
+        affordable: preview.affordable,
+        dpsGain: preview.dpsGain,
+        spawnGainPercent: preview.spawnGainPercent,
+        safetyBefore: preview.safetyBefore,
+        safetyAfter: preview.safetyAfter,
+        towerX: anchor?.x ?? 0,
+        towerY: anchor?.y ?? 0,
       })
       prunePopups(now)
       debug.popups = getPopups().length
@@ -134,7 +175,13 @@ export const App = () => {
 
     const loop = createLoop(FIXED_STEP, {
       step: () => {
-        stepRun(run, fire.consume() ? FIRE_COMMANDS : NO_COMMANDS, events)
+        if (fire.consume()) commands.push(FIRE_COMMAND)
+        try {
+          stepRun(run, commands, events)
+        } finally {
+          // Commands are one-shot: a persisted buy must never re-purchase.
+          commands.length = 0
+        }
       },
       frame: (steps) => {
         countFrame()
@@ -147,13 +194,37 @@ export const App = () => {
 
         if (steps > 0 && started && camera) {
           try {
-            renderer.draw(camera, view, events.shots, steps * FIXED_STEP)
+            renderer.draw(
+              camera,
+              view,
+              events.shots,
+              steps * FIXED_STEP,
+              run.towerCount,
+            )
             for (const kill of events.kills) {
               const screen = worldToScreen(camera, kill.x, kill.y)
               pushPopup(
                 screen.x,
                 screen.y,
                 `+${formatCurrency(kill.bounty)}`,
+                now,
+              )
+            }
+            if (events.purchases.length > 0) {
+              const spent = events.purchases.reduce(
+                (total, purchase) => total + purchase.cost,
+                0,
+              )
+              const screen = worldToScreen(
+                camera,
+                TOWER_ANCHOR.x,
+                TOWER_ANCHOR.y - 50,
+              )
+              const stack = getPopups().length
+              pushPopup(
+                screen.x,
+                screen.y - stack * 16,
+                `-${formatCurrency(spent)}`,
                 now,
               )
             }
@@ -176,7 +247,7 @@ export const App = () => {
         { width: size.width, height: size.height },
         WORLD,
       )
-      renderer.draw(camera, view, NO_SHOTS, 0)
+      renderer.draw(camera, view, NO_SHOTS, 0, run.towerCount)
       writeCanvas()
       loop.start()
       debug.running = true
@@ -204,7 +275,7 @@ export const App = () => {
         { width: next.width, height: next.height },
         WORLD,
       )
-      renderer.draw(camera, view, NO_SHOTS, 0)
+      renderer.draw(camera, view, NO_SHOTS, 0, run.towerCount)
       writeCanvas()
     }
 
@@ -236,6 +307,7 @@ export const App = () => {
       window.removeEventListener('resize', resize)
       resolutionQuery?.removeEventListener('change', rearmResolution)
       resolutionQuery = null
+      commands.length = 0
       renderer.dispose()
       if (window.__game === debug) delete window.__game
     }
@@ -247,6 +319,8 @@ export const App = () => {
       overlay={
         <>
           <Hud />
+          <TowerBadge />
+          <TowerPanel onBuy={onBuy} />
           <Popups />
         </>
       }

@@ -233,6 +233,26 @@ const runPass = async (browser, deviceScaleFactor) => {
       ['no page or console errors', errors.length === 0, errors.join(' | ')],
     )
 
+    const zeroState = await page.evaluate(() => {
+      const buy = document.querySelector('[data-buy="tower"]')
+      return {
+        towers: globalThis.__game?.towers ?? -1,
+        badge: document.querySelector('[data-tower-badge]') !== null,
+        disabled: buy instanceof HTMLButtonElement ? buy.disabled : false,
+        cost: Number.parseFloat(
+          document.querySelector('[data-tower="cost"]')?.textContent ?? '',
+        ),
+      }
+    })
+    checks.push([
+      'M1 zero state (badge hidden, buy disabled)',
+      zeroState.towers === 0 &&
+        !zeroState.badge &&
+        zeroState.disabled &&
+        Math.abs(zeroState.cost - 3) <= 0.001,
+      `towers=${zeroState.towers} badge=${zeroState.badge} disabled=${zeroState.disabled} cost=${zeroState.cost}`,
+    ])
+
     await page.mouse.click(640, 360)
     await page.mouse.click(640, 360)
     // Input queues for the next tick, so wait for the shot to land instead of
@@ -416,6 +436,171 @@ const runStressPass = async (browser) => {
   return { checks, screenshotPath }
 }
 
+const runM1Pass = async (browser) => {
+  const screenshotPath = '/tmp/clicker-smoke-m1.png'
+  const context = await browser.newContext({
+    viewport: { width: 1280, height: 720 },
+    deviceScaleFactor: 1,
+  })
+  const page = await context.newPage()
+  const errors = []
+  page.on('pageerror', (error) => {
+    errors.push(`pageerror: ${error.message}`)
+  })
+  page.on('console', (message) => {
+    if (message.type() === 'error') errors.push(`console: ${message.text()}`)
+  })
+
+  const checks = []
+  try {
+    await page.goto(`${url}?bank=100`, { waitUntil: 'load' })
+    await page.waitForFunction(
+      () =>
+        globalThis.__game?.running === true && globalThis.__game.towers === 0,
+      undefined,
+      { timeout: 15000 },
+    )
+
+    const initial = await page.evaluate(() => {
+      const panel = document.querySelector('[data-panel="tower"]')
+      const cost = document.querySelector('[data-tower="cost"]')
+      const buy = document.querySelector('[data-buy="tower"]')
+      return {
+        panelVisible: Boolean(panel && panel.getBoundingClientRect().width > 0),
+        cost: Number.parseFloat(cost?.textContent ?? ''),
+        buyEnabled: buy instanceof HTMLButtonElement && !buy.disabled,
+        currency: globalThis.__game?.currency ?? 0,
+      }
+    })
+    checks.push(
+      [
+        'M1 panel visible',
+        initial.panelVisible,
+        `visible=${initial.panelVisible}`,
+      ],
+      [
+        'M1 first cost is 3.00',
+        Math.abs(initial.cost - 3) <= 0.001,
+        `cost=${initial.cost}`,
+      ],
+      [
+        'M1 buy enabled with bank',
+        initial.buyEnabled,
+        `enabled=${initial.buyEnabled}`,
+      ],
+    )
+
+    for (let index = 0; index < 3; index += 1) {
+      await page.click('[data-buy="tower"]')
+    }
+    await page.waitForFunction(
+      () => {
+        const game = globalThis.__game
+        const hud = document
+          .querySelector('[data-hud="towers"]')
+          ?.textContent?.trim()
+        const cost = document
+          .querySelector('[data-tower="cost"]')
+          ?.textContent?.trim()
+        return game?.towers === 3 && hud === '3' && cost === '4.56'
+      },
+      undefined,
+      { timeout: 5000 },
+    )
+
+    const data = await page.evaluate(() => {
+      const game = globalThis.__game
+      if (!game) throw new Error('window.__game missing')
+      const buy = document.querySelector('[data-buy="tower"]')
+      return {
+        towers: game.towers,
+        currency: game.currency,
+        spawnRate: game.spawnRate,
+        dps: game.dps,
+        safety: game.safety,
+        drawnTowers: game.drawn.towers,
+        hudTowers:
+          document.querySelector('[data-hud="towers"]')?.textContent ?? '',
+        badgeText:
+          document.querySelector('[data-tower-badge]')?.textContent ?? '',
+        panelCost: Number.parseFloat(
+          document.querySelector('[data-tower="cost"]')?.textContent ?? '',
+        ),
+        panelDps:
+          document.querySelector('[data-tower="dps"]')?.textContent ?? '',
+        panelSpawn:
+          document.querySelector('[data-tower="spawn"]')?.textContent ?? '',
+        panelSafety:
+          document.querySelector('[data-tower="safety"]')?.textContent ?? '',
+        buyEnabled: buy instanceof HTMLButtonElement && !buy.disabled,
+      }
+    })
+
+    const spend = initial.currency - data.currency
+
+    checks.push(
+      ['M1 bought three towers', data.towers === 3, `towers=${data.towers}`],
+      [
+        'M1 HUD towers matches',
+        Number.parseInt(data.hudTowers, 10) === 3,
+        `hud=${data.hudTowers}`,
+      ],
+      [
+        'M1 one visible turret',
+        data.drawnTowers === 1,
+        `drawn=${data.drawnTowers}`,
+      ],
+      [
+        'M1 currency after ladder',
+        Math.abs(spend - (3 + 3.45 + 3.9675)) <= 0.02,
+        `spent=${spend}`,
+      ],
+      [
+        'M1 badge shows ×3',
+        data.badgeText.trim() === '×3',
+        `badge=${data.badgeText}`,
+      ],
+      [
+        'M1 panel preview rows',
+        data.panelDps.trim() === '+2.0' &&
+          data.panelSpawn.trim() === '+3.0%' &&
+          data.panelSafety.includes('1.13') &&
+          data.panelSafety.includes('1.46'),
+        `dps=${data.panelDps} spawn=${data.panelSpawn} safety=${data.panelSafety}`,
+      ],
+      [
+        'M1 spawn rate at three towers',
+        Math.abs(data.spawnRate - 0.53045) <= 1e-5,
+        `spawnRate=${data.spawnRate}`,
+      ],
+      ['M1 DPS at three towers', data.dps === 6, `dps=${data.dps}`],
+      [
+        'M1 safety at three towers',
+        Math.abs(data.safety - 1.131) <= 0.01,
+        `safety=${data.safety}`,
+      ],
+      [
+        'M1 next cost is 4.56',
+        Math.abs(data.panelCost - 4.56) <= 0.001,
+        `cost=${data.panelCost}`,
+      ],
+      [
+        'M1 buy still enabled with bank',
+        data.buyEnabled,
+        `enabled=${data.buyEnabled}`,
+      ],
+      ['no page or console errors', errors.length === 0, errors.join(' | ')],
+    )
+
+    await page.screenshot({ path: screenshotPath })
+    console.log(`screenshot ${screenshotPath}`)
+  } finally {
+    await context.close().catch(() => {})
+  }
+
+  return { checks, screenshotPath }
+}
+
 let browser
 let failed = true
 
@@ -428,6 +613,7 @@ try {
     passes.push(await runPass(browser, deviceScaleFactor))
   }
   passes.push(await runStressPass(browser))
+  passes.push(await runM1Pass(browser))
 
   failed = false
   for (const { checks, screenshotPath } of passes) {

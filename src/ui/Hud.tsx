@@ -19,10 +19,8 @@ const Row = ({ label, field, value }: RowProps) => (
 )
 
 export const Hud = () => {
-  const { currency, enemies, spawnRate, leaks, kills } = useSyncExternalStore(
-    subscribeHud,
-    getHudValues,
-  )
+  const { currency, enemies, spawnRate, leaks, kills, towers } =
+    useSyncExternalStore(subscribeHud, getHudValues)
 
   return (
     <aside className={styles.hud} aria-label="Run stats">
@@ -33,6 +31,7 @@ export const Hud = () => {
         field="spawnRate"
         value={formatCurrency(spawnRate)}
       />
+      <Row label="Towers" field="towers" value={String(towers)} />
       <Row label="Leaks" field="leaks" value={String(leaks)} />
       <Row label="Kills" field="kills" value={String(kills)} />
     </aside>

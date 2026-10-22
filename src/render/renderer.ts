@@ -5,6 +5,7 @@ import { BackgroundLayer } from '@/render/background'
 import { createDrawnCounts } from '@/render/drawn'
 import { EnemyLayer } from '@/render/enemy-layer'
 import { WORLD_BACKGROUND } from '@/render/palette'
+import { TowerLayer } from '@/render/tower-layer'
 import { TracerLayer } from '@/render/tracer-layer'
 import type { ShotEvent } from '@/sim/combat'
 import type { RenderableWorld } from '@/sim/view'
@@ -16,6 +17,7 @@ export class Renderer {
   private readonly background = new BackgroundLayer()
   private readonly enemies = new EnemyLayer()
   private readonly tracers = new TracerLayer()
+  private readonly towers = new TowerLayer()
   public readonly drawn = createDrawnCounts()
   public readonly stats = {
     calls: 0,
@@ -33,7 +35,12 @@ export class Renderer {
     })
     this.renderer.setClearColor(WORLD_BACKGROUND, 1)
     this.camera = new THREE.OrthographicCamera(0, 1, 0, 1, -10, 10)
-    this.scene.add(this.background.mesh, this.enemies.mesh, this.tracers.mesh)
+    this.scene.add(
+      this.background.mesh,
+      this.enemies.mesh,
+      this.tracers.mesh,
+      this.towers.mesh,
+    )
   }
 
   public resize(cssWidth: number, cssHeight: number, dpr: number): void {
@@ -46,6 +53,7 @@ export class Renderer {
     world: RenderableWorld,
     shots: readonly ShotEvent[],
     deltaSeconds: number,
+    towerCount: number,
   ): void {
     const bounds = viewBounds(camera)
     // Y is down, so top < bottom: the negative Y scale flips triangle winding.
@@ -57,6 +65,7 @@ export class Renderer {
     this.camera.updateProjectionMatrix()
 
     this.enemies.update(world, bounds)
+    this.towers.update(towerCount)
     this.tracers.spawn(shots)
     // Cosmetic lifetime is frame-clamped: a 0.1 s hitch must not consume a
     // 0.12 s tracer inside the same draw.
@@ -70,6 +79,7 @@ export class Renderer {
     this.drawn.background += 1
     this.drawn.enemies = this.enemies.visible
     this.drawn.tracers = this.tracers.visible
+    this.drawn.towers = this.towers.visible
   }
 
   /** Ratio actually applied after the DPR cap. */
@@ -81,6 +91,7 @@ export class Renderer {
     this.background.dispose()
     this.enemies.dispose()
     this.tracers.dispose()
+    this.towers.dispose()
     this.renderer.dispose()
   }
 }

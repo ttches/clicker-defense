@@ -1,0 +1,64 @@
+aside.panel {
+  position: absolute;
+  bottom: 0.75rem;
+  left: 0.75rem;
+  display: grid;
+  gap: 0.2rem;
+  width: 15.5rem;
+  padding: 0.6rem 0.75rem 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: rgb(8 10 12 / 82%);
+  color: var(--foreground);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  line-height: 1.35;
+  pointer-events: auto;
+  user-select: none;
+}
+
+.heading {
+  margin-bottom: 0.15rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.label {
+  color: var(--muted-foreground);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.value {
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.danger {
+  color: #ff8f6b;
+  font-weight: 600;
+}
+
+.buy {
+  margin-top: 0.35rem;
+  padding: 0.35rem 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) / 2);
+  background: var(--accent);
+  color: var(--background);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.buy:disabled {
+  background: var(--surface);
+  color: var(--muted-foreground);
+  cursor: not-allowed;
+}
