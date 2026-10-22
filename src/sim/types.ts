@@ -35,6 +35,7 @@ export const ENEMY_COLUMNS = {
   boss: Uint8Array,
   bounty: Float32Array,
   speed: Float32Array,
+  lane: Uint8Array,
 } as const satisfies ColumnSpec
 
 export type EnemyColumns = ColumnsOf<typeof ENEMY_COLUMNS>

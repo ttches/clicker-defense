@@ -10,6 +10,7 @@ export const ENEMY = {
   walkTicks: 720,
   lineX: 80,
   spawnX: 1840,
+  lanes: 12,
 } as const
 
 export const BOUNTY = { base: 0.25, perHp: 0.075 } as const
