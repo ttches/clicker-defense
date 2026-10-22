@@ -42,8 +42,9 @@ things land. Research detail lives in `idle-game-mechanic-research/PLAN.md`
       leaks deferred. See `design/claude-review-findings.md` / `review-findings.md`.
 - [ ] **Build M0–M6** and log tuning as you play. Execution is split into slices
       (see `design/build-plan.md` §Coding slices); **SP1 is in progress**.
-  - [ ] **SP1** foundation audit → `design/foundation-notes.md`
-  - [ ] **E1** foundation: scaffold + engine + balance/economy
+  - [x] **SP1** foundation audit → `design/foundation-notes.md`
+  - [ ] **E1a** headless foundation: scaffold + engine + SoA store
+  - [ ] **E1b** visible foundation: balance/economy + renderer + app mount + smoke
   - [ ] **SP2** browser/perf spike (instancing + DPR + 2,048 enemies)
   - [ ] **E2** M0a: sim stream + enemy render + HUD
   - [ ] **E3** M0b: input/cadence + targeting/damage + bounty → **M0 playable**

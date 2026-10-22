@@ -31,7 +31,8 @@ the next run starts. M0 = E2 + E3; M1 = E4.
 | run | covers | substeps | gate |
 | --- | --- | --- | --- |
 | **SP1** | foundation audit (read-only) | which eco-evo modules to copy/adapt/skip, aliases, canvas/DPR, loop↔React, SoA view | `design/foundation-notes.md` ratified |
-| **E1** | foundation | 1.1 scaffold · 1.2 engine · 1.3 balance + economy | build/test/lint; empty field boots |
+| **E1a** | foundation (headless) | 1.1 scaffold · 1.2 engine · 1.3 SoA store | build/test/lint; page boots; no DOM in `sim/` |
+| **E1b** | foundation (visible) | 1.4 balance + economy · 1.5 renderer/background · 1.6 app mount + smoke harness | empty field at DPR 1/2; early-table tests; smoke PASS |
 | **SP2** | browser/perf spike | instanced silhouettes + native×DPR + 2,048 enemies | measured ms/frame, not vibes |
 | **E2** | M0 part 1 | 2.1 sim stream · 2.2 enemy render · 2.3 HUD readout | deterministic spawn/walk/leak tests |
 | **E3** | M0 part 2 (**M0 done**) | 3.1 input/cadence · 3.2 targeting+damage · 3.3 tracer · 3.4 bounty+popups | M0 acceptance; playable checkpoint |
@@ -42,8 +43,11 @@ the next run starts. M0 = E2 + E3; M1 = E4.
 | id | slice | evidence |
 | --- | --- | --- |
 | 1.1 | Scaffold: pinned deps, Vite/Vitest/TS/oxlint/prettier, app shell, provenance note | build/test/lint clean; dev server boots |
-| 1.2 | Engine: fixed loop (injectable clock), RNG/clamp, camera fit + world↔screen | unit tests; no browser needed for loop |
-| 1.3 | `data/balance.ts` (every spec constant) + pure `sim/economy.ts` | early-table test (0–3 towers), cost ladder, bounty |
+| 1.2 | Engine: fixed loop (injectable clock, idempotent start/stop), RNG with serializable state, camera fit + world↔screen | unit tests; loop runs on a fake clock |
+| 1.3 | SoA store: typed-array columns, alloc/zero/stable-id, swap-remove, full-capacity sentinel | store tests; capacity + id invariants |
+| 1.4 | `data/balance.ts` (every spec constant) + pure `sim/economy.ts` | early-table test (0–3 towers), cost ladder, bounty, time-to-afford |
+| 1.5 | Renderer: ortho fit, native×DPR, resize; palette + background | static field at DPR 1/2; no colour-space mixing |
+| 1.6 | App mount (canvas, resize/DPR), `window.__game` debug snapshot, `tools/smoke.mjs` | smoke test PASS; one `createLoop` after StrictMode remount |
 | 2.1 | SoA world, spawner, walk, leak-removal, 2,048 cap (overflow = leaks) | same seed ⇒ same hash; 5 s spawn; 12 s walk |
 | 2.2 | Enemy silhouette layer (per-instance colour + HP tint), background | drawn count == sim count |
 | 2.3 | HUD readout at 10 Hz: currency, alive, spawn/s, leaks | no per-frame React renders; values match |
