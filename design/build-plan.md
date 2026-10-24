@@ -10,8 +10,8 @@
 
 | # | milestone | status |
 | --- | --- | --- |
-| M0 | Bullets & enemies | not started |
-| M1 | First tower | not started |
+| M0 | Bullets & enemies | first draft built (2026-10-23); needs playtest |
+| M1 | First tower | first draft built (2026-10-23); needs playtest |
 | M2 | Depth (damage & speed tiers) | not started |
 | M3 | Eras & boss (forced reset) | not started |
 | M4 | Prestige (tokens & upgrades) | not started |
@@ -255,4 +255,5 @@ part of M0–M6.
 
 | date | milestone | observation | change |
 | --- | --- | --- | --- |
-| | | | |
+| 2026-10-23 | M0/M1 | Build decisions: random on-screen targeting (skips enemies already doomed by in-flight bullets); damage on bullet hit; tap capped at 2× hold rate (10 ticks), hold every 20 ticks; leaks still free; spawn gaps jittered ×0.6–1.4 | — |
+| 2026-10-23 | M0/M1 | Headless (seeds 1–3, 10 min): time to 3 currency holding ≈ 15.2–15.6 s. Leak share: 0 towers + hold 0%; 1 tower no hold ≈ 99%, hold 1–3%; 2 towers no hold ≈ 66–72%, hold 0%; 3+ towers no hold 0% | Random spread makes under-powered states leak much harder than the spec's DPS table implies (front-most would leak ≈ 60% / 22% at 1 / 2 towers) |

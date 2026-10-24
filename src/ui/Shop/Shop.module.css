@@ -1,0 +1,176 @@
+.shop {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+}
+
+.heading {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--muted-foreground);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-raised);
+}
+
+.titleRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.title {
+  font-weight: 600;
+}
+
+.count {
+  font-family: var(--font-mono);
+  color: var(--muted-foreground);
+}
+
+.blurb {
+  margin: 0 0 4px;
+  font-size: 0.8rem;
+  color: var(--muted-foreground);
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+}
+
+.rowLabel {
+  color: var(--muted-foreground);
+}
+
+.change {
+  display: flex;
+  gap: 6px;
+  font-family: var(--font-mono);
+}
+
+.change [data-level='danger'] {
+  color: var(--danger);
+}
+
+.change [data-level='warning'] {
+  color: var(--warning);
+}
+
+.change [data-level='safe'] {
+  color: var(--accent);
+}
+
+.arrow {
+  color: var(--muted-foreground);
+}
+
+.good,
+.bad,
+.mild {
+  font-family: var(--font-mono);
+}
+
+.good {
+  color: var(--accent);
+}
+
+.bad {
+  color: var(--danger);
+}
+
+.mild {
+  color: var(--warning);
+}
+
+.warning {
+  margin: 2px 0 0;
+  font-size: 0.8rem;
+  color: var(--warning);
+}
+
+.buy {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 6px;
+  padding: 10px 12px;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  background: var(--accent);
+  color: #06140c;
+  font-weight: 700;
+}
+
+.buy:hover:not(:disabled) {
+  filter: brightness(1.08);
+}
+
+.buy:focus-visible {
+  outline: 2px solid var(--foreground);
+  outline-offset: 2px;
+}
+
+.buy:disabled {
+  cursor: not-allowed;
+  background: transparent;
+  border-color: var(--border);
+  color: var(--foreground);
+}
+
+/* Grows left to right as currency approaches the price. */
+.fill {
+  position: absolute;
+  inset: 0;
+  transform-origin: left center;
+  background: rgb(78 224 138 / 28%);
+  transition: transform 0.12s linear;
+}
+
+.buy:not(:disabled) .fill {
+  background: transparent;
+}
+
+.label {
+  position: relative;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fill {
+    transition: none;
+  }
+}
+
+.price {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  font-family: var(--font-mono);
+}
+
+.coin {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+.help {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--muted-foreground);
+}

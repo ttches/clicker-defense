@@ -1,0 +1,60 @@
+.stage {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.header {
+  flex: none;
+  border-bottom: 1px solid var(--border);
+}
+
+.body {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+
+.display {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+}
+
+.canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: crosshair;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.side {
+  flex: none;
+  width: 300px;
+  overflow-y: auto;
+  border-left: 1px solid var(--border);
+  background: var(--surface);
+}
+
+@media (max-width: 720px) {
+  .body {
+    flex-direction: column;
+  }
+
+  .side {
+    width: auto;
+    max-height: 45%;
+    border-left: none;
+    border-top: 1px solid var(--border);
+  }
+}

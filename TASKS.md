@@ -36,9 +36,11 @@ things land. Research detail lives in `idle-game-mechanic-research/PLAN.md`
 - [x] **Apply the review decisions** — per-kill **bounty** (kills are the payout,
       build-up → payout), **rare/chunky speed** (3 × +25%, cap ≈×2), and the
       **optimized simulator deferred**. See `design/review-findings.md`.
-- [ ] **Next session: scaffold the root app** (npm) per `technical-plan.md` §12,
-      then start **M0**.
-- [ ] **Build M0–M6** and log tuning as you play.
+- [x] **Scaffold the root app** (npm) and build **M0 + M1** first draft —
+      2026-10-23. See `readme.md` → Running, and the tuning log in
+      `design/build-plan.md`.
+- [ ] **Playtest M0/M1** and log tuning (targeting spread, tower-1 spawn jump).
+- [ ] **Build M2–M6** and log tuning as you play.
 
 ## Explorations (later, not pre-alpha)
 

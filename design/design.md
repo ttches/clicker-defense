@@ -143,9 +143,12 @@ reaches the line.**
 
 ## Decided so far
 
-- **Targeting:** each shot picks a random lane (y) and hits the **nearest
-  (front-most)** enemy in its path. (Revisit with a research spike later — see
-  Parked.)
+- **Targeting (decided 2026-10-23):** every shot, tower or click, picks a
+  **uniformly random on-screen enemy**, skipping any that bullets already in
+  flight will kill. Damage lands **when the bullet hits**. (Front-most and
+  front-weighted were considered; random was chosen so fire spreads across the
+  horde.) Watch in playtests: when under-powered, random spread chips everyone
+  and kills few, so leaks rise faster than with front-most.
 - **Click / active layer (kept deliberately simple for now):**
   - Tapping fires a basic ammunition → earns the currency needed for the first
     tower.

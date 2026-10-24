@@ -1,0 +1,81 @@
+.hud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  align-items: center;
+  padding: 10px 16px;
+  background: var(--surface);
+}
+
+.currency {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+  min-width: 180px;
+}
+
+.coin {
+  align-self: center;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 10px rgb(255 207 92 / 50%);
+}
+
+.amount {
+  font-family: var(--font-mono);
+  font-size: 1.6rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.rate {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--muted-foreground);
+}
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 20px;
+}
+
+.stat,
+.safety {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.label {
+  font-size: 0.7rem;
+  color: var(--muted-foreground);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.value {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.safety {
+  padding: 2px 10px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+.safety[data-level='danger'] .value {
+  color: var(--danger);
+}
+
+.safety[data-level='warning'] .value {
+  color: var(--warning);
+}
+
+.safety[data-level='safe'] .value {
+  color: var(--accent);
+}

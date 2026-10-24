@@ -1,0 +1,6 @@
+node_modules
+dist
+package-lock.json
+idle-game-mechanic-research
+design
+*.md

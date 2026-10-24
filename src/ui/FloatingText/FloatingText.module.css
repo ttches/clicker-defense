@@ -1,0 +1,41 @@
+.label {
+  position: absolute;
+  visibility: hidden;
+  transform: translate(-50%, -100%);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-shadow: 0 1px 2px rgb(0 0 0 / 80%);
+  white-space: nowrap;
+}
+
+.rising {
+  animation: rise 0.9s ease-out forwards;
+}
+
+@keyframes rise {
+  from {
+    opacity: 1;
+    transform: translate(-50%, -100%);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-50%, calc(-100% - 28px));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rising {
+    animation-name: fade;
+  }
+
+  @keyframes fade {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+}
